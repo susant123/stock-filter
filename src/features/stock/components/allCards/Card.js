@@ -29,7 +29,7 @@ function Card(props) {
 
   return (
     <>
-      {stockName != "ZEEL" && (
+      {stockName !== "ZEEL" && (
         <CardBlock>
           <StockSymbol>
             {stockName}-({nse.priceInfo.lastPrice})
@@ -42,7 +42,7 @@ function Card(props) {
           <MCChart stockName={stockName} />
           <SentimentsTable sentiments={indicators.data.sentiments} />
           <PivotLevelsTable pivotLevels={indicators.data.pivotLevels} />
-          <EmaSma indicators={indicators.data} />
+          <EmaSma ema={indicators.data.ema} sma={indicators.data.sma} />
           <hr />
           <div style={{ backgroundColor: "#b49292" }}>
             <SwotComponent swot={strength} />
@@ -55,7 +55,7 @@ function Card(props) {
             <hr />
             <VolumeData volumeData={volumeData.data} />
             <hr />
-            <LineChart chartData={chartData} />
+            <LineChart chartData={chartData.chartData} />
             <hr />
             <RSILineChart
               chartData={chartData.chartData}

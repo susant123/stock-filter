@@ -1,49 +1,14 @@
 import { convertArrayToObject } from "../utils/utilities";
 
-import { selectTradeData, selectLivePlusIndicatorData } from "../StockSlice";
-
-//import livePlusIndicator from "../data/json/livePlusIndicator.json";
-//import tradeData from "../data/tradeData.json";
-//import axios from "axios";
-//const liveData = {};
-/* const getLiveData = () => {
-  axios.get("/liveData.json").then((data) => {
-    console.log("asasasasa", data);
-  });
-};
-getLiveData(); */
-
-//const livePlusIndicator = useSelector(selectLivePlusIndicatorData);
-//const tradeData = useSelector(selectTradeData);
-
-//const allStocks = Object.keys(livePlusIndicator);
-
 const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel"];
 const keyObjectTradeData = {};
-
-const tradeData = {};
 const livePlusIndicator = {};
-
-export const getKeyObjectTradeData = () => {
-  for (let i = 0; i < accounts.length; i++) {
-    keyObjectTradeData[accounts[i]] = convertArrayToObject(
-      tradeData.stocks[accounts[i]],
-      "stockName"
-    );
-  }
-  ////console.log("keyObjectTradeData", keyObjectTradeData);
-  return keyObjectTradeData;
-};
-
-//const initialTradeData = getKeyObjectTradeData();
-
 const initialTradeData = {};
 
-//console.log("initialTradeData +++++++++++++++++++++++", initialTradeData);
-
-//console.log("livePlusIndicator----------------", livePlusIndicator);
-
-export const addCurrentPriceToTradeData = () => {
+export const addCurrentPriceToTradeData = (
+  livePlusIndicator,
+  initialTradeData
+) => {
   //const livePlusIndicator = useSelector(selectLivePlusIndicatorData);
   const allStocks = Object.keys(livePlusIndicator);
 
@@ -59,9 +24,6 @@ export const addCurrentPriceToTradeData = () => {
           livePlusIndicator[allStocks[j]].nse.priceInfo.lastPrice;
         initialTradeData[accounts[i]][allStocks[j]].indicators =
           livePlusIndicator[allStocks[j]].indicators.data;
-
-        initialTradeData[accounts[i]][allStocks[j]].allData =
-          livePlusIndicator[allStocks[j]].nse;
         initialTradeData[accounts[i]][allStocks[j]].strength =
           livePlusIndicator[allStocks[j]].strength;
         initialTradeData[accounts[i]][allStocks[j]].weakness =
@@ -80,32 +42,21 @@ export const addCurrentPriceToTradeData = () => {
 //console.log("initialTradeData------------", initialTradeData);
 const allStocks = Object.keys(livePlusIndicator);
 
-export const getSellRecommendation = () => {
-  const sellRecommendation = [];
-  for (let i = 0; i < accounts.length; i++) {
-    for (let j = 0; j < allStocks.length; j++) {
-      const currentStock = initialTradeData[accounts[i]][allStocks[j]];
-      if (currentStock) {
-        const profit = profitLossCalc(
-          currentStock.currentPrice,
-          currentStock.boughtPrice
-        );
-        if (profit > 5) {
-          sellRecommendation.push({
-            account: accounts[i],
-            stockName: currentStock.stockName,
-            profit: profit,
-            quantity: currentStock.quantity,
-            currentPrice: currentStock.currentPrice,
-          });
-        }
-      }
+export const getKeyObjectTradeData = (tradeData) => {
+  if (tradeData) {
+    for (let i = 0; i < accounts.length; i++) {
+      keyObjectTradeData[accounts[i]] = convertArrayToObject(
+        tradeData[accounts[i]],
+        "stockName"
+      );
     }
   }
-  return sellRecommendation;
+  ////console.log("keyObjectTradeData", keyObjectTradeData);
+  return keyObjectTradeData || [];
 };
 
 const profitLossCalc = (currentPrice = 0, boughtPrice) => {
+  console.log("currentPrice---", currentPrice, "boughtPrice", boughtPrice);
   return boughtPrice
     ? (((currentPrice - boughtPrice) / boughtPrice) * 100).toFixed(1)
     : 0;
@@ -179,7 +130,6 @@ export const getBuyRecommendations = () => {
               buyAccount: accounts[buyAccountIndex],
               stockName: currentStock.stockName,
               quantity: currentStock.quantity,
-              allData: currentStock.allData,
               indicators: currentStock.indicators,
               strength: currentStock.strength,
               weakness: currentStock.weakness,

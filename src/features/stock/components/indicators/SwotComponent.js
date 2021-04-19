@@ -18,13 +18,13 @@ function SwotComponent({ swot }) {
       if (strength.indexOf("Brokers upgraded recommendation") !== -1) {
         setIsGreenFlag(true);
       }
+      return true;
     });
-  }, []);
+  }, [swot.data.info]);
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
 
-  //console.log("swot.data", swot.data);
   return (
     <Wrapper isRedFlag={isRedFlag} isGreenFlag={isGreenFlag}>
       <IconHeaderWrapper>

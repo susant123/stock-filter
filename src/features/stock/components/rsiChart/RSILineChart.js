@@ -39,7 +39,7 @@ const isLowRSI = (rsiData) => {
 function RSILineChart({ chartData, rsiData, rsiRange }) {
   console.log("In RSILineChart");
   //console.log("chartData", chartData, rsiData);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
