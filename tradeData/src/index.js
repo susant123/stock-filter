@@ -7,6 +7,7 @@ import path from "path";
 import AllRSIData from "./data/AllRSIData.json";
 import ChartData from "./data/chart-6month.json";
 import LiveIndicatorData from "./data/livePlusIndicator.json";
+import TradeData from "./data/tradeData.json";
 
 const bodyParser = require("body-parser");
 
@@ -38,6 +39,10 @@ app.get("/getChartData", (req, res) => {
 
 app.get("/getLivePlusIndicatorData", (req, res) => {
   res.send(LiveIndicatorData);
+});
+
+app.get("/getTradeData", (req, res) => {
+  res.send(TradeData);
 });
 
 const httpServer = http.createServer(app);

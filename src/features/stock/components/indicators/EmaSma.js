@@ -10,7 +10,7 @@ import {
 
 function EmaSma(props) {
   const [isOpen, setIsOpen] = useState(false);
-  const { ema, sma } = props.indicators;
+  const { ema, sma } = props;
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
