@@ -7,14 +7,10 @@ import SwotComponent from "../indicators/SwotComponent";
 import VolumeData from "../indicators/VolumeData";
 import LineChart from "../charts/LineChart";
 import MCChart from "../modal/MCChart";
-//import ChartData from "../../data/json/chart-6month.json";
-
 import RSILineChart from "../rsiChart/RSILineChart";
-//import AllRSIData from "../../data/json/AllRSIData.json";
 
 function Card(props) {
   const { card, stockName, chartData, rsiData } = props;
-  // console.log("card----", chartData);
   const {
     indicators,
     strength,
@@ -24,8 +20,6 @@ function Card(props) {
     volumeData,
     nse,
   } = card;
-
-  console.log("stockName--", stockName);
 
   return (
     <>

@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
 import AllCards from "./components/allCards/AllCards";
-
 import {
   getLivePlusIndicatorDataAsync,
   getAllRSIDataAsync,
@@ -17,14 +15,11 @@ export function Stock() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("In useEffect");
     dispatch(getLivePlusIndicatorDataAsync());
     dispatch(getAllRSIDataAsync());
     dispatch(getChartDataAsync());
     dispatch(getTradeDataAsync());
   }, [dispatch]);
-  //const allRSIData = useSelector(selectAllRSIData);
-  //const chartData = useSelector(selectChartData);
   const livePlusIndicatorData = useSelector(selectLivePlusIndicatorData);
 
   return (

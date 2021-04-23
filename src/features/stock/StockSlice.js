@@ -35,8 +35,6 @@ export const getLivePlusIndicatorDataAsync = createAsyncThunk(
   "stock/getLivePlusIndicatorData",
   async (amount) => {
     const response = await fetchLivePlusIndicatorData();
-    // The value we return becomes the `fulfilled` action payload
-    console.log("fetchLivePlusIndicatorData response", response);
     return response.data;
   }
 );
@@ -44,10 +42,7 @@ export const getLivePlusIndicatorDataAsync = createAsyncThunk(
 export const getTradeDataAsync = createAsyncThunk(
   "stock/getTradeData",
   async (amount) => {
-    console.log("getTradeDataAsync response------------start");
     const response = await fetchTradeData();
-    // The value we return becomes the `fulfilled` action payload
-    console.log("getTradeDataAsync response------------", response);
     return response.data;
   }
 );
@@ -66,30 +61,21 @@ export const stockSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getAllRSIDataAsync.pending, (state) => {
-        //console.log("getting trade data");
         state.status = "loading";
       })
       .addCase(getAllRSIDataAsync.fulfilled, (state, action) => {
-        //console.log("action.payload", action.payload);
         state.allRSIData = action.payload;
       })
       .addCase(getChartDataAsync.pending, (state) => {
-        //console.log("getting live data");
         state.status = "loading";
       })
       .addCase(getChartDataAsync.fulfilled, (state, action) => {
-        //console.log(" getChartDataAsync action.payload", action.payload);
         state.chartData = action.payload;
       })
       .addCase(getLivePlusIndicatorDataAsync.fulfilled, (state, action) => {
-        //console.log("getLivePlusIndicatorData action.payload", action.payload);
         state.livePlusIndicatorData = action.payload;
       })
       .addCase(getTradeDataAsync.fulfilled, (state, action) => {
-        console.log(
-          "getTradeData action.payload^^^^^^^^^^^^^^^",
-          action.payload
-        );
         state.tradeData = action.payload;
       });
   },

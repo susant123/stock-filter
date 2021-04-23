@@ -12,7 +12,6 @@ export const getKeyObjectTradeData = (tradeData) => {
       );
     }
   }
-  ////console.log("keyObjectTradeData", keyObjectTradeData);
   return keyObjectTradeData;
 };
 

@@ -18,7 +18,6 @@ const getKeyObjectTradeData = (tradeData) => {
       );
     }
   }
-  ////console.log("keyObjectTradeData", keyObjectTradeData);
   return keyObjectTradeData;
 };
 
@@ -30,12 +29,6 @@ const shouldBuyNextAccountStock = (
 ) => {
   const accountToCheck = nextAccount % 4;
   const stockToCheck = initialTradeData[accounts[accountToCheck]][stockName];
-  //console.log("stockToCheck", stockToCheck);
-
-  /*const profitLoss = profitLossCalc(
-    stockToCheck.currentPrice,
-    stockToCheck.boughtPrice
-  );*/
   let isItAlreadyBought = false;
   if (!stockToCheck.quantity) {
     isItAlreadyBought = checkOtherAccount(
@@ -59,12 +52,6 @@ const checkOtherAccount = (nextAccount, stockName, initialTradeData) => {
   );
 
   const stockToCheck2 = initialTradeData[accounts[accountToCheck2]][stockName];
-
-  /*const profitLoss2 = profitLossCalc(
-    stockToCheck2.currentPrice,
-    stockToCheck2.boughtPrice
-  );*/
-
   if (
     (stockToCheck1.quantity && profitLoss1 > -5) ||
     (stockToCheck2.quantity && profitLoss1 > -5)
@@ -83,15 +70,8 @@ const getAllStockNames = (stocksArr) => {
 
 export const getBuyRecommendations = (livePlusIndicator, tradeData) => {
   const initialTradeData = getKeyObjectTradeData(tradeData);
-
   let allStocksNameArr = [];
-  console.log(
-    "getBuyRecommendations@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
-    tradeData,
-    livePlusIndicator
-  );
   const buyRecommendations = [];
-
   const buyRecommendationsObj = {};
 
   if (tradeData["asha-kite"] && livePlusIndicator) {
@@ -125,42 +105,7 @@ export const getBuyRecommendations = (livePlusIndicator, tradeData) => {
             });
           }
         }
-
-        /*const currentStock = initialTradeData[accounts[i]][allStocks[j]];
-      const currentPrice =
-        livePlusIndicator[allStocks[j]].nse.priceInfo.lastPrice;
-      const allLiveStockData = livePlusIndicator[allStocks[j]];
-      if (currentStock) {
-        const profitLoss = parseFloat(
-          profitLossCalc(currentPrice, currentStock.boughtPrice)
-        );
-        if (profitLoss < -5) {
-          const shouldBuyNext = shouldBuyNextAccountStock(
-            i + 1,
-            allStocks[j],
-            profitLoss,
-            initialTradeData
-          );
-          if (shouldBuyNext) {
-            const buyAccountIndex = (i + 1) % 4;
-            buyRecommendations.push({
-              buyAccount: accounts[buyAccountIndex],
-              stockName: currentStock.stockName,
-              quantity: currentStock.quantity,
-              indicators: allLiveStockData.indicators,
-              strength: allLiveStockData.strength,
-              weakness: allLiveStockData.weakness,
-              opportunities: allLiveStockData.opportunities,
-              threat: allLiveStockData.threat,
-              volumeData: allLiveStockData.volumeData,
-              previousAccountLoss: profitLoss,
-            });
-            break;
-          }
-        }
-      }*/
       }
-      console.log("buyRecommendations is called%%%%%%%%%%%%", stockWiseData);
     }
   }
 
