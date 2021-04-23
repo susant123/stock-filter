@@ -10,11 +10,11 @@ const profitLossCalc = (currentPrice = 0, boughtPrice) => {
 
 const getKeyObjectTradeData = (tradeData) => {
   const keyObjectTradeData = [];
-  if (tradeData.stocks && tradeData.stocks[accounts[0]]) {
+  if (tradeData["asha-kite"] && tradeData[accounts[0]]) {
     for (let i = 0; i < accounts.length; i++) {
       keyObjectTradeData[accounts[i]] = convertArrayToObject(
-        tradeData.stocks[accounts[i]],
-        "stockName"
+        tradeData[accounts[i]],
+        "stock_name"
       );
     }
   }
@@ -73,16 +73,60 @@ const checkOtherAccount = (nextAccount, stockName, initialTradeData) => {
   }
 };
 
+const getAllStockNames = (stocksArr) => {
+  const allStocksNames = [];
+  for (var i = 0; i < stocksArr.length; i++) {
+    allStocksNames.push(stocksArr[i].stock_name);
+  }
+  return allStocksNames;
+};
+
 export const getBuyRecommendations = (livePlusIndicator, tradeData) => {
-  const allStocks = Object.keys(livePlusIndicator);
   const initialTradeData = getKeyObjectTradeData(tradeData);
+
+  let allStocksNameArr = [];
+  console.log(
+    "getBuyRecommendations@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+    tradeData,
+    livePlusIndicator
+  );
   const buyRecommendations = [];
 
   const buyRecommendationsObj = {};
 
-  for (let j = 0; j < allStocks.length; j++) {
-    for (let i = 0; i < accounts.length; i++) {
-      const currentStock = initialTradeData[accounts[i]][allStocks[j]];
+  if (tradeData["asha-kite"] && livePlusIndicator) {
+    allStocksNameArr = getAllStockNames(tradeData[accounts[0]]);
+
+    for (let j = 0; j < allStocksNameArr.length; j++) {
+      const stockWiseData = [];
+      for (let i = 0; i < accounts.length; i++) {
+        const currentStock = initialTradeData[accounts[i]][allStocksNameArr[j]];
+        if (livePlusIndicator[allStocksNameArr[j]]) {
+          const currentPrice =
+            livePlusIndicator[allStocksNameArr[j]].nse.priceInfo.lastPrice;
+          const allLiveStockData = livePlusIndicator[allStocksNameArr[j]];
+
+          if (currentStock) {
+            const profitLoss = parseFloat(
+              profitLossCalc(currentPrice, currentStock.boughtPrice)
+            );
+            const buyAccountIndex = (i + 1) % 4;
+            stockWiseData.push({
+              buyAccount: accounts[buyAccountIndex],
+              stockName: currentStock.stockName,
+              quantity: currentStock.quantity,
+              indicators: allLiveStockData.indicators,
+              strength: allLiveStockData.strength,
+              weakness: allLiveStockData.weakness,
+              opportunities: allLiveStockData.opportunities,
+              threat: allLiveStockData.threat,
+              volumeData: allLiveStockData.volumeData,
+              profitLoss: profitLoss,
+            });
+          }
+        }
+
+        /*const currentStock = initialTradeData[accounts[i]][allStocks[j]];
       const currentPrice =
         livePlusIndicator[allStocks[j]].nse.priceInfo.lastPrice;
       const allLiveStockData = livePlusIndicator[allStocks[j]];
@@ -114,9 +158,11 @@ export const getBuyRecommendations = (livePlusIndicator, tradeData) => {
             break;
           }
         }
+      }*/
       }
+      console.log("buyRecommendations is called%%%%%%%%%%%%", stockWiseData);
     }
   }
-  console.log("buyRecommendations is called", buyRecommendations);
+
   return buyRecommendations;
 };

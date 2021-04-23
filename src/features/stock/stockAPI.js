@@ -18,6 +18,6 @@ export function fetchLivePlusIndicatorData() {
 }
 
 export function fetchTradeData(amount = 1) {
-  const url = baseUrl + "/getTradeData";
+  const url = "http://localhost:4300/api/trade_details/";
   return axios.get(url);
 }

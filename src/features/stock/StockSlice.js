@@ -44,9 +44,10 @@ export const getLivePlusIndicatorDataAsync = createAsyncThunk(
 export const getTradeDataAsync = createAsyncThunk(
   "stock/getTradeData",
   async (amount) => {
+    console.log("getTradeDataAsync response------------start");
     const response = await fetchTradeData();
     // The value we return becomes the `fulfilled` action payload
-    console.log("getTradeDataAsync response", response);
+    console.log("getTradeDataAsync response------------", response);
     return response.data;
   }
 );
@@ -85,7 +86,10 @@ export const stockSlice = createSlice({
         state.livePlusIndicatorData = action.payload;
       })
       .addCase(getTradeDataAsync.fulfilled, (state, action) => {
-        //console.log("getTradeData action.payload", action.payload);
+        console.log(
+          "getTradeData action.payload^^^^^^^^^^^^^^^",
+          action.payload
+        );
         state.tradeData = action.payload;
       });
   },
