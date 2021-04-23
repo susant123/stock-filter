@@ -27,7 +27,7 @@ function BuyCard(props) {
   const allRSIData = useSelector(selectAllRSIData);
   const chartData = useSelector(selectChartData);
   const displayRows = [
-    { label: "Buy", info: card.buyAccount },
+    { label: "Buy", info: card.account },
     {
       label: "Year low",
       info: priceInfo.weekHighLow.min + " - " + priceInfo.weekHighLow.minDate,
