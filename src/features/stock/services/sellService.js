@@ -32,7 +32,7 @@ const getAllStockNames = (stocksArr) => {
 export const getSellRecommendation = (livePlusIndicator, tradeData = {}) => {
   let allStocks = [];
   const sellRecommendation = [];
-  if (tradeData["asha-kite"] && JSON.stringify(livePlusIndicator) != "{}") {
+  if (tradeData["asha-kite"] && JSON.stringify(livePlusIndicator) !== "{}") {
     allStocks = getAllStockNames(tradeData["asha-kite"]);
     const initialTradeData = getKeyObjectTradeData(tradeData);
     for (let i = 0; i < accounts.length; i++) {

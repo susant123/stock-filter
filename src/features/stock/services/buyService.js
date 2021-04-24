@@ -21,14 +21,6 @@ const getKeyObjectTradeData = (tradeData) => {
   return keyObjectTradeData;
 };
 
-const getKeyObjectBuyIndicatorData = (tradeData) => {
-  let keyObjectTradeData = [];
-  for (let i = 0; i < accounts.length; i++) {
-    keyObjectTradeData = convertArrayToObject(tradeData, "account");
-  }
-  return keyObjectTradeData;
-};
-
 const getAllStockNames = (stocksArr) => {
   let allStocksNames = [];
   for (var i = 0; i < stocksArr.length; i++) {
@@ -37,17 +29,72 @@ const getAllStockNames = (stocksArr) => {
   return allStocksNames;
 };
 
-const calculateBuySuggestion = (accountWiseStock) => {
-  const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel"];
+const calculateBuySuggestion = (stockWiseData) => {
   let buyAccount = null;
-  for (let i = 0; i < accounts.length; i++) {
-    const currentAccountData = accountWiseStock[accounts[i]];
-    console.log("currentAccountData--------", currentAccountData);
-    if (currentAccountData && currentAccountData.profitLoss) {
-      if (currentAccountData.profitLoss < -5) {
-        buyAccount = currentAccountData;
+
+  stockWiseData.sort((a, b) => {
+    return a.profitLoss - b.profitLoss;
+  });
+
+  console.log("Sorted stockWiseData", stockWiseData);
+
+  const acc1Stock = stockWiseData[0];
+  const acc2Stock = stockWiseData[1];
+  const acc3Stock = stockWiseData[2];
+  const acc4Stock = stockWiseData[3];
+
+  if (
+    acc1Stock.quantity &&
+    acc1Stock.quantity > 0 &&
+    acc1Stock.profitLoss < -5
+  ) {
+    if (
+      acc2Stock.quantity &&
+      acc2Stock.quantity > 0 &&
+      acc2Stock.profitLoss < -5
+    ) {
+      if (
+        acc3Stock.quantity &&
+        acc3Stock.quantity > 0 &&
+        acc3Stock.profitLoss < -5
+      ) {
+        if (
+          acc4Stock.quantity &&
+          acc4Stock.quantity > 0 &&
+          acc4Stock.profitLoss < -5
+        ) {
+          buyAccount = acc4Stock;
+        } else if (
+          acc4Stock.quantity &&
+          acc4Stock.quantity > 0 &&
+          acc4Stock.profitLoss > -5
+        ) {
+          console.log("Have patience", acc4Stock.account, acc4Stock.stockName);
+        }
+      } else if (
+        acc3Stock.quantity &&
+        acc3Stock.quantity > 0 &&
+        acc3Stock.profitLoss > -5
+      ) {
+        console.log("Have patience", acc3Stock.account, acc3Stock.stockName);
+      } else {
+        buyAccount = acc3Stock;
       }
+    } else if (
+      acc2Stock.quantity &&
+      acc2Stock.quantity > 0 &&
+      acc2Stock.profitLoss > -5
+    ) {
+      console.log("Have patience", acc2Stock.account, acc2Stock.stockName);
+    } else {
+      buyAccount = acc2Stock;
     }
+  } else if (
+    acc1Stock.quantity &&
+    acc1Stock.quantity > 0 &&
+    acc1Stock.profitLoss > -5
+  ) {
+    console.log("Have patience", acc1Stock.account, acc1Stock.stockName);
   }
   return buyAccount;
 };
@@ -56,7 +103,6 @@ export const getBuyRecommendations = (livePlusIndicator, tradeData) => {
   const initialTradeData = getKeyObjectTradeData(tradeData);
   let allStocksNameArr = [];
   const buyRecommendations = [];
-  const buyRecommendationsObj = {};
 
   if (tradeData["asha-kite"] && livePlusIndicator) {
     allStocksNameArr = getAllStockNames(tradeData[accounts[0]]);
@@ -92,19 +138,14 @@ export const getBuyRecommendations = (livePlusIndicator, tradeData) => {
             }
           }
         }
-        const keyObjectBuyIndicatorData = getKeyObjectBuyIndicatorData(
-          stockWiseData
-        );
-        console.log("stockWiseData---------", keyObjectBuyIndicatorData);
-        const recomendedToBuy = calculateBuySuggestion(
-          keyObjectBuyIndicatorData
-        );
-        if (recomendedToBuy) {
-          buyRecommendations.push(recomendedToBuy);
+        if (stockWiseData.length > 0) {
+          const recomendedToBuy = calculateBuySuggestion(stockWiseData);
+          if (recomendedToBuy) {
+            buyRecommendations.push(recomendedToBuy);
+          }
         }
       }
     }
   }
-  console.log("buyRecommendations--------------------@@@@", buyRecommendations);
   return buyRecommendations;
 };
