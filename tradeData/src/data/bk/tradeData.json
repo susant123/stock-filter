@@ -1,0 +1,1173 @@
+{
+  "stocks": {
+    "asha-kite": [
+        {
+            "stockName": "ADANITRANS"
+        },
+        {
+            "stockName": "AIAENG"
+        },
+        {
+            "stockName": "AKZOINDIA"
+        },
+        {
+            "stockName": "AMARAJABAT"
+        },
+        {
+            "stockName": "APOLLOTYRE"
+        },
+        {
+            "stockName": "ASHOKLEY"
+        },
+        {
+            "stockName": "ATUL"
+        },
+        {
+            "stockName": "AUROPHARMA"
+        },
+        {
+            "stockName": "BAJAJ-AUTO",
+            "boughtPrice": "4021.73",
+            "quantity": "6"
+        },
+        {
+            "stockName": "BALRAMCHIN"
+        },
+        {
+            "stockName": "BANKBEES"
+        },
+        {
+            "stockName": "BEL",
+            "boughtPrice": "133.05",
+            "quantity": "60"
+        },
+        {
+            "stockName": "BLUESTARCO"
+        },
+        {
+            "stockName": "BRITANNIA"
+        },
+        {
+            "stockName": "CADILAHC"
+        },
+        {
+            "stockName": "CASTROLIND",
+            "boughtPrice": "123.8",
+            "quantity": "50"
+        },
+        {
+            "stockName": "CDSL",
+            "boughtPrice": "754.9",
+            "quantity": "10"
+        },
+        {
+            "stockName": "CEATLTD"
+        },
+        {
+            "stockName": "CIPLA"
+        },
+        {
+            "stockName": "COALINDIA"
+        },
+        {
+            "stockName": "COLPAL",
+            "boughtPrice": "1638.94",
+            "quantity": "15"
+        },
+        {
+            "stockName": "CRAFTSMAN"
+        },
+        {
+            "stockName": "CRISIL"
+        },
+        {
+            "stockName": "DABUR"
+        },
+        {
+            "stockName": "EPL"
+        },
+        {
+            "stockName": "FINCABLES",
+            "boughtPrice": "384.18",
+            "quantity": "45"
+        },
+        {
+            "stockName": "FINPIPE"
+        },
+        {
+            "stockName": "GAIL"
+        },
+        {
+            "stockName": "GLENMARK"
+        },
+        {
+            "stockName": "GODREJCP"
+        },
+        {
+            "stockName": "GODREJIND"
+        },
+        {
+            "stockName": "GOLDBEES",
+            "boughtPrice": "42.91",
+            "quantity": "899"
+        },
+        {
+            "stockName": "HAL"
+        },
+        {
+            "stockName": "HCLTECH"
+        },
+        {
+            "stockName": "HDFC",
+            "boughtPrice": "2777.73",
+            "quantity": "6"
+        },
+        {
+            "stockName": "HDFCBANK",
+            "boughtPrice": "1486.93",
+            "quantity": "10"
+        },
+        {
+            "stockName": "HEIDELBERG"
+        },
+        {
+            "stockName": "HINDUNILVR"
+        },
+        {
+            "stockName": "IDFC",
+            "boughtPrice": "52.01",
+            "quantity": "600"
+        },
+        {
+            "stockName": "IIFL",
+            "boughtPrice": "326.48",
+            "quantity": "30"
+        },
+        {
+            "stockName": "INFY"
+        },
+        {
+            "stockName": "INOXWIND"
+        },
+        {
+            "stockName": "IOC",
+            "boughtPrice": "91.2",
+            "quantity": "50"
+        },
+        {
+            "stockName": "IRFC",
+            "boughtPrice": "23.35",
+            "quantity": "1150"
+        },
+        {
+            "stockName": "ITC",
+            "boughtPrice": "219.58",
+            "quantity": "75"
+        },
+        {
+            "stockName": "JCHAC"
+        },
+        {
+            "stockName": "JKLAKSHMI",
+            "boughtPrice": "453.85",
+            "quantity": "2"
+        },
+        {
+            "stockName": "JUNIORBEES"
+        },
+        {
+            "stockName": "JYOTHYLAB",
+            "boughtPrice": "148.77",
+            "quantity": "150"
+        },
+        {
+            "stockName": "KALPATPOWR"
+        },
+        {
+            "stockName": "KALYANKJIL",
+            "boughtPrice": "74.07",
+            "quantity": "150"
+        },
+        {
+            "stockName": "KOTAKBANK",
+            "boughtPrice": "1899.36",
+            "quantity": "14"
+        },
+        {
+            "stockName": "LICHSGFIN",
+            "boughtPrice": "450.2",
+            "quantity": "50"
+        },
+        {
+            "stockName": "M&M",
+            "boughtPrice": "853.5",
+            "quantity": "10"
+        },
+        {
+            "stockName": "M&MFIN",
+            "boughtPrice": "188.18",
+            "quantity": "175"
+        },
+        {
+            "stockName": "MPHASIS"
+        },
+        {
+            "stockName": "NATIONALUM",
+            "boughtPrice": "61.19",
+            "quantity": "250"
+        },
+        {
+            "stockName": "NESTLEIND"
+        },
+        {
+            "stockName": "NH",
+            "boughtPrice": "432.4",
+            "quantity": "50"
+        },
+        {
+            "stockName": "NIFTYBEES"
+        },
+        {
+            "stockName": "PETRONET"
+        },
+        {
+            "stockName": "PNB",
+            "boughtPrice": "38.6",
+            "quantity": "200"
+        },
+        {
+            "stockName": "PSUBNKBEES",
+            "boughtPrice": "26.49",
+            "quantity": "1250"
+        },
+        {
+            "stockName": "QUESS",
+            "boughtPrice": "679.98",
+            "quantity": "15"
+        },
+        {
+            "stockName": "RELIANCE",
+            "boughtPrice": "2002.25",
+            "quantity": "7"
+        },
+        {
+            "stockName": "RITES"
+        },
+        {
+            "stockName": "SKFINDIA",
+            "boughtPrice": "2333.04",
+            "quantity": "8"
+        },
+        {
+            "stockName": "SONATSOFTW"
+        },
+        {
+            "stockName": "SUNPHARMA",
+            "boughtPrice": "625",
+            "quantity": "15"
+        },
+        {
+            "stockName": "SWARAJENG"
+        },
+        {
+            "stockName": "TATAPOWER"
+        },
+        {
+            "stockName": "TEAMLEASE"
+        },
+        {
+            "stockName": "TIMKEN"
+        },
+        {
+            "stockName": "TITAN"
+        },
+        {
+            "stockName": "TVSMOTOR",
+            "boughtPrice": "572.42",
+            "quantity": "25"
+        },
+        {
+            "stockName": "UNIONBANK"
+        },
+        {
+            "stockName": "VSTIND"
+        },
+        {
+            "stockName": "WABCOINDIA",
+            "boughtPrice": "6294.75",
+            "quantity": "3"
+        },
+        {
+            "stockName": "WIPRO"
+        },
+        {
+            "stockName": "YESBANK",
+            "boughtPrice": "18.46",
+            "quantity": "5500"
+        }
+    ],
+	
+	
+	"susant-kite":[
+        {
+            "stockName": "ADANITRANS"
+        },
+        {
+            "stockName": "AIAENG"
+        },
+        {
+            "stockName": "AKZOINDIA",
+            "boughtPrice": "2422.25",
+            "quantity": "2"
+        },
+        {
+            "stockName": "AMARAJABAT",
+            "boughtPrice": "805.9",
+            "quantity": "10"
+        },
+        {
+            "stockName": "APOLLOTYRE",
+            "boughtPrice": "213.85",
+            "quantity": "50"
+        },
+        {
+            "stockName": "ASHOKLEY",
+            "boughtPrice": "125.14",
+            "quantity": "350"
+        },
+        {
+            "stockName": "ATUL"
+        },
+        {
+            "stockName": "AUROPHARMA"
+        },
+        {
+            "stockName": "BAJAJ-AUTO",
+            "boughtPrice": "3804.01",
+            "quantity": "8"
+        },
+        {
+            "stockName": "BALRAMCHIN"
+        },
+        {
+            "stockName": "BANKBEES"
+        },
+        {
+            "stockName": "BEL"
+        },
+        {
+            "stockName": "BLUESTARCO",
+            "boughtPrice": "938.81",
+            "quantity": "11"
+        },
+        {
+            "stockName": "BRITANNIA"
+        },
+        {
+            "stockName": "CADILAHC",
+            "boughtPrice": "500.4",
+            "quantity": "2"
+        },
+        {
+            "stockName": "CASTROLIND",
+            "boughtPrice": "126.78",
+            "quantity": "150"
+        },
+        {
+            "stockName": "CDSL"
+        },
+        {
+            "stockName": "CEATLTD",
+            "boughtPrice": "1505",
+            "quantity": "5"
+        },
+        {
+            "stockName": "CIPLA"
+        },
+        {
+            "stockName": "COALINDIA",
+            "boughtPrice": "141.45",
+            "quantity": "200"
+        },
+        {
+            "stockName": "COLPAL"
+        },
+        {
+            "stockName": "CRAFTSMAN",
+            "boughtPrice": "1490",
+            "quantity": "10"
+        },
+        {
+            "stockName": "CRISIL"
+        },
+        {
+            "stockName": "DABUR"
+        },
+        {
+            "stockName": "EPL"
+        },
+        {
+            "stockName": "FINCABLES",
+            "boughtPrice": "390.3",
+            "quantity": "15"
+        },
+        {
+            "stockName": "FINPIPE"
+        },
+        {
+            "stockName": "GAIL"
+        },
+        {
+            "stockName": "GLENMARK"
+        },
+        {
+            "stockName": "GODREJCP"
+        },
+        {
+            "stockName": "GODREJIND",
+            "boughtPrice": "533.24",
+            "quantity": "25"
+        },
+        {
+            "stockName": "GOLDBEES",
+            "boughtPrice": "40.49",
+            "quantity": "300"
+        },
+        {
+            "stockName": "HAL",
+            "boughtPrice": "976.92",
+            "quantity": "7"
+        },
+        {
+            "stockName": "HCLTECH",
+            "boughtPrice": "1045.05",
+            "quantity": "1"
+        },
+        {
+            "stockName": "HDFC",
+            "boughtPrice": "2473.65",
+            "quantity": "5"
+        },
+        {
+            "stockName": "HDFCBANK",
+            "boughtPrice": "1551.61",
+            "quantity": "13"
+        },
+        {
+            "stockName": "HEIDELBERG",
+            "boughtPrice": "232.68",
+            "quantity": "24"
+        },
+        {
+            "stockName": "HINDUNILVR",
+            "boughtPrice": "2471.8",
+            "quantity": "1"
+        },
+        {
+            "stockName": "IDFC",
+            "boughtPrice": "50.17",
+            "quantity": "250"
+        },
+        {
+            "stockName": "IIFL",
+            "boughtPrice": "275.55",
+            "quantity": "60"
+        },
+        {
+            "stockName": "INFY"
+        },
+        {
+            "stockName": "INOXWIND"
+        },
+        {
+            "stockName": "IOC"
+        },
+        {
+            "stockName": "IRFC",
+            "boughtPrice": "24.32",
+            "quantity": "1900"
+        },
+        {
+            "stockName": "ITC",
+            "boughtPrice": "212.85",
+            "quantity": "50"
+        },
+        {
+            "stockName": "JCHAC",
+            "boughtPrice": "2559.89",
+            "quantity": "5"
+        },
+        {
+            "stockName": "JKLAKSHMI",
+            "boughtPrice": "419.2",
+            "quantity": "15"
+        },
+        {
+            "stockName": "JUNIORBEES"
+        },
+        {
+            "stockName": "JYOTHYLAB",
+            "boughtPrice": "158.63",
+            "quantity": "400"
+        },
+        {
+            "stockName": "KALPATPOWR",
+            "boughtPrice": "370.64",
+            "quantity": "10"
+        },
+        {
+            "stockName": "KALYANKJIL",
+            "boughtPrice": "82.51",
+            "quantity": "230"
+        },
+        {
+            "stockName": "KOTAKBANK",
+            "boughtPrice": "1842.22",
+            "quantity": "12"
+        },
+        {
+            "stockName": "LICHSGFIN",
+            "boughtPrice": "451",
+            "quantity": "25"
+        },
+        {
+            "stockName": "M&M"
+        },
+        {
+            "stockName": "M&MFIN"
+        },
+        {
+            "stockName": "MPHASIS"
+        },
+        {
+            "stockName": "NATIONALUM",
+            "boughtPrice": "59.85",
+            "quantity": "100"
+        },
+        {
+            "stockName": "NESTLEIND"
+        },
+        {
+            "stockName": "NH",
+            "boughtPrice": "444.93",
+            "quantity": "80"
+        },
+        {
+            "stockName": "NIFTYBEES"
+        },
+        {
+            "stockName": "PETRONET",
+            "boughtPrice": "225.15",
+            "quantity": "25"
+        },
+        {
+            "stockName": "PNB",
+            "boughtPrice": "44.15",
+            "quantity": "250"
+        },
+        {
+            "stockName": "PSUBNKBEES",
+            "boughtPrice": "23.97",
+            "quantity": "1100"
+        },
+        {
+            "stockName": "QUESS",
+            "boughtPrice": "703.62",
+            "quantity": "25"
+        },
+        {
+            "stockName": "RELIANCE",
+            "boughtPrice": "2188.9",
+            "quantity": "7"
+        },
+        {
+            "stockName": "RITES"
+        },
+        {
+            "stockName": "SKFINDIA",
+            "boughtPrice": "2209.32",
+            "quantity": "6"
+        },
+        {
+            "stockName": "SONATSOFTW",
+            "boughtPrice": "604.2",
+            "quantity": "12"
+        },
+        {
+            "stockName": "SUNPHARMA"
+        },
+        {
+            "stockName": "SWARAJENG",
+            "boughtPrice": "1435.52",
+            "quantity": "10"
+        },
+        {
+            "stockName": "TATAPOWER"
+        },
+        {
+            "stockName": "TEAMLEASE",
+            "boughtPrice": "3692.8",
+            "quantity": "2"
+        },
+        {
+            "stockName": "TIMKEN",
+            "boughtPrice": "1370.71",
+            "quantity": "9"
+        },
+        {
+            "stockName": "TITAN"
+        },
+        {
+            "stockName": "TVSMOTOR",
+            "boughtPrice": "586.93",
+            "quantity": "30"
+        },
+        {
+            "stockName": "UNIONBANK",
+            "boughtPrice": "36.67",
+            "quantity": "300"
+        },
+        {
+            "stockName": "VSTIND",
+            "boughtPrice": "3339.65",
+            "quantity": "2"
+        },
+        {
+            "stockName": "WABCOINDIA",
+            "boughtPrice": "6666.3",
+            "quantity": "3"
+        },
+        {
+            "stockName": "WIPRO"
+        },
+        {
+            "stockName": "YESBANK",
+            "boughtPrice": "16.67",
+            "quantity": "1500"
+        }
+    ],
+	
+	
+	
+	"asha-angel":[
+        {
+            "stockName": "ADANITRANS"
+        },
+        {
+            "stockName": "AIAENG",
+            "boughtPrice": "1955.11",
+            "quantity": "5"
+        },
+        {
+            "stockName": "AKZOINDIA"
+        },
+        {
+            "stockName": "AMARAJABAT"
+        },
+        {
+            "stockName": "APOLLOTYRE"
+        },
+        {
+            "stockName": "ASHOKLEY",
+            "boughtPrice": "120.34",
+            "quantity": "100"
+        },
+        {
+            "stockName": "ATUL"
+        },
+        {
+            "stockName": "AUROPHARMA"
+        },
+        {
+            "stockName": "BAJAJ-AUTO",
+            "boughtPrice": "3706.77",
+            "quantity": "6"
+        },
+        {
+            "stockName": "BALRAMCHIN"
+        },
+        {
+            "stockName": "BANKBEES"
+        },
+        {
+            "stockName": "BEL"
+        },
+        {
+            "stockName": "BLUESTARCO"
+        },
+        {
+            "stockName": "BRITANNIA"
+        },
+        {
+            "stockName": "CADILAHC"
+        },
+        {
+            "stockName": "CASTROLIND"
+        },
+        {
+            "stockName": "CDSL"
+        },
+        {
+            "stockName": "CEATLTD"
+        },
+        {
+            "stockName": "CIPLA"
+        },
+        {
+            "stockName": "COALINDIA"
+        },
+        {
+            "stockName": "COLPAL"
+        },
+        {
+            "stockName": "CRAFTSMAN"
+        },
+        {
+            "stockName": "CRISIL"
+        },
+        {
+            "stockName": "DABUR"
+        },
+        {
+            "stockName": "EPL",
+            "boughtPrice": "221.05",
+            "quantity": "50"
+        },
+        {
+            "stockName": "FINCABLES"
+        },
+        {
+            "stockName": "FINPIPE"
+        },
+        {
+            "stockName": "GAIL"
+        },
+        {
+            "stockName": "GLENMARK"
+        },
+        {
+            "stockName": "GODREJCP"
+        },
+        {
+            "stockName": "GODREJIND"
+        },
+        {
+            "stockName": "GOLDBEES"
+        },
+        {
+            "stockName": "HAL"
+        },
+        {
+            "stockName": "HCLTECH"
+        },
+        {
+            "stockName": "HDFC"
+        },
+        {
+            "stockName": "HDFCBANK",
+            "boughtPrice": "1440.74",
+            "quantity": "5"
+        },
+        {
+            "stockName": "HEIDELBERG"
+        },
+        {
+            "stockName": "HINDUNILVR"
+        },
+        {
+            "stockName": "IDFC"
+        },
+        {
+            "stockName": "IIFL"
+        },
+        {
+            "stockName": "INFY",
+            "boughtPrice": "1435.61",
+            "quantity": "10"
+        },
+        {
+            "stockName": "INOXWIND"
+        },
+        {
+            "stockName": "IOC",
+            "boughtPrice": "95.61",
+            "quantity": "200"
+        },
+        {
+            "stockName": "IRFC"
+        },
+        {
+            "stockName": "ITC"
+        },
+        {
+            "stockName": "JCHAC"
+        },
+        {
+            "stockName": "JKLAKSHMI"
+        },
+        {
+            "stockName": "JUNIORBEES"
+        },
+        {
+            "stockName": "JYOTHYLAB"
+        },
+        {
+            "stockName": "KALPATPOWR"
+        },
+        {
+            "stockName": "KALYANKJIL"
+        },
+        {
+            "stockName": "KOTAKBANK"
+        },
+        {
+            "stockName": "LICHSGFIN"
+        },
+        {
+            "stockName": "M&M"
+        },
+        {
+            "stockName": "M&MFIN"
+        },
+        {
+            "stockName": "MPHASIS"
+        },
+        {
+            "stockName": "NATIONALUM"
+        },
+        {
+            "stockName": "NESTLEIND"
+        },
+        {
+            "stockName": "NH",
+            "boughtPrice": "430.46",
+            "quantity": "25"
+        },
+        {
+            "stockName": "NIFTYBEES"
+        },
+        {
+            "stockName": "PETRONET"
+        },
+        {
+            "stockName": "PNB",
+            "boughtPrice": "36.64",
+            "quantity": "400"
+        },
+        {
+            "stockName": "PSUBNKBEES"
+        },
+        {
+            "stockName": "QUESS"
+        },
+        {
+            "stockName": "RELIANCE"
+        },
+        {
+            "stockName": "RITES"
+        },
+        {
+            "stockName": "SKFINDIA"
+        },
+        {
+            "stockName": "SONATSOFTW"
+        },
+        {
+            "stockName": "SUNPHARMA"
+        },
+        {
+            "stockName": "SWARAJENG"
+        },
+        {
+            "stockName": "TATAPOWER"
+        },
+        {
+            "stockName": "TEAMLEASE"
+        },
+        {
+            "stockName": "TIMKEN"
+        },
+        {
+            "stockName": "TITAN"
+        },
+        {
+            "stockName": "TVSMOTOR"
+        },
+        {
+            "stockName": "UNIONBANK"
+        },
+        {
+            "stockName": "VSTIND"
+        },
+        {
+            "stockName": "WABCOINDIA"
+        },
+        {
+            "stockName": "WIPRO"
+        },
+        {
+            "stockName": "YESBANK",
+            "boughtPrice": "88.43",
+            "quantity": "700"
+        }
+    ],
+	
+	"susant-angel":[
+        {
+            "stockName": "ADANITRANS"
+        },
+        {
+            "stockName": "AIAENG"
+        },
+        {
+            "stockName": "AKZOINDIA"
+        },
+        {
+            "stockName": "AMARAJABAT"
+        },
+        {
+            "stockName": "APOLLOTYRE"
+        },
+        {
+            "stockName": "ASHOKLEY"
+        },
+        {
+            "stockName": "ATUL"
+        },
+        {
+            "stockName": "AUROPHARMA"
+        },
+        {
+            "stockName": "BAJAJ-AUTO",
+            "boughtPrice": "3895.2",
+            "quantity": "3"
+        },
+        {
+            "stockName": "BALRAMCHIN"
+        },
+        {
+            "stockName": "BANKBEES"
+        },
+        {
+            "stockName": "BEL"
+        },
+        {
+            "stockName": "BLUESTARCO"
+        },
+        {
+            "stockName": "BRITANNIA"
+        },
+        {
+            "stockName": "CADILAHC"
+        },
+        {
+            "stockName": "CASTROLIND"
+        },
+        {
+            "stockName": "CDSL"
+        },
+        {
+            "stockName": "CEATLTD"
+        },
+        {
+            "stockName": "CIPLA"
+        },
+        {
+            "stockName": "COALINDIA"
+        },
+        {
+            "stockName": "COLPAL"
+        },
+        {
+            "stockName": "CRAFTSMAN"
+        },
+        {
+            "stockName": "CRISIL"
+        },
+        {
+            "stockName": "DABUR"
+        },
+        {
+            "stockName": "EPL"
+        },
+        {
+            "stockName": "FINCABLES"
+        },
+        {
+            "stockName": "FINPIPE"
+        },
+        {
+            "stockName": "GAIL"
+        },
+        {
+            "stockName": "GLENMARK"
+        },
+        {
+            "stockName": "GODREJCP"
+        },
+        {
+            "stockName": "GODREJIND"
+        },
+        {
+            "stockName": "GOLDBEES"
+        },
+        {
+            "stockName": "HAL"
+        },
+        {
+            "stockName": "HCLTECH"
+        },
+        {
+            "stockName": "HDFC"
+        },
+        {
+            "stockName": "HDFCBANK",
+            "boughtPrice": "1491.05",
+            "quantity": "8"
+        },
+        {
+            "stockName": "HEIDELBERG"
+        },
+        {
+            "stockName": "HINDUNILVR"
+        },
+        {
+            "stockName": "IDFC"
+        },
+        {
+            "stockName": "IIFL"
+        },
+        {
+            "stockName": "INFY"
+        },
+        {
+            "stockName": "INOXWIND"
+        },
+        {
+            "stockName": "IOC"
+        },
+        {
+            "stockName": "IRFC"
+        },
+        {
+            "stockName": "ITC",
+            "boughtPrice": "231.51",
+            "quantity": "900"
+        },
+        {
+            "stockName": "JCHAC"
+        },
+        {
+            "stockName": "JKLAKSHMI"
+        },
+        {
+            "stockName": "JUNIORBEES"
+        },
+        {
+            "stockName": "JYOTHYLAB"
+        },
+        {
+            "stockName": "KALPATPOWR"
+        },
+        {
+            "stockName": "KALYANKJIL"
+        },
+        {
+            "stockName": "KOTAKBANK"
+        },
+        {
+            "stockName": "LICHSGFIN"
+        },
+        {
+            "stockName": "M&M"
+        },
+        {
+            "stockName": "M&MFIN"
+        },
+        {
+            "stockName": "MPHASIS"
+        },
+        {
+            "stockName": "NATIONALUM"
+        },
+        {
+            "stockName": "NESTLEIND"
+        },
+        {
+            "stockName": "NH"
+        },
+        {
+            "stockName": "NIFTYBEES"
+        },
+        {
+            "stockName": "PETRONET"
+        },
+        {
+            "stockName": "PNB",
+            "boughtPrice": "39.17",
+            "quantity": "300"
+        },
+        {
+            "stockName": "PSUBNKBEES"
+        },
+        {
+            "stockName": "QUESS",
+            "boughtPrice": "592.57",
+            "quantity": "20"
+        },
+        {
+            "stockName": "RELIANCE"
+        },
+        {
+            "stockName": "RITES"
+        },
+        {
+            "stockName": "SKFINDIA"
+        },
+        {
+            "stockName": "SONATSOFTW"
+        },
+        {
+            "stockName": "SUNPHARMA"
+        },
+        {
+            "stockName": "SWARAJENG"
+        },
+        {
+            "stockName": "TATAPOWER"
+        },
+        {
+            "stockName": "TEAMLEASE"
+        },
+        {
+            "stockName": "TIMKEN"
+        },
+        {
+            "stockName": "TITAN"
+        },
+        {
+            "stockName": "TVSMOTOR"
+        },
+        {
+            "stockName": "UNIONBANK",
+            "boughtPrice": "56.75",
+            "quantity": "250"
+        },
+        {
+            "stockName": "VSTIND"
+        },
+        {
+            "stockName": "WABCOINDIA"
+        },
+        {
+            "stockName": "WIPRO"
+        },
+        {
+            "stockName": "YESBANK",
+            "boughtPrice": "17.86",
+            "quantity": "800"
+        }
+    ]
+	
+}
+}

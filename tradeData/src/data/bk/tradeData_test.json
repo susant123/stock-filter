@@ -1,0 +1,60 @@
+{
+  "stocks": {
+    "asha-kite": [
+        {
+            "stockName": "ADANITRANS",			
+            "boughtPrice": "1235.11",
+            "quantity": "5"
+        },
+        {
+            "stockName": "NATIONALUM",
+            "boughtPrice": "79.85",
+            "quantity": "100"
+        }
+    ],
+	
+	
+	"susant-kite":[
+        {
+            "stockName": "ADANITRANS",			
+            "boughtPrice": "1955.11",
+            "quantity": "5"
+        },
+        {
+            "stockName": "NATIONALUM",
+            "boughtPrice": "59.85",
+            "quantity": "100"
+        }
+        
+    ],
+	
+	
+	
+	"asha-angel":[
+        {
+            "stockName": "ADANITRANS",			
+            "boughtPrice": "1255.11",
+            "quantity": "5"
+        },
+        {
+            "stockName": "NATIONALUM",
+            "boughtPrice": "59.85",
+            "quantity": "100"
+        }
+    ],
+	
+	"susant-angel":[
+        {
+            "stockName": "ADANITRANS",			
+            "boughtPrice": "1955.11",
+            "quantity": "5"
+        },
+        {
+            "stockName": "NATIONALUM",
+            "boughtPrice": "59.85",
+            "quantity": "100"
+        }
+    ]
+	
+}
+}

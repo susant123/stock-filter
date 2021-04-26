@@ -63,7 +63,12 @@ const calculateBuySuggestion = (stockWiseData) => {
           acc4Stock.quantity > 0 &&
           acc4Stock.profitLoss < -5
         ) {
-          buyAccount = acc4Stock;
+          buyAccount = acc1Stock;
+          buyAccount.flagAccounts = [
+            acc2Stock.account,
+            acc3Stock.account,
+            acc4Stock.account,
+          ];
         } else if (
           acc4Stock.quantity &&
           acc4Stock.quantity > 0 &&
@@ -79,6 +84,7 @@ const calculateBuySuggestion = (stockWiseData) => {
         console.log("Have patience", acc3Stock.account, acc3Stock.stockName);
       } else {
         buyAccount = acc3Stock;
+        buyAccount.flagAccounts = [acc1Stock.account, acc2Stock.account];
       }
     } else if (
       acc2Stock.quantity &&
@@ -88,6 +94,7 @@ const calculateBuySuggestion = (stockWiseData) => {
       console.log("Have patience", acc2Stock.account, acc2Stock.stockName);
     } else {
       buyAccount = acc2Stock;
+      buyAccount.flagAccounts = acc1Stock.account;
     }
   } else if (
     acc1Stock.quantity &&

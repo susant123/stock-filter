@@ -21,13 +21,20 @@ import RSILineChart from "../rsiChart/RSILineChart";
 import { selectAllRSIData, selectChartData } from "../../StockSlice";
 import { useSelector } from "react-redux";
 
+const recommendedAmout = 15000;
+
 function BuyCard(props) {
   const { card, nseData } = props;
   const { priceInfo, info, metadata } = nseData;
   const allRSIData = useSelector(selectAllRSIData);
   const chartData = useSelector(selectChartData);
+
+  const recommendedQuantity = Math.floor(
+    recommendedAmout / priceInfo.lastPrice
+  );
   const displayRows = [
     { label: "Buy", info: card.account },
+    { label: "Flag Accounts", info: card.flagAccounts },
     {
       label: "Year low",
       info: priceInfo.weekHighLow.min + " - " + priceInfo.weekHighLow.minDate,
@@ -90,7 +97,7 @@ function BuyCard(props) {
       </div>
       <QuantityBlock>
         <Title>Recommended Quantity: {card.quantity}</Title>
-        <InputField value={card.quantity} onChange={() => {}} />
+        <InputField value={recommendedQuantity} onChange={() => {}} />
         <Button>Done</Button>
       </QuantityBlock>
     </CardBlock>
