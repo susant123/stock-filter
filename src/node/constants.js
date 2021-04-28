@@ -1,6 +1,6 @@
 module.exports = {
   nseBaseURL: "https://www.nseindia.com/",
-  nseDataURL: "https://www.nseindia.com/api/quote-equity?symbol=ITC",
+  nseDataURL: "https://www.nseindia.com/api/quote-equity?symbol=",
   headers: {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
     "accept-language": "en,gu;q=0.9,hi;q=0.8",
