@@ -1,5 +1,8 @@
 const axios = require("axios");
 const constants = require("./constants");
+const utils = require("./utils");
+const copyFile = require("fs/promises");
+
 let cookie;
 
 fs = require("fs");
@@ -9,11 +12,10 @@ const instance = axios.create({
   cookie: cookie ? cookie : "",
 });
 
-const allNSEDataObj = {};
-
 const getStockWiseNSEData = (symbol) => {
-  const url = constants.nseDataURL + symbol;
-  console.log(symbol, "url---", url);
+  const formattedURL = utils.stringFormat(constants.nseDataURL, symbol);
+  console.log(symbol, "url---", formattedURL);
+
   const headers = {
     ...constants.headers,
     cookie: cookie,
@@ -21,7 +23,7 @@ const getStockWiseNSEData = (symbol) => {
   return new Promise((resolve, reject) => {
     try {
       axios
-        .get(url, {
+        .get(formattedURL, {
           withCredentials: true,
           headers: headers,
         })
@@ -43,11 +45,13 @@ const refreshCookie = async () => {
 
 const getAllNSEData = (cookie) => {
   let counter = 0;
+  const allNSEDataObj = {};
   try {
     return new Promise((resolve, reject) => {
       for (let i = 0; i < constants.allStocks.length; i++) {
         (function (i) {
           const symbol = constants.allStocks[i].symbol;
+          console.log("symbol-------", symbol);
           setTimeout(async () => {
             if (counter % 15 == 0) {
               refreshCookie();
@@ -74,10 +78,32 @@ const getAllNSEData = (cookie) => {
   }
 };
 
+const takeBackup = () => {
+  const d = new Date();
+  const timeSuffix = d.getTime();
+
+  try {
+    fs.copyFile(
+      __dirname + "/data/allNSEData.json",
+      __dirname + "/data/allNSEData-old" + timeSuffix + ".json",
+      (err) => {
+        if (err) {
+          console.log("Error Found:", err);
+        } else {
+          console.log("allNSEData.json was copied to allNSEData-old.json");
+        }
+      }
+    );
+  } catch (err) {
+    console.log("The file could not be copied", err);
+  }
+};
+
 const getCookies = async () => {
   try {
     const response = await instance.get(constants.nseBaseURL);
     cookie = response.headers["set-cookie"].join(";");
+    takeBackup();
     getAllNSEData(cookie)
       .then((response) => {
         console.log("response length", Object.keys(response).length);
