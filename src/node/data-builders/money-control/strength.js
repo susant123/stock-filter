@@ -1,7 +1,23 @@
+/*
+SMA, EMA, Pivot levels, Sentiments
+*/
 const axios = require("axios");
-const constants = require("./constants");
-const utils = require("./utils");
+const constants = require("../../constants");
+const utils = require("../../utils");
+const path = require("path");
+
 fs = require("fs");
+
+const swot = {
+  S: "strength",
+  W: "weakness",
+  O: "opprtunities",
+  T: "threat",
+};
+
+const baseUrl = "https://www.moneycontrol.com/";
+const dataUrl =
+  "https://api.moneycontrol.com/mcapi/v1/swot/details?scId={0}&type={1}";
 
 let cookie;
 
@@ -10,8 +26,8 @@ const instance = axios.create({
   cookie: cookie ? cookie : "",
 });
 
-const getStockWiseNSEData = (symbol) => {
-  const formattedURL = utils.stringFormat(constants.nseDataURL, symbol);
+const getStockWiseNSEData = (symbol, type) => {
+  const formattedURL = utils.stringFormat(dataUrl, symbol, type);
   console.log(symbol, "url---", formattedURL);
 
   const headers = {
@@ -35,27 +51,26 @@ const getStockWiseNSEData = (symbol) => {
 };
 
 const refreshCookie = async () => {
-  const response = await instance.get(constants.nseBaseURL);
+  const response = await instance.get(baseUrl);
   cookie = response.headers["set-cookie"].join(";");
 
   console.log("cookie refreshed");
 };
 
-const getAllNSEData = (cookie) => {
+const getAllNSEData = (cookie, type) => {
   let counter = 0;
   const allNSEDataObj = {};
   try {
     return new Promise((resolve, reject) => {
       for (let i = 0; i < constants.allStocks.length; i++) {
         (function (i) {
-          const symbol = constants.allStocks[i].symbol;
-          console.log("symbol-------", symbol);
+          const symbol = constants.allStocks[i].mcScid;
           setTimeout(async () => {
             if (counter % 15 == 0) {
               refreshCookie();
             }
-            const nseData = await getStockWiseNSEData(symbol);
-            allNSEDataObj[symbol] = nseData;
+            const nseData = await getStockWiseNSEData(symbol, type);
+            allNSEDataObj[symbol] = nseData.data;
             console.log(
               "Object.keys(allNSEDataObj).length",
               Object.keys(allNSEDataObj).length,
@@ -76,19 +91,22 @@ const getAllNSEData = (cookie) => {
   }
 };
 
-const takeBackup = () => {
+const takeBackup = (type) => {
   const d = new Date();
   const timeSuffix = d.getTime();
 
   try {
     fs.copyFile(
-      __dirname + "/data/allNSEData.json",
-      __dirname + "/data/allNSEData-old" + timeSuffix + ".json",
+      path.join(__dirname, "../../data/" + swot[type] + ".json"),
+      path.join(
+        __dirname,
+        "../../data/" + swot[type] + "-old" + timeSuffix + ".json"
+      ),
       (err) => {
         if (err) {
           console.log("Error Found:", err);
         } else {
-          console.log("allNSEData.json was copied to allNSEData-old.json");
+          console.log("Copied successfully-----------");
         }
       }
     );
@@ -97,20 +115,20 @@ const takeBackup = () => {
   }
 };
 
-const getCookies = async () => {
+const getCookies = async (type) => {
   try {
     const response = await instance.get(constants.nseBaseURL);
     cookie = response.headers["set-cookie"].join(";");
-    takeBackup();
-    getAllNSEData(cookie)
+    takeBackup(type);
+    getAllNSEData(cookie, type)
       .then((response) => {
         console.log("response length", Object.keys(response).length);
         fs.writeFile(
-          __dirname + "/data/allNSEData.json",
+          path.join(__dirname, "../../data/" + swot[type] + ".json"),
           JSON.stringify(response),
           function (err) {
             if (err) return console.log(err);
-            console.log("all NSE data .json is ready");
+            console.log(swot[type] + " data .json is ready");
           }
         );
       })
@@ -129,4 +147,7 @@ const getCookies = async () => {
   }
 };
 
-getCookies();
+getCookies("S");
+getCookies("W");
+getCookies("O");
+getCookies("T");

@@ -1,7 +1,16 @@
+/*
+SMA, EMA, Pivot levels, Sentiments
+*/
 const axios = require("axios");
-const constants = require("./constants");
-const utils = require("./utils");
+const constants = require("../../constants");
+const utils = require("../../utils");
+const path = require("path");
+
 fs = require("fs");
+
+const baseUrl = "https://www.moneycontrol.com/";
+const chartDataUrl =
+  "https://priceapi.moneycontrol.com/techCharts/techChartController/history?symbol={0}&resolution=1D&from={1}&to={2}";
 
 let cookie;
 
@@ -11,7 +20,19 @@ const instance = axios.create({
 });
 
 const getStockWiseNSEData = (symbol) => {
-  const formattedURL = utils.stringFormat(constants.nseDataURL, symbol);
+  //for epoch date
+  const fromTime = Math.floor(
+    (new Date().getTime() - 3 * 30 * 24 * 60 * 60 * 1000) / 1000
+  );
+
+  const toTime = Math.floor(new Date().getTime() / 1000);
+
+  const formattedURL = utils.stringFormat(
+    chartDataUrl,
+    symbol,
+    fromTime,
+    toTime
+  );
   console.log(symbol, "url---", formattedURL);
 
   const headers = {
@@ -35,7 +56,7 @@ const getStockWiseNSEData = (symbol) => {
 };
 
 const refreshCookie = async () => {
-  const response = await instance.get(constants.nseBaseURL);
+  const response = await instance.get(baseUrl);
   cookie = response.headers["set-cookie"].join(";");
 
   console.log("cookie refreshed");
@@ -51,7 +72,7 @@ const getAllNSEData = (cookie) => {
           const symbol = constants.allStocks[i].symbol;
           console.log("symbol-------", symbol);
           setTimeout(async () => {
-            if (counter % 15 == 0) {
+            if (counter % 20 == 0) {
               refreshCookie();
             }
             const nseData = await getStockWiseNSEData(symbol);
@@ -82,13 +103,13 @@ const takeBackup = () => {
 
   try {
     fs.copyFile(
-      __dirname + "/data/allNSEData.json",
-      __dirname + "/data/allNSEData-old" + timeSuffix + ".json",
+      path.join(__dirname, "../../data/chart.json"),
+      path.join(__dirname, "../../data/chart-old" + timeSuffix + ".json"),
       (err) => {
         if (err) {
           console.log("Error Found:", err);
         } else {
-          console.log("allNSEData.json was copied to allNSEData-old.json");
+          console.log("copied Successfully");
         }
       }
     );
@@ -106,11 +127,11 @@ const getCookies = async () => {
       .then((response) => {
         console.log("response length", Object.keys(response).length);
         fs.writeFile(
-          __dirname + "/data/allNSEData.json",
+          path.join(__dirname, "../../data/chart.json"),
           JSON.stringify(response),
           function (err) {
             if (err) return console.log(err);
-            console.log("all NSE data .json is ready");
+            console.log("data .json is ready");
           }
         );
       })

@@ -1,7 +1,16 @@
+/*
+SMA, EMA, Pivot levels, Sentiments
+*/
 const axios = require("axios");
-const constants = require("./constants");
-const utils = require("./utils");
+const constants = require("../../constants");
+const utils = require("../../utils");
+const path = require("path");
+
 fs = require("fs");
+
+const baseUrl = "https://www.moneycontrol.com/";
+const smaEmaPivotSentimentURL =
+  "https://priceapi.moneycontrol.com/pricefeed/techindicator/D/{0}?fields=sentiments,pivotLevels,sma,ema";
 
 let cookie;
 
@@ -11,7 +20,7 @@ const instance = axios.create({
 });
 
 const getStockWiseNSEData = (symbol) => {
-  const formattedURL = utils.stringFormat(constants.nseDataURL, symbol);
+  const formattedURL = utils.stringFormat(smaEmaPivotSentimentURL, symbol);
   console.log(symbol, "url---", formattedURL);
 
   const headers = {
@@ -35,7 +44,7 @@ const getStockWiseNSEData = (symbol) => {
 };
 
 const refreshCookie = async () => {
-  const response = await instance.get(constants.nseBaseURL);
+  const response = await instance.get(baseUrl);
   cookie = response.headers["set-cookie"].join(";");
 
   console.log("cookie refreshed");
@@ -48,14 +57,14 @@ const getAllNSEData = (cookie) => {
     return new Promise((resolve, reject) => {
       for (let i = 0; i < constants.allStocks.length; i++) {
         (function (i) {
-          const symbol = constants.allStocks[i].symbol;
+          const symbol = constants.allStocks[i].mcScid;
           console.log("symbol-------", symbol);
           setTimeout(async () => {
             if (counter % 15 == 0) {
               refreshCookie();
             }
             const nseData = await getStockWiseNSEData(symbol);
-            allNSEDataObj[symbol] = nseData;
+            allNSEDataObj[symbol] = nseData.data;
             console.log(
               "Object.keys(allNSEDataObj).length",
               Object.keys(allNSEDataObj).length,
@@ -82,8 +91,11 @@ const takeBackup = () => {
 
   try {
     fs.copyFile(
-      __dirname + "/data/allNSEData.json",
-      __dirname + "/data/allNSEData-old" + timeSuffix + ".json",
+      path.join(__dirname, "../../data/sma-ema-pivot-sentiment.json"),
+      path.join(
+        __dirname,
+        "../../data/sma-ema-pivot-sentiment-old" + timeSuffix + ".json"
+      ),
       (err) => {
         if (err) {
           console.log("Error Found:", err);
@@ -106,7 +118,7 @@ const getCookies = async () => {
       .then((response) => {
         console.log("response length", Object.keys(response).length);
         fs.writeFile(
-          __dirname + "/data/allNSEData.json",
+          path.join(__dirname, "../../data/sma-ema-pivot-sentiment.json"),
           JSON.stringify(response),
           function (err) {
             if (err) return console.log(err);
