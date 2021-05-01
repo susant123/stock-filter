@@ -87,13 +87,13 @@ function BuyCard(props) {
         <hr />
         <SwotComponent swot={card.threat} />
         <hr />
-        {/*  <VolumeData volumeData={card.volumeData.data} /> */}
+        <VolumeData volumeData={card.volumeData} />
         <hr />
-        {/*  <RSILineChart
+        <RSILineChart
           chartData={chartDataPerStock}
           rsiData={allRSIData[card.stockName]}
           rsiRange={14}
-        /> */}
+        />
       </div>
       <QuantityBlock>
         <Title>Recommended Quantity: {card.quantity}</Title>

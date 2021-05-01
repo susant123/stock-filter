@@ -12,12 +12,20 @@ function Portfolio() {
   const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel"];
   const tradeData = useSelector(selectTradeData);
   const [selectedAc, setSelectedAc] = useState(null);
+  const [totalInvested, setTotalInvested] = useState(0);
+
+  const calculateTotalInvested = (account) => {
+    let totalInvested = 0;
+    tradeData[account].forEach((trade) => {
+      totalInvested += trade.average_price * trade.quantity;
+    });
+    return totalInvested.toFixed(2);
+  };
 
   const handleSelection = (account) => {
     setSelectedAc(account);
+    setTotalInvested(calculateTotalInvested(account));
   };
-
-  //console.log("tradeData--------------", tradeData);
   return (
     <div className="portfolio">
       {tradeData["asha-kite"] && (
@@ -36,6 +44,7 @@ function Portfolio() {
             })}
           </Tabs>
           <AccountWiseTradeData>
+            <div>{totalInvested}</div>
             {selectedAc &&
               tradeData[selectedAc].map((trade, index) => {
                 return <PortfolioRow trade={trade} key={index} />;

@@ -26,4 +26,5 @@ export const InputField = styled.input`
 
 export const ButtonWrapper = styled.button`
   color: black;
+  cursor: pointer;
 `;

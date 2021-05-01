@@ -65,9 +65,9 @@ const calculateBuySuggestion = (stockWiseData) => {
         ) {
           buyAccount = acc1Stock;
           buyAccount.flagAccounts = [
-            acc2Stock.account,
-            acc3Stock.account,
-            acc4Stock.account,
+            acc2Stock.account + ": " + acc2Stock.profitLoss + ",",
+            acc3Stock.account + ": " + acc3Stock.profitLoss + ",",
+            acc4Stock.account + ": " + acc4Stock.profitLoss + ",",
           ];
         } else if (
           acc4Stock.quantity &&
@@ -75,6 +75,13 @@ const calculateBuySuggestion = (stockWiseData) => {
           acc4Stock.profitLoss > -5
         ) {
           console.log("Have patience", acc4Stock.account, acc4Stock.stockName);
+        } else {
+          buyAccount = acc4Stock;
+          buyAccount.flagAccounts = [
+            acc1Stock.account + ": " + acc1Stock.profitLoss + ",",
+            acc2Stock.account + ": " + acc2Stock.profitLoss + ",",
+            acc3Stock.account + ": " + acc3Stock.profitLoss + ",",
+          ];
         }
       } else if (
         acc3Stock.quantity &&
@@ -84,7 +91,10 @@ const calculateBuySuggestion = (stockWiseData) => {
         console.log("Have patience", acc3Stock.account, acc3Stock.stockName);
       } else {
         buyAccount = acc3Stock;
-        buyAccount.flagAccounts = [acc1Stock.account, acc2Stock.account];
+        buyAccount.flagAccounts = [
+          acc1Stock.account + ": " + acc1Stock.profitLoss + ",",
+          acc2Stock.account + ": " + acc2Stock.profitLoss + ",",
+        ];
       }
     } else if (
       acc2Stock.quantity &&
@@ -94,7 +104,8 @@ const calculateBuySuggestion = (stockWiseData) => {
       console.log("Have patience", acc2Stock.account, acc2Stock.stockName);
     } else {
       buyAccount = acc2Stock;
-      buyAccount.flagAccounts = acc1Stock.account;
+      buyAccount.flagAccounts =
+        acc1Stock.account + ": " + acc1Stock.profitLoss + ",";
     }
   } else if (
     acc1Stock.quantity &&
@@ -128,9 +139,9 @@ export const getBuyRecommendations = (livePlusIndicator, tradeData) => {
               const profitLoss = parseFloat(
                 profitLossCalc(currentPrice, currentStock.average_price)
               );
-              const buyAccountIndex = (i + 1) % 4;
+
               stockWiseData.push({
-                account: accounts[buyAccountIndex],
+                account: accounts[i],
                 stockName: currentStock.stock_name,
                 quantity: currentStock.quantity,
                 indicators: allLiveStockData.indicators,
