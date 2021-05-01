@@ -10,6 +10,7 @@ import {
 } from "./StockSlice";
 import SellCards from "../stock/components/sell/SellCards";
 import BuyCards from "../stock/components/buy/BuyCards";
+import Portfolio from "../stock/components/portfolio/portfolio";
 
 export function Stock() {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ export function Stock() {
 
   return (
     <div className="App" style={{ fontFamily: "sans-serif", fontSize: "16px" }}>
+      <Portfolio />
       <SellCards />
       <BuyCards />
       <AllCards livePlusIndicator={livePlusIndicatorData} />

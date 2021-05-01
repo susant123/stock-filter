@@ -36,7 +36,7 @@ const calculateBuySuggestion = (stockWiseData) => {
     return a.profitLoss - b.profitLoss;
   });
 
-  console.log("Sorted stockWiseData", stockWiseData);
+  //console.log("Sorted stockWiseData", stockWiseData);
 
   const acc1Stock = stockWiseData[0];
   const acc2Stock = stockWiseData[1];

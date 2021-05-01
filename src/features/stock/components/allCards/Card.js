@@ -34,9 +34,9 @@ function Card(props) {
           </StockName>
           <hr />
           <MCChart stockName={stockName} />
-          <SentimentsTable sentiments={indicators.data.sentiments} />
-          <PivotLevelsTable pivotLevels={indicators.data.pivotLevels} />
-          <EmaSma ema={indicators.data.ema} sma={indicators.data.sma} />
+          <SentimentsTable sentiments={indicators.sentiments} />
+          <PivotLevelsTable pivotLevels={indicators.pivotLevels} />
+          <EmaSma ema={indicators.ema} sma={indicators.sma} />
           <hr />
           <div style={{ backgroundColor: "#b49292" }}>
             <SwotComponent swot={strength} />
@@ -47,15 +47,15 @@ function Card(props) {
             <hr />
             <SwotComponent swot={threat} />
             <hr />
-            <VolumeData volumeData={volumeData.data} />
+            <VolumeData volumeData={volumeData} />
             <hr />
-            <LineChart chartData={chartData.chartData} />
+            <LineChart chartData={chartData ? chartData.chartData : {}} />
             <hr />
-            <RSILineChart
-              chartData={chartData.chartData}
+            {/* <RSILineChart
+              chartData={chartData ? chartData.chartData : {}}
               rsiData={rsiData}
               rsiRange={14}
-            />
+            /> */}
           </div>
         </CardBlock>
       )}

@@ -21,3 +21,19 @@ export function fetchTradeData() {
   const url = "http://localhost:4300/api/trade_details/";
   return axios.get(url);
 }
+
+export function postSellData(payload) {
+  const url = "http://localhost:4300/api/post_sell_data";
+  console.log("postSellData", payload);
+  const { stockName, price, quantity, account } = payload;
+  return axios({
+    method: "post",
+    url: url,
+    data: {
+      stockName,
+      price,
+      quantity,
+      account,
+    },
+  });
+}

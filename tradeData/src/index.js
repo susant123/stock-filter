@@ -6,7 +6,7 @@ import path from "path";
 
 import AllRSIData from "./data/AllRSIData.json";
 import ChartData from "./data/chart-6month.json";
-import LiveIndicatorData from "./data/livePlusIndicator.json";
+import LiveIndicatorData from "./data/new/allData.json";
 import TradeData from "./data/tradeData.json";
 
 const bodyParser = require("body-parser");

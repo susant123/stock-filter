@@ -65,12 +65,14 @@ const getAllNSEData = (cookie, type) => {
       for (let i = 0; i < constants.allStocks.length; i++) {
         (function (i) {
           const symbol = constants.allStocks[i].mcScid;
+
+          const stockSymbol = constants.allStocks[i].symbol;
           setTimeout(async () => {
             if (counter % 15 == 0) {
               refreshCookie();
             }
             const nseData = await getStockWiseNSEData(symbol, type);
-            allNSEDataObj[symbol] = nseData.data;
+            allNSEDataObj[stockSymbol] = nseData.data;
             console.log(
               "Object.keys(allNSEDataObj).length",
               Object.keys(allNSEDataObj).length,

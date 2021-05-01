@@ -9,8 +9,8 @@ const path = require("path");
 fs = require("fs");
 
 const baseUrl = "https://www.moneycontrol.com/";
-const smaEmaPivotSentimentURL =
-  "https://priceapi.moneycontrol.com/pricefeed/techindicator/D/{0}?fields=sentiments,pivotLevels,sma,ema";
+const volumeDataUrl =
+  "https://api.moneycontrol.com/mcapi/v1/stock/price-volume?scId={0}";
 
 let cookie;
 
@@ -20,7 +20,7 @@ const instance = axios.create({
 });
 
 const getStockWiseNSEData = (symbol) => {
-  const formattedURL = utils.stringFormat(smaEmaPivotSentimentURL, symbol);
+  const formattedURL = utils.stringFormat(volumeDataUrl, symbol);
   console.log(symbol, "url---", formattedURL);
 
   const headers = {
@@ -60,11 +60,11 @@ const getAllNSEData = (cookie) => {
           const symbol = constants.allStocks[i].mcScid;
           const stockSymbol = constants.allStocks[i].symbol;
           setTimeout(async () => {
-            if (counter % 20 == 0) {
+            if (counter % 15 == 0) {
               refreshCookie();
             }
-            const nseData = await getStockWiseNSEData(symbol);
-            allNSEDataObj[stockSymbol] = nseData.data;
+            const response = await getStockWiseNSEData(symbol);
+            allNSEDataObj[stockSymbol] = response.data;
             console.log(
               "Object.keys(allNSEDataObj).length",
               Object.keys(allNSEDataObj).length,
@@ -91,11 +91,8 @@ const takeBackup = () => {
 
   try {
     fs.copyFile(
-      path.join(__dirname, "../../data/sma-ema-pivot-sentiment.json"),
-      path.join(
-        __dirname,
-        "../../data/sma-ema-pivot-sentiment-old" + timeSuffix + ".json"
-      ),
+      path.join(__dirname, "../../data/volume.json"),
+      path.join(__dirname, "../../data/volume-old" + timeSuffix + ".json"),
       (err) => {
         if (err) {
           console.log("Error Found:", err);
@@ -118,11 +115,11 @@ const getCookies = async () => {
       .then((response) => {
         console.log("response length", Object.keys(response).length);
         fs.writeFile(
-          path.join(__dirname, "../../data/sma-ema-pivot-sentiment.json"),
+          path.join(__dirname, "../../data/volume.json"),
           JSON.stringify(response),
           function (err) {
             if (err) return console.log(err);
-            console.log("all NSE data .json is ready");
+            console.log("all volume data .json is ready");
           }
         );
       })
