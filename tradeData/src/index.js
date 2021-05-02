@@ -2,9 +2,9 @@ import express from "express";
 import fs from "fs";
 import http from "http";
 
-import AllRSIData from "./data/new/AllRSIData.json";
-import ChartData from "./data/new/chart.json";
-import LiveIndicatorData from "./data/new/allData.json";
+import AllRSIData from "./data/AllRSIData.json";
+import ChartData from "./data/chart.json";
+import LiveIndicatorData from "./data/allData.json";
 
 const bodyParser = require("body-parser");
 
