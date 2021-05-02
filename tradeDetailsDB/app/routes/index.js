@@ -1,5 +1,5 @@
-const getRoutes = require("./trade-details-get-route");
-const postRoute = require("./product-post-route");
+const getRoutes = require("./get-route");
+const postRoute = require("./update-route");
 
 module.exports = function (app, db) {
   getRoutes(app, db);

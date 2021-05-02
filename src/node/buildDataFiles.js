@@ -1,6 +1,10 @@
 const axios = require("axios");
 const constants = require("./constants");
 const utils = require("./utils");
+
+//const swot = require("./data-builders/money-control/swot");
+const chart = require("./data-builders/money-control/chartData");
+
 fs = require("fs");
 
 let cookie;
@@ -49,7 +53,6 @@ const getAllNSEData = (cookie) => {
       for (let i = 0; i < constants.allStocks.length; i++) {
         (function (i) {
           const symbol = constants.allStocks[i].symbol;
-          console.log("symbol-------", symbol);
           setTimeout(async () => {
             if (counter % 15 == 0) {
               refreshCookie();
@@ -97,13 +100,16 @@ const takeBackup = () => {
   }
 };
 
-const getCookies = async () => {
+const startBuildingDataFiles = async () => {
   try {
     const response = await instance.get(constants.nseBaseURL);
     cookie = response.headers["set-cookie"].join(";");
     takeBackup();
     getAllNSEData(cookie)
       .then((response) => {
+        //start chartData fetching
+        chart.startBuildingChartData();
+
         console.log("response length", Object.keys(response).length);
         fs.writeFile(
           __dirname + "/data/allNSEData.json",
@@ -129,4 +135,4 @@ const getCookies = async () => {
   }
 };
 
-getCookies();
+startBuildingDataFiles();

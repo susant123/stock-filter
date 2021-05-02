@@ -12,6 +12,10 @@
 # production
 /build
 
+#data_files
+/src/node/data
+/tradeData/src/data
+
 # misc
 .DS_Store
 .env.local

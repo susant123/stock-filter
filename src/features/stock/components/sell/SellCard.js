@@ -21,9 +21,7 @@ function SellCard(props) {
   const allRSIData = useSelector(selectAllRSIData);
   const chartData = useSelector(selectChartData);
   const card = props.card;
-  const chartDataPerStock = chartData[card.stockName]
-    ? chartData[card.stockName].chartData
-    : [];
+  const chartDataPerStock = chartData[card.stockName] || [];
 
   const [sellQuantity, setSellQuantity] = useState(card.quantity);
   const [sellPrice, setSellPrice] = useState(card.currentPrice);
@@ -91,11 +89,11 @@ function SellCard(props) {
             />
           </RowWrapper>
 
-          {/* <RSILineChart
+          <RSILineChart
             chartData={chartDataPerStock}
             rsiData={allRSIData[card.stockName]}
             rsiRange={14}
-          /> */}
+          />
           <Button onClick={doneHandler}>All Sold</Button>
           <Button onClick={partiallySavedhandler}>Partially Sold</Button>
         </QuantityBlock>

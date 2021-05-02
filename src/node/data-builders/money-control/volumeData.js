@@ -5,6 +5,7 @@ const axios = require("axios");
 const constants = require("../../constants");
 const utils = require("../../utils");
 const path = require("path");
+const smaEma = require("./sma-ema-buildDataFiles");
 
 fs = require("fs");
 
@@ -66,9 +67,10 @@ const getAllNSEData = (cookie) => {
             const response = await getStockWiseNSEData(symbol);
             allNSEDataObj[stockSymbol] = response.data;
             console.log(
-              "Object.keys(allNSEDataObj).length",
-              Object.keys(allNSEDataObj).length,
-              constants.allStocks.length
+              "Current position->" +
+                Object.keys(allNSEDataObj).length +
+                "Total Stocks:->" +
+                constants.allStocks.length
             );
             if (
               Object.keys(allNSEDataObj).length == constants.allStocks.length
@@ -106,13 +108,15 @@ const takeBackup = () => {
   }
 };
 
-const getCookies = async () => {
+const startBuildingVolumeData = async () => {
   try {
     const response = await instance.get(constants.nseBaseURL);
     cookie = response.headers["set-cookie"].join(";");
     takeBackup();
     getAllNSEData(cookie)
       .then((response) => {
+        //start smaEmaDataFetch
+        smaEma.startEmaSmaDataFetch();
         console.log("response length", Object.keys(response).length);
         fs.writeFile(
           path.join(__dirname, "../../data/volume.json"),
@@ -138,4 +142,6 @@ const getCookies = async () => {
   }
 };
 
-getCookies();
+module.exports.startBuildingVolumeData = startBuildingVolumeData;
+
+//startBuildingVolumeData();

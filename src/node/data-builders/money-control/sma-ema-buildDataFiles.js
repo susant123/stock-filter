@@ -5,6 +5,7 @@ const axios = require("axios");
 const constants = require("../../constants");
 const utils = require("../../utils");
 const path = require("path");
+const swot = require("./swot");
 
 fs = require("fs");
 
@@ -109,13 +110,18 @@ const takeBackup = () => {
   }
 };
 
-const getCookies = async () => {
+const startEmaSmaDataFetch = async () => {
   try {
     const response = await instance.get(constants.nseBaseURL);
     cookie = response.headers["set-cookie"].join(";");
     takeBackup();
     getAllNSEData(cookie)
       .then((response) => {
+        swot.startBuildingSWOTData("S");
+        swot.startBuildingSWOTData("W");
+        swot.startBuildingSWOTData("O");
+        swot.startBuildingSWOTData("T");
+
         console.log("response length", Object.keys(response).length);
         fs.writeFile(
           path.join(__dirname, "../../data/sma-ema-pivot-sentiment.json"),
@@ -141,4 +147,6 @@ const getCookies = async () => {
   }
 };
 
-getCookies();
+module.exports.startEmaSmaDataFetch = startEmaSmaDataFetch;
+
+//startEmaSmaDataFetch();

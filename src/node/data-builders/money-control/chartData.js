@@ -5,8 +5,8 @@ const axios = require("axios");
 const constants = require("../../constants");
 const utils = require("../../utils");
 const path = require("path");
-
-fs = require("fs");
+const fs = require("fs");
+const volumeData = require("./volumeData");
 
 const baseUrl = "https://www.moneycontrol.com/";
 const chartDataUrl =
@@ -78,9 +78,10 @@ const getAllNSEData = (cookie) => {
             const nseData = await getStockWiseNSEData(symbol);
             allNSEDataObj[symbol] = nseData;
             console.log(
-              "Object.keys(allNSEDataObj).length",
-              Object.keys(allNSEDataObj).length,
-              constants.allStocks.length
+              "Current position->" +
+                Object.keys(allNSEDataObj).length +
+                "Total Stocks:->" +
+                constants.allStocks.length
             );
             if (
               Object.keys(allNSEDataObj).length == constants.allStocks.length
@@ -118,13 +119,15 @@ const takeBackup = () => {
   }
 };
 
-const getCookies = async () => {
+const startBuildingChartData = async () => {
   try {
     const response = await instance.get(constants.nseBaseURL);
     cookie = response.headers["set-cookie"].join(";");
     takeBackup();
     getAllNSEData(cookie)
       .then((response) => {
+        //startFetching volumeData
+        volumeData.startBuildingVolumeData();
         console.log("response length", Object.keys(response).length);
         fs.writeFile(
           path.join(__dirname, "../../data/chart.json"),
@@ -150,4 +153,5 @@ const getCookies = async () => {
   }
 };
 
-getCookies();
+module.exports.startBuildingChartData = startBuildingChartData;
+//getCookies();

@@ -50,9 +50,7 @@ function BuyCard(props) {
     },
   ];
 
-  const chartDataPerStock = chartData[card.stockName]
-    ? chartData[card.stockName].chartData
-    : [];
+  const chartDataPerStock = chartData[card.stockName] || [];
 
   return (
     <CardBlock>

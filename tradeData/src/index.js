@@ -1,13 +1,10 @@
 import express from "express";
 import fs from "fs";
 import http from "http";
-import https from "https";
-import path from "path";
 
-import AllRSIData from "./data/AllRSIData.json";
-import ChartData from "./data/chart-6month.json";
+import AllRSIData from "./data/new/AllRSIData.json";
+import ChartData from "./data/new/chart.json";
 import LiveIndicatorData from "./data/new/allData.json";
-import TradeData from "./data/tradeData.json";
 
 const bodyParser = require("body-parser");
 
@@ -41,23 +38,11 @@ app.get("/getLivePlusIndicatorData", (req, res) => {
   res.send(LiveIndicatorData);
 });
 
-app.get("/getTradeData", (req, res) => {
+/* app.get("/getTradeData", (req, res) => {
   res.send(TradeData);
-});
+}); */
 
 const httpServer = http.createServer(app);
 httpServer.listen(port2, () => {
   console.log(`Listening on port ${port2}!`);
-});
-
-const updateUrlsForDevMode = (mockSurvey) => ({
-  ...mockSurvey,
-  metadata: {
-    ...mockSurvey.metadata,
-    custom_post_rv_url: "http://localhost:8081/api/v1/runtime/raasPostSurvey",
-    filtered_answers_url:
-      "http://localhost:8081/api/v1/runtime/filteredAnswers",
-    container_validation_url:
-      "http://localhost:8081/api/v1/runtime/containerValidation",
-  },
 });

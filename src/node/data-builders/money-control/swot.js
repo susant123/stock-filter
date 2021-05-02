@@ -117,7 +117,7 @@ const takeBackup = (type) => {
   }
 };
 
-const getCookies = async (type) => {
+const startBuildingSWOTData = async (type) => {
   try {
     const response = await instance.get(constants.nseBaseURL);
     cookie = response.headers["set-cookie"].join(";");
@@ -149,7 +149,9 @@ const getCookies = async (type) => {
   }
 };
 
-getCookies("S");
-getCookies("W");
-getCookies("O");
-getCookies("T");
+module.exports.startBuildingSWOTData = startBuildingSWOTData;
+
+/* startBuildingSWOTData("S");
+startBuildingSWOTData("W");
+startBuildingSWOTData("O");
+startBuildingSWOTData("T"); */
