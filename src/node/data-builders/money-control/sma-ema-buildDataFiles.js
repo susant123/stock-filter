@@ -67,8 +67,9 @@ const getAllNSEData = (cookie) => {
             const nseData = await getStockWiseNSEData(symbol);
             allNSEDataObj[stockSymbol] = nseData.data;
             console.log(
-              "Object.keys(allNSEDataObj).length",
+              "Current length: ",
               Object.keys(allNSEDataObj).length,
+              "/",
               constants.allStocks.length
             );
             if (
@@ -101,7 +102,9 @@ const takeBackup = () => {
         if (err) {
           console.log("Error Found:", err);
         } else {
-          console.log("allNSEData.json was copied to allNSEData-old.json");
+          console.log(
+            "sma-ema-pivot-sentiment.json was copied to sma-ema-pivot-sentiment-old.json"
+          );
         }
       }
     );

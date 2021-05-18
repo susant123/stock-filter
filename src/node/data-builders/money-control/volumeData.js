@@ -61,7 +61,7 @@ const getAllNSEData = (cookie) => {
           const symbol = constants.allStocks[i].mcScid;
           const stockSymbol = constants.allStocks[i].symbol;
           setTimeout(async () => {
-            if (counter % 15 == 0) {
+            if (counter % 20 == 0) {
               refreshCookie();
             }
             const response = await getStockWiseNSEData(symbol);
@@ -99,7 +99,7 @@ const takeBackup = () => {
         if (err) {
           console.log("Error Found:", err);
         } else {
-          console.log("allNSEData.json was copied to allNSEData-old.json");
+          console.log("volume.json was copied to volume-old.json");
         }
       }
     );

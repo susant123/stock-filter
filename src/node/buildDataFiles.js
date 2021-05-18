@@ -54,7 +54,7 @@ const getAllNSEData = (cookie) => {
         (function (i) {
           const symbol = constants.allStocks[i].symbol;
           setTimeout(async () => {
-            if (counter % 15 == 0) {
+            if (counter % 20 == 0) {
               refreshCookie();
             }
             const nseData = await getStockWiseNSEData(symbol);
@@ -116,7 +116,7 @@ const startBuildingDataFiles = async () => {
           JSON.stringify(response),
           function (err) {
             if (err) return console.log(err);
-            console.log("all NSE data .json is ready");
+            console.log("all NSE data .json is ready----------------------");
           }
         );
       })

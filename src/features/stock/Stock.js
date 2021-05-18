@@ -7,10 +7,13 @@ import {
   getChartDataAsync,
   getTradeDataAsync,
   selectLivePlusIndicatorData,
+  updateStock,
 } from "./StockSlice";
 import SellCards from "../stock/components/sell/SellCards";
 import BuyCards from "../stock/components/buy/BuyCards";
 import Portfolio from "../stock/components/portfolio/portfolio";
+
+import InsertNewData from "./components/dataManage/insertData";
 
 export function Stock() {
   const dispatch = useDispatch();
@@ -25,6 +28,7 @@ export function Stock() {
 
   return (
     <div className="App" style={{ fontFamily: "sans-serif", fontSize: "16px" }}>
+      <InsertNewData />
       <Portfolio />
       <SellCards />
       <BuyCards />

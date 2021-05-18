@@ -17,15 +17,15 @@ var close = [4, 5, 6, 6, 6, 5, 5, 5, 6, 4];
 var volume = [123, 232, 212, 232, 111, 232, 212, 321, 232, 321];
 
 //Do a simple moving average on close prices with period of 3.
-tulind.indicators.sma.indicator([close], [3], function (err, results) {
+/* tulind.indicators.sma.indicator([close], [3], function (err, results) {
   console.log("Result of sma is:");
   console.log(results[0]);
-});
+}); */
 
 //Discover argument types at run-time:
 //console.log(tulind.indicators.stoch);
 
-console.log(tulind.indicators.macd);
+//console.log(tulind.indicators.macd);
 
 //Do a simple moving average on close prices with period of 3.
 

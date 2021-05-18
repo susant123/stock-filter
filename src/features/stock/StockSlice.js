@@ -5,6 +5,7 @@ import {
   fetchLivePlusIndicatorData,
   fetchTradeData,
   postSellData,
+  insertNewScrip,
 } from "./stockAPI";
 
 const initialState = {
@@ -53,6 +54,15 @@ export const updateStock = createAsyncThunk(
   async (payload) => {
     console.log(payload);
     const response = await postSellData(payload);
+    return response.data;
+  }
+);
+
+export const insertNewScripAsync = createAsyncThunk(
+  "stock/insertNewScrip",
+  async (payload) => {
+    console.log(payload);
+    const response = await insertNewScrip(payload);
     return response.data;
   }
 );

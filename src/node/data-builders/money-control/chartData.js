@@ -127,6 +127,7 @@ const startBuildingChartData = async () => {
     getAllNSEData(cookie)
       .then((response) => {
         //startFetching volumeData
+
         volumeData.startBuildingVolumeData();
         console.log("response length", Object.keys(response).length);
         fs.writeFile(

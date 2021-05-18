@@ -37,3 +37,17 @@ export function postSellData(payload) {
     },
   });
 }
+
+export function insertNewScrip(payload) {
+  const url = "http://localhost:4300/api/insert_new_scrip";
+  console.log("insertNewScrip", payload);
+  const { newScrip } = payload;
+
+  return axios({
+    method: "post",
+    url: url,
+    data: {
+      newScrip,
+    },
+  });
+}

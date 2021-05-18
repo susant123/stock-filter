@@ -49,13 +49,13 @@ function Card(props) {
             <hr />
             <VolumeData volumeData={volumeData} />
             <hr />
-            <LineChart chartData={chartData ? chartData.chartData : {}} />
+            <LineChart chartData={chartData} />
             <hr />
-            {/* <RSILineChart
-              chartData={chartData ? chartData.chartData : {}}
+            <RSILineChart
+              chartData={chartData ? chartData : {}}
               rsiData={rsiData}
               rsiRange={14}
-            /> */}
+            />
           </div>
         </CardBlock>
       )}
