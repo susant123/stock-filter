@@ -70,7 +70,6 @@ const getAllNSEData = (cookie) => {
       for (let i = 0; i < constants.allStocks.length; i++) {
         (function (i) {
           const symbol = constants.allStocks[i].symbol;
-          console.log("symbol-------", symbol);
           setTimeout(async () => {
             if (counter % 20 == 0) {
               refreshCookie();
@@ -89,7 +88,7 @@ const getAllNSEData = (cookie) => {
               resolve(allNSEDataObj);
             }
             counter++;
-          }, 1000 * (i + 1));
+          }, 500 * (i + 1));
         })(i);
       }
     });

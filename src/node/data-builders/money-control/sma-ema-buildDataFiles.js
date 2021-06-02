@@ -78,7 +78,7 @@ const getAllNSEData = (cookie) => {
               resolve(allNSEDataObj);
             }
             counter++;
-          }, 1000 * (i + 1));
+          }, 500 * (i + 1));
         })(i);
       }
     });
