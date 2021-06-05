@@ -74,7 +74,7 @@ const getAllNSEData = (cookie, type) => {
             const nseData = await getStockWiseNSEData(symbol, type);
             allNSEDataObj[stockSymbol] = nseData.data;
             console.log(
-              "Object.keys(allNSEDataObj).length",
+              "symbol--" + symbol + "Object.keys(allNSEDataObj).length",
               Object.keys(allNSEDataObj).length,
               constants.allStocks.length
             );
@@ -84,7 +84,7 @@ const getAllNSEData = (cookie, type) => {
               resolve(allNSEDataObj);
             }
             counter++;
-          }, 00 * (i + 1));
+          }, 500 * (i + 1));
         })(i);
       }
     });
@@ -118,6 +118,7 @@ const takeBackup = (type) => {
 };
 
 const startBuildingSWOTData = async (type) => {
+  console.log("type-----------", type);
   try {
     const response = await instance.get(constants.nseBaseURL);
     cookie = response.headers["set-cookie"].join(";");
@@ -149,9 +150,10 @@ const startBuildingSWOTData = async (type) => {
   }
 };
 
-module.exports.startBuildingSWOTData = startBuildingSWOTData;
-
+//startBuildingSWOTData();
 /* startBuildingSWOTData("S");
 startBuildingSWOTData("W");
 startBuildingSWOTData("O");
 startBuildingSWOTData("T"); */
+
+module.exports.startBuildingSWOTData = startBuildingSWOTData;
