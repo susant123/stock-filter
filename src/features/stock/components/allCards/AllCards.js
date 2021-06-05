@@ -22,8 +22,6 @@ function AllCards() {
   };
 
   const allStocks = Object.keys(livePlusIndicator);
-
-  //console.log("chartData@@@@@@@@@@@@@@", chartData);
   return (
     <div className="App">
       <hr />

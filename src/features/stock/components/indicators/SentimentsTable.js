@@ -21,9 +21,6 @@ function SentimentsTable({ sentiments }) {
     movingAverageCrossOverSentiment,
     movingAverageSentiment,
   } = sentiments;
-
-  //console.log("sentiments", sentiments);
-
   const sentimentData = [];
   sentimentData.push({ key: "indicatorsSentiment", ...indicatorsSentiment });
   sentimentData.push({
@@ -34,8 +31,6 @@ function SentimentsTable({ sentiments }) {
     key: "movingAverageSentiment",
     ...movingAverageSentiment,
   });
-
-  //console.log("sentimentData", sentimentData);
 
   return (
     <div>

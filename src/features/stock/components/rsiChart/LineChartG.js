@@ -28,11 +28,8 @@ const buildChartData = (xArray = [], yArray = []) => {
 };
 
 function LineChart({ chartData }) {
-  // console.log("props000000000000", props);
-  console.log("chartData", chartData);
   //const { data, width, height } = this.props;
   const data = buildChartData(chartData.t, chartData.c);
-  console.log("data777777777777", data);
   const h = height - 2 * margin,
     w = width - 2 * margin;
 
@@ -60,14 +57,12 @@ function LineChart({ chartData }) {
     .curve(d3.curveCatmullRom.alpha(0.5)); //curve line
 
   const xTicks = x.ticks(30).map((d) => {
-    console.log("jasfjkjkkdf", d);
     const returnVal = (
       <g transform={`translate(${x(d)},${h + margin})`}>
         <text>{xFormat(d)}</text>
         <line x1="0" x1="0" y1="0" y2="5" transform="translate(0,-20)" />
       </g>
     );
-    console.log("returnVal", returnVal);
   });
 
   const yTicks = y.ticks(5).map((d) => (

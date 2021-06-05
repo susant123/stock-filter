@@ -12,7 +12,7 @@ function SellCards() {
   const livePlusIndicator = useSelector(selectLivePlusIndicatorData);
   const tradeData = useSelector(selectTradeData);
 
-  const cards = getSellRecommendation(livePlusIndicator, tradeData.stocks);
+  const cards = getSellRecommendation(livePlusIndicator, tradeData);
 
   return (
     <div className="App">

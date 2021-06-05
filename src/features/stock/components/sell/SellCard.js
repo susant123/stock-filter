@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   SellCardBlock,
   StockSymbol,
@@ -13,15 +13,44 @@ import {
 } from "../commonStyles/cardStyles";
 import RSILineChart from "../rsiChart/RSILineChart";
 import { selectAllRSIData, selectChartData } from "../../StockSlice";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { updateStock } from "../../StockSlice";
 
 function SellCard(props) {
+  const dispatch = useDispatch();
   const allRSIData = useSelector(selectAllRSIData);
   const chartData = useSelector(selectChartData);
   const card = props.card;
-  const chartDataPerStock = chartData[card.stockName]
-    ? chartData[card.stockName].chartData
-    : [];
+  const chartDataPerStock = chartData[card.stockName] || [];
+
+  const [sellQuantity, setSellQuantity] = useState(card.quantity);
+  const [sellPrice, setSellPrice] = useState(card.currentPrice);
+
+  const doneHandler = () => {
+    setSellQuantity(0);
+    setSellPrice(0);
+
+    dispatch(
+      updateStock({
+        stockName: card.stockName,
+        account: card.account,
+        quantity: null,
+        price: null,
+      })
+    );
+  };
+
+  const partiallySavedhandler = () => {
+    console.log(sellQuantity, ",", sellPrice);
+    dispatch(
+      updateStock({
+        stockName: card.stockName,
+        account: card.account,
+        quantity: sellQuantity,
+        price: sellPrice,
+      })
+    );
+  };
   return (
     <div className="App">
       <SellCardBlock>
@@ -42,12 +71,22 @@ function SellCard(props) {
         <QuantityBlock>
           <RowWrapper>
             <Label>Quantity:</Label>{" "}
-            <InputField value={card.quantity} onChange={() => {}} />
+            <InputField
+              value={sellQuantity}
+              onChange={(e) => {
+                setSellQuantity(e.target.value);
+              }}
+            />
           </RowWrapper>
 
           <RowWrapper>
             <Label>Price:</Label>{" "}
-            <InputField value={card.currentPrice} onChange={() => {}} />
+            <InputField
+              value={sellPrice}
+              onChange={(e) => {
+                setSellPrice(e.target.value);
+              }}
+            />
           </RowWrapper>
 
           <RSILineChart
@@ -55,7 +94,8 @@ function SellCard(props) {
             rsiData={allRSIData[card.stockName]}
             rsiRange={14}
           />
-          <Button>Done</Button>
+          <Button onClick={doneHandler}>All Sold</Button>
+          <Button onClick={partiallySavedhandler}>Partially Sold</Button>
         </QuantityBlock>
       </SellCardBlock>
       <hr />

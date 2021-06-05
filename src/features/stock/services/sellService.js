@@ -8,11 +8,10 @@ export const getKeyObjectTradeData = (tradeData) => {
     for (let i = 0; i < accounts.length; i++) {
       keyObjectTradeData[accounts[i]] = convertArrayToObject(
         tradeData[accounts[i]],
-        "stockName"
+        "stock_name"
       );
     }
   }
-  ////console.log("keyObjectTradeData", keyObjectTradeData);
   return keyObjectTradeData;
 };
 
@@ -22,27 +21,44 @@ const profitLossCalc = (currentPrice = 0, boughtPrice) => {
     : 0;
 };
 
-export const getSellRecommendation = (livePlusIndicator, tradeData) => {
-  const allStocks1 = Object.keys(livePlusIndicator);
+const getAllStockNames = (stocksArr) => {
+  const allStocksNames = [];
+  for (var i = 0; i < stocksArr.length; i++) {
+    allStocksNames.push(stocksArr[i].stock_name);
+  }
+  return allStocksNames;
+};
+
+export const getSellRecommendation = (livePlusIndicator, tradeData = {}) => {
+  let allStocks = [];
   const sellRecommendation = [];
-  const initialTradeData = getKeyObjectTradeData(tradeData);
-  for (let i = 0; i < accounts.length; i++) {
-    for (let j = 0; j < allStocks1.length; j++) {
-      const currentStock = initialTradeData[accounts[i]][allStocks1[j]];
-      const currentPrice =
-        livePlusIndicator[allStocks1[j]].nse.priceInfo.lastPrice;
-      if (currentStock) {
-        const profit = parseFloat(
-          profitLossCalc(currentPrice, parseFloat(currentStock.boughtPrice))
-        );
-        if (profit > 5) {
-          sellRecommendation.push({
-            account: accounts[i],
-            stockName: currentStock.stockName,
-            profit: profit,
-            quantity: currentStock.quantity,
-            currentPrice: currentPrice,
-          });
+  if (tradeData["asha-kite"] && JSON.stringify(livePlusIndicator) !== "{}") {
+    allStocks = getAllStockNames(tradeData["asha-kite"]);
+    const initialTradeData = getKeyObjectTradeData(tradeData);
+    for (let i = 0; i < accounts.length; i++) {
+      for (let j = 0; j < allStocks.length; j++) {
+        const currentStock = initialTradeData[accounts[i]][allStocks[j]];
+
+        if (livePlusIndicator[allStocks[j]]) {
+          const currentPrice =
+            livePlusIndicator[allStocks[j]].nse.priceInfo.lastPrice;
+          if (currentStock) {
+            const profit = parseFloat(
+              profitLossCalc(
+                currentPrice,
+                parseFloat(currentStock.average_price)
+              )
+            );
+            if (profit > 5) {
+              sellRecommendation.push({
+                account: accounts[i],
+                stockName: currentStock.stock_name,
+                profit: profit,
+                quantity: currentStock.quantity,
+                currentPrice: currentPrice,
+              });
+            }
+          }
         }
       }
     }

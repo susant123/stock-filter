@@ -10,7 +10,6 @@ import {
 const buildChartData = (date = [], price = [], volume = []) => {
   const data = [["Date", "Price", "Volume"]];
   let dataObj = {};
-  //console.log("xArray", date.length);
   for (let i = 0; i < date.length; i++) {
     dataObj = [
       new Date(date[i] * 1000).toISOString().split("T")[0],
@@ -24,13 +23,12 @@ const buildChartData = (date = [], price = [], volume = []) => {
 };
 
 function LineChart({ chartData }) {
-  //console.log("chartData", chartData);
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
   const data = buildChartData(chartData.t, chartData.c, chartData.v);
-  //console.log("data", data);
+
   return (
     <div>
       <IconHeaderWrapper>

@@ -12,7 +12,6 @@ import { RSIWrapper } from "./RSILineChart.styles";
 const buildChartData = (date = [], rsiData = [], rsiRange) => {
   const data = [["Date", "RSI"]];
   let dataObj = {};
-  //console.log("xArray", date.length);
 
   for (let i = 0; i < date.length; i++) {
     dataObj = [
@@ -37,14 +36,11 @@ const isLowRSI = (rsiData) => {
 };
 
 function RSILineChart({ chartData, rsiData, rsiRange }) {
-  console.log("In RSILineChart");
-  //console.log("chartData", chartData, rsiData);
   const [isOpen, setIsOpen] = useState(true);
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
   const data = buildChartData(chartData.t, rsiData, rsiRange);
-  //console.log("data", data);
   const isLowRsi = isLowRSI(rsiData);
   return (
     <RSIWrapper isLowRSI={isLowRsi}>

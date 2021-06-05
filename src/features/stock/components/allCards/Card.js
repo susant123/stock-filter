@@ -7,14 +7,10 @@ import SwotComponent from "../indicators/SwotComponent";
 import VolumeData from "../indicators/VolumeData";
 import LineChart from "../charts/LineChart";
 import MCChart from "../modal/MCChart";
-//import ChartData from "../../data/json/chart-6month.json";
-
 import RSILineChart from "../rsiChart/RSILineChart";
-//import AllRSIData from "../../data/json/AllRSIData.json";
 
 function Card(props) {
   const { card, stockName, chartData, rsiData } = props;
-  // console.log("card----", chartData);
   const {
     indicators,
     strength,
@@ -24,8 +20,6 @@ function Card(props) {
     volumeData,
     nse,
   } = card;
-
-  console.log("stockName--", stockName);
 
   return (
     <>
@@ -40,9 +34,9 @@ function Card(props) {
           </StockName>
           <hr />
           <MCChart stockName={stockName} />
-          <SentimentsTable sentiments={indicators.data.sentiments} />
-          <PivotLevelsTable pivotLevels={indicators.data.pivotLevels} />
-          <EmaSma ema={indicators.data.ema} sma={indicators.data.sma} />
+          <SentimentsTable sentiments={indicators.sentiments} />
+          <PivotLevelsTable pivotLevels={indicators.pivotLevels} />
+          <EmaSma ema={indicators.ema} sma={indicators.sma} />
           <hr />
           <div style={{ backgroundColor: "#b49292" }}>
             <SwotComponent swot={strength} />
@@ -53,12 +47,12 @@ function Card(props) {
             <hr />
             <SwotComponent swot={threat} />
             <hr />
-            <VolumeData volumeData={volumeData.data} />
+            <VolumeData volumeData={volumeData} />
             <hr />
-            <LineChart chartData={chartData.chartData} />
+            <LineChart chartData={chartData} />
             <hr />
             <RSILineChart
-              chartData={chartData.chartData}
+              chartData={chartData ? chartData : {}}
               rsiData={rsiData}
               rsiRange={14}
             />
