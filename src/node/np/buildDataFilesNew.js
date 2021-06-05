@@ -1,6 +1,6 @@
 const axios = require("axios");
-const constants = require("./constants");
-const utils = require("./utils");
+const constants = require("../constants");
+const utils = require("../utils");
 
 let cookie;
 
@@ -50,7 +50,7 @@ const getAllNSEData = (cookie) => {
         (function (i) {
           const symbol = constants.allStocks[i].symbol;
           setTimeout(async () => {
-            if (counter % 15 == 0) {
+            if (counter % 20 == 0) {
               refreshCookie();
             }
             const nseData = await getStockWiseNSEData(symbol);
@@ -66,7 +66,7 @@ const getAllNSEData = (cookie) => {
               resolve(allNSEDataObj);
             }
             counter++;
-          }, 1000 * (i + 1));
+          }, 500 * (i + 1));
         })(i);
       }
     });

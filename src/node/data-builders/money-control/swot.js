@@ -68,7 +68,7 @@ const getAllNSEData = (cookie, type) => {
 
           const stockSymbol = constants.allStocks[i].symbol;
           setTimeout(async () => {
-            if (counter % 15 == 0) {
+            if (counter % 20 == 0) {
               refreshCookie();
             }
             const nseData = await getStockWiseNSEData(symbol, type);
@@ -84,7 +84,7 @@ const getAllNSEData = (cookie, type) => {
               resolve(allNSEDataObj);
             }
             counter++;
-          }, 1000 * (i + 1));
+          }, 00 * (i + 1));
         })(i);
       }
     });

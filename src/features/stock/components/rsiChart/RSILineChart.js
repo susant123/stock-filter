@@ -24,7 +24,7 @@ const buildChartData = (date = [], rsiData = [], rsiRange) => {
   return data;
 };
 
-const isLowRSI = (rsiData) => {
+/* const isLowRSI = (rsiData) => {
   let total = 0;
   for (let i = 0; i < rsiData.length; i++) {
     total += rsiData[i];
@@ -33,15 +33,15 @@ const isLowRSI = (rsiData) => {
   if (average > rsiData[rsiData.length - 1]) {
     return true;
   }
-};
+}; */
 
-function RSILineChart({ chartData, rsiData, rsiRange }) {
+function RSILineChart({ chartData, rsiData, rsiRange, isLowRsi }) {
   const [isOpen, setIsOpen] = useState(true);
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
   const data = buildChartData(chartData.t, rsiData, rsiRange);
-  const isLowRsi = isLowRSI(rsiData);
+  //const isLowRsi = isLowRSI(rsiData);
   return (
     <RSIWrapper isLowRSI={isLowRsi}>
       <IconHeaderWrapper>

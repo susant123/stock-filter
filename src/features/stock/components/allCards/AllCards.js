@@ -17,6 +17,8 @@ function AllCards() {
   const chartData = useSelector(selectChartData);
   const livePlusIndicator = useSelector(selectLivePlusIndicatorData);
 
+  //console.log("livePlusIndicator", livePlusIndicator);
+
   const handleClick = () => {
     setIsOpen(!isOpen);
   };

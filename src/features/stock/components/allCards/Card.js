@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { CardBlock, StockSymbol, StockName } from "../commonStyles/cardStyles";
 import PivotLevelsTable from "../indicators/PivotLevelsTable";
 import SentimentsTable from "../indicators/SentimentsTable";
@@ -8,9 +8,12 @@ import VolumeData from "../indicators/VolumeData";
 import LineChart from "../charts/LineChart";
 import MCChart from "../modal/MCChart";
 import RSILineChart from "../rsiChart/RSILineChart";
+import { IconHeaderWrapper, ActionIcon } from "../commonStyles/commonStyles";
+import { CardTitle, CardsWrapper } from "../commonStyles/allCardsStyles";
 
 function Card(props) {
   const { card, stockName, chartData, rsiData } = props;
+  const [isOpen, setIsOpen] = useState(false);
   const {
     indicators,
     strength,
@@ -21,9 +24,33 @@ function Card(props) {
     nse,
   } = card;
 
+  const isLowRSI = (rsiData) => {
+    let total = 0;
+    for (let i = 0; i < rsiData.length; i++) {
+      total += rsiData[i];
+    }
+    const average = total / rsiData.length;
+    if (average > rsiData[rsiData.length - 1]) {
+      return true;
+    }
+  };
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const isLowRsi = isLowRSI(rsiData);
+  //console.log("isLowRsi-----------------", isLowRsi);
   return (
-    <>
-      {stockName !== "ZEEL" && (
+    <div>
+      <IconHeaderWrapper onClick={handleClick}>
+        <ActionIcon>{isOpen ? "-" : "+"}</ActionIcon>
+        <CardTitle>
+          {stockName}-({nse.priceInfo.lastPrice}){" "}
+        </CardTitle>
+      </IconHeaderWrapper>
+
+      {(isOpen || isLowRsi) && stockName !== "ZEEL" && (
         <CardBlock>
           <StockSymbol>
             {stockName}-({nse.priceInfo.lastPrice})
@@ -55,11 +82,12 @@ function Card(props) {
               chartData={chartData ? chartData : {}}
               rsiData={rsiData}
               rsiRange={14}
+              isLowRsi={isLowRsi}
             />
           </div>
         </CardBlock>
       )}
-    </>
+    </div>
   );
 }
 
