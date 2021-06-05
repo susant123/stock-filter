@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const IconHeaderWrapper = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: left;
 `;
 export const ActionIcon = styled.div`
   font-size: 18px;

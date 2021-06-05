@@ -9,10 +9,10 @@ import LineChart from "../charts/LineChart";
 import MCChart from "../modal/MCChart";
 import RSILineChart from "../rsiChart/RSILineChart";
 import { IconHeaderWrapper, ActionIcon } from "../commonStyles/commonStyles";
-import { CardTitle, CardsWrapper } from "../commonStyles/allCardsStyles";
+import { CardTitle, CardsWrapper, CardContainer } from "../commonStyles/allCardsStyles";
 
 function Card(props) {
-  const { card, stockName, chartData, rsiData } = props;
+  const { card, stockName, chartData, rsiData, keepSeparated} = props;
   const [isOpen, setIsOpen] = useState(false);
   const {
     indicators,
@@ -42,7 +42,7 @@ function Card(props) {
   const isLowRsi = isLowRSI(rsiData);
   //console.log("isLowRsi-----------------", isLowRsi);
   return (
-    <div>
+    <CardContainer keepSeparated={keepSeparated} isOpen={isOpen}>
       <IconHeaderWrapper onClick={handleClick}>
         <ActionIcon>{isOpen ? "-" : "+"}</ActionIcon>
         <CardTitle>
@@ -87,7 +87,7 @@ function Card(props) {
           </div>
         </CardBlock>
       )}
-    </div>
+    </CardContainer>
   );
 }
 
