@@ -12,8 +12,8 @@ import {
 import SellCards from "../stock/components/sell/SellCards";
 import BuyCards from "../stock/components/buy/BuyCards";
 import Portfolio from "../stock/components/portfolio/portfolio";
-
 import InsertNewData from "./components/dataManage/insertData";
+import Tabs from "./Tabs";
 
 export function Stock() {
   const dispatch = useDispatch();
@@ -28,6 +28,7 @@ export function Stock() {
 
   return (
     <div className="App" style={{ fontFamily: "sans-serif", fontSize: "16px" }}>
+      <Tabs />
       <InsertNewData />
       <Portfolio />
       <SellCards />

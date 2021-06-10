@@ -152,6 +152,7 @@ export const getBuyRecommendations = (livePlusIndicator, tradeData) => {
                 volumeData: allLiveStockData.volumeData,
                 profitLoss: profitLoss,
                 nseData: livePlusIndicator[currentStock.stock_name].nse,
+                macdData: allLiveStockData.macdData
               });
             }
           }

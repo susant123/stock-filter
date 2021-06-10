@@ -18,8 +18,10 @@ import SwotComponent from "../indicators/SwotComponent";
 import VolumeData from "../indicators/VolumeData";
 import MCChart from "../modal/MCChart";
 import RSILineChart from "../rsiChart/RSILineChart";
+import MACDChart from "../macdCharts/LineChart";
 import { selectAllRSIData, selectChartData } from "../../StockSlice";
 import { useSelector } from "react-redux";
+
 
 const recommendedAmout = 15000;
 
@@ -92,6 +94,9 @@ function BuyCard(props) {
           rsiData={allRSIData[card.stockName]}
           rsiRange={14}
         />
+        <MACDChart
+          macdChartData = {card.macdData} />
+
       </div>
       <QuantityBlock>
         <Title>Recommended Quantity: {card.quantity}</Title>

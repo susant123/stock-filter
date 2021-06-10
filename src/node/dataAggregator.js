@@ -5,6 +5,7 @@ const weakness = require("./data/weakness.json");
 const opportunities = require("./data/opprtunities.json");
 const threat = require("./data/threat.json");
 const volumeData = require("./data/volume.json");
+const AllmacdData = require("./data/MACDData.json");
 
 fs = require("fs");
 const path = require("path");
@@ -24,6 +25,7 @@ allSymbols.forEach((symbol) => {
     threat: threat[symbol],
     strength: strength[symbol],
     volumeData: volumeData[symbol],
+    macdData:AllmacdData[symbol]
   };
   allData[symbol] = symbolData;
 });

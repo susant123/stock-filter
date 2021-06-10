@@ -22,7 +22,7 @@ const instance = axios.create({
 const getStockWiseNSEData = (symbol) => {
   //for epoch date
   const fromTime = Math.floor(
-    (new Date().getTime() - 3 * 30 * 24 * 60 * 60 * 1000) / 1000
+    (new Date().getTime() - 6 * 30 * 24 * 60 * 60 * 1000) / 1000
   );
 
   const toTime = Math.floor(new Date().getTime() / 1000);

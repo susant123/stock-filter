@@ -2,7 +2,8 @@ import styled from "@emotion/styled";
 
 export const IconHeaderWrapper = styled.div`
   display: flex;
-  justify-content: left;
+  justify-content: ${props=>props.allCards?'center':'left'};
+
 `;
 export const ActionIcon = styled.div`
   font-size: 18px;
@@ -33,6 +34,7 @@ export const TableHeader = styled.div`
   text-align: center;
   padding: 5px 0;
   width: 100%;
+  ${props=>props.isMacdChart?`background-color: ${props.isMacdPositive?'green':'red'}`:''};
 `;
 export const MinusIcon = styled.div`
   font-size: 18px;

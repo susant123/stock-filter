@@ -38,7 +38,7 @@ function AllCards() {
   return (
     <div className="App">
       <hr />
-      <IconHeaderWrapper onClick={handleClick}>
+      <IconHeaderWrapper onClick={handleClick} allCards={true}>
         <ActionIcon>{isOpen ? "-" : "+"}</ActionIcon>
         <CardTitle>All Stocks - {allStocks.length}</CardTitle>
       </IconHeaderWrapper>
