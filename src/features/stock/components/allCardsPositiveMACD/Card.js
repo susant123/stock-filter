@@ -14,7 +14,7 @@ import MACDChart from "../macdCharts/LineChart";
 
 function Card(props) {
   const { card, stockName, chartData, rsiData, keepSeparated} = props;
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const {
     indicators,
     strength,
@@ -51,7 +51,7 @@ function Card(props) {
         </CardTitle>
       </IconHeaderWrapper>
 
-      {(isOpen || isLowRsi) && stockName !== "ZEEL" && (
+      {isOpen && stockName !== "ZEEL" && (
         <CardBlock>
           <StockSymbol>
             {stockName}-({nse.priceInfo.lastPrice})

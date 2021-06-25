@@ -83,7 +83,7 @@ const getAllNSEData = (cookie) => {
                 constants.allStocks.length
             );
             if (
-              Object.keys(allNSEDataObj).length == constants.allStocks.length
+              Object.keys(allNSEDataObj).length == constants.allStocks.length || symbol== 'ECLERX'
             ) {
               resolve(allNSEDataObj);
             }
@@ -126,7 +126,6 @@ const startBuildingChartData = async () => {
     getAllNSEData(cookie)
       .then((response) => {
         //startFetching volumeData
-
         volumeData.startBuildingVolumeData();
         console.log("response length", Object.keys(response).length);
         fs.writeFile(
@@ -134,7 +133,7 @@ const startBuildingChartData = async () => {
           JSON.stringify(response),
           function (err) {
             if (err) return console.log(err);
-            console.log("data .json is ready");
+            console.log("chart data .json is ready");
           }
         );
       })
@@ -152,6 +151,8 @@ const startBuildingChartData = async () => {
     }
   }
 };
+
+//startBuildingChartData();
 
 module.exports.startBuildingChartData = startBuildingChartData;
 //getCookies();

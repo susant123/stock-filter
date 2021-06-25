@@ -73,7 +73,7 @@ const getAllNSEData = (cookie) => {
               constants.allStocks.length
             );
             if (
-              Object.keys(allNSEDataObj).length == constants.allStocks.length
+              Object.keys(allNSEDataObj).length == constants.allStocks.length ||  symbol== 'ES07' || stockSymbol== 'ECLERX'
             ) {
               resolve(allNSEDataObj);
             }

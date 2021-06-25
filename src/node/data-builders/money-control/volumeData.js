@@ -73,7 +73,7 @@ const getAllNSEData = (cookie) => {
                 constants.allStocks.length
             );
             if (
-              Object.keys(allNSEDataObj).length == constants.allStocks.length
+              Object.keys(allNSEDataObj).length == constants.allStocks.length || stockSymbol== 'ES07' || stockSymbol== 'ECLERX'
             ) {
               resolve(allNSEDataObj);
             }
@@ -142,6 +142,6 @@ const startBuildingVolumeData = async () => {
   }
 };
 
-module.exports.startBuildingVolumeData = startBuildingVolumeData;
-
 //startBuildingVolumeData();
+
+module.exports.startBuildingVolumeData = startBuildingVolumeData;

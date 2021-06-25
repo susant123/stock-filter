@@ -74,12 +74,12 @@ const getAllNSEData = (cookie, type) => {
             const nseData = await getStockWiseNSEData(symbol, type);
             allNSEDataObj[stockSymbol] = nseData.data;
             console.log(
-              "symbol--" + symbol + "Object.keys(allNSEDataObj).length",
+              "symbol--" + stockSymbol + "Object.keys(allNSEDataObj).length",
               Object.keys(allNSEDataObj).length,
               constants.allStocks.length
             );
             if (
-              Object.keys(allNSEDataObj).length == constants.allStocks.length
+              Object.keys(allNSEDataObj).length == constants.allStocks.length || stockSymbol== 'ECLERX'
             ) {
               resolve(allNSEDataObj);
             }

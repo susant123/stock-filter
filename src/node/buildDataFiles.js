@@ -54,7 +54,7 @@ const getAllNSEData = (cookie) => {
         (function (i) {
           const symbol = constants.allStocks[i].symbol;
           setTimeout(async () => {
-            if (counter % 20 == 0) {
+            if (counter % 40 == 0) {
               refreshCookie();
             }
             const nseData = await getStockWiseNSEData(symbol);
@@ -65,12 +65,13 @@ const getAllNSEData = (cookie) => {
               constants.allStocks.length
             );
             if (
-              Object.keys(allNSEDataObj).length == constants.allStocks.length
+              (Object.keys(allNSEDataObj).length == constants.allStocks.length) || symbol=== 'ECLERX'
             ) {
               resolve(allNSEDataObj);
+              console.log("All done---------------------");
             }
             counter++;
-          }, 1000 * (i + 1));
+          }, 500 * (i + 1));
         })(i);
       }
     });
@@ -107,9 +108,6 @@ const startBuildingDataFiles = async () => {
     takeBackup();
     getAllNSEData(cookie)
       .then((response) => {
-        //start chartData fetching
-        chart.startBuildingChartData();
-
         console.log("response length", Object.keys(response).length);
         fs.writeFile(
           __dirname + "/data/allNSEData.json",
@@ -135,4 +133,6 @@ const startBuildingDataFiles = async () => {
   }
 };
 
+ //start chartData fetching
+chart.startBuildingChartData();
 startBuildingDataFiles();

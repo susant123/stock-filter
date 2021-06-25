@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import AllCards from "./components/allCards/AllCards";
 import {
   getLivePlusIndicatorDataAsync,
   getAllRSIDataAsync,
@@ -28,12 +27,14 @@ export function Stock() {
 
   return (
     <div className="App" style={{ fontFamily: "sans-serif", fontSize: "16px" }}>
-      <Tabs />
-      <InsertNewData />
+      <Tabs livePlusIndicatorData={livePlusIndicatorData}/>
+    
+      
+      {/*
       <Portfolio />
       <SellCards />
       <BuyCards />
-      <AllCards livePlusIndicator={livePlusIndicatorData} />
+      <AllCards livePlusIndicator={livePlusIndicatorData} />*/}
     </div>
   );
 }
