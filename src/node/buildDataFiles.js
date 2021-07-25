@@ -5,7 +5,7 @@ const utils = require("./utils");
 //const swot = require("./data-builders/money-control/swot");
 const chart = require("./data-builders/money-control/chartData");
 
-fs = require("fs");
+const fs = require("fs");
 
 let cookie;
 
@@ -15,7 +15,10 @@ const instance = axios.create({
 });
 
 const getStockWiseNSEData = (symbol) => {
-  const formattedURL = utils.stringFormat(constants.nseDataURL, symbol);
+  const formattedURL = utils.stringFormat(
+    constants.nseDataURL,
+    encodeURIComponent(symbol)
+  );
   console.log(symbol, "url---", formattedURL);
 
   const headers = {
@@ -65,7 +68,8 @@ const getAllNSEData = (cookie) => {
               constants.allStocks.length
             );
             if (
-              (Object.keys(allNSEDataObj).length == constants.allStocks.length) || symbol=== 'ECLERX'
+              Object.keys(allNSEDataObj).length == constants.allStocks.length ||
+              symbol === "ECLERX"
             ) {
               resolve(allNSEDataObj);
               console.log("All done---------------------");
@@ -133,6 +137,6 @@ const startBuildingDataFiles = async () => {
   }
 };
 
- //start chartData fetching
+//start chartData fetching
 chart.startBuildingChartData();
 startBuildingDataFiles();

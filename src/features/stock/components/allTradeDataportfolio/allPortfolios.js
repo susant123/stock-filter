@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import { selectTradeData } from "../../StockSlice";
 import { useSelector } from "react-redux";
-import {selectLivePlusIndicatorData} from "../../StockSlice";
+import { selectLivePlusIndicatorData } from "../../StockSlice";
 import { convertArrayToObject } from "../../utils/utilities";
 
-import {PortfolioTable, Col, Row, InnerRow, InnerCol} from "./allPortfolio.styles";
+import {
+  PortfolioTable,
+  Col,
+  Row,
+  InnerRow,
+  InnerCol,
+} from "./allPortfolio.styles";
 
 function AllPortfolios() {
   const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel"];
@@ -13,9 +19,7 @@ function AllPortfolios() {
   const [totalInvested, setTotalInvested] = useState(0);
   const livePlusIndicator = useSelector(selectLivePlusIndicatorData);
 
-
   const allStocks = Object.keys(livePlusIndicator);
-
 
   const getKeyObjectTradeData = (tradeData) => {
     const keyObjectTradeData = [];
@@ -30,57 +34,96 @@ function AllPortfolios() {
     return keyObjectTradeData;
   };
 
-  
- const keyObjectTradeData = getKeyObjectTradeData(tradeData)
+  const keyObjectTradeData = getKeyObjectTradeData(tradeData);
 
- console.log("livePlusIndicator----", livePlusIndicator)
   return (
     <div className="portfolio">
-      
       <PortfolioTable>
         <Row>
           <Col isHeader={true}>Stock Name</Col>
           <Col isHeader={true}>Asha Kite</Col>
-          <Col isHeader={true}>Susant Kite</Col>          
+          <Col isHeader={true}>Susant Kite</Col>
           <Col isHeader={true}>Asha Angel</Col>
           <Col isHeader={true}>Susant Angel</Col>
         </Row>
         <Row>
           <Col isHeader={true}></Col>
-          <Col isHeader={true}><InnerRow><InnerCol>APrice</InnerCol><InnerCol>Quantity</InnerCol><InnerCol>CPrice</InnerCol><InnerCol>P/L</InnerCol></InnerRow></Col>
-          <Col isHeader={true}><InnerRow><InnerCol>APrice</InnerCol><InnerCol>Quantity</InnerCol><InnerCol>CPrice</InnerCol><InnerCol>P/L</InnerCol></InnerRow></Col>
-          <Col isHeader={true}><InnerRow><InnerCol>APrice</InnerCol><InnerCol>Quantity</InnerCol><InnerCol>CPrice</InnerCol><InnerCol>P/L</InnerCol></InnerRow></Col>
-          <Col isHeader={true}><InnerRow><InnerCol>APrice</InnerCol><InnerCol>Quantity</InnerCol><InnerCol>CPrice</InnerCol><InnerCol>P/L</InnerCol></InnerRow></Col>
-          
+          <Col isHeader={true}>
+            <InnerRow>
+              <InnerCol>APrice</InnerCol>
+              <InnerCol>Quantity</InnerCol>
+              <InnerCol>CPrice</InnerCol>
+              <InnerCol>P/L</InnerCol>
+            </InnerRow>
+          </Col>
+          <Col isHeader={true}>
+            <InnerRow>
+              <InnerCol>APrice</InnerCol>
+              <InnerCol>Quantity</InnerCol>
+              <InnerCol>CPrice</InnerCol>
+              <InnerCol>P/L</InnerCol>
+            </InnerRow>
+          </Col>
+          <Col isHeader={true}>
+            <InnerRow>
+              <InnerCol>APrice</InnerCol>
+              <InnerCol>Quantity</InnerCol>
+              <InnerCol>CPrice</InnerCol>
+              <InnerCol>P/L</InnerCol>
+            </InnerRow>
+          </Col>
+          <Col isHeader={true}>
+            <InnerRow>
+              <InnerCol>APrice</InnerCol>
+              <InnerCol>Quantity</InnerCol>
+              <InnerCol>CPrice</InnerCol>
+              <InnerCol>P/L</InnerCol>
+            </InnerRow>
+          </Col>
         </Row>
-        {allStocks.map(stock=>{
-          return(
-          <Row>
-            <Col isHeader={true}>{stock}</Col>
+        {allStocks.map((stock) => {
+          return (
+            <Row>
+              <Col isHeader={true}>{stock}</Col>
 
-            {accounts.map((account, index)=>{    
-              const averagePrice =   keyObjectTradeData[account][stock]? keyObjectTradeData[account][stock].average_price: null;
-              const latestPrice = livePlusIndicator[stock].nse.priceInfo.lastPrice;
+              {accounts.map((account, index) => {
+                const averagePrice = keyObjectTradeData[account][stock]
+                  ? keyObjectTradeData[account][stock].average_price
+                  : null;
+                const latestPrice =
+                  livePlusIndicator[stock].nse.priceInfo.lastPrice;
 
-              const profitLoss = averagePrice?((latestPrice - averagePrice)/averagePrice * 100).toFixed(1): null;
-              const quantity = keyObjectTradeData[account][stock]?keyObjectTradeData[account][stock].quantity:null;
+                const profitLoss = averagePrice
+                  ? (
+                      ((latestPrice - averagePrice) / averagePrice) *
+                      100
+                    ).toFixed(1)
+                  : null;
+                const quantity = keyObjectTradeData[account][stock]
+                  ? keyObjectTradeData[account][stock].quantity
+                  : null;
 
-              return (                            
+                return (
                   <Col>
                     <InnerRow>
                       <InnerCol>{averagePrice}</InnerCol>
                       <InnerCol>{quantity}</InnerCol>
-                      <InnerCol>{quantity && keyObjectTradeData[account][stock] && latestPrice}</InnerCol>
-                      <InnerCol isLoss={profitLoss < 0} isHeader={true}>{quantity && profitLoss}</InnerCol>
+                      <InnerCol>
+                        {quantity &&
+                          keyObjectTradeData[account][stock] &&
+                          latestPrice}
+                      </InnerCol>
+                      <InnerCol isLoss={profitLoss < 0} isHeader={true}>
+                        {quantity && profitLoss}
+                      </InnerCol>
                     </InnerRow>
-                  </Col>                
-              )
-          })}
-            </Row>)
-          
+                  </Col>
+                );
+              })}
+            </Row>
+          );
         })}
-     </PortfolioTable>
-
+      </PortfolioTable>
     </div>
   );
 }

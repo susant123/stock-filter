@@ -6,19 +6,10 @@ const constants = require("../../constants");
 const utils = require("../../utils");
 const path = require("path");
 const smaEma = require("./sma-ema-buildDataFiles");
+const fs = require("fs");
 
-fs = require("fs");
-
-const baseUrl = "https://www.moneycontrol.com/";
 const volumeDataUrl =
   "https://api.moneycontrol.com/mcapi/v1/stock/price-volume?scId={0}";
-
-let cookie;
-
-const instance = axios.create({
-  headers: constants.headers,
-  cookie: cookie ? cookie : "",
-});
 
 const getStockWiseNSEData = (symbol) => {
   const formattedURL = utils.stringFormat(volumeDataUrl, symbol);
@@ -26,7 +17,6 @@ const getStockWiseNSEData = (symbol) => {
 
   const headers = {
     ...constants.headers,
-    cookie: cookie,
   };
   return new Promise((resolve, reject) => {
     try {
@@ -44,14 +34,7 @@ const getStockWiseNSEData = (symbol) => {
   });
 };
 
-const refreshCookie = async () => {
-  const response = await instance.get(baseUrl);
-  cookie = response.headers["set-cookie"].join(";");
-
-  console.log("cookie refreshed");
-};
-
-const getAllNSEData = (cookie) => {
+const getAllNSEData = () => {
   let counter = 0;
   const allNSEDataObj = {};
   try {
@@ -61,9 +44,6 @@ const getAllNSEData = (cookie) => {
           const symbol = constants.allStocks[i].mcScid;
           const stockSymbol = constants.allStocks[i].symbol;
           setTimeout(async () => {
-            if (counter % 20 == 0) {
-              refreshCookie();
-            }
             const response = await getStockWiseNSEData(symbol);
             allNSEDataObj[stockSymbol] = response.data;
             console.log(
@@ -73,7 +53,9 @@ const getAllNSEData = (cookie) => {
                 constants.allStocks.length
             );
             if (
-              Object.keys(allNSEDataObj).length == constants.allStocks.length || stockSymbol== 'ES07' || stockSymbol== 'ECLERX'
+              Object.keys(allNSEDataObj).length == constants.allStocks.length ||
+              stockSymbol == "ES07" ||
+              stockSymbol == "ECLERX"
             ) {
               resolve(allNSEDataObj);
             }
@@ -110,10 +92,8 @@ const takeBackup = () => {
 
 const startBuildingVolumeData = async () => {
   try {
-    const response = await instance.get(constants.nseBaseURL);
-    cookie = response.headers["set-cookie"].join(";");
     takeBackup();
-    getAllNSEData(cookie)
+    getAllNSEData()
       .then((response) => {
         //start smaEmaDataFetch
         smaEma.startEmaSmaDataFetch();
@@ -142,6 +122,6 @@ const startBuildingVolumeData = async () => {
   }
 };
 
-//startBuildingVolumeData();
+startBuildingVolumeData();
 
-module.exports.startBuildingVolumeData = startBuildingVolumeData;
+//module.exports.startBuildingVolumeData = startBuildingVolumeData;

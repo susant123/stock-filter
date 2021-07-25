@@ -8,1492 +8,2509 @@ module.exports = {
     "accept-language": "en,gu;q=0.9,hi;q=0.8",
     "accept-encoding": "gzip, deflate, br",
   },
-  allStocks1: [{ symbol: "AARTIDRUGS", mcScid: "AD", mcScdid: "AD" }],
-  allStocks:[
+
+  allStocks1: [
     {
-        "symbol": "3MINDIA","mcScid": "B3M","mcScdid": "MI42"
+      symbol: "M&M",
+      mcScid: "MM",
+      mcScdid: "MM",
     },
+  ],
+  allStocks: [
     {
-        "symbol": "ABB","mcScid": "ABB","mcScdid": "ABB"
+      symbol: "3MINDIA",
+      mcScid: "B3M",
+      mcScdid: "MI42",
     },
     {
-        "symbol": "POWERINDIA","mcScid": "APP03","mcScdid": "APP03"
+      symbol: "ABB",
+      mcScid: "ABB",
+      mcScdid: "ABB",
     },
     {
-        "symbol": "ACC","mcScid": "ACC","mcScdid": "ACC06"
+      symbol: "POWERINDIA",
+      mcScid: "APP03",
+      mcScdid: "APP03",
     },
     {
-        "symbol": "AIAENG","mcScid": "AIE01","mcScdid": "AIE01"
+      symbol: "ACC",
+      mcScid: "ACC",
+      mcScdid: "ACC06",
     },
     {
-        "symbol": "APLAPOLLO","mcScid": "BT09","mcScdid": "BT09"
+      symbol: "AIAENG",
+      mcScid: "AIE01",
+      mcScdid: "AIE01",
     },
     {
-        "symbol": "AUBANK","mcScid": "ASF03","mcScdid": "ASF02"
+      symbol: "APLAPOLLO",
+      mcScid: "BT09",
+      mcScdid: "BT09",
     },
     {
-        "symbol": "AARTIDRUGS","mcScid": "AD","mcScdid": "AD"
+      symbol: "AUBANK",
+      mcScid: "ASF03",
+      mcScdid: "ASF02",
     },
     {
-        "symbol": "AARTIIND","mcScid": "AI","mcScdid": "AI45"
+      symbol: "AARTIDRUGS",
+      mcScid: "AD",
+      mcScdid: "AD",
     },
     {
-        "symbol": "AAVAS","mcScid": "AF32","mcScdid": "AF17"
+      symbol: "AARTIIND",
+      mcScid: "AI",
+      mcScdid: "AI45",
     },
     {
-        "symbol": "ABBOTINDIA","mcScid": "KP","mcScdid": "AI51"
+      symbol: "AAVAS",
+      mcScid: "AF32",
+      mcScdid: "AF17",
     },
     {
-        "symbol": "ADANIENT","mcScid": "AE01","mcScdid": "AE13"
+      symbol: "ABBOTINDIA",
+      mcScid: "KP",
+      mcScdid: "AI51",
     },
     {
-        "symbol": "ADANIGREEN","mcScid": "ADANI54145","mcScdid": "ADANI54145"
+      symbol: "ADANIENT",
+      mcScid: "AE01",
+      mcScdid: "AE13",
     },
     {
-        "symbol": "ADANIPORTS","mcScid": "MPS","mcScdid": "MPS"
+      symbol: "ADANIGREEN",
+      mcScid: "ADANI54145",
+      mcScdid: "ADANI54145",
     },
     {
-        "symbol": "ATGL","mcScid": "ADG01","mcScdid": "ADG01"
+      symbol: "ADANIPORTS",
+      mcScid: "MPS",
+      mcScdid: "MPS",
     },
     {
-        "symbol": "ADANITRANS","mcScid": "AT18","mcScdid": "AT22"
+      symbol: "ATGL",
+      mcScid: "ADG01",
+      mcScdid: "ADG01",
     },
     {
-        "symbol": "ABCAPITAL","mcScid": "ABC07","mcScdid": "ABC9"
+      symbol: "ADANITRANS",
+      mcScid: "AT18",
+      mcScdid: "AT22",
     },
     {
-        "symbol": "ABFRL","mcScid": "PFR","mcScdid": "PFR"
+      symbol: "ABCAPITAL",
+      mcScid: "ABC07",
+      mcScdid: "ABC9",
     },
     {
-        "symbol": "ADVENZYMES","mcScid": "AET02","mcScdid": "AET"
+      symbol: "ABFRL",
+      mcScid: "PFR",
+      mcScdid: "PFR",
     },
     {
-        "symbol": "AEGISCHEM","mcScid": "AC02","mcScdid": "AL9"
+      symbol: "ADVENZYMES",
+      mcScid: "AET02",
+      mcScdid: "AET",
     },
     {
-        "symbol": "AFFLE","mcScid": "AI72","mcScdid": "AI82"
+      symbol: "AEGISCHEM",
+      mcScid: "AC02",
+      mcScdid: "AL9",
     },
     {
-        "symbol": "AJANTPHARM","mcScid": "AP22","mcScdid": "AP22"
+      symbol: "AFFLE",
+      mcScid: "AI72",
+      mcScdid: "AI82",
     },
     {
-        "symbol": "AKZOINDIA","mcScid": "ICI","mcScdid": "ICI"
+      symbol: "AJANTPHARM",
+      mcScid: "AP22",
+      mcScdid: "AP22",
     },
     {
-        "symbol": "ALEMBICLTD","mcScid": "ACW","mcScdid": "A08"
+      symbol: "AKZOINDIA",
+      mcScid: "ICI",
+      mcScdid: "ICI",
     },
     {
-        "symbol": "APLLTD","mcScid": "AP29","mcScdid": "AP35"
+      symbol: "ALEMBICLTD",
+      mcScid: "ACW",
+      mcScdid: "A08",
     },
     {
-        "symbol": "ALKEM","mcScid": "AL16","mcScdid": "AL05"
+      symbol: "APLLTD",
+      mcScid: "AP29",
+      mcScdid: "AP35",
     },
     {
-        "symbol": "ALKYLAMINE","mcScid": "AAC","mcScdid": "AAC"
+      symbol: "ALKEM",
+      mcScid: "AL16",
+      mcScdid: "AL05",
     },
     {
-        "symbol": "ALOKINDS","mcScid": "ATI","mcScdid": "AI54"
+      symbol: "ALKYLAMINE",
+      mcScid: "AAC",
+      mcScdid: "AAC",
     },
     {
-        "symbol": "AMARAJABAT","mcScid": "ARB","mcScdid": "ARB"
+      symbol: "ALOKINDS",
+      mcScid: "ATI",
+      mcScdid: "AI54",
     },
     {
-        "symbol": "AMBER","mcScid": "AEI01","mcScdid": "AEI01"
+      symbol: "AMARAJABAT",
+      mcScid: "ARB",
+      mcScdid: "ARB",
     },
     {
-        "symbol": "AMBUJACEM","mcScid": "GAC","mcScdid": "AC18"
+      symbol: "AMBER",
+      mcScid: "AEI01",
+      mcScdid: "AEI01",
     },
     {
-        "symbol": "ANGELBRKG","mcScid": "ABL03","mcScdid": "ABL03"
+      symbol: "AMBUJACEM",
+      mcScid: "GAC",
+      mcScdid: "AC18",
     },
     {
-        "symbol": "APOLLOHOSP","mcScid": "AHE","mcScdid": "AHE"
+      symbol: "ANGELBRKG",
+      mcScid: "ABL03",
+      mcScdid: "ABL03",
     },
     {
-        "symbol": "APOLLOTYRE","mcScid": "AT","mcScdid": "AT14"
+      symbol: "APOLLOHOSP",
+      mcScid: "AHE",
+      mcScdid: "AHE",
     },
     {
-        "symbol": "ASAHIINDIA","mcScid": "AIS","mcScdid": "AIG01"
+      symbol: "APOLLOTYRE",
+      mcScid: "AT",
+      mcScdid: "AT14",
     },
     {
-        "symbol": "ASHOKLEY","mcScid": "AL","mcScdid": "AL"
+      symbol: "ASAHIINDIA",
+      mcScid: "AIS",
+      mcScdid: "AIG01",
     },
     {
-        "symbol": "ASHOKA","mcScid": "AB","mcScdid": "AB"
+      symbol: "ASHOKLEY",
+      mcScid: "AL",
+      mcScdid: "AL",
     },
     {
-        "symbol": "ASIANPAINT","mcScid": "API","mcScdid": "AP31"
+      symbol: "ASHOKA",
+      mcScid: "AB",
+      mcScdid: "AB",
     },
     {
-        "symbol": "ASTERDM","mcScid": "ADH","mcScdid": "ADH"
+      symbol: "ASIANPAINT",
+      mcScid: "API",
+      mcScdid: "AP31",
     },
     {
-        "symbol": "ASTRAZEN","mcScid": "AID","mcScdid": "AZP"
+      symbol: "ASTERDM",
+      mcScid: "ADH",
+      mcScdid: "ADH",
     },
     {
-        "symbol": "ASTRAL","mcScid": "APT02","mcScdid": "APT02"
+      symbol: "ASTRAZEN",
+      mcScid: "AID",
+      mcScdid: "AZP",
     },
     {
-        "symbol": "ATUL","mcScid": "A06","mcScdid": "A06"
+      symbol: "ASTRAL",
+      mcScid: "APT02",
+      mcScdid: "APT02",
     },
     {
-        "symbol": "AUROPHARMA","mcScid": "AP","mcScdid": "AP"
+      symbol: "ATUL",
+      mcScid: "A06",
+      mcScdid: "A06",
     },
     {
-        "symbol": "AVANTIFEED","mcScid": "AF21","mcScdid": "AF21"
+      symbol: "AUROPHARMA",
+      mcScid: "AP",
+      mcScdid: "AP",
     },
     {
-        "symbol": "DMART","mcScid": "AS28","mcScdid": "AS19"
+      symbol: "AVANTIFEED",
+      mcScid: "AF21",
+      mcScdid: "AF21",
     },
     {
-        "symbol": "AXISBANK","mcScid": "UTI10","mcScdid": "AB16"
+      symbol: "DMART",
+      mcScid: "AS28",
+      mcScdid: "AS19",
     },
     {
-        "symbol": "BASF","mcScid": "BAS","mcScdid": "BAS"
+      symbol: "AXISBANK",
+      mcScid: "UTI10",
+      mcScdid: "AB16",
     },
     {
-        "symbol": "BEML","mcScid": "BEM","mcScdid": "BEM03"
+      symbol: "BASF",
+      mcScid: "BAS",
+      mcScdid: "BAS",
     },
     {
-        "symbol": "BSE","mcScid": "B03","mcScdid": "B08"
+      symbol: "BEML",
+      mcScid: "BEM",
+      mcScdid: "BEM03",
     },
     {
-        "symbol": "BAJAJ-AUTO","mcScid": "BA06","mcScdid": "BA10"
+      symbol: "BSE",
+      mcScid: "B03",
+      mcScdid: "B08",
     },
     {
-        "symbol": "BAJAJCON","mcScid": "BC14","mcScdid": "BC02"
+      symbol: "BAJAJ-AUTO",
+      mcScid: "BA06",
+      mcScdid: "BA10",
     },
     {
-        "symbol": "BAJAJELEC","mcScid": "BE","mcScdid": "BE"
+      symbol: "BAJAJCON",
+      mcScid: "BC14",
+      mcScdid: "BC02",
     },
     {
-        "symbol": "BAJFINANCE","mcScid": "BAF","mcScdid": "BAF"
+      symbol: "BAJAJELEC",
+      mcScid: "BE",
+      mcScdid: "BE",
     },
     {
-        "symbol": "BAJAJFINSV","mcScid": "BF04","mcScdid": "BF04"
+      symbol: "BAJFINANCE",
+      mcScid: "BAF",
+      mcScdid: "BAF",
     },
     {
-        "symbol": "BAJAJHLDNG","mcScid": "BA","mcScdid": "BHI"
+      symbol: "BAJAJFINSV",
+      mcScid: "BF04",
+      mcScdid: "BF04",
     },
     {
-        "symbol": "BALAMINES","mcScid": "BA05","mcScdid": "BA05"
+      symbol: "BAJAJHLDNG",
+      mcScid: "BA",
+      mcScdid: "BHI",
     },
     {
-        "symbol": "BALKRISIND","mcScid": "BI03","mcScdid": "BI03"
+      symbol: "BALAMINES",
+      mcScid: "BA05",
+      mcScdid: "BA05",
     },
     {
-        "symbol": "BALMLAWRIE","mcScid": "BLC","mcScdid": "BLC"
+      symbol: "BALKRISIND",
+      mcScid: "BI03",
+      mcScdid: "BI03",
     },
     {
-        "symbol": "BALRAMCHIN","mcScid": "BCM","mcScdid": "BCM"
+      symbol: "BALMLAWRIE",
+      mcScid: "BLC",
+      mcScdid: "BLC",
     },
     {
-        "symbol": "BANDHANBNK","mcScid": "BB09","mcScdid": "BB09"
+      symbol: "BALRAMCHIN",
+      mcScid: "BCM",
+      mcScdid: "BCM",
     },
     {
-        "symbol": "BANKBARODA","mcScid": "BOB","mcScdid": "BOB"
+      symbol: "BANDHANBNK",
+      mcScid: "BB09",
+      mcScdid: "BB09",
     },
     {
-        "symbol": "BANKINDIA","mcScid": "BOI","mcScdid": "BOI"
+      symbol: "BANKBARODA",
+      mcScid: "BOB",
+      mcScdid: "BOB",
     },
     {
-        "symbol": "MAHABANK","mcScid": "BM05","mcScdid": "BM05"
+      symbol: "BANKINDIA",
+      mcScid: "BOI",
+      mcScdid: "BOI",
     },
     {
-        "symbol": "BATAINDIA","mcScid": "BI01","mcScdid": "BI01"
+      symbol: "MAHABANK",
+      mcScid: "BM05",
+      mcScdid: "BM05",
     },
     {
-        "symbol": "BAYERCROP","mcScid": "HSA01","mcScdid": "BC12"
+      symbol: "BATAINDIA",
+      mcScid: "BI01",
+      mcScdid: "BI01",
     },
     {
-        "symbol": "BERGEPAINT","mcScid": "BPI02","mcScdid": "BPI02"
+      symbol: "BAYERCROP",
+      mcScid: "HSA01",
+      mcScdid: "BC12",
     },
     {
-        "symbol": "BDL","mcScid": "BDL01","mcScdid": "BDL01"
+      symbol: "BERGEPAINT",
+      mcScid: "BPI02",
+      mcScdid: "BPI02",
     },
     {
-        "symbol": "BEL","mcScid": "BE03","mcScdid": "BE03"
+      symbol: "BDL",
+      mcScid: "BDL01",
+      mcScdid: "BDL01",
     },
     {
-        "symbol": "BHARATFORG","mcScid": "BFC","mcScdid": "BF03"
+      symbol: "BEL",
+      mcScid: "BE03",
+      mcScdid: "BE03",
     },
     {
-        "symbol": "BHEL","mcScid": "BHE","mcScdid": "BHE"
+      symbol: "BHARATFORG",
+      mcScid: "BFC",
+      mcScdid: "BF03",
     },
     {
-        "symbol": "BPCL","mcScid": "BPC","mcScdid": "BPC"
+      symbol: "BHEL",
+      mcScid: "BHE",
+      mcScdid: "BHE",
     },
     {
-        "symbol": "BHARATRAS","mcScid": "BR01","mcScdid": "BR01"
+      symbol: "BPCL",
+      mcScid: "BPC",
+      mcScdid: "BPC",
     },
     {
-        "symbol": "BHARTIARTL","mcScid": "BTV","mcScdid": "BA08"
+      symbol: "BHARATRAS",
+      mcScid: "BR01",
+      mcScdid: "BR01",
     },
     {
-        "symbol": "BIOCON","mcScid": "BL03","mcScdid": "BL03"
+      symbol: "BHARTIARTL",
+      mcScid: "BTV",
+      mcScdid: "BA08",
     },
     {
-        "symbol": "BIRLACORPN","mcScid": "BC07","mcScdid": "BC07"
+      symbol: "BIOCON",
+      mcScid: "BL03",
+      mcScdid: "BL03",
     },
     {
-        "symbol": "BSOFT","mcScid": "KPI01","mcScdid": "KPI02"
+      symbol: "BIRLACORPN",
+      mcScid: "BC07",
+      mcScdid: "BC07",
     },
     {
-        "symbol": "BLISSGVS","mcScid": "BCP01","mcScdid": "BGV"
+      symbol: "BSOFT",
+      mcScid: "KPI01",
+      mcScdid: "KPI02",
     },
     {
-        "symbol": "BLUEDART","mcScid": "BDE","mcScdid": "BDE"
+      symbol: "BLISSGVS",
+      mcScid: "BCP01",
+      mcScdid: "BGV",
     },
     {
-        "symbol": "BLUESTARCO","mcScid": "BS","mcScdid": "BS"
+      symbol: "BLUEDART",
+      mcScid: "BDE",
+      mcScdid: "BDE",
     },
     {
-        "symbol": "BBTC","mcScid": "BBT","mcScdid": "BBT"
+      symbol: "BLUESTARCO",
+      mcScid: "BS",
+      mcScdid: "BS",
     },
     {
-        "symbol": "BOSCHLTD","mcScid": "MIC","mcScdid": "B05"
+      symbol: "BBTC",
+      mcScid: "BBT",
+      mcScdid: "BBT",
     },
     {
-        "symbol": "BRIGADE","mcScid": "BE08","mcScdid": "BE08"
+      symbol: "BOSCHLTD",
+      mcScid: "MIC",
+      mcScdid: "B05",
     },
     {
-        "symbol": "BRITANNIA","mcScid": "BI","mcScdid": "BI"
+      symbol: "BRIGADE",
+      mcScid: "BE08",
+      mcScdid: "BE08",
     },
     {
-        "symbol": "BURGERKING","mcScid": "BKI01","mcScdid": "BKI01"
+      symbol: "BRITANNIA",
+      mcScid: "BI",
+      mcScdid: "BI",
     },
     {
-        "symbol": "CCL","mcScid": "CC10","mcScdid": "CC10"
+      symbol: "BURGERKING",
+      mcScid: "BKI01",
+      mcScdid: "BKI01",
     },
     {
-        "symbol": "CESC","mcScid": "CES","mcScdid": "CES"
+      symbol: "CCL",
+      mcScid: "CC10",
+      mcScdid: "CC10",
     },
     {
-        "symbol": "CRISIL","mcScid": "CRI","mcScdid": "CRI"
+      symbol: "CESC",
+      mcScid: "CES",
+      mcScdid: "CES",
     },
     {
-        "symbol": "CSBBANK","mcScid": "CB08","mcScdid": "CB05"
+      symbol: "CRISIL",
+      mcScid: "CRI",
+      mcScdid: "CRI",
     },
     {
-        "symbol": "CADILAHC","mcScid": "CHC","mcScdid": "CHC"
+      symbol: "CSBBANK",
+      mcScid: "CB08",
+      mcScdid: "CB05",
     },
     {
-        "symbol": "CANFINHOME","mcScid": "CFH","mcScdid": "CFH"
+      symbol: "CADILAHC",
+      mcScid: "CHC",
+      mcScdid: "CHC",
     },
     {
-        "symbol": "CANBK","mcScid": "CB06","mcScdid": "CB06"
+      symbol: "CANFINHOME",
+      mcScid: "CFH",
+      mcScdid: "CFH",
     },
     {
-        "symbol": "CAPLIPOINT","mcScid": "CPL","mcScdid": "CPL"
+      symbol: "CANBK",
+      mcScid: "CB06",
+      mcScdid: "CB06",
     },
     {
-        "symbol": "CGCL","mcScid": "DSL01","mcScdid": "MMF05"
+      symbol: "CAPLIPOINT",
+      mcScid: "CPL",
+      mcScdid: "CPL",
     },
     {
-        "symbol": "CARBORUNIV","mcScid": "CU","mcScdid": "CU"
+      symbol: "CGCL",
+      mcScid: "DSL01",
+      mcScdid: "MMF05",
     },
     {
-        "symbol": "CASTROLIND","mcScid": "CI01","mcScdid": "CI01"
+      symbol: "CARBORUNIV",
+      mcScid: "CU",
+      mcScdid: "CU",
     },
     {
-        "symbol": "CEATLTD","mcScid": "C07","mcScdid": "C07"
+      symbol: "CASTROLIND",
+      mcScid: "CI01",
+      mcScdid: "CI01",
     },
     {
-        "symbol": "CENTRALBK","mcScid": "CBO01","mcScdid": "CBO01"
+      symbol: "CEATLTD",
+      mcScid: "C07",
+      mcScdid: "C07",
     },
     {
-        "symbol": "CDSL","mcScid": "CDS","mcScdid": "CDS"
+      symbol: "CENTRALBK",
+      mcScid: "CBO01",
+      mcScdid: "CBO01",
     },
     {
-        "symbol": "CENTURYPLY","mcScid": "CP9","mcScdid": "CP9"
+      symbol: "CDSL",
+      mcScid: "CDS",
+      mcScdid: "CDS",
     },
     {
-        "symbol": "CENTURYTEX","mcScid": "CTI","mcScdid": "CTI"
+      symbol: "CENTURYPLY",
+      mcScid: "CP9",
+      mcScdid: "CP9",
     },
     {
-        "symbol": "CERA","mcScid": "MOF","mcScdid": "CS18"
+      symbol: "CENTURYTEX",
+      mcScid: "CTI",
+      mcScdid: "CTI",
     },
     {
-        "symbol": "CHALET","mcScid": "CH03","mcScdid": "CH03"
+      symbol: "CERA",
+      mcScid: "MOF",
+      mcScdid: "CS18",
     },
     {
-        "symbol": "CHAMBLFERT","mcScid": "CFC","mcScdid": "CFC"
+      symbol: "CHALET",
+      mcScid: "CH03",
+      mcScdid: "CH03",
     },
     {
-        "symbol": "CHOLAHLDNG","mcScid": "TII","mcScdid": "TII"
+      symbol: "CHAMBLFERT",
+      mcScid: "CFC",
+      mcScdid: "CFC",
     },
     {
-        "symbol": "CHOLAFIN","mcScid": "CIF01","mcScdid": "CDB"
+      symbol: "CHOLAHLDNG",
+      mcScid: "TII",
+      mcScdid: "TII",
     },
     {
-        "symbol": "CIPLA","mcScid": "C","mcScdid": "C"
+      symbol: "CHOLAFIN",
+      mcScid: "CIF01",
+      mcScdid: "CDB",
     },
     {
-        "symbol": "CUB","mcScid": "CUB","mcScdid": "CUB"
+      symbol: "CIPLA",
+      mcScid: "C",
+      mcScdid: "C",
     },
     {
-        "symbol": "COALINDIA","mcScid": "CI29","mcScdid": "CI11"
+      symbol: "CUB",
+      mcScid: "CUB",
+      mcScdid: "CUB",
     },
     {
-        "symbol": "COCHINSHIP","mcScid": "CS17","mcScdid": "CS"
+      symbol: "COALINDIA",
+      mcScid: "CI29",
+      mcScdid: "CI11",
     },
     {
-        "symbol": "COFORGE","mcScid": "NII02","mcScdid": "NII02"
+      symbol: "COCHINSHIP",
+      mcScid: "CS17",
+      mcScdid: "CS",
     },
     {
-        "symbol": "COLPAL","mcScid": "CPI","mcScdid": "CPI"
+      symbol: "COFORGE",
+      mcScid: "NII02",
+      mcScdid: "NII02",
     },
     {
-        "symbol": "CAMS","mcScid": "CAM","mcScdid": "CAM"
+      symbol: "COLPAL",
+      mcScid: "CPI",
+      mcScdid: "CPI",
     },
     {
-        "symbol": "CONCOR","mcScid": "CCI","mcScdid": "CCI"
+      symbol: "CAMS",
+      mcScid: "CAM",
+      mcScdid: "CAM",
     },
     {
-        "symbol": "COROMANDEL","mcScid": "CF06","mcScdid": "CI45"
+      symbol: "CONCOR",
+      mcScid: "CCI",
+      mcScdid: "CCI",
     },
     {
-        "symbol": "CREDITACC","mcScid": "CG02","mcScdid": "CG03"
+      symbol: "COROMANDEL",
+      mcScid: "CF06",
+      mcScdid: "CI45",
     },
     {
-        "symbol": "CROMPTON","mcScid": "CGC01","mcScdid": "CGC01"
+      symbol: "CREDITACC",
+      mcScid: "CG02",
+      mcScdid: "CG03",
     },
     {
-        "symbol": "CUMMINSIND","mcScid": "CI02","mcScdid": "CI02"
+      symbol: "CROMPTON",
+      mcScid: "CGC01",
+      mcScdid: "CGC01",
     },
     {
-        "symbol": "CYIENT","mcScid": "IE07","mcScdid": "IE07"
+      symbol: "CUMMINSIND",
+      mcScid: "CI02",
+      mcScdid: "CI02",
     },
     {
-        "symbol": "DCBBANK","mcScid": "DCB01","mcScdid": "DCB01"
+      symbol: "CYIENT",
+      mcScid: "IE07",
+      mcScdid: "IE07",
     },
     {
-        "symbol": "DCMSHRIRAM","mcScid": "DCM02","mcScdid": "DCM02"
+      symbol: "DCBBANK",
+      mcScid: "DCB01",
+      mcScdid: "DCB01",
     },
     {
-        "symbol": "DLF","mcScid": "D04","mcScdid": "D04"
+      symbol: "DCMSHRIRAM",
+      mcScid: "DCM02",
+      mcScdid: "DCM02",
     },
     {
-        "symbol": "DABUR","mcScid": "DI","mcScdid": "DI"
+      symbol: "DLF",
+      mcScid: "D04",
+      mcScdid: "D04",
     },
     {
-        "symbol": "DALBHARAT","mcScid": "OCL","mcScdid": "OCL"
+      symbol: "DABUR",
+      mcScid: "DI",
+      mcScdid: "DI",
     },
     {
-        "symbol": "DEEPAKNTR","mcScid": "DN","mcScdid": "DN"
+      symbol: "DALBHARAT",
+      mcScid: "OCL",
+      mcScdid: "OCL",
     },
     {
-        "symbol": "DELTACORP","mcScid": "AW","mcScdid": "DC11"
+      symbol: "DEEPAKNTR",
+      mcScid: "DN",
+      mcScdid: "DN",
     },
     {
-        "symbol": "DHANI","mcScid": "IS08","mcScdid": "IS13"
+      symbol: "DELTACORP",
+      mcScid: "AW",
+      mcScdid: "DC11",
     },
     {
-        "symbol": "DHANUKA","mcScid": "DP04","mcScdid": "DA01"
+      symbol: "DHANI",
+      mcScid: "IS08",
+      mcScdid: "IS13",
     },
     {
-        "symbol": "DBL","mcScid": "DB03","mcScdid": "DB04"
+      symbol: "DHANUKA",
+      mcScid: "DP04",
+      mcScdid: "DA01",
     },
     {
-        "symbol": "DISHTV","mcScid": "DTV","mcScdid": "DTV"
+      symbol: "DBL",
+      mcScid: "DB03",
+      mcScdid: "DB04",
     },
     {
-        "symbol": "DCAL","mcScid": "DCA","mcScdid": "DCA"
+      symbol: "DISHTV",
+      mcScid: "DTV",
+      mcScdid: "DTV",
     },
     {
-        "symbol": "DIVISLAB","mcScid": "DL03","mcScdid": "DL03"
+      symbol: "DCAL",
+      mcScid: "DCA",
+      mcScdid: "DCA",
     },
     {
-        "symbol": "DIXON","mcScid": "DT07","mcScdid": "DT07"
+      symbol: "DIVISLAB",
+      mcScid: "DL03",
+      mcScdid: "DL03",
     },
     {
-        "symbol": "LALPATHLAB","mcScid": "DLP01","mcScdid": "DLP01"
+      symbol: "DIXON",
+      mcScid: "DT07",
+      mcScdid: "DT07",
     },
     {
-        "symbol": "DRREDDY","mcScid": "DRL","mcScdid": "DRL"
+      symbol: "LALPATHLAB",
+      mcScid: "DLP01",
+      mcScdid: "DLP01",
     },
     {
-        "symbol": "EIDPARRY","mcScid": "EID","mcScdid": "EID"
+      symbol: "DRREDDY",
+      mcScid: "DRL",
+      mcScdid: "DRL",
     },
     {
-        "symbol": "EIHOTEL","mcScid": "EIH","mcScdid": "EIH"
+      symbol: "EIDPARRY",
+      mcScid: "EID",
+      mcScdid: "EID",
     },
     {
-        "symbol": "EPL","mcScid": "EP","mcScdid": "EP11"
+      symbol: "EIHOTEL",
+      mcScid: "EIH",
+      mcScdid: "EIH",
     },
     {
-        "symbol": "EDELWEISS","mcScid": "EC06","mcScdid": "EC01"
+      symbol: "EPL",
+      mcScid: "EP",
+      mcScdid: "EP11",
     },
     {
-        "symbol": "EICHERMOT","mcScid": "EM","mcScdid": "EM"
+      symbol: "EDELWEISS",
+      mcScid: "EC06",
+      mcScdid: "EC01",
     },
     {
-        "symbol": "ELGIEQUIP","mcScid": "EE01","mcScdid": "EE01"
+      symbol: "EICHERMOT",
+      mcScid: "EM",
+      mcScdid: "EM",
     },
     {
-        "symbol": "EMAMILTD","mcScid": "E05","mcScdid": "E06"
+      symbol: "ELGIEQUIP",
+      mcScid: "EE01",
+      mcScdid: "EE01",
     },
     {
-        "symbol": "ENDURANCE","mcScid": "ET04","mcScdid": "ET01"
+      symbol: "EMAMILTD",
+      mcScid: "E05",
+      mcScdid: "E06",
     },
     {
-        "symbol": "ENGINERSIN","mcScid": "EI14","mcScdid": "EI14"
+      symbol: "ENDURANCE",
+      mcScid: "ET04",
+      mcScdid: "ET01",
     },
     {
-        "symbol": "EQUITASBNK","mcScid": "ESF","mcScdid": "ESF"
+      symbol: "ENGINERSIN",
+      mcScid: "EI14",
+      mcScdid: "EI14",
     },
     {
-        "symbol": "ERIS","mcScid": "EL01","mcScdid": "EL01"
+      symbol: "EQUITASBNK",
+      mcScid: "ESF",
+      mcScdid: "ESF",
     },
     {
-        "symbol": "ESCORTS","mcScid": "E","mcScdid": "E"
+      symbol: "ERIS",
+      mcScid: "EL01",
+      mcScdid: "EL01",
     },
     {
-        "symbol": "EXIDEIND","mcScid": "EI","mcScdid": "EI"
+      symbol: "ESCORTS",
+      mcScid: "E",
+      mcScdid: "E",
     },
     {
-        "symbol": "FDC","mcScid": "FDC","mcScdid": "FDC"
+      symbol: "EXIDEIND",
+      mcScid: "EI",
+      mcScdid: "EI",
     },
     {
-        "symbol": "FEDERALBNK","mcScid": "FB","mcScdid": "FB"
+      symbol: "FDC",
+      mcScid: "FDC",
+      mcScdid: "FDC",
     },
     {
-        "symbol": "FINEORG","mcScid": "FOI","mcScdid": "FOI"
+      symbol: "FEDERALBNK",
+      mcScid: "FB",
+      mcScdid: "FB",
     },
     {
-        "symbol": "FINCABLES","mcScid": "FC01","mcScdid": "FC01"
+      symbol: "FINEORG",
+      mcScid: "FOI",
+      mcScdid: "FOI",
     },
     {
-        "symbol": "FINPIPE","mcScid": "FI","mcScdid": "FI"
+      symbol: "FINCABLES",
+      mcScid: "FC01",
+      mcScdid: "FC01",
     },
     {
-        "symbol": "FSL","mcScid": "FS07","mcScdid": "FS07"
+      symbol: "FINPIPE",
+      mcScid: "FI",
+      mcScdid: "FI",
     },
     {
-        "symbol": "FORTIS","mcScid": "FH","mcScdid": "FH"
+      symbol: "FSL",
+      mcScid: "FS07",
+      mcScdid: "FS07",
     },
     {
-        "symbol": "FCONSUMER","mcScid": "FVI","mcScdid": "FVI"
+      symbol: "FORTIS",
+      mcScid: "FH",
+      mcScdid: "FH",
     },
     {
-        "symbol": "FRETAIL","mcScid": "FR","mcScdid": "FR"
+      symbol: "FCONSUMER",
+      mcScid: "FVI",
+      mcScdid: "FVI",
     },
     {
-        "symbol": "GAIL","mcScid": "GAI","mcScdid": "GAI"
+      symbol: "FRETAIL",
+      mcScid: "FR",
+      mcScdid: "FR",
     },
     {
-        "symbol": "GEPIL","mcScid": "ABB01","mcScdid": "AP29"
+      symbol: "GAIL",
+      mcScid: "GAI",
+      mcScdid: "GAI",
     },
     {
-        "symbol": "GMMPFAUDLR","mcScid": "GMM01","mcScdid": "GMM01"
+      symbol: "GEPIL",
+      mcScid: "ABB01",
+      mcScdid: "AP29",
     },
     {
-        "symbol": "GMRINFRA","mcScid": "GI27","mcScdid": "GI27"
+      symbol: "GMMPFAUDLR",
+      mcScid: "GMM01",
+      mcScdid: "GMM01",
     },
     {
-        "symbol": "GALAXYSURF","mcScid": "GSL06","mcScdid": "GSL06"
+      symbol: "GMRINFRA",
+      mcScid: "GI27",
+      mcScdid: "GI27",
     },
     {
-        "symbol": "GRSE","mcScid": "GRS01","mcScdid": "GRS01"
+      symbol: "GALAXYSURF",
+      mcScid: "GSL06",
+      mcScdid: "GSL06",
     },
     {
-        "symbol": "GARFIBRES","mcScid": "GWR","mcScdid": "GWR"
+      symbol: "GRSE",
+      mcScid: "GRS01",
+      mcScdid: "GRS01",
     },
     {
-        "symbol": "GICRE","mcScid": "GIC12","mcScdid": "GIC12"
+      symbol: "GARFIBRES",
+      mcScid: "GWR",
+      mcScdid: "GWR",
     },
     {
-        "symbol": "GILLETTE","mcScid": "ISP","mcScdid": "GI22"
+      symbol: "GICRE",
+      mcScid: "GIC12",
+      mcScdid: "GIC12",
     },
     {
-        "symbol": "GLAXO","mcScid": "GI","mcScdid": "GSK"
+      symbol: "GILLETTE",
+      mcScid: "ISP",
+      mcScdid: "GI22",
     },
     {
-        "symbol": "GLENMARK","mcScid": "GP08","mcScdid": "GP08"
+      symbol: "GLAXO",
+      mcScid: "GI",
+      mcScdid: "GSK",
     },
     {
-        "symbol": "GODFRYPHLP","mcScid": "GPI","mcScdid": "GPI"
+      symbol: "GLENMARK",
+      mcScid: "GP08",
+      mcScdid: "GP08",
     },
     {
-        "symbol": "GODREJAGRO","mcScid": "GA08","mcScdid": "GA03"
+      symbol: "GODFRYPHLP",
+      mcScid: "GPI",
+      mcScdid: "GPI",
     },
     {
-        "symbol": "GODREJCP","mcScid": "GCP","mcScdid": "GCP"
+      symbol: "GODREJAGRO",
+      mcScid: "GA08",
+      mcScdid: "GA03",
     },
     {
-        "symbol": "GODREJIND","mcScid": "GS","mcScdid": "GI23"
+      symbol: "GODREJCP",
+      mcScid: "GCP",
+      mcScdid: "GCP",
     },
     {
-        "symbol": "GODREJPROP","mcScid": "GP11","mcScdid": "GP11"
+      symbol: "GODREJIND",
+      mcScid: "GS",
+      mcScdid: "GI23",
     },
     {
-        "symbol": "GRANULES","mcScid": "GI22","mcScdid": "GI25"
+      symbol: "GODREJPROP",
+      mcScid: "GP11",
+      mcScdid: "GP11",
     },
     {
-        "symbol": "GRAPHITE","mcScid": "GI13","mcScdid": "GI13"
+      symbol: "GRANULES",
+      mcScid: "GI22",
+      mcScdid: "GI25",
     },
     {
-        "symbol": "GRASIM","mcScid": "GI01","mcScdid": "GI01"
+      symbol: "GRAPHITE",
+      mcScid: "GI13",
+      mcScdid: "GI13",
     },
     {
-        "symbol": "GESHIP","mcScid": "GES","mcScdid": "GES"
+      symbol: "GRASIM",
+      mcScid: "GI01",
+      mcScdid: "GI01",
     },
     {
-        "symbol": "GREAVESCOT","mcScid": "G","mcScdid": "GC20"
+      symbol: "GESHIP",
+      mcScid: "GES",
+      mcScdid: "GES",
     },
     {
-        "symbol": "GRINDWELL","mcScid": "GN","mcScdid": "GN"
+      symbol: "GREAVESCOT",
+      mcScid: "G",
+      mcScdid: "GC20",
     },
     {
-        "symbol": "GUJALKALI","mcScid": "GAC01","mcScdid": "GAC01"
+      symbol: "GRINDWELL",
+      mcScid: "GN",
+      mcScdid: "GN",
     },
     {
-        "symbol": "GAEL","mcScid": "GAE","mcScdid": "GAE"
+      symbol: "GUJALKALI",
+      mcScid: "GAC01",
+      mcScdid: "GAC01",
     },
     {
-        "symbol": "FLUOROCHEM","mcScid": "GUJAR54281","mcScdid": "GUJAR54281"
+      symbol: "GAEL",
+      mcScid: "GAE",
+      mcScdid: "GAE",
     },
     {
-        "symbol": "GUJGASLTD","mcScid": "GGC","mcScdid": "GGC"
+      symbol: "FLUOROCHEM",
+      mcScid: "GUJAR54281",
+      mcScdid: "GUJAR54281",
     },
     {
-        "symbol": "GNFC","mcScid": "GNV","mcScdid": "GNV"
+      symbol: "GUJGASLTD",
+      mcScid: "GGC",
+      mcScdid: "GGC",
     },
     {
-        "symbol": "GPPL","mcScid": "GPP03","mcScdid": "GPP03"
+      symbol: "GNFC",
+      mcScid: "GNV",
+      mcScdid: "GNV",
     },
     {
-        "symbol": "GSFC","mcScid": "GSF","mcScdid": "GSF"
+      symbol: "GPPL",
+      mcScid: "GPP03",
+      mcScdid: "GPP03",
     },
     {
-        "symbol": "GSPL","mcScid": "GSP02","mcScdid": "GSP02"
+      symbol: "GSFC",
+      mcScid: "GSF",
+      mcScdid: "GSF",
     },
     {
-        "symbol": "GULFOILLUB","mcScid": "GOL01","mcScdid": "GOL01"
+      symbol: "GSPL",
+      mcScid: "GSP02",
+      mcScdid: "GSP02",
     },
     {
-        "symbol": "HEG","mcScid": "HEG","mcScdid": "HEG"
+      symbol: "GULFOILLUB",
+      mcScid: "GOL01",
+      mcScdid: "GOL01",
     },
     {
-        "symbol": "HCLTECH","mcScid": "HCL02","mcScdid": "HCL02"
+      symbol: "HEG",
+      mcScid: "HEG",
+      mcScdid: "HEG",
     },
     {
-        "symbol": "HDFCAMC","mcScid": "HAM02","mcScdid": "HAM02"
+      symbol: "HCLTECH",
+      mcScid: "HCL02",
+      mcScdid: "HCL02",
     },
     {
-        "symbol": "HDFCBANK","mcScid": "HDF01","mcScdid": "HDF01"
+      symbol: "HDFC",
+      mcScid: "HDF",
+      mcScdid: "HDF",
     },
     {
-        "symbol": "HDFCLIFE","mcScid": "HSL01","mcScdid": "HSL01"
+      symbol: "HDFCAMC",
+      mcScid: "HAM02",
+      mcScdid: "HAM02",
     },
     {
-        "symbol": "HFCL","mcScid": "HFC","mcScdid": "HFC"
+      symbol: "HDFCBANK",
+      mcScid: "HDF01",
+      mcScdid: "HDF01",
     },
     {
-        "symbol": "HAPPSTMNDS","mcScid": "HMT01","mcScdid": "HMT01"
+      symbol: "HDFCLIFE",
+      mcScid: "HSL01",
+      mcScdid: "HSL01",
     },
     {
-        "symbol": "HATSUN","mcScid": "HAP","mcScdid": "HAP"
+      symbol: "HFCL",
+      mcScid: "HFC",
+      mcScdid: "HFC",
     },
     {
-        "symbol": "HAVELLS","mcScid": "HI01","mcScdid": "HI01"
+      symbol: "HAPPSTMNDS",
+      mcScid: "HMT01",
+      mcScdid: "HMT01",
     },
     {
-        "symbol": "HEIDELBERG","mcScid": "MC14","mcScdid": "HCI02"
+      symbol: "HATSUN",
+      mcScid: "HAP",
+      mcScdid: "HAP",
     },
     {
-        "symbol": "HEMIPROP","mcScid": "HPI01","mcScdid": "HPI01"
+      symbol: "HAVELLS",
+      mcScid: "HI01",
+      mcScdid: "HI01",
     },
     {
-        "symbol": "HEROMOTOCO","mcScid": "HHM","mcScdid": "HHM"
+      symbol: "HEIDELBERG",
+      mcScid: "MC14",
+      mcScdid: "HCI02",
     },
     {
-        "symbol": "HSCL","mcScid": "HCI01","mcScdid": "HCI01"
+      symbol: "HEMIPROP",
+      mcScid: "HPI01",
+      mcScdid: "HPI01",
     },
     {
-        "symbol": "HINDALCO","mcScid": "H","mcScdid": "HI"
+      symbol: "HEROMOTOCO",
+      mcScid: "HHM",
+      mcScdid: "HHM",
     },
     {
-        "symbol": "HAL","mcScid": "HAL","mcScdid": "HAL"
+      symbol: "HSCL",
+      mcScid: "HCI01",
+      mcScdid: "HCI01",
     },
     {
-        "symbol": "HINDCOPPER","mcScid": "HC07","mcScdid": "HC07"
+      symbol: "HINDALCO",
+      mcScid: "H",
+      mcScdid: "HI",
     },
     {
-        "symbol": "HINDPETRO","mcScid": "HPC","mcScdid": "HPC"
+      symbol: "HAL",
+      mcScid: "HAL",
+      mcScdid: "HAL",
     },
     {
-        "symbol": "HINDUNILVR","mcScid": "HL","mcScdid": "HU"
+      symbol: "HINDCOPPER",
+      mcScid: "HC07",
+      mcScdid: "HC07",
     },
     {
-        "symbol": "HINDZINC","mcScid": "HZ","mcScdid": "HZ"
+      symbol: "HINDPETRO",
+      mcScid: "HPC",
+      mcScdid: "HPC",
     },
     {
-        "symbol": "HONAUT","mcScid": "TH","mcScdid": "HA04"
+      symbol: "HINDUNILVR",
+      mcScid: "HL",
+      mcScdid: "HU",
     },
     {
-        "symbol": "HUDCO","mcScid": "HUD","mcScdid": "HUD"
-    },    
+      symbol: "HINDZINC",
+      mcScid: "HZ",
+      mcScdid: "HZ",
+    },
+    {
+      symbol: "HONAUT",
+      mcScid: "TH",
+      mcScdid: "HA04",
+    },
+    {
+      symbol: "HUDCO",
+      mcScid: "HUD",
+      mcScdid: "HUD",
+    },
+    {
+      symbol: "HUHTAMAKI",
+      mcScid: "PP",
+      mcScdid: "PP",
+    },
+    {
+      symbol: "ICICIBANK",
+      mcScid: "ICI02",
+      mcScdid: "ICI02",
+    },
+    {
+      symbol: "ICICIGI",
+      mcScid: "ILG",
+      mcScdid: "ILG",
+    },
     {
-        "symbol": "HUHTAMAKI","mcScid": "PP","mcScdid": "PP"
+      symbol: "ICICIPRULI",
+      mcScid: "IPL01",
+      mcScdid: "IPL01",
     },
     {
-        "symbol": "ICICIBANK","mcScid": "ICI02","mcScdid": "ICI02"
+      symbol: "IRFC",
+      mcScid: "IRF",
+      mcScdid: "IRF",
     },
     {
-        "symbol": "ICICIGI","mcScid": "ILG","mcScdid": "ILG"
+      symbol: "ISEC",
+      mcScid: "ISL03",
+      mcScdid: "ISL04",
     },
     {
-        "symbol": "ICICIPRULI","mcScid": "IPL01","mcScdid": "IPL01"
+      symbol: "IDBI",
+      mcScid: "IDB",
+      mcScdid: "IDB05",
     },
     {
-        "symbol": "ISEC","mcScid": "ISL03","mcScdid": "ISL04"
+      symbol: "IDFCFIRSTB",
+      mcScid: "IDF01",
+      mcScdid: "IDF01",
     },
     {
-        "symbol": "IDBI","mcScid": "IDB","mcScdid": "IDB05"
+      symbol: "IDFC",
+      mcScid: "IDF",
+      mcScdid: "IDF",
     },
     {
-        "symbol": "IDFCFIRSTB","mcScid": "IDF01","mcScdid": "IDF01"
+      symbol: "IFBIND",
+      mcScid: "IFB02",
+      mcScdid: "IFB02",
     },
     {
-        "symbol": "IDFC","mcScid": "IDF","mcScdid": "IDF"
+      symbol: "IIFL",
+      mcScid: "II15",
+      mcScdid: "II15",
     },
     {
-        "symbol": "IFBIND","mcScid": "IFB02","mcScdid": "IFB02"
+      symbol: "IIFLWAM",
+      mcScid: "IIFLW54277",
+      mcScdid: "IIFLW54277",
     },
     {
-        "symbol": "IIFL","mcScid": "II15","mcScdid": "II15"
+      symbol: "IOLCP",
+      mcScid: "TAC01",
+      mcScdid: "IOL01",
     },
     {
-        "symbol": "IIFLWAM","mcScid": "IIFLW54277","mcScdid": "IIFLW54277"
+      symbol: "IRB",
+      mcScid: "IID01",
+      mcScdid: "IID01",
     },
     {
-        "symbol": "IOLCP","mcScid": "TAC01","mcScdid": "IOL01"
+      symbol: "IRCON",
+      mcScid: "II21",
+      mcScdid: "II07",
     },
     {
-        "symbol": "IRB","mcScid": "IID01","mcScdid": "IID01"
+      symbol: "ITC",
+      mcScid: "ITC",
+      mcScdid: "ITC",
     },
     {
-        "symbol": "IRCON","mcScid": "II21","mcScdid": "II07"
+      symbol: "ITI",
+      mcScid: "ITI",
+      mcScdid: "ITI",
     },
     {
-        "symbol": "ITC","mcScid": "ITC","mcScdid": "ITC"
+      symbol: "INDIACEM",
+      mcScid: "IC",
+      mcScdid: "IC",
     },
     {
-        "symbol": "ITI","mcScid": "ITI","mcScdid": "ITI"
+      symbol: "IBULHSGFIN",
+      mcScid: "IHF01",
+      mcScdid: "IHF01",
     },
     {
-        "symbol": "INDIACEM","mcScid": "IC","mcScdid": "IC"
+      symbol: "IBREALEST",
+      mcScid: "IRE01",
+      mcScdid: "IRE01",
     },
     {
-        "symbol": "IBULHSGFIN","mcScid": "IHF01","mcScdid": "IHF01"
+      symbol: "INDIAMART",
+      mcScid: "II22",
+      mcScdid: "II12",
     },
     {
-        "symbol": "IBREALEST","mcScid": "IRE01","mcScdid": "IRE01"
+      symbol: "INDIANB",
+      mcScid: "IB04",
+      mcScdid: "IB04",
     },
     {
-        "symbol": "INDIAMART","mcScid": "II22","mcScdid": "II12"
+      symbol: "IEX",
+      mcScid: "IEE",
+      mcScdid: "IEE",
     },
     {
-        "symbol": "INDIANB","mcScid": "IB04","mcScdid": "IB04"
+      symbol: "INDHOTEL",
+      mcScid: "IHC",
+      mcScdid: "IHC",
     },
     {
-        "symbol": "IEX","mcScid": "IEE","mcScdid": "IEE"
+      symbol: "IOC",
+      mcScid: "IOC",
+      mcScdid: "IOC",
     },
     {
-        "symbol": "INDHOTEL","mcScid": "IHC","mcScdid": "IHC"
+      symbol: "IOB",
+      mcScid: "IOB",
+      mcScdid: "IOB",
     },
     {
-        "symbol": "IOC","mcScid": "IOC","mcScdid": "IOC"
+      symbol: "IRCTC",
+      mcScid: "IRC",
+      mcScdid: "IRC",
     },
     {
-        "symbol": "IOB","mcScid": "IOB","mcScdid": "IOB"
+      symbol: "ICIL",
+      mcScid: "ICI07",
+      mcScdid: "ICI07",
     },
     {
-        "symbol": "IRCTC","mcScid": "IRC","mcScdid": "IRC"
+      symbol: "INDOCO",
+      mcScid: "IR05",
+      mcScdid: "IR05",
     },
     {
-        "symbol": "ICIL","mcScid": "ICI07","mcScdid": "ICI07"
+      symbol: "IGL",
+      mcScid: "IG04",
+      mcScdid: "IG04",
     },
     {
-        "symbol": "INDOCO","mcScid": "IR05","mcScdid": "IR05"
+      symbol: "INDUSTOWER",
+      mcScid: "BI26",
+      mcScdid: "BI14",
     },
     {
-        "symbol": "IGL","mcScid": "IG04","mcScdid": "IG04"
+      symbol: "INDUSINDBK",
+      mcScid: "IIB",
+      mcScdid: "IIB",
     },
     {
-        "symbol": "INDUSTOWER","mcScid": "BI26","mcScdid": "BI14"
+      symbol: "INFIBEAM",
+      mcScid: "IIL03",
+      mcScdid: "IIL03",
     },
     {
-        "symbol": "INDUSINDBK","mcScid": "IIB","mcScdid": "IIB"
+      symbol: "NAUKRI",
+      mcScid: "IEI01",
+      mcScdid: "IEI01",
     },
     {
-        "symbol": "INFIBEAM","mcScid": "IIL03","mcScdid": "IIL03"
+      symbol: "INFY",
+      mcScid: "IT",
+      mcScdid: "IT",
     },
     {
-        "symbol": "NAUKRI","mcScid": "IEI01","mcScdid": "IEI01"
+      symbol: "INGERRAND",
+      mcScid: "IRI01",
+      mcScdid: "IRI01",
     },
     {
-        "symbol": "INFY","mcScid": "IT","mcScdid": "IT"
+      symbol: "INOXLEISUR",
+      mcScid: "INO01",
+      mcScdid: "INO01",
     },
     {
-        "symbol": "INGERRAND","mcScid": "IRI01","mcScdid": "IRI01"
+      symbol: "INTELLECT",
+      mcScid: "IDA",
+      mcScdid: "IDA",
     },
     {
-        "symbol": "INOXLEISUR","mcScid": "INO01","mcScdid": "INO01"
+      symbol: "INDIGO",
+      mcScid: "IA05",
+      mcScdid: "IA04",
     },
     {
-        "symbol": "INTELLECT","mcScid": "IDA","mcScdid": "IDA"
+      symbol: "IPCALAB",
+      mcScid: "IL",
+      mcScdid: "IL",
     },
     {
-        "symbol": "INDIGO","mcScid": "IA05","mcScdid": "IA04"
+      symbol: "JBCHEPHARM",
+      mcScid: "JBC",
+      mcScdid: "JBC01",
     },
     {
-        "symbol": "IPCALAB","mcScid": "IL","mcScdid": "IL"
+      symbol: "JKCEMENT",
+      mcScid: "JKC03",
+      mcScdid: "JKC03",
     },
     {
-        "symbol": "JBCHEPHARM","mcScid": "JBC","mcScdid": "JBC01"
+      symbol: "JKLAKSHMI",
+      mcScid: "JKC",
+      mcScdid: "JKL01",
     },
     {
-        "symbol": "JKCEMENT","mcScid": "JKC03","mcScdid": "JKC03"
+      symbol: "JKPAPER",
+      mcScid: "CPM01",
+      mcScdid: "JKP01",
     },
     {
-        "symbol": "JKLAKSHMI","mcScid": "JKC","mcScdid": "JKL01"
+      symbol: "JKTYRE",
+      mcScid: "JKI",
+      mcScdid: "JKT01",
     },
     {
-        "symbol": "JKPAPER","mcScid": "CPM01","mcScdid": "JKP01"
+      symbol: "JMFINANCIL",
+      mcScid: "JMS",
+      mcScdid: "JMF",
     },
     {
-        "symbol": "JKTYRE","mcScid": "JKI","mcScdid": "JKT01"
+      symbol: "JSWENERGY",
+      mcScid: "JE02",
+      mcScdid: "JE01",
     },
     {
-        "symbol": "JMFINANCIL","mcScid": "JMS","mcScdid": "JMF"
+      symbol: "JSWSTEEL",
+      mcScid: "JVS",
+      mcScdid: "JSW01",
     },
     {
-        "symbol": "JSWENERGY","mcScid": "JE02","mcScdid": "JE01"
+      symbol: "JTEKTINDIA",
+      mcScid: "SSS",
+      mcScdid: "SKS04",
     },
     {
-        "symbol": "JSWSTEEL","mcScid": "JVS","mcScdid": "JSW01"
+      symbol: "JAMNAAUTO",
+      mcScid: "JAI",
+      mcScdid: "JAI",
     },
     {
-        "symbol": "JTEKTINDIA","mcScid": "SSS","mcScdid": "SKS04"
+      symbol: "JINDALSAW",
+      mcScid: "SP09",
+      mcScdid: "JS08",
     },
     {
-        "symbol": "JAMNAAUTO","mcScid": "JAI","mcScdid": "JAI"
+      symbol: "JSLHISAR",
+      mcScid: "JSH",
+      mcScdid: "JSH",
     },
     {
-        "symbol": "JINDALSAW","mcScid": "SP09","mcScdid": "JS08"
+      symbol: "JSL",
+      mcScid: "JS07",
+      mcScdid: "JSL01",
     },
     {
-        "symbol": "JSLHISAR","mcScid": "JSH","mcScdid": "JSH"
+      symbol: "JINDALSTEL",
+      mcScid: "JSP",
+      mcScdid: "JSP",
     },
     {
-        "symbol": "JSL","mcScid": "JS07","mcScdid": "JSL01"
+      symbol: "JCHAC",
+      mcScid: "AA02",
+      mcScdid: "HHL",
     },
     {
-        "symbol": "JINDALSTEL","mcScid": "JSP","mcScdid": "JSP"
+      symbol: "JUBLFOOD",
+      mcScid: "JF04",
+      mcScdid: "JF04",
     },
     {
-        "symbol": "JCHAC","mcScid": "AA02","mcScdid": "HHL"
+      symbol: "JUSTDIAL",
+      mcScid: "JD02",
+      mcScdid: "JD",
     },
     {
-        "symbol": "JUBLFOOD","mcScid": "JF04","mcScdid": "JF04"
+      symbol: "JYOTHYLAB",
+      mcScid: "JL",
+      mcScdid: "JL",
     },
     {
-        "symbol": "JUSTDIAL","mcScid": "JD02","mcScdid": "JD"
+      symbol: "KPRMILL",
+      mcScid: "M09",
+      mcScdid: "M15",
     },
     {
-        "symbol": "JYOTHYLAB","mcScid": "JL","mcScdid": "JL"
+      symbol: "KEI",
+      mcScid: "KEI",
+      mcScdid: "KEI",
     },
     {
-        "symbol": "KPRMILL","mcScid": "M09","mcScdid": "M15"
+      symbol: "KNRCON",
+      mcScid: "KC13",
+      mcScdid: "KC13",
     },
     {
-        "symbol": "KEI","mcScid": "KEI","mcScdid": "KEI"
+      symbol: "KPITTECH",
+      mcScid: "KPITT54265",
+      mcScdid: "KPITT54265",
     },
     {
-        "symbol": "KNRCON","mcScid": "KC13","mcScdid": "KC13"
+      symbol: "KRBL",
+      mcScid: "KRB",
+      mcScdid: "KRB01",
     },
     {
-        "symbol": "KPITTECH","mcScid": "KPITT54265","mcScdid": "KPITT54265"
+      symbol: "KSB",
+      mcScid: "KSB",
+      mcScdid: "KSB",
     },
     {
-        "symbol": "KRBL","mcScid": "KRB","mcScdid": "KRB01"
+      symbol: "KAJARIACER",
+      mcScid: "KC06",
+      mcScdid: "KC06",
     },
     {
-        "symbol": "KSB","mcScid": "KSB","mcScdid": "KSB"
+      symbol: "KALPATPOWR",
+      mcScid: "KPT",
+      mcScdid: "KPT",
     },
     {
-        "symbol": "KAJARIACER","mcScid": "KC06","mcScdid": "KC06"
+      symbol: "KANSAINER",
+      mcScid: "GNP",
+      mcScdid: "KNP",
     },
     {
-        "symbol": "KALPATPOWR","mcScid": "KPT","mcScdid": "KPT"
+      symbol: "KARURVYSYA",
+      mcScid: "KVB",
+      mcScdid: "KVB",
     },
     {
-        "symbol": "KANSAINER","mcScid": "GNP","mcScdid": "KNP"
+      symbol: "KSCL",
+      mcScid: "KSC01",
+      mcScdid: "KSC01",
     },
     {
-        "symbol": "KARURVYSYA","mcScid": "KVB","mcScdid": "KVB"
+      symbol: "KEC",
+      mcScid: "KEC03",
+      mcScdid: "KEC04",
     },
     {
-        "symbol": "KSCL","mcScid": "KSC01","mcScdid": "KSC01"
+      symbol: "KOTAKBANK",
+      mcScid: "KMF",
+      mcScdid: "KMB",
     },
     {
-        "symbol": "KEC","mcScid": "KEC03","mcScdid": "KEC04"
+      symbol: "LTTS",
+      mcScid: "LTS",
+      mcScdid: "LTS",
     },
     {
-        "symbol": "KOTAKBANK","mcScid": "KMF","mcScdid": "KMB"
-    },    
+      symbol: "LICHSGFIN",
+      mcScid: "LIC",
+      mcScdid: "LIC",
+    },
     {
-        "symbol": "LTTS","mcScid": "LTS","mcScdid": "LTS"
+      symbol: "LAOPALA",
+      mcScid: "LOG",
+      mcScdid: "LOR",
     },
     {
-        "symbol": "LICHSGFIN","mcScid": "LIC","mcScdid": "LIC"
+      symbol: "LAXMIMACH",
+      mcScid: "LMW",
+      mcScdid: "LMW",
     },
     {
-        "symbol": "LAOPALA","mcScid": "LOG","mcScdid": "LOR"
+      symbol: "LTI",
+      mcScid: "LI09",
+      mcScdid: "LI12",
     },
     {
-        "symbol": "LAXMIMACH","mcScid": "LMW","mcScdid": "LMW"
+      symbol: "LT",
+      mcScid: "LT",
+      mcScdid: "LT",
     },
     {
-        "symbol": "LTI","mcScid": "LI09","mcScdid": "LI12"
+      symbol: "LAURUSLABS",
+      mcScid: "LL06",
+      mcScdid: "LL05",
     },
     {
-        "symbol": "LT","mcScid": "LT","mcScdid": "LT"
+      symbol: "LEMONTREE",
+      mcScid: "LTH",
+      mcScdid: "LTH",
     },
     {
-        "symbol": "LAURUSLABS","mcScid": "LL06","mcScdid": "LL05"
+      symbol: "LINDEINDIA",
+      mcScid: "BOC",
+      mcScdid: "BOC",
     },
     {
-        "symbol": "LEMONTREE","mcScid": "LTH","mcScdid": "LTH"
+      symbol: "LUPIN",
+      mcScid: "LC03",
+      mcScdid: "L",
     },
     {
-        "symbol": "LINDEINDIA","mcScid": "BOC","mcScdid": "BOC"
+      symbol: "LUXIND",
+      mcScid: "LHI",
+      mcScdid: "LHI",
     },
     {
-        "symbol": "LUPIN","mcScid": "LC03","mcScdid": "L"
+      symbol: "M&M",
+      mcScid: "MM",
+      mcScdid: "MM",
     },
     {
-        "symbol": "LUXIND","mcScid": "LHI","mcScdid": "LHI"
+      symbol: "M&MFIN",
+      mcScid: "MMF04",
+      mcScdid: "MMF04",
     },
     {
-        "symbol": "MASFIN","mcScid": "MFS09","mcScdid": "MFS09"
+      symbol: "MASFIN",
+      mcScid: "MFS09",
+      mcScdid: "MFS09",
     },
     {
-        "symbol": "MMTC","mcScid": "MMT","mcScdid": "MMT"
+      symbol: "MMTC",
+      mcScid: "MMT",
+      mcScdid: "MMT",
     },
     {
-        "symbol": "MOIL","mcScid": "M11","mcScdid": "M18"
+      symbol: "MOIL",
+      mcScid: "M11",
+      mcScdid: "M18",
     },
     {
-        "symbol": "MRF","mcScid": "MRF","mcScdid": "MRF"
+      symbol: "MRF",
+      mcScid: "MRF",
+      mcScdid: "MRF",
     },
     {
-        "symbol": "MGL","mcScid": "MG02","mcScdid": "MG02"
+      symbol: "MGL",
+      mcScid: "MG02",
+      mcScdid: "MG02",
     },
     {
-        "symbol": "MAHSCOOTER","mcScid": "MS01","mcScdid": "MS01"
+      symbol: "MAHSCOOTER",
+      mcScid: "MS01",
+      mcScdid: "MS01",
     },
     {
-        "symbol": "MAHSEAMLES","mcScid": "MS02","mcScdid": "MS02"
-    },   
+      symbol: "MAHSEAMLES",
+      mcScid: "MS02",
+      mcScdid: "MS02",
+    },
     {
-        "symbol": "MAHINDCIE","mcScid": "MAS","mcScdid": "MF19"
+      symbol: "MAHINDCIE",
+      mcScid: "MAS",
+      mcScdid: "MF19",
     },
     {
-        "symbol": "MHRIL","mcScid": "MHR","mcScdid": "MHR"
+      symbol: "MHRIL",
+      mcScid: "MHR",
+      mcScdid: "MHR",
     },
     {
-        "symbol": "MAHLOG","mcScid": "ML12","mcScdid": "ML04"
+      symbol: "MAHLOG",
+      mcScid: "ML12",
+      mcScdid: "ML04",
     },
     {
-        "symbol": "MANAPPURAM","mcScid": "MGF01","mcScdid": "MGF01"
+      symbol: "MANAPPURAM",
+      mcScid: "MGF01",
+      mcScdid: "MGF01",
     },
     {
-        "symbol": "MRPL","mcScid": "MRP","mcScdid": "MRP"
+      symbol: "MRPL",
+      mcScid: "MRP",
+      mcScdid: "MRP",
     },
     {
-        "symbol": "MARICO","mcScid": "MI25","mcScdid": "M13"
+      symbol: "MARICO",
+      mcScid: "MI25",
+      mcScdid: "M13",
     },
     {
-        "symbol": "MARUTI","mcScid": "MU01","mcScdid": "MS24"
+      symbol: "MARUTI",
+      mcScid: "MU01",
+      mcScdid: "MS24",
     },
     {
-        "symbol": "MFSL","mcScid": "MI","mcScdid": "MI"
+      symbol: "MFSL",
+      mcScid: "MI",
+      mcScdid: "MI",
     },
     {
-        "symbol": "MAXHEALTH","mcScid": "MHI","mcScdid": "MHI"
+      symbol: "MAXHEALTH",
+      mcScid: "MHI",
+      mcScdid: "MHI",
     },
     {
-        "symbol": "MAZDOCK","mcScid": "MDS01","mcScdid": "MDS01"
+      symbol: "MAZDOCK",
+      mcScid: "MDS01",
+      mcScdid: "MDS01",
     },
     {
-        "symbol": "METROPOLIS","mcScid": "MH09","mcScdid": "MH06"
+      symbol: "METROPOLIS",
+      mcScid: "MH09",
+      mcScdid: "MH06",
     },
     {
-        "symbol": "MINDTREE","mcScid": "MC20","mcScdid": "MT13"
+      symbol: "MINDTREE",
+      mcScid: "MC20",
+      mcScdid: "MT13",
     },
     {
-        "symbol": "MINDACORP","mcScid": "MC22","mcScdid": "MC23"
+      symbol: "MINDACORP",
+      mcScid: "MC22",
+      mcScdid: "MC23",
     },
     {
-        "symbol": "MINDAIND","mcScid": "MI44","mcScdid": "MI4"
+      symbol: "MINDAIND",
+      mcScid: "MI44",
+      mcScdid: "MI4",
     },
     {
-        "symbol": "MIDHANI","mcScid": "MDN","mcScdid": "MDN"
+      symbol: "MIDHANI",
+      mcScid: "MDN",
+      mcScdid: "MDN",
     },
     {
-        "symbol": "MOTHERSUMI","mcScid": "MSS01","mcScdid": "MSS01"
+      symbol: "MOTHERSUMI",
+      mcScid: "MSS01",
+      mcScdid: "MSS01",
     },
     {
-        "symbol": "MOTILALOFS","mcScid": "MOF01","mcScdid": "MOF01"
+      symbol: "MOTILALOFS",
+      mcScid: "MOF01",
+      mcScdid: "MOF01",
     },
     {
-        "symbol": "MPHASIS","mcScid": "BFL","mcScdid": "MB02"
+      symbol: "MPHASIS",
+      mcScid: "BFL",
+      mcScdid: "MB02",
     },
     {
-        "symbol": "MCX","mcScid": "MCE","mcScdid": "MCE"
+      symbol: "MCX",
+      mcScid: "MCE",
+      mcScdid: "MCE",
     },
     {
-        "symbol": "MUTHOOTFIN","mcScid": "MF19","mcScdid": "MF10"
+      symbol: "MUTHOOTFIN",
+      mcScid: "MF19",
+      mcScdid: "MF10",
     },
     {
-        "symbol": "NATCOPHARM","mcScid": "NP01","mcScdid": "NP07"
+      symbol: "NATCOPHARM",
+      mcScid: "NP01",
+      mcScdid: "NP07",
     },
     {
-        "symbol": "NBCC","mcScid": "NBC","mcScdid": "NBC01"
+      symbol: "NBCC",
+      mcScid: "NBC",
+      mcScdid: "NBC01",
     },
     {
-        "symbol": "NCC","mcScid": "NCC01","mcScdid": "NCC01"
+      symbol: "NCC",
+      mcScid: "NCC01",
+      mcScdid: "NCC01",
     },
     {
-        "symbol": "NESCO","mcScid": "NSE","mcScdid": "NES"
+      symbol: "NESCO",
+      mcScid: "NSE",
+      mcScdid: "NES",
     },
     {
-        "symbol": "NHPC","mcScid": "N07","mcScdid": "N07"
+      symbol: "NHPC",
+      mcScid: "N07",
+      mcScdid: "N07",
     },
     {
-        "symbol": "NLCINDIA","mcScid": "NLC","mcScdid": "NLC"
+      symbol: "NLCINDIA",
+      mcScid: "NLC",
+      mcScdid: "NLC",
     },
     {
-        "symbol": "NMDC","mcScid": "NMD01","mcScdid": "NMD02"
+      symbol: "NMDC",
+      mcScid: "NMD01",
+      mcScdid: "NMD02",
     },
     {
-        "symbol": "NOCIL","mcScid": "NOC","mcScdid": "NOC02"
+      symbol: "NOCIL",
+      mcScid: "NOC",
+      mcScdid: "NOC02",
     },
     {
-        "symbol": "NTPC","mcScid": "NTP","mcScdid": "NTP"
-    },    
+      symbol: "NTPC",
+      mcScid: "NTP",
+      mcScdid: "NTP",
+    },
     {
-        "symbol": "NATIONALUM","mcScid": "NAC","mcScdid": "NAC"
+      symbol: "NATIONALUM",
+      mcScid: "NAC",
+      mcScdid: "NAC",
     },
     {
-        "symbol": "NFL","mcScid": "NF06","mcScdid": "NF06"
+      symbol: "NFL",
+      mcScid: "NF06",
+      mcScdid: "NF06",
     },
     {
-        "symbol": "NAVINFLUOR","mcScid": "PRC","mcScdid": "NFI"
+      symbol: "NAVINFLUOR",
+      mcScid: "PRC",
+      mcScdid: "NFI",
     },
     {
-        "symbol": "NESTLEIND","mcScid": "NI","mcScdid": "NI"
+      symbol: "NESTLEIND",
+      mcScid: "NI",
+      mcScdid: "NI",
     },
     {
-        "symbol": "NETWORK18","mcScid": "NF07","mcScdid": "NMI"
+      symbol: "NETWORK18",
+      mcScid: "NF07",
+      mcScdid: "NMI",
     },
     {
-        "symbol": "NILKAMAL","mcScid": "NP08","mcScdid": "NP08"
+      symbol: "NILKAMAL",
+      mcScid: "NP08",
+      mcScdid: "NP08",
     },
     {
-        "symbol": "NAM-INDIA","mcScid": "RNL","mcScdid": "RNL"
+      symbol: "NAM-INDIA",
+      mcScid: "RNL",
+      mcScdid: "RNL",
     },
     {
-        "symbol": "OBEROIRLTY","mcScid": "OR","mcScdid": "OR"
+      symbol: "OBEROIRLTY",
+      mcScid: "OR",
+      mcScdid: "OR",
     },
     {
-        "symbol": "ONGC","mcScid": "ONG","mcScdid": "ONG"
-    },    
+      symbol: "ONGC",
+      mcScid: "ONG",
+      mcScdid: "ONG",
+    },
     {
-        "symbol": "OFSS","mcScid": "S11","mcScdid": "OFS01"
+      symbol: "OFSS",
+      mcScid: "S11",
+      mcScdid: "OFS01",
     },
     {
-        "symbol": "ORIENTELEC","mcScid": "ORIEN54130","mcScdid": "ORIEN54130"
+      symbol: "ORIENTELEC",
+      mcScid: "ORIEN54130",
+      mcScdid: "ORIEN54130",
     },
     {
-        "symbol": "ORIENTREF","mcScid": "OR01","mcScdid": "OR01"
+      symbol: "RHIM",
+      mcScid: "OR01",
+      mcScdid: "OR01",
     },
     {
-        "symbol": "PIIND","mcScid": "PII","mcScdid": "PII"
+      symbol: "PIIND",
+      mcScid: "PII",
+      mcScdid: "PII",
     },
     {
-        "symbol": "PNBHOUSING","mcScid": "PHF","mcScdid": "PHF"
+      symbol: "PNBHOUSING",
+      mcScid: "PHF",
+      mcScdid: "PHF",
     },
     {
-        "symbol": "PNCINFRA","mcScid": "PI29","mcScdid": "PI26"
+      symbol: "PNCINFRA",
+      mcScid: "PI29",
+      mcScdid: "PI26",
     },
     {
-        "symbol": "PVR","mcScid": "PVR","mcScdid": "PVR"
+      symbol: "PVR",
+      mcScid: "PVR",
+      mcScdid: "PVR",
     },
     {
-        "symbol": "PAGEIND","mcScid": "PI35","mcScdid": "PI35"
+      symbol: "PAGEIND",
+      mcScid: "PI35",
+      mcScdid: "PI35",
     },
     {
-        "symbol": "PERSISTENT","mcScid": "PS15","mcScdid": "PS15"
+      symbol: "PERSISTENT",
+      mcScid: "PS15",
+      mcScdid: "PS15",
     },
     {
-        "symbol": "PETRONET","mcScid": "PLN","mcScdid": "PLN"
+      symbol: "PETRONET",
+      mcScid: "PLN",
+      mcScdid: "PLN",
     },
     {
-        "symbol": "PFIZER","mcScid": "P","mcScdid": "P"
+      symbol: "PFIZER",
+      mcScid: "P",
+      mcScdid: "P",
     },
     {
-        "symbol": "PHILIPCARB","mcScid": "PCB01","mcScdid": "PCB01"
+      symbol: "PHILIPCARB",
+      mcScid: "PCB01",
+      mcScdid: "PCB01",
     },
     {
-        "symbol": "PHOENIXLTD","mcScid": "PM02","mcScdid": "PM02"
+      symbol: "PHOENIXLTD",
+      mcScid: "PM02",
+      mcScdid: "PM02",
     },
     {
-        "symbol": "PIDILITIND","mcScid": "PI11","mcScdid": "PI11"
+      symbol: "PIDILITIND",
+      mcScid: "PI11",
+      mcScdid: "PI11",
     },
     {
-        "symbol": "PEL","mcScid": "NP07","mcScdid": "PH05"
+      symbol: "PEL",
+      mcScid: "NP07",
+      mcScdid: "PH05",
     },
     {
-        "symbol": "POLYMED","mcScid": "PM06","mcScdid": "PM06"
+      symbol: "POLYMED",
+      mcScid: "PM06",
+      mcScdid: "PM06",
     },
     {
-        "symbol": "POLYCAB","mcScid": "PI41","mcScdid": "PI44"
+      symbol: "POLYCAB",
+      mcScid: "PI41",
+      mcScdid: "PI44",
     },
     {
-        "symbol": "POLYPLEX","mcScid": "PC08","mcScdid": "PC08"
+      symbol: "POLYPLEX",
+      mcScid: "PC08",
+      mcScdid: "PC08",
     },
     {
-        "symbol": "PFC","mcScid": "PFC02","mcScdid": "PFC02"
+      symbol: "PFC",
+      mcScid: "PFC02",
+      mcScdid: "PFC02",
     },
     {
-        "symbol": "POWERGRID","mcScid": "PGC","mcScdid": "PGC"
+      symbol: "POWERGRID",
+      mcScid: "PGC",
+      mcScdid: "PGC",
     },
     {
-        "symbol": "PRESTIGE","mcScid": "PEP02","mcScdid": "PEP02"
+      symbol: "PRESTIGE",
+      mcScid: "PEP02",
+      mcScdid: "PEP02",
     },
     {
-        "symbol": "PRINCEPIPE","mcScid": "PPF","mcScdid": "PPF"
+      symbol: "PRINCEPIPE",
+      mcScid: "PPF",
+      mcScdid: "PPF",
     },
     {
-        "symbol": "PRSMJOHNSN","mcScid": "PC","mcScdid": "PC"
+      symbol: "PRSMJOHNSN",
+      mcScid: "PC",
+      mcScdid: "PC",
     },
     {
-        "symbol": "PGHL","mcScid": "EMI","mcScdid": "M12"
+      symbol: "PGHL",
+      mcScid: "EMI",
+      mcScdid: "M12",
     },
     {
-        "symbol": "PGHH","mcScid": "PGI","mcScdid": "PGH"
+      symbol: "PGHH",
+      mcScid: "PGI",
+      mcScdid: "PGH",
     },
     {
-        "symbol": "PNB","mcScid": "PNB05","mcScdid": "PNB05"
+      symbol: "PNB",
+      mcScid: "PNB05",
+      mcScdid: "PNB05",
     },
     {
-        "symbol": "QUESS","mcScid": "QC","mcScdid": "QC"
+      symbol: "QUESS",
+      mcScid: "QC",
+      mcScdid: "QC",
     },
     {
-        "symbol": "RBLBANK","mcScid": "RB02","mcScdid": "RB03"
+      symbol: "RBLBANK",
+      mcScid: "RB02",
+      mcScdid: "RB03",
     },
     {
-        "symbol": "RECLTD","mcScid": "REC02","mcScdid": "REC02"
+      symbol: "RECLTD",
+      mcScid: "REC02",
+      mcScdid: "REC02",
     },
     {
-        "symbol": "RITES","mcScid": "R06","mcScdid": "R02"
+      symbol: "RITES",
+      mcScid: "R06",
+      mcScdid: "R02",
     },
     {
-        "symbol": "RADICO","mcScid": "RK01","mcScdid": "RK01"
+      symbol: "RADICO",
+      mcScid: "RK01",
+      mcScdid: "RK01",
     },
     {
-        "symbol": "RVNL","mcScid": "RVN","mcScdid": "RVN"
+      symbol: "RVNL",
+      mcScid: "RVN",
+      mcScdid: "RVN",
     },
     {
-        "symbol": "RAIN","mcScid": "PC13","mcScdid": "RC12"
+      symbol: "RAIN",
+      mcScid: "PC13",
+      mcScdid: "RC12",
     },
     {
-        "symbol": "RAJESHEXPO","mcScid": "RE07","mcScdid": "RE07"
+      symbol: "RAJESHEXPO",
+      mcScid: "RE07",
+      mcScdid: "RE07",
     },
     {
-        "symbol": "RALLIS","mcScid": "RI03","mcScdid": "RI03"
+      symbol: "RALLIS",
+      mcScid: "RI03",
+      mcScdid: "RI03",
     },
     {
-        "symbol": "RCF","mcScid": "RCF01","mcScdid": "RCF01"
+      symbol: "RCF",
+      mcScid: "RCF01",
+      mcScdid: "RCF01",
     },
     {
-        "symbol": "RATNAMANI","mcScid": "RMT","mcScdid": "RMT"
+      symbol: "RATNAMANI",
+      mcScid: "RMT",
+      mcScdid: "RMT",
     },
     {
-        "symbol": "RAYMOND","mcScid": "R","mcScdid": "R"
+      symbol: "RAYMOND",
+      mcScid: "R",
+      mcScdid: "R",
     },
     {
-        "symbol": "REDINGTON","mcScid": "RI37","mcScdid": "RI37"
+      symbol: "REDINGTON",
+      mcScid: "RI37",
+      mcScdid: "RI37",
     },
     {
-        "symbol": "RELAXO","mcScid": "RF07","mcScdid": "RF07"
+      symbol: "RELAXO",
+      mcScid: "RF07",
+      mcScdid: "RF07",
     },
     {
-        "symbol": "RELIANCE","mcScid": "RI","mcScdid": "RI"
+      symbol: "RELIANCE",
+      mcScid: "RI",
+      mcScdid: "RI",
     },
     {
-        "symbol": "RESPONIND","mcScid": "SH10","mcScdid": "SH10"
+      symbol: "RESPONIND",
+      mcScid: "SH10",
+      mcScdid: "SH10",
     },
     {
-        "symbol": "ROSSARI","mcScid": "RB04","mcScdid": "RB05"
+      symbol: "ROSSARI",
+      mcScid: "RB04",
+      mcScdid: "RB05",
     },
     {
-        "symbol": "ROUTE","mcScid": "RML02","mcScdid": "RML02"
+      symbol: "ROUTE",
+      mcScid: "RML02",
+      mcScdid: "RML02",
     },
     {
-        "symbol": "SBICARD","mcScid": "SCP03","mcScdid": "SCP02"
+      symbol: "SBICARD",
+      mcScid: "SCP03",
+      mcScdid: "SCP02",
     },
     {
-        "symbol": "SBILIFE","mcScid": "SLI03","mcScdid": "SLI03"
+      symbol: "SBILIFE",
+      mcScid: "SLI03",
+      mcScdid: "SLI03",
     },
     {
-        "symbol": "SIS","mcScid": "SIS07","mcScdid": "SIS08"
+      symbol: "SIS",
+      mcScid: "SIS07",
+      mcScdid: "SIS08",
     },
     {
-        "symbol": "SJVN","mcScid": "S14","mcScdid": "S11"
+      symbol: "SJVN",
+      mcScid: "S14",
+      mcScdid: "S11",
     },
     {
-        "symbol": "SKFINDIA","mcScid": "SKF","mcScdid": "SKF01"
+      symbol: "SKFINDIA",
+      mcScid: "SKF",
+      mcScdid: "SKF01",
     },
     {
-        "symbol": "SRF","mcScid": "SRF","mcScdid": "SRF"
+      symbol: "SRF",
+      mcScid: "SRF",
+      mcScdid: "SRF",
     },
     {
-        "symbol": "SANOFI","mcScid": "HMR","mcScdid": "AP26"
+      symbol: "SANOFI",
+      mcScid: "HMR",
+      mcScdid: "AP26",
     },
     {
-        "symbol": "SCHAEFFLER","mcScid": "FPB","mcScdid": "FAG"
+      symbol: "SCHAEFFLER",
+      mcScid: "FPB",
+      mcScdid: "FAG",
     },
     {
-        "symbol": "SCHNEIDER","mcScid": "SEI04","mcScdid": "SEI04"
+      symbol: "SCHNEIDER",
+      mcScid: "SEI04",
+      mcScdid: "SEI04",
     },
     {
-        "symbol": "SEQUENT","mcScid": "VTF","mcScdid": "PID01"
+      symbol: "SEQUENT",
+      mcScid: "VTF",
+      mcScdid: "PID01",
     },
     {
-        "symbol": "SHARDACROP","mcScid": "SC47","mcScdid": "SC04"
+      symbol: "SHARDACROP",
+      mcScid: "SC47",
+      mcScdid: "SC04",
     },
     {
-        "symbol": "SFL","mcScid": "SF30","mcScdid": "SF14"
+      symbol: "SFL",
+      mcScid: "SF30",
+      mcScdid: "SF14",
     },
     {
-        "symbol": "SHILPAMED","mcScid": "SA04","mcScdid": "SM19"
+      symbol: "SHILPAMED",
+      mcScid: "SA04",
+      mcScdid: "SM19",
     },
     {
-        "symbol": "SCI","mcScid": "SCI","mcScdid": "SCI"
+      symbol: "SCI",
+      mcScid: "SCI",
+      mcScdid: "SCI",
     },
     {
-        "symbol": "SHOPERSTOP","mcScid": "SS51","mcScdid": "SS51"
+      symbol: "SHOPERSTOP",
+      mcScid: "SS51",
+      mcScdid: "SS51",
     },
     {
-        "symbol": "SHREECEM","mcScid": "SC12","mcScdid": "SC12"
+      symbol: "SHREECEM",
+      mcScid: "SC12",
+      mcScdid: "SC12",
     },
     {
-        "symbol": "SHRIRAMCIT","mcScid": "SCU","mcScdid": "SCU"
+      symbol: "SHRIRAMCIT",
+      mcScid: "SCU",
+      mcScdid: "SCU",
     },
     {
-        "symbol": "SRTRANSFIN","mcScid": "STF","mcScdid": "STF"
+      symbol: "SRTRANSFIN",
+      mcScid: "STF",
+      mcScdid: "STF",
     },
     {
-        "symbol": "SIEMENS","mcScid": "S","mcScdid": "S"
+      symbol: "SIEMENS",
+      mcScid: "S",
+      mcScdid: "S",
     },
     {
-        "symbol": "SOBHA","mcScid": "SD6","mcScdid": "SD6"
+      symbol: "SOBHA",
+      mcScid: "SD6",
+      mcScdid: "SD6",
     },
     {
-        "symbol": "SOLARINDS","mcScid": "SE20","mcScdid": "SII04"
+      symbol: "SOLARINDS",
+      mcScid: "SE20",
+      mcScdid: "SII04",
     },
     {
-        "symbol": "SOLARA","mcScid": "SOLAR54154","mcScdid": "SOLAR54154"
+      symbol: "SOLARA",
+      mcScid: "SOLAR54154",
+      mcScdid: "SOLAR54154",
     },
     {
-        "symbol": "SONATSOFTW","mcScid": "SS42","mcScdid": "SS42"
+      symbol: "SONATSOFTW",
+      mcScid: "SS42",
+      mcScdid: "SS42",
     },
     {
-        "symbol": "SPANDANA","mcScid": "SSF07","mcScdid": "SSF07"
+      symbol: "SPANDANA",
+      mcScid: "SSF07",
+      mcScdid: "SSF07",
     },
     {
-        "symbol": "SPICEJET","mcScid": "ML04","mcScdid": "SJ01"
+      symbol: "SPICEJET",
+      mcScid: "ML04",
+      mcScdid: "SJ01",
     },
     {
-        "symbol": "STARCEMENT","mcScid": "SFC02","mcScdid": "SFC02"
+      symbol: "STARCEMENT",
+      mcScid: "SFC02",
+      mcScdid: "SFC02",
     },
     {
-        "symbol": "SBIN","mcScid": "SBI","mcScdid": "SBI"
+      symbol: "SBIN",
+      mcScid: "SBI",
+      mcScdid: "SBI",
     },
     {
-        "symbol": "SAIL","mcScid": "SAI","mcScdid": "SAI"
+      symbol: "SAIL",
+      mcScid: "SAI",
+      mcScdid: "SAI",
     },
     {
-        "symbol": "SWSOLAR","mcScid": "SWS","mcScdid": "SWS"
+      symbol: "SWSOLAR",
+      mcScid: "SWS",
+      mcScdid: "SWS",
     },
     {
-        "symbol": "STLTECH","mcScid": "SO03","mcScdid": "ST20"
+      symbol: "STLTECH",
+      mcScid: "SO03",
+      mcScdid: "ST20",
     },
     {
-        "symbol": "STAR","mcScid": "SA10","mcScdid": "SA10"
+      symbol: "STAR",
+      mcScid: "SA10",
+      mcScdid: "SA10",
     },
     {
-        "symbol": "SUDARSCHEM","mcScid": "SCI05","mcScdid": "SCI08"
+      symbol: "SUDARSCHEM",
+      mcScid: "SCI05",
+      mcScdid: "SCI08",
     },
     {
-        "symbol": "SUMICHEM","mcScid": "SUMIC54292","mcScdid": "SUMIC54292"
+      symbol: "SUMICHEM",
+      mcScid: "SUMIC54292",
+      mcScdid: "SUMIC54292",
     },
     {
-        "symbol": "SPARC","mcScid": "SPA","mcScdid": "SPA"
+      symbol: "SPARC",
+      mcScid: "SPA",
+      mcScdid: "SPA",
     },
     {
-        "symbol": "SUNPHARMA","mcScid": "SPI","mcScdid": "SPI"
+      symbol: "SUNPHARMA",
+      mcScid: "SPI",
+      mcScdid: "SPI",
     },
     {
-        "symbol": "SUNTV","mcScid": "STV01","mcScdid": "STN01"
+      symbol: "SUNTV",
+      mcScid: "STV01",
+      mcScdid: "STN01",
     },
     {
-        "symbol": "SUNCLAYLTD","mcScid": "SC","mcScdid": "SC"
+      symbol: "SUNCLAYLTD",
+      mcScid: "SC",
+      mcScdid: "SC",
     },
     {
-        "symbol": "SUNDARMFIN","mcScid": "SF20","mcScdid": "SF20"
+      symbol: "SUNDARMFIN",
+      mcScid: "SF20",
+      mcScdid: "SF20",
     },
     {
-        "symbol": "SUNDRMFAST","mcScid": "SF","mcScdid": "SF23"
+      symbol: "SUNDRMFAST",
+      mcScid: "SF",
+      mcScdid: "SF23",
     },
     {
-        "symbol": "SUNTECK","mcScid": "IE06","mcScdid": "SR05"
+      symbol: "SUNTECK",
+      mcScid: "IE06",
+      mcScdid: "SR05",
     },
     {
-        "symbol": "SUPRAJIT","mcScid": "SE15","mcScdid": "SE15"
+      symbol: "SUPRAJIT",
+      mcScid: "SE15",
+      mcScdid: "SE15",
     },
     {
-        "symbol": "SUPREMEIND","mcScid": "SI48","mcScdid": "SI48"
+      symbol: "SUPREMEIND",
+      mcScid: "SI48",
+      mcScdid: "SI48",
     },
     {
-        "symbol": "SUPPETRO","mcScid": "SP","mcScdid": "SP"
+      symbol: "SUPPETRO",
+      mcScid: "SP",
+      mcScdid: "SP",
     },
     {
-        "symbol": "SUVENPHAR","mcScid": "SP42","mcScdid": "SP19"
+      symbol: "SUVENPHAR",
+      mcScid: "SP42",
+      mcScdid: "SP19",
     },
     {
-        "symbol": "SUZLON","mcScid": "SE17","mcScdid": "SE17"
+      symbol: "SUZLON",
+      mcScid: "SE17",
+      mcScdid: "SE17",
     },
     {
-        "symbol": "SWANENERGY","mcScid": "SM09","mcScdid": "SM09"
+      symbol: "SWANENERGY",
+      mcScid: "SM09",
+      mcScdid: "SM09",
     },
     {
-        "symbol": "SYMPHONY","mcScid": "SCS04","mcScdid": "SCS04"
+      symbol: "SYMPHONY",
+      mcScid: "SCS04",
+      mcScdid: "SCS04",
     },
     {
-        "symbol": "SYNGENE","mcScid": "SI62","mcScdid": "SI10"
+      symbol: "SYNGENE",
+      mcScid: "SI62",
+      mcScdid: "SI10",
     },
     {
-        "symbol": "TCIEXP","mcScid": "TCI08","mcScdid": "TCI08"
+      symbol: "TCIEXP",
+      mcScid: "TCI08",
+      mcScdid: "TCI08",
     },
     {
-        "symbol": "TCNSBRANDS","mcScid": "TCC","mcScdid": "TCC"
+      symbol: "TCNSBRANDS",
+      mcScid: "TCC",
+      mcScdid: "TCC",
     },
     {
-        "symbol": "TTKPRESTIG","mcScid": "TTK02","mcScdid": "TTK02"
+      symbol: "TTKPRESTIG",
+      mcScid: "TTK02",
+      mcScdid: "TTK02",
     },
     {
-        "symbol": "TV18BRDCST","mcScid": "GBN","mcScdid": "IBN"
+      symbol: "TV18BRDCST",
+      mcScid: "GBN",
+      mcScdid: "IBN",
     },
     {
-        "symbol": "TVSMOTOR","mcScid": "TVS","mcScdid": "TVS"
+      symbol: "TVSMOTOR",
+      mcScid: "TVS",
+      mcScdid: "TVS",
     },
     {
-        "symbol": "TANLA","mcScid": "TS11","mcScdid": "TS11"
+      symbol: "TANLA",
+      mcScid: "TS11",
+      mcScdid: "TS11",
     },
     {
-        "symbol": "TASTYBITE","mcScid": "TBE","mcScdid": "TBE"
+      symbol: "TASTYBITE",
+      mcScid: "TBE",
+      mcScdid: "TBE",
     },
     {
-        "symbol": "TATACHEM","mcScid": "TC","mcScdid": "TC"
+      symbol: "TATACHEM",
+      mcScid: "TC",
+      mcScdid: "TC",
     },
     {
-        "symbol": "TATACOFFEE","mcScid": "CC23","mcScdid": "TC14"
+      symbol: "TATACOFFEE",
+      mcScid: "CC23",
+      mcScdid: "TC14",
     },
     {
-        "symbol": "TATACOMM","mcScid": "VSN","mcScdid": "TC17"
+      symbol: "TATACOMM",
+      mcScid: "VSN",
+      mcScdid: "TC17",
     },
     {
-        "symbol": "TCS","mcScid": "TCS","mcScdid": "TCS"
+      symbol: "TCS",
+      mcScid: "TCS",
+      mcScdid: "TCS",
     },
     {
-        "symbol": "TATACONSUM","mcScid": "TT","mcScdid": "TT"
+      symbol: "TATACONSUM",
+      mcScid: "TT",
+      mcScdid: "TT",
     },
     {
-        "symbol": "TATAELXSI","mcScid": "TEI","mcScdid": "TE"
+      symbol: "TATAELXSI",
+      mcScid: "TEI",
+      mcScdid: "TE",
     },
     {
-        "symbol": "TATAINVEST","mcScid": "TIC","mcScdid": "TIC"
+      symbol: "TATAINVEST",
+      mcScid: "TIC",
+      mcScdid: "TIC",
     },
     {
-        "symbol": "TATAMTRDVR","mcScid": "TMD","mcScdid": "TATAM57000"
+      symbol: "TATAMTRDVR",
+      mcScid: "TMD",
+      mcScdid: "TATAM57000",
     },
     {
-        "symbol": "TATAMOTORS","mcScid": "TEL","mcScdid": "TM03"
+      symbol: "TATAMOTORS",
+      mcScid: "TEL",
+      mcScdid: "TM03",
     },
     {
-        "symbol": "TATAPOWER","mcScid": "TPC","mcScdid": "TPC"
+      symbol: "TATAPOWER",
+      mcScid: "TPC",
+      mcScdid: "TPC",
     },
     {
-        "symbol": "TATASTEEL","mcScid": "TIS","mcScdid": "TIS"
+      symbol: "TATASTEEL",
+      mcScid: "TIS",
+      mcScdid: "TIS",
     },
     {
-        "symbol": "TEAMLEASE","mcScid": "TS15","mcScdid": "TS13"
+      symbol: "TEAMLEASE",
+      mcScid: "TS15",
+      mcScdid: "TS13",
     },
     {
-        "symbol": "TECHM","mcScid": "TM4","mcScdid": "TM4"
+      symbol: "TECHM",
+      mcScid: "TM4",
+      mcScdid: "TM4",
     },
     {
-        "symbol": "NIACL","mcScid": "NIA","mcScdid": "NIA"
+      symbol: "NIACL",
+      mcScid: "NIA",
+      mcScdid: "NIA",
     },
     {
-        "symbol": "RAMCOCEM","mcScid": "MC","mcScdid": "MC"
+      symbol: "RAMCOCEM",
+      mcScid: "MC",
+      mcScdid: "MC",
     },
     {
-        "symbol": "THERMAX","mcScid": "T","mcScdid": "T"
+      symbol: "THERMAX",
+      mcScid: "T",
+      mcScdid: "T",
     },
     {
-        "symbol": "THYROCARE","mcScid": "TT14","mcScdid": "TT16"
+      symbol: "THYROCARE",
+      mcScid: "TT14",
+      mcScdid: "TT16",
     },
     {
-        "symbol": "TIMKEN","mcScid": "TT04","mcScdid": "TI23"
+      symbol: "TIMKEN",
+      mcScid: "TT04",
+      mcScdid: "TI23",
     },
     {
-        "symbol": "TITAN","mcScid": "TI01","mcScdid": "TI01"
+      symbol: "TITAN",
+      mcScid: "TI01",
+      mcScdid: "TI01",
     },
     {
-        "symbol": "TORNTPHARM","mcScid": "TP06","mcScdid": "TP06"
+      symbol: "TORNTPHARM",
+      mcScid: "TP06",
+      mcScdid: "TP06",
     },
     {
-        "symbol": "TORNTPOWER","mcScid": "TP13","mcScdid": "TP14"
+      symbol: "TORNTPOWER",
+      mcScid: "TP13",
+      mcScdid: "TP14",
     },
     {
-        "symbol": "TRENT","mcScid": "L","mcScdid": "T04"
+      symbol: "TRENT",
+      mcScid: "L",
+      mcScdid: "T04",
     },
     {
-        "symbol": "TRIDENT","mcScid": "AI01","mcScdid": "AI01"
+      symbol: "TRIDENT",
+      mcScid: "AI01",
+      mcScdid: "AI01",
     },
     {
-        "symbol": "TRITURBINE","mcScid": "TT12","mcScdid": "TT14"
+      symbol: "TRITURBINE",
+      mcScid: "TT12",
+      mcScdid: "TT14",
     },
     {
-        "symbol": "TIINDIA","mcScid": "TIIND54076","mcScdid": "TIIND54076"
+      symbol: "TIINDIA",
+      mcScid: "TIIND54076",
+      mcScdid: "TIIND54076",
     },
     {
-        "symbol": "UCOBANK","mcScid": "UCO","mcScdid": "UCO"
+      symbol: "UCOBANK",
+      mcScid: "UCO",
+      mcScdid: "UCO",
     },
     {
-        "symbol": "UFLEX","mcScid": "FI08","mcScdid": "U01"
+      symbol: "UFLEX",
+      mcScid: "FI08",
+      mcScdid: "U01",
     },
     {
-        "symbol": "UPL","mcScid": "SI10","mcScdid": "UP04"
+      symbol: "UPL",
+      mcScid: "SI10",
+      mcScdid: "UP04",
     },
     {
-        "symbol": "UTIAMC","mcScid": "UA03","mcScdid": "UA04"
+      symbol: "UTIAMC",
+      mcScid: "UA03",
+      mcScdid: "UA04",
     },
     {
-        "symbol": "UJJIVAN","mcScid": "UFS01","mcScdid": "UFS01"
+      symbol: "UJJIVAN",
+      mcScid: "UFS01",
+      mcScdid: "UFS01",
     },
     {
-        "symbol": "UJJIVANSFB","mcScid": "USF","mcScdid": "USF"
+      symbol: "UJJIVANSFB",
+      mcScid: "USF",
+      mcScdid: "USF",
     },
     {
-        "symbol": "ULTRACEMCO","mcScid": "UTC","mcScdid": "UTC01"
+      symbol: "ULTRACEMCO",
+      mcScid: "UTC",
+      mcScdid: "UTC01",
     },
     {
-        "symbol": "UNIONBANK","mcScid": "UBI01","mcScdid": "UBI01"
+      symbol: "UNIONBANK",
+      mcScid: "UBI01",
+      mcScdid: "UBI01",
     },
     {
-        "symbol": "UBL","mcScid": "UBB","mcScdid": "UB02"
+      symbol: "UBL",
+      mcScid: "UBB",
+      mcScdid: "UB02",
     },
     {
-        "symbol": "MCDOWELL-N","mcScid": "MC08","mcScdid": "US"
+      symbol: "MCDOWELL-N",
+      mcScid: "MC08",
+      mcScdid: "US",
     },
     {
-        "symbol": "VGUARD","mcScid": "VI16","mcScdid": "VI02"
+      symbol: "VGUARD",
+      mcScid: "VI16",
+      mcScdid: "VI02",
     },
     {
-        "symbol": "VMART","mcScid": "VR03","mcScdid": "VR03"
+      symbol: "VMART",
+      mcScid: "VR03",
+      mcScdid: "VR03",
     },
     {
-        "symbol": "VIPIND","mcScid": "VIP","mcScdid": "VIP"
+      symbol: "VIPIND",
+      mcScid: "VIP",
+      mcScdid: "VIP",
     },
     {
-        "symbol": "VSTIND","mcScid": "VST","mcScdid": "VST"
+      symbol: "VSTIND",
+      mcScid: "VST",
+      mcScdid: "VST",
     },
     {
-        "symbol": "VAIBHAVGBL","mcScid": "VG02","mcScdid": "VG02"
+      symbol: "VAIBHAVGBL",
+      mcScid: "VG02",
+      mcScdid: "VG02",
     },
     {
-        "symbol": "VAKRANGEE","mcScid": "VI02","mcScdid": "VS"
+      symbol: "VAKRANGEE",
+      mcScid: "VI02",
+      mcScdid: "VS",
     },
     {
-        "symbol": "VALIANTORG","mcScid": "VO03","mcScdid": "VO03"
+      symbol: "VALIANTORG",
+      mcScid: "VO03",
+      mcScdid: "VO03",
     },
     {
-        "symbol": "VTL","mcScid": "MSM","mcScdid": "VT10"
+      symbol: "VTL",
+      mcScid: "MSM",
+      mcScdid: "VT10",
     },
     {
-        "symbol": "VARROC","mcScid": "VE08","mcScdid": "VE08"
+      symbol: "VARROC",
+      mcScid: "VE08",
+      mcScdid: "VE08",
     },
     {
-        "symbol": "VBL","mcScid": "VB05","mcScdid": "VB05"
+      symbol: "VBL",
+      mcScid: "VB05",
+      mcScdid: "VB05",
     },
     {
-        "symbol": "VEDL","mcScid": "SG","mcScdid": "SG"
+      symbol: "VEDL",
+      mcScid: "SG",
+      mcScdid: "SG",
     },
     {
-        "symbol": "VENKEYS","mcScid": "WH01","mcScdid": "V03"
+      symbol: "VENKEYS",
+      mcScid: "WH01",
+      mcScdid: "V03",
     },
     {
-        "symbol": "VINATIORGA","mcScid": "VO01","mcScdid": "VO01"
+      symbol: "VINATIORGA",
+      mcScid: "VO01",
+      mcScdid: "VO01",
     },
     {
-        "symbol": "IDEA","mcScid": "IC8","mcScdid": "IC8"
+      symbol: "IDEA",
+      mcScid: "IC8",
+      mcScdid: "IC8",
     },
     {
-        "symbol": "VOLTAS","mcScid": "V","mcScdid": "V"
+      symbol: "VOLTAS",
+      mcScid: "V",
+      mcScdid: "V",
     },
     {
-        "symbol": "WABCOINDIA","mcScid": "WAB","mcScdid": "WAB"
+      symbol: "WABCOINDIA",
+      mcScid: "WAB",
+      mcScdid: "WAB",
     },
     {
-        "symbol": "WELCORP","mcScid": "WGS","mcScdid": "WGS"
+      symbol: "WELCORP",
+      mcScid: "WGS",
+      mcScdid: "WGS",
     },
     {
-        "symbol": "WELSPUNIND","mcScid": "WI03","mcScdid": "WI03"
+      symbol: "WELSPUNIND",
+      mcScid: "WI03",
+      mcScdid: "WI03",
     },
     {
-        "symbol": "WESTLIFE","mcScid": "DIC","mcScdid": "DIC"
+      symbol: "WESTLIFE",
+      mcScid: "DIC",
+      mcScdid: "DIC",
     },
     {
-        "symbol": "WHIRLPOOL","mcScid": "WI","mcScdid": "WI"
+      symbol: "WHIRLPOOL",
+      mcScid: "WI",
+      mcScdid: "WI",
     },
     {
-        "symbol": "WIPRO","mcScid": "W","mcScdid": "W"
+      symbol: "WIPRO",
+      mcScid: "W",
+      mcScdid: "W",
     },
     {
-        "symbol": "WOCKPHARMA","mcScid": "W05","mcScdid": "W05"
+      symbol: "WOCKPHARMA",
+      mcScid: "W05",
+      mcScdid: "W05",
     },
     {
-        "symbol": "YESBANK","mcScid": "YB","mcScdid": "YB"
+      symbol: "YESBANK",
+      mcScid: "YB",
+      mcScdid: "YB",
     },
     {
-        "symbol": "ZEEL","mcScid": "ZT","mcScdid": "ZEE"
+      symbol: "ZEEL",
+      mcScid: "ZT",
+      mcScdid: "ZEE",
     },
     {
-        "symbol": "ZENSARTECH","mcScid": "FIC","mcScdid": "ZT02"
+      symbol: "ZENSARTECH",
+      mcScid: "FIC",
+      mcScdid: "ZT02",
     },
     {
-        "symbol": "ZYDUSWELL","mcScid": "CNA","mcScdid": "ZW01"
+      symbol: "ZYDUSWELL",
+      mcScid: "CNA",
+      mcScdid: "ZW01",
     },
     {
-        "symbol": "ECLERX","mcScid": "ES07","mcScdid": "eS06"
-    }
-]
+      symbol: "ECLERX",
+      mcScid: "ES07",
+      mcScdid: "eS06",
+    },
+  ],
 };

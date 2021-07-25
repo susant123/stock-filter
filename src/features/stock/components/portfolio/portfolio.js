@@ -47,7 +47,13 @@ function Portfolio() {
             <div>{totalInvested}</div>
             {selectedAc &&
               tradeData[selectedAc].map((trade, index) => {
-                return <PortfolioRow trade={trade} key={index} />;
+                return (
+                  <PortfolioRow
+                    trade={trade}
+                    key={index}
+                    serialNo={index + 1}
+                  />
+                );
               })}
           </AccountWiseTradeData>
         </>

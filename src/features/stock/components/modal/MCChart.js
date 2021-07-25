@@ -12,7 +12,8 @@ function MCChart({ stockName }) {
     setShowModal(!showModal);
   };
   const chartUrl =
-    "https://www.moneycontrol.com/mc/stock/chart?scId=" + stockName;
+    "https://www.moneycontrol.com/mc/stock/chart?scId=" +
+    encodeURIComponent(stockName);
   return (
     <div>
       <ShowChart onClick={handleClick}>Show Chart</ShowChart>

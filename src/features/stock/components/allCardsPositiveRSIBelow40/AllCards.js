@@ -33,28 +33,31 @@ function AllCards() {
       return true;
     }*/
 
-    if (average > rsiData[rsiData.length - 1]) {
+    if (average > rsiData[rsiData.length - 1] && rsiData[rsiData.length - 1] < 40) {
       return true;
-    }
+    }  
   };
 
   const allStocks = Object.keys(livePlusIndicator);
 
-  const allPositiveRSICount = allStocks.filter((stockName) => {
+ const allPositiveRSICount = allStocks.filter(stockName=>{
     return isLowRSI(allRSIData[stockName]);
-  });
+  })
 
   return (
     <div className="App">
       <hr />
       <IconHeaderWrapper onClick={handleClick} allCards={true}>
+        
         <CardTitle>Positive RSI - {allPositiveRSICount.length}</CardTitle>
       </IconHeaderWrapper>
 
-      <CardsWrapper>
-        {allStocks.map((stockName, index) => {
-          const isLowRsi = isLowRSI(allRSIData[stockName]);
-          if (isLowRsi) {
+     
+        <CardsWrapper>
+          {allStocks.map((stockName, index) => {
+
+            const isLowRsi = isLowRSI(allRSIData[stockName]);
+            if(isLowRsi){
             return (
               <Card
                 card={livePlusIndicator[stockName]}
@@ -64,11 +67,11 @@ function AllCards() {
                 rsiData={allRSIData[stockName]}
               />
             );
-          } else {
-            return <></>;
-          }
-        })}
-      </CardsWrapper>
+            }else{
+              return <></>
+            }
+          })}
+        </CardsWrapper>        
       <hr />
     </div>
   );

@@ -7,17 +7,8 @@ const utils = require("../../utils");
 const path = require("path");
 const fs = require("fs");
 const volumeData = require("./volumeData");
-
-const baseUrl = "https://www.moneycontrol.com/";
 const chartDataUrl =
   "https://priceapi.moneycontrol.com/techCharts/techChartController/history?symbol={0}&resolution=1D&from={1}&to={2}";
-
-let cookie;
-
-const instance = axios.create({
-  headers: constants.headers,
-  cookie: cookie ? cookie : "",
-});
 
 const getStockWiseNSEData = (symbol) => {
   //for epoch date
@@ -29,7 +20,7 @@ const getStockWiseNSEData = (symbol) => {
 
   const formattedURL = utils.stringFormat(
     chartDataUrl,
-    symbol,
+    encodeURIComponent(symbol),
     fromTime,
     toTime
   );
@@ -37,7 +28,6 @@ const getStockWiseNSEData = (symbol) => {
 
   const headers = {
     ...constants.headers,
-    cookie: cookie,
   };
   return new Promise((resolve, reject) => {
     try {
@@ -55,14 +45,7 @@ const getStockWiseNSEData = (symbol) => {
   });
 };
 
-const refreshCookie = async () => {
-  const response = await instance.get(baseUrl);
-  cookie = response.headers["set-cookie"].join(";");
-
-  console.log("cookie refreshed");
-};
-
-const getAllNSEData = (cookie) => {
+const getAllNSEData = () => {
   let counter = 0;
   const allNSEDataObj = {};
   try {
@@ -71,9 +54,6 @@ const getAllNSEData = (cookie) => {
         (function (i) {
           const symbol = constants.allStocks[i].symbol;
           setTimeout(async () => {
-            if (counter % 20 == 0) {
-              refreshCookie();
-            }
             const nseData = await getStockWiseNSEData(symbol);
             allNSEDataObj[symbol] = nseData;
             console.log(
@@ -83,7 +63,8 @@ const getAllNSEData = (cookie) => {
                 constants.allStocks.length
             );
             if (
-              Object.keys(allNSEDataObj).length == constants.allStocks.length || symbol== 'ECLERX'
+              Object.keys(allNSEDataObj).length == constants.allStocks.length ||
+              symbol == "ECLERX"
             ) {
               resolve(allNSEDataObj);
             }
@@ -120,10 +101,8 @@ const takeBackup = () => {
 
 const startBuildingChartData = async () => {
   try {
-    const response = await instance.get(constants.nseBaseURL);
-    cookie = response.headers["set-cookie"].join(";");
     takeBackup();
-    getAllNSEData(cookie)
+    getAllNSEData()
       .then((response) => {
         //startFetching volumeData
         volumeData.startBuildingVolumeData();
@@ -155,4 +134,3 @@ const startBuildingChartData = async () => {
 //startBuildingChartData();
 
 module.exports.startBuildingChartData = startBuildingChartData;
-//getCookies();

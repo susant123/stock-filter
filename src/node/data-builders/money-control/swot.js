@@ -5,8 +5,7 @@ const axios = require("axios");
 const constants = require("../../constants");
 const utils = require("../../utils");
 const path = require("path");
-
-fs = require("fs");
+const fs = require("fs");
 
 const swot = {
   S: "strength",
@@ -15,16 +14,8 @@ const swot = {
   T: "threat",
 };
 
-const baseUrl = "https://www.moneycontrol.com/";
 const dataUrl =
   "https://api.moneycontrol.com/mcapi/v1/swot/details?scId={0}&type={1}";
-
-let cookie;
-
-const instance = axios.create({
-  headers: constants.headers,
-  cookie: cookie ? cookie : "",
-});
 
 const getStockWiseNSEData = (symbol, type) => {
   const formattedURL = utils.stringFormat(dataUrl, symbol, type);
@@ -32,7 +23,6 @@ const getStockWiseNSEData = (symbol, type) => {
 
   const headers = {
     ...constants.headers,
-    cookie: cookie,
   };
   return new Promise((resolve, reject) => {
     try {
@@ -50,14 +40,14 @@ const getStockWiseNSEData = (symbol, type) => {
   });
 };
 
-const refreshCookie = async () => {
+/*const refreshCookie = async () => {
   const response = await instance.get(baseUrl);
   cookie = response.headers["set-cookie"].join(";");
 
   console.log("cookie refreshed");
-};
+};*/
 
-const getAllNSEData = (cookie, type) => {
+const getAllNSEData = (type) => {
   let counter = 0;
   const allNSEDataObj = {};
   try {
@@ -68,9 +58,6 @@ const getAllNSEData = (cookie, type) => {
 
           const stockSymbol = constants.allStocks[i].symbol;
           setTimeout(async () => {
-            if (counter % 20 == 0) {
-              refreshCookie();
-            }
             const nseData = await getStockWiseNSEData(symbol, type);
             allNSEDataObj[stockSymbol] = nseData.data;
             console.log(
@@ -79,7 +66,8 @@ const getAllNSEData = (cookie, type) => {
               constants.allStocks.length
             );
             if (
-              Object.keys(allNSEDataObj).length == constants.allStocks.length || stockSymbol== 'ECLERX'
+              Object.keys(allNSEDataObj).length == constants.allStocks.length ||
+              stockSymbol == "ECLERX"
             ) {
               resolve(allNSEDataObj);
             }
@@ -120,10 +108,8 @@ const takeBackup = (type) => {
 const startBuildingSWOTData = async (type) => {
   console.log("type-----------", type);
   try {
-    const response = await instance.get(constants.nseBaseURL);
-    cookie = response.headers["set-cookie"].join(";");
     takeBackup(type);
-    getAllNSEData(cookie, type)
+    getAllNSEData(type)
       .then((response) => {
         console.log("response length", Object.keys(response).length);
         fs.writeFile(

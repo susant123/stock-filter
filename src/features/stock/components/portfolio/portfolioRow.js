@@ -8,7 +8,7 @@ import {
 } from "./portfolioRow.styles";
 import { updateStock } from "../../StockSlice";
 
-function PortfolioRow({ trade }) {
+function PortfolioRow({ trade, serialNo }) {
   const dispatch = useDispatch();
   const [price, setPrice] = useState(trade.average_price);
   const [quantity, setQuantity] = useState(trade.quantity);
@@ -50,6 +50,7 @@ function PortfolioRow({ trade }) {
 
   return (
     <RowWrapper className="portfolio" valueChanged={valueChanged}>
+      <CellWrapper>{serialNo}</CellWrapper>
       <CellWrapper>{trade.stock_name}</CellWrapper>
       <CellWrapper>
         <InputField

@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const RowWrapper = styled.div`
   display: grid;
   grid-gap: 5px;
-  grid-template-columns: 18% 18% 18% 100px 100px;
+  grid-template-columns: 40px 18% 18% 18% 100px 100px;
   background-color: ${(props) => (props.valueChanged ? "#4444ff" : "#fff")};
   margin: 10px;
 `;
