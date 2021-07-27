@@ -59,17 +59,17 @@ const calculateBuySuggestion = (stockWiseData) => {
     if (
       acc2Stock.quantity &&
       acc2Stock.quantity > 0 &&
-      acc2Stock.profitLoss < -5
+      acc2Stock.profitLoss <= -5
     ) {
       if (
         acc3Stock.quantity &&
         acc3Stock.quantity > 0 &&
-        acc3Stock.profitLoss < -5
+        acc3Stock.profitLoss <= -5
       ) {
         if (
           acc4Stock.quantity &&
           acc4Stock.quantity > 0 &&
-          acc4Stock.profitLoss < -5
+          acc4Stock.profitLoss <= -5
         ) {
           buyAccount = acc1Stock;
           buyAccount.flagAccounts = [

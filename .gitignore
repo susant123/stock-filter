@@ -38,4 +38,3 @@ src/node/data/volume.json
 src/node/data/weakness.json
 tradeData/src/data/AllRSIData.json
 tradeData/src/data/chart.json
-tradeDetailsDB/app/data/tradeData.db
