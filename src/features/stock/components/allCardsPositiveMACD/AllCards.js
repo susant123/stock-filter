@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { CardTitle, CardsWrapper } from "../commonStyles/allCardsStyles";
 import Card from "./Card";
 import { useSelector } from "react-redux";
-import { IconHeaderWrapper, ActionIcon } from "../commonStyles/commonStyles";
+import { IconHeaderWrapper } from "../commonStyles/commonStyles";
 
 import {
   selectAllRSIData,

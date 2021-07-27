@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { selectTradeData } from "../../StockSlice";
 import { useSelector } from "react-redux";
 import { selectLivePlusIndicatorData } from "../../StockSlice";
@@ -15,8 +15,8 @@ import {
 function AllPortfolios() {
   const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel"];
   const tradeData = useSelector(selectTradeData);
-  const [selectedAc, setSelectedAc] = useState(null);
-  const [totalInvested, setTotalInvested] = useState(0);
+  /*const [selectedAc, setSelectedAc] = useState(null);
+  const [totalInvested, setTotalInvested] = useState(0);*/
   const livePlusIndicator = useSelector(selectLivePlusIndicatorData);
 
   const allStocks = Object.keys(livePlusIndicator);

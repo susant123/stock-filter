@@ -122,6 +122,6 @@ const startBuildingVolumeData = async () => {
   }
 };
 
-startBuildingVolumeData();
+//startBuildingVolumeData();
 
-//module.exports.startBuildingVolumeData = startBuildingVolumeData;
+module.exports.startBuildingVolumeData = startBuildingVolumeData;

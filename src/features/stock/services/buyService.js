@@ -30,13 +30,21 @@ const getAllStockNames = (stocksArr) => {
 };
 
 const calculateBuySuggestion = (stockWiseData) => {
+  //console.log("stockWiseData-----", stockWiseData);
   let buyAccount = null;
 
   stockWiseData.sort((a, b) => {
-    return a.profitLoss - b.profitLoss;
-  });
+    const value = (el, quantity) => {
+      return el === 0 && !quantity ? Infinity : el;
+    };
 
-  //console.log("Sorted stockWiseData", stockWiseData);
+    return value(a.profitLoss, a.quantity) - value(b.profitLoss, b.quantity);
+
+    /* if (b.profitLoss === 0 || a.profitLoss === 0) {
+      return -9999;
+    }
+    return a.profitLoss - b.profitLoss; */
+  });
 
   const acc1Stock = stockWiseData[0];
   const acc2Stock = stockWiseData[1];
@@ -152,7 +160,7 @@ export const getBuyRecommendations = (livePlusIndicator, tradeData) => {
                 volumeData: allLiveStockData.volumeData,
                 profitLoss: profitLoss,
                 nseData: livePlusIndicator[currentStock.stock_name].nse,
-                macdData: allLiveStockData.macdData
+                macdData: allLiveStockData.macdData,
               });
             }
           }

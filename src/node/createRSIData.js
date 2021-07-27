@@ -1,7 +1,7 @@
 var tulind = require("tulind");
 var liveData = require("./data/chart.json");
 
-fs = require("fs");
+const fs = require("fs");
 
 const allStocks = Object.keys(liveData);
 
@@ -9,7 +9,7 @@ var rsiData = {};
 allStocks.forEach((stock) => {
   console.log("StockName---" + stock);
   var chartData = liveData[stock];
-  tulind.indicators.rsi.indicator([chartData.c], [14], function (err, results) {    
+  tulind.indicators.rsi.indicator([chartData.c], [14], function (err, results) {
     rsiData[stock] = results[0];
   });
 });

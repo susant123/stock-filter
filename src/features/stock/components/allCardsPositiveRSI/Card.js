@@ -9,11 +9,11 @@ import LineChart from "../charts/LineChart";
 import MCChart from "../modal/MCChart";
 import RSILineChart from "../rsiChart/RSILineChart";
 import { IconHeaderWrapper, ActionIcon } from "../commonStyles/commonStyles";
-import { CardTitle, CardsWrapper, CardContainer } from "../commonStyles/allCardsStyles";
+import { CardTitle, CardContainer } from "../commonStyles/allCardsStyles";
 import MACDChart from "../macdCharts/LineChart";
 
 function Card(props) {
-  const { card, stockName, chartData, rsiData, keepSeparated} = props;
+  const { card, stockName, chartData, rsiData, keepSeparated } = props;
   const [isOpen, setIsOpen] = useState(false);
   const {
     indicators,
@@ -85,8 +85,7 @@ function Card(props) {
               rsiRange={14}
               isLowRsi={isLowRsi}
             />
-            <MACDChart
-              macdChartData = {card.macdData} />
+            <MACDChart macdChartData={card.macdData} />
           </div>
         </CardBlock>
       )}

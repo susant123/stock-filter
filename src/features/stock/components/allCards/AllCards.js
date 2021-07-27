@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { CardTitle, CardsWrapper } from "../commonStyles/allCardsStyles";
 import Card from "./Card";
 import { useSelector } from "react-redux";
-import { IconHeaderWrapper, ActionIcon } from "../commonStyles/commonStyles";
+import { IconHeaderWrapper } from "../commonStyles/commonStyles";
 
 import {
   selectAllRSIData,
@@ -39,16 +39,13 @@ function AllCards() {
     <div className="App">
       <hr />
       <IconHeaderWrapper onClick={handleClick} allCards={true}>
-        
         <CardTitle>All Stocks - {allStocks.length}</CardTitle>
       </IconHeaderWrapper>
 
-     
-        <CardsWrapper>
-          {allStocks.map((stockName, index) => {
-
-            const isLowRsi = isLowRSI(allRSIData[stockName]);
-            if(isLowRsi){
+      <CardsWrapper>
+        {allStocks.map((stockName, index) => {
+          const isLowRsi = isLowRSI(allRSIData[stockName]);
+          if (isLowRsi) {
             return (
               <Card
                 card={livePlusIndicator[stockName]}
@@ -58,19 +55,16 @@ function AllCards() {
                 rsiData={allRSIData[stockName]}
               />
             );
-            }else{
-              return <></>
-            }
-          })}
-        </CardsWrapper>
-     
+          } else {
+            return <></>;
+          }
+        })}
+      </CardsWrapper>
 
-
-        <CardsWrapper>
-          {allStocks.map((stockName, index) => {
-
-            const isLowRsi = isLowRSI(allRSIData[stockName]);
-            if(!isLowRsi){
+      <CardsWrapper>
+        {allStocks.map((stockName, index) => {
+          const isLowRsi = isLowRSI(allRSIData[stockName]);
+          if (!isLowRsi) {
             return (
               <Card
                 card={livePlusIndicator[stockName]}
@@ -81,11 +75,11 @@ function AllCards() {
                 keepSeparated={true}
               />
             );
-            }else{
-              return <></>
-            }
-          })}
-        </CardsWrapper>
+          } else {
+            return <></>;
+          }
+        })}
+      </CardsWrapper>
       <hr />
     </div>
   );
