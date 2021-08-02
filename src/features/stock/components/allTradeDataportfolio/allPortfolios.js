@@ -82,46 +82,52 @@ function AllPortfolios() {
           </Col>
         </Row>
         {allStocks.map((stock) => {
-          return (
-            <Row>
-              <Col isHeader={true}>{stock}</Col>
+          if (stock !== "TIMESTAMP") {
+            return (
+              <Row>
+                <Col isHeader={true}>{stock}</Col>
 
-              {accounts.map((account, index) => {
-                const averagePrice = keyObjectTradeData[account][stock]
-                  ? keyObjectTradeData[account][stock].average_price
-                  : null;
-                const latestPrice =
-                  livePlusIndicator[stock].nse.priceInfo.lastPrice;
+                {accounts.map((account, index) => {
+                  const averagePrice = keyObjectTradeData[account][stock]
+                    ? keyObjectTradeData[account][stock].average_price
+                    : null;
 
-                const profitLoss = averagePrice
-                  ? (
-                      ((latestPrice - averagePrice) / averagePrice) *
-                      100
-                    ).toFixed(1)
-                  : null;
-                const quantity = keyObjectTradeData[account][stock]
-                  ? keyObjectTradeData[account][stock].quantity
-                  : null;
+                  console.log("stock", stock);
+                  const latestPrice =
+                    livePlusIndicator[stock].nse.priceInfo.lastPrice;
 
-                return (
-                  <Col>
-                    <InnerRow>
-                      <InnerCol>{averagePrice}</InnerCol>
-                      <InnerCol>{quantity}</InnerCol>
-                      <InnerCol>
-                        {quantity &&
-                          keyObjectTradeData[account][stock] &&
-                          latestPrice}
-                      </InnerCol>
-                      <InnerCol isLoss={profitLoss < 0} isHeader={true}>
-                        {quantity && profitLoss}
-                      </InnerCol>
-                    </InnerRow>
-                  </Col>
-                );
-              })}
-            </Row>
-          );
+                  const profitLoss = averagePrice
+                    ? (
+                        ((latestPrice - averagePrice) / averagePrice) *
+                        100
+                      ).toFixed(1)
+                    : null;
+                  const quantity = keyObjectTradeData[account][stock]
+                    ? keyObjectTradeData[account][stock].quantity
+                    : null;
+
+                  return (
+                    <Col>
+                      <InnerRow>
+                        <InnerCol>{averagePrice}</InnerCol>
+                        <InnerCol>{quantity}</InnerCol>
+                        <InnerCol>
+                          {quantity &&
+                            keyObjectTradeData[account][stock] &&
+                            latestPrice}
+                        </InnerCol>
+                        <InnerCol isLoss={profitLoss < 0} isHeader={true}>
+                          {quantity && profitLoss}
+                        </InnerCol>
+                      </InnerRow>
+                    </Col>
+                  );
+                })}
+              </Row>
+            );
+          } else {
+            return null;
+          }
         })}
       </PortfolioTable>
     </div>

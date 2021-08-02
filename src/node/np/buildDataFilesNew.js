@@ -106,4 +106,4 @@ const getCookies = async () => {
   }
 };
 
-getCookies();
+//getCookies();

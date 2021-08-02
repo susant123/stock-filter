@@ -8,8 +8,8 @@ import {
 } from "../commonStyles/commonStyles";
 
 const buildChartData = (macdChartData) => {
-  console.log("macdChartData", macdChartData);
-  if(!macdChartData){
+  //console.log("macdChartData", macdChartData);
+  if (!macdChartData) {
     return [];
   }
 
@@ -25,7 +25,7 @@ const buildChartData = (macdChartData) => {
       new Date(date[i] * 1000).toISOString().split("T")[0],
       macd[i],
       signal[i],
-      histogram[i],      
+      histogram[i],
     ];
     data.push(dataObj);
   }
@@ -33,11 +33,11 @@ const buildChartData = (macdChartData) => {
   return data;
 };
 
-const isPositiveMACDSignal = (macdChartData) =>{
+const isPositiveMACDSignal = (macdChartData) => {
   const macd = macdChartData[0];
   const signal = macdChartData[1];
   return macd[macd.length - 1] >= signal[signal.length - 1];
-}
+};
 
 function LineChart({ macdChartData }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,9 +48,14 @@ function LineChart({ macdChartData }) {
 
   return (
     <div>
-      <IconHeaderWrapper >
+      <IconHeaderWrapper>
         <ActionIcon onClick={handleClick}>{isOpen ? "-" : "+"}</ActionIcon>
-        <TableHeader isMacdPositive={isPositiveMACDSignal(macdChartData)} isMacdChart={true}>MACD Chart</TableHeader>
+        <TableHeader
+          isMacdPositive={isPositiveMACDSignal(macdChartData)}
+          isMacdChart={true}
+        >
+          MACD Chart
+        </TableHeader>
       </IconHeaderWrapper>
       {isOpen && (
         <Chart
