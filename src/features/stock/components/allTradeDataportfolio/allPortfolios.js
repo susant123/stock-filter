@@ -21,6 +21,10 @@ function AllPortfolios() {
 
   const allStocks = Object.keys(livePlusIndicator);
 
+  allStocks.sort();
+
+  console.log("allStocks", allStocks);
+
   const getKeyObjectTradeData = (tradeData) => {
     const keyObjectTradeData = [];
     if (tradeData["asha-kite"] && tradeData[accounts[0]]) {
