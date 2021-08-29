@@ -1,7 +1,6 @@
 import React from "react";
 import {
   CardBlock,
-  StockSymbol,
   GridBody,
   GridAction,
   AccuntName,
@@ -9,7 +8,6 @@ import {
   Title,
   InputField,
   Button,
-  StockName,
 } from "../commonStyles/cardStyles";
 import PivotLevelsTable from "../indicators/PivotLevelsTable";
 import SentimentsTable from "../indicators/SentimentsTable";
@@ -21,13 +19,13 @@ import RSILineChart from "../rsiChart/RSILineChart";
 import MACDChart from "../macdCharts/LineChart";
 import { selectAllRSIData, selectChartData } from "../../StockSlice";
 import { useSelector } from "react-redux";
-
+import CommonCardView from "../common/CommonCardView";
 
 const recommendedAmout = 15000;
 
 function BuyCard(props) {
   const { card, nseData } = props;
-  const { priceInfo, info, metadata } = nseData;
+  const { priceInfo } = nseData;
   const allRSIData = useSelector(selectAllRSIData);
   const chartData = useSelector(selectChartData);
 
@@ -56,13 +54,8 @@ function BuyCard(props) {
 
   return (
     <CardBlock>
-      <StockSymbol>
-        {card.stockName} ({priceInfo.lastPrice})
-      </StockSymbol>
-      <StockName>
-        {info.companyName}-(
-        {metadata.industry.toLowerCase()})
-      </StockName>
+      <CommonCardView nseData={nseData} stockName={card.stockName} />
+
       <hr style={{ borderColor: "gray" }} />
 
       {displayRows.map((displayRow, index) => {
@@ -78,6 +71,7 @@ function BuyCard(props) {
       <PivotLevelsTable pivotLevels={card.indicators.pivotLevels} />
       <EmaSma ema={card.indicators.ema} sma={card.indicators.sma} />
       <hr />
+
       <div style={{ backgroundColor: "#b49292" }}>
         <SwotComponent swot={card.strength} />
         <hr />
@@ -94,9 +88,7 @@ function BuyCard(props) {
           rsiData={allRSIData[card.stockName]}
           rsiRange={14}
         />
-        <MACDChart
-          macdChartData = {card.macdData} />
-
+        <MACDChart macdChartData={card.macdData} />
       </div>
       <QuantityBlock>
         <Title>Recommended Quantity: {card.quantity}</Title>

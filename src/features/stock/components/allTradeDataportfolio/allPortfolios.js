@@ -39,7 +39,7 @@ function AllPortfolios() {
   return (
     <div className="portfolio">
       <PortfolioTable>
-        <Row>
+        <Row fixedRow={true}>
           <Col isHeader={true}>Stock Name</Col>
           <Col isHeader={true}>Asha Kite</Col>
           <Col isHeader={true}>Susant Kite</Col>

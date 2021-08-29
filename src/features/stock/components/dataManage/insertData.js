@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { selectTradeData } from "../../StockSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { insertNewScripAsync } from "../../StockSlice";
 
 function InsertNewData() {

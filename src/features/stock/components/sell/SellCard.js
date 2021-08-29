@@ -15,7 +15,6 @@ import RSILineChart from "../rsiChart/RSILineChart";
 import { selectAllRSIData, selectChartData } from "../../StockSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { updateStock } from "../../StockSlice";
-import MACDChart from "../macdCharts/LineChart";
 
 function SellCard(props) {
   const dispatch = useDispatch();
@@ -95,7 +94,7 @@ function SellCard(props) {
             rsiData={allRSIData[card.stockName]}
             rsiRange={14}
           />
-          
+
           <Button onClick={doneHandler}>All Sold</Button>
           <Button onClick={partiallySavedhandler}>Partially Sold</Button>
         </QuantityBlock>

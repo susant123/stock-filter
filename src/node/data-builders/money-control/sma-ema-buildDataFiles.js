@@ -78,7 +78,7 @@ const takeBackup = () => {
       path.join(__dirname, "../../data/sma-ema-pivot-sentiment.json"),
       path.join(
         __dirname,
-        "../../data/sma-ema-pivot-sentiment-old" + timeSuffix + ".json"
+        "../../data/z-sma-ema-pivot-sentiment-old" + timeSuffix + ".json"
       ),
       (err) => {
         if (err) {

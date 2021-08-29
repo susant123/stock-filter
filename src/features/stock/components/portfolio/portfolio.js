@@ -35,7 +35,7 @@ function Portfolio() {
               return (
                 <AccountWrapper
                   onClick={() => handleSelection(account)}
-                  isSelected={selectedAc == account}
+                  isSelected={selectedAc === account}
                   key={index}
                 >
                   {account}

@@ -85,7 +85,7 @@ const takeBackup = () => {
   try {
     fs.copyFile(
       path.join(__dirname, "../../data/chart.json"),
-      path.join(__dirname, "../../data/chart-old" + timeSuffix + ".json"),
+      path.join(__dirname, "../../data/z-chart-old" + timeSuffix + ".json"),
       (err) => {
         if (err) {
           console.log("Error Found:", err);

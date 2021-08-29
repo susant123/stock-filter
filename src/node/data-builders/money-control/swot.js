@@ -90,7 +90,7 @@ const takeBackup = (type) => {
       path.join(__dirname, "../../data/" + swot[type] + ".json"),
       path.join(
         __dirname,
-        "../../data/" + swot[type] + "-old" + timeSuffix + ".json"
+        "../../data/z-" + swot[type] + "-old" + timeSuffix + ".json"
       ),
       (err) => {
         if (err) {

@@ -102,7 +102,7 @@ const getAllNSEData = (cookie) => {
         (function (i) {
           const symbol = constants.allStocks[i].symbol;
           setTimeout(async () => {
-            if (counter % 40 == 0) {
+            if (counter % 40 === 0) {
               refreshCookie();
             }
             const nseData = await getStockWiseNSEData(symbol);
@@ -113,7 +113,8 @@ const getAllNSEData = (cookie) => {
               constants.allStocks.length
             );
             if (
-              Object.keys(allNSEDataObj).length == constants.allStocks.length ||
+              Object.keys(allNSEDataObj).length ===
+                constants.allStocks.length ||
               symbol === "ECLERX"
             ) {
               resolve(allNSEDataObj);
@@ -136,7 +137,7 @@ const takeBackup = () => {
   try {
     fs.copyFile(
       __dirname + "/data/allNSEData.json",
-      __dirname + "/data/allNSEData-old" + timeSuffix + ".json",
+      __dirname + "/data/z-allNSEData-old" + timeSuffix + ".json",
       (err) => {
         if (err) {
           console.log("Error Found:", err);

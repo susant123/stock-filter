@@ -40,6 +40,15 @@ export const getSellRecommendation = (livePlusIndicator, tradeData = {}) => {
         const currentStock = initialTradeData[accounts[i]][allStocks[j]];
 
         if (livePlusIndicator[allStocks[j]]) {
+          /*if (!livePlusIndicator[allStocks[j]].nse.priceInfo) {
+            return;
+          }
+          console.log(
+            "allStocks[j]",
+            allStocks[j],
+            "livePlusIndicator[allStocks[j]].nse",
+            livePlusIndicator[allStocks[j]].nse
+          ); */
           const currentPrice =
             livePlusIndicator[allStocks[j]].nse.priceInfo.lastPrice;
           if (currentStock) {

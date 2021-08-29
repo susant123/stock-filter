@@ -72,7 +72,8 @@ export const StockSymbol = styled.div`
 
 export const StockName = styled.div`
   font-size: 12px;
-  color: #333;
+  color: ${(props) => (props.isDanger ? "#922" : "#333")};
+  background-color: ${(props) => (props.isDanger ? "yellow" : "transparent")};
   text-align: center;
   font-weight: bold;
 `;
