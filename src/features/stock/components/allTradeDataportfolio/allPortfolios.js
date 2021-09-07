@@ -23,7 +23,7 @@ function AllPortfolios() {
 
   allStocks.sort();
 
-  console.log("allStocks", allStocks);
+  //console.log("allStocks", allStocks);
 
   const getKeyObjectTradeData = (tradeData) => {
     const keyObjectTradeData = [];
@@ -85,10 +85,10 @@ function AllPortfolios() {
             </InnerRow>
           </Col>
         </Row>
-        {allStocks.map((stock) => {
+        {allStocks.map((stock, index) => {
           if (stock !== "TIMESTAMP") {
             return (
-              <Row>
+              <Row key={index}>
                 <Col isHeader={true}>{stock}</Col>
 
                 {accounts.map((account, index) => {
@@ -96,7 +96,6 @@ function AllPortfolios() {
                     ? keyObjectTradeData[account][stock].average_price
                     : null;
 
-                  console.log("stock", stock);
                   const latestPrice =
                     livePlusIndicator[stock].nse.priceInfo.lastPrice;
 
@@ -111,7 +110,7 @@ function AllPortfolios() {
                     : null;
 
                   return (
-                    <Col>
+                    <Col key={index}>
                       <InnerRow>
                         <InnerCol>{averagePrice}</InnerCol>
                         <InnerCol>{quantity}</InnerCol>

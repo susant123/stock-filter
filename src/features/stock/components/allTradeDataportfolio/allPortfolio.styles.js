@@ -9,7 +9,10 @@ export const Row = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   width: 100%;
-  ${(props) => (props.fixedRow ? "position: fixed; top: 55px;" : "")}
+  ${(props) =>
+    props.fixedRow
+      ? "position: fixed; top: 55px; width: calc(100% - 51px);"
+      : ""}
 `;
 
 export const Col = styled.div`

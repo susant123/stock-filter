@@ -29,7 +29,7 @@ const getAllStockNames = (stocksArr) => {
   return allStocksNames;
 };
 
-const calculateBuySuggestion = (stockWiseData) => {
+const calculateBuySuggestion = (stockWiseData, limitPercentage) => {
   //console.log("stockWiseData-----", stockWiseData);
   let buyAccount = null;
 
@@ -54,22 +54,22 @@ const calculateBuySuggestion = (stockWiseData) => {
   if (
     acc1Stock.quantity &&
     acc1Stock.quantity > 0 &&
-    acc1Stock.profitLoss < -5
+    acc1Stock.profitLoss < limitPercentage
   ) {
     if (
       acc2Stock.quantity &&
       acc2Stock.quantity > 0 &&
-      acc2Stock.profitLoss <= -5
+      acc2Stock.profitLoss <= limitPercentage
     ) {
       if (
         acc3Stock.quantity &&
         acc3Stock.quantity > 0 &&
-        acc3Stock.profitLoss <= -5
+        acc3Stock.profitLoss <= limitPercentage
       ) {
         if (
           acc4Stock.quantity &&
           acc4Stock.quantity > 0 &&
-          acc4Stock.profitLoss <= -5
+          acc4Stock.profitLoss <= limitPercentage
         ) {
           buyAccount = acc1Stock;
           buyAccount.flagAccounts = [
@@ -80,7 +80,7 @@ const calculateBuySuggestion = (stockWiseData) => {
         } else if (
           acc4Stock.quantity &&
           acc4Stock.quantity > 0 &&
-          acc4Stock.profitLoss > -5
+          acc4Stock.profitLoss > limitPercentage
         ) {
           console.log("Have patience", acc4Stock.account, acc4Stock.stockName);
         } else {
@@ -94,7 +94,7 @@ const calculateBuySuggestion = (stockWiseData) => {
       } else if (
         acc3Stock.quantity &&
         acc3Stock.quantity > 0 &&
-        acc3Stock.profitLoss > -5
+        acc3Stock.profitLoss > limitPercentage
       ) {
         console.log("Have patience", acc3Stock.account, acc3Stock.stockName);
       } else {
@@ -107,7 +107,7 @@ const calculateBuySuggestion = (stockWiseData) => {
     } else if (
       acc2Stock.quantity &&
       acc2Stock.quantity > 0 &&
-      acc2Stock.profitLoss > -5
+      acc2Stock.profitLoss > limitPercentage
     ) {
       console.log("Have patience", acc2Stock.account, acc2Stock.stockName);
     } else {
@@ -118,14 +118,18 @@ const calculateBuySuggestion = (stockWiseData) => {
   } else if (
     acc1Stock.quantity &&
     acc1Stock.quantity > 0 &&
-    acc1Stock.profitLoss > -5
+    acc1Stock.profitLoss > limitPercentage
   ) {
     console.log("Have patience", acc1Stock.account, acc1Stock.stockName);
   }
   return buyAccount;
 };
 
-export const getBuyRecommendations = (livePlusIndicator, tradeData) => {
+export const getBuyRecommendations = (
+  livePlusIndicator,
+  tradeData,
+  limitPercentage
+) => {
   const initialTradeData = getKeyObjectTradeData(tradeData);
   let allStocksNameArr = [];
   const buyRecommendations = [];
@@ -166,7 +170,10 @@ export const getBuyRecommendations = (livePlusIndicator, tradeData) => {
           }
         }
         if (stockWiseData.length > 0) {
-          const recomendedToBuy = calculateBuySuggestion(stockWiseData);
+          const recomendedToBuy = calculateBuySuggestion(
+            stockWiseData,
+            limitPercentage
+          );
           if (recomendedToBuy) {
             buyRecommendations.push(recomendedToBuy);
           }
