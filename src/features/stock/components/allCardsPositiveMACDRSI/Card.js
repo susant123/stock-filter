@@ -30,6 +30,7 @@ function Card(props) {
             card={card}
             rsiData={rsiData}
             chartData={chartData}
+            stockName={stockName}
           />
         </CardBlock>
       )}
