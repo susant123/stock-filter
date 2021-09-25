@@ -5,8 +5,8 @@ import { getBuyRecommendations } from "../../services/buyService";
 import { useSelector } from "react-redux";
 import { selectLivePlusIndicatorData, selectTradeData } from "../../StockSlice";
 
-const limit10Percentage = -10;
-const limit5Percentage = -5;
+const limit10Percentage = -9.9;
+const limit5Percentage = -4.9;
 
 function BuyCards() {
   const livePlusIndicator = useSelector(selectLivePlusIndicatorData);
