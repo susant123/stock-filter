@@ -7,12 +7,9 @@ export const PortfolioTable = styled.div`
 
 export const Row = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
   width: 100%;
-  ${(props) =>
-    props.fixedRow
-      ? "position: fixed; top: 55px; width: calc(100% - 51px);"
-      : ""}
+  ${(props) => (props.fixedRow ? "position: fixed; top: 55px;" : "")}
 `;
 
 export const Col = styled.div`
