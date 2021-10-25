@@ -4,7 +4,7 @@ export const Tab = styled.div`
   font-weight: bold;
   border: 1px solid #999;
   padding: 5px 10px;
-  min-width: 150px;
+  min-width: 80px;
   background: ${props=>props.active?'#888':'#cecece'};
   color: black;
   cursor: pointer;
