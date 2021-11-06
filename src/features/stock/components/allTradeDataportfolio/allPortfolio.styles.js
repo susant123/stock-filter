@@ -34,3 +34,45 @@ export const InnerCol = styled.div`
   font-weight: ${(props) => (props.isHeader ? "bold" : "normal")};
   color: ${(props) => (props.isLoss ? "red" : "black")};
 `;
+
+export const AdditionalInfo = styled.div`
+  width: 20px;
+  height: 20px;
+  border: 1px solid;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  cursor: pointer;
+`;
+export const Modal = styled.div`
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #ccc;
+  height: 500px;
+  width: 500px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+`;
+export const ModalContent = styled.div`
+  display: flex;
+  align-items: center;
+`;
+export const CloseButton = styled.div`
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: #fefefe;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  border: 1px solid #645959;
+  align-items: center;
+  justify-content: center;
+`;

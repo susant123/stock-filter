@@ -1868,6 +1868,11 @@ module.exports = {
       mcScdid: "RVN",
     },
     {
+      symbol: "RAILTEL",
+      mcScid: "RCO01",
+      mcScdid: "RCO01",
+    },
+    {
       symbol: "RAIN",
       mcScid: "PC13",
       mcScdid: "RC12",
@@ -1982,6 +1987,12 @@ module.exports = {
       mcScid: "SC47",
       mcScdid: "SC04",
     },
+    {
+      symbol: "SHYAMMETL",
+      mcScid: "SME05",
+      mcScdid: "SME05",
+    },
+
     {
       symbol: "SFL",
       mcScid: "SF30",

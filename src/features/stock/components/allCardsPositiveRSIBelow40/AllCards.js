@@ -35,7 +35,7 @@ function AllCards() {
 
     if (
       average > rsiData[rsiData.length - 1] &&
-      rsiData[rsiData.length - 1] < 40
+      rsiData[rsiData.length - 1] < 30
     ) {
       return true;
     }

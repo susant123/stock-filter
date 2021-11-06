@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { selectTradeData } from "../../StockSlice";
 import { useSelector } from "react-redux";
 import { selectLivePlusIndicatorData } from "../../StockSlice";
@@ -10,6 +10,10 @@ import {
   Row,
   InnerRow,
   InnerCol,
+  AdditionalInfo,
+  Modal,
+  ModalContent,
+  CloseButton,
 } from "./allPortfolio.styles";
 
 function AllPortfolios() {
@@ -17,8 +21,9 @@ function AllPortfolios() {
   const tradeData = useSelector(selectTradeData);
   /*const [selectedAc, setSelectedAc] = useState(null);
   const [totalInvested, setTotalInvested] = useState(0);*/
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalStock, setModalStock] = useState(null);
   const livePlusIndicator = useSelector(selectLivePlusIndicatorData);
-
   const allStocks = Object.keys(livePlusIndicator);
 
   allStocks.sort();
@@ -39,6 +44,17 @@ function AllPortfolios() {
   };
 
   const keyObjectTradeData = getKeyObjectTradeData(tradeData);
+
+  const showAdditionalInfoModal = (stock) => {
+    setIsModalOpen(true);
+    setModalStock(keyObjectTradeData[accounts[0]][stock]);
+    console.log(keyObjectTradeData[accounts[0]][stock]);
+    //keyObjectTradeData[account][stock]
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="portfolio">
@@ -89,7 +105,14 @@ function AllPortfolios() {
           if (stock !== "TIMESTAMP") {
             return (
               <Row key={index}>
-                <Col isHeader={true}>{stock}</Col>
+                <Col isHeader={true}>
+                  {stock}
+                  <AdditionalInfo
+                    onClick={() => showAdditionalInfoModal(stock)}
+                  >
+                    +
+                  </AdditionalInfo>
+                </Col>
 
                 {accounts.map((account, index) => {
                   const averagePrice = keyObjectTradeData[account][stock]
@@ -133,6 +156,12 @@ function AllPortfolios() {
           }
         })}
       </PortfolioTable>
+      {isModalOpen && (
+        <Modal>
+          <CloseButton onClick={closeModal}>X</CloseButton>
+          <ModalContent>{modalStock.stock_name}</ModalContent>
+        </Modal>
+      )}
     </div>
   );
 }
