@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Tab, TabsWrapper } from "./Tabs.styles";
 import SellCards from "../stock/components/sell/SellCards";
 import BuyCards from "../stock/components/buy/BuyCards";
+
+import AllBoughtCards from "../stock/components/allBought/AllBoughtCards";
+
 import Portfolio from "../stock/components/portfolio/portfolio";
 import InsertNewData from "./components/dataManage/insertData";
 import AllCardsPositiveRSIBelow40 from "./components/allCardsPositiveRSIBelow40/AllCards";
@@ -30,7 +33,7 @@ const Tabs = (props) => {
           Buy Cards
         </Tab>
         <Tab onClick={() => onTabClick(99)} active={activeTab === 99}>
-          All Cards-Positive RSI Below 40
+          All Cards-Positive RSI Below 30
         </Tab>
         <Tab onClick={() => onTabClick(3)} active={activeTab === 3}>
           All Cards-Positive RSI
@@ -38,20 +41,20 @@ const Tabs = (props) => {
         <Tab onClick={() => onTabClick(4)} active={activeTab === 4}>
           All Cards-Positive MACD
         </Tab>
-
         <Tab onClick={() => onTabClick(5)} active={activeTab === 5}>
           All Cards-Positive RSI & MACD
         </Tab>
-
         <Tab onClick={() => onTabClick(7)} active={activeTab === 7}>
           All Cards
         </Tab>
-
         <Tab onClick={() => onTabClick(10)} active={activeTab === 10}>
           Portfolio
         </Tab>
         <Tab onClick={() => onTabClick(11)} active={activeTab === 11}>
           All Portfolios
+        </Tab>
+        <Tab onClick={() => onTabClick(12)} active={activeTab === 12}>
+          All Bought Cards
         </Tab>
 
         {/*<Tab>Positive MACD</Tab>
@@ -91,6 +94,12 @@ const Tabs = (props) => {
         {activeTab === 11 && (
           <>
             <AllPortfolios />{" "}
+          </>
+        )}
+
+        {activeTab === 12 && (
+          <>
+            <AllBoughtCards />
           </>
         )}
       </div>
