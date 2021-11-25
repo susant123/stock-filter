@@ -2409,11 +2409,6 @@ module.exports = {
       mcScdid: "VST",
     },
     {
-      symbol: "VAIBHAVGBL",
-      mcScid: "VG02",
-      mcScdid: "VG02",
-    },
-    {
       symbol: "VAKRANGEE",
       mcScid: "VI02",
       mcScdid: "VS",
