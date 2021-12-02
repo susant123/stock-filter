@@ -172,11 +172,7 @@ module.exports = {
       mcScid: "GAC",
       mcScdid: "AC18",
     },
-    {
-      symbol: "ANGELBRKG",
-      mcScid: "ABL03",
-      mcScdid: "ABL03",
-    },
+
     {
       symbol: "APOLLOHOSP",
       mcScid: "AHE",
@@ -731,6 +727,11 @@ module.exports = {
       symbol: "ENGINERSIN",
       mcScid: "EI14",
       mcScdid: "EI14",
+    },
+    {
+      symbol: "EQUITAS",
+      mcScid: "EH03",
+      mcScdid: "EH03",
     },
     {
       symbol: "EQUITASBNK",
@@ -1953,6 +1954,11 @@ module.exports = {
       mcScdid: "S11",
     },
     {
+      symbol: "SAPPHIRE",
+      mcScid: "SFI05",
+      mcScdid: "SFI05",
+    },
+    {
       symbol: "SKFINDIA",
       mcScid: "SKF",
       mcScdid: "SKF01",
@@ -2497,11 +2503,6 @@ module.exports = {
       symbol: "YESBANK",
       mcScid: "YB",
       mcScdid: "YB",
-    },
-    {
-      symbol: "ZEEL",
-      mcScid: "ZT",
-      mcScdid: "ZEE",
     },
     {
       symbol: "ZENSARTECH",

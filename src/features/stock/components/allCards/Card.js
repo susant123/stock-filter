@@ -27,6 +27,7 @@ function Card(props) {
   };
 
   const isLowRsi = isLowRSI(rsiData);
+  console.log("stockName", stockName);
   return (
     <CardContainer keepSeparated={keepSeparated} isOpen={isOpen}>
       <IconHeaderWrapper onClick={handleClick}>

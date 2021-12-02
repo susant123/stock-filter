@@ -38,6 +38,15 @@ function BuyCards() {
         })}
       </CardsWrapper>
       <hr />
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+      <hr />
 
       <CardTitle>Buy Cards 5% - {cards5Percentage.length}</CardTitle>
       <CardsWrapper>

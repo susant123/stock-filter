@@ -10,8 +10,10 @@ function SwotComponent({ swot }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isRedFlag, setIsRedFlag] = useState(false);
   const [isGreenFlag, setIsGreenFlag] = useState(false);
+
+  const info = swot?swot.info:null;
   useEffect(() => {
-    swot.info.map((strength, index) => {
+    info && info.map((strength, index) => {
       if (strength.indexOf("Red Flag") !== -1) {
         setIsRedFlag(true);
       }
@@ -20,13 +22,14 @@ function SwotComponent({ swot }) {
       }
       return true;
     });
-  }, [swot.info]);
+  }, [info]);
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <Wrapper isRedFlag={isRedFlag} isGreenFlag={isGreenFlag}>
+    <>
+    {swot && <Wrapper isRedFlag={isRedFlag} isGreenFlag={isGreenFlag}>
       <IconHeaderWrapper>
         <ActionIcon onClick={handleClick}>{isOpen ? "-" : "+"}</ActionIcon>
         <CountLabel>{swot.count}</CountLabel>
@@ -39,7 +42,8 @@ function SwotComponent({ swot }) {
           })}
         </ol>
       )}
-    </Wrapper>
+    </Wrapper> }
+    </>
   );
 }
 
