@@ -24,7 +24,28 @@ function Portfolio() {
 
   const handleSelection = (account) => {
     setSelectedAc(account);
-    setTotalInvested(calculateTotalInvested(account));
+    const totalInvestedAmount = calculateTotalInvested(account);
+    setTotalInvested(totalInvestedAmount);
+    switch(account){
+      case "asha-kite":{
+        window.ashaKite = totalInvestedAmount;
+        break;
+      }
+      
+      case "asha-angel":{
+        window.ashaAngel = totalInvestedAmount;
+        break;
+      }
+      case "susant-kite":{
+        window.susantKite = totalInvestedAmount;
+        break;
+      }
+      default:
+        window.susantAngel = totalInvestedAmount;
+    }
+
+    window.totalInvested = parseFloat(window.susantAngel) + parseFloat( window.susantKite) +parseFloat( window.ashaAngel) +parseFloat( window.ashaKite);
+
   };
   return (
     <div className="portfolio">
@@ -44,7 +65,8 @@ function Portfolio() {
             })}
           </Tabs>
           <AccountWiseTradeData>
-            <div>{totalInvested}</div>
+            <div>{totalInvested} </div>
+            <div> Total in all Ac: <b>{window.totalInvested? window.totalInvested.toFixed(2).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","):0}</b> </div>
             {selectedAc &&
               tradeData[selectedAc].map((trade, index) => {
                 return (
