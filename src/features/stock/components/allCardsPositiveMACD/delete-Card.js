@@ -6,7 +6,8 @@ import CommonCardView from "../common/CommonCardView";
 import ChartsAndDetails from "../common/ChartsAndDetails";
 
 function Card(props) {
-  const { card, stockName, chartData, rsiData, keepSeparated } = props;
+  const { card, stockName, chartData, rsiData, keepSeparated, nsePriceData } =
+    props;
   const [isOpen, setIsOpen] = useState(true);
   const { nse } = card;
 
@@ -31,6 +32,7 @@ function Card(props) {
             rsiData={rsiData}
             chartData={chartData}
             stockName={stockName}
+            nsePriceData={nsePriceData[stockName]}
           />
         </CardBlock>
       )}

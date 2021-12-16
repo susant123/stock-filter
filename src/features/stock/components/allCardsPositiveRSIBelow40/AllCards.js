@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CardTitle, CardsWrapper } from "../commonStyles/allCardsStyles";
-import Card from "./Card";
+//import Card from "./Card";
+import Card from "../common/Card";
 import { useSelector } from "react-redux";
 import { IconHeaderWrapper } from "../commonStyles/commonStyles";
 
@@ -69,6 +70,7 @@ function AllCards() {
                 chartData={chartData[stockName]}
                 rsiData={allRSIData[stockName]}
                 nsePriceData={nsePriceData[stockName]}
+                isLowRsi={isLowRsi}
               />
             );
           } else {

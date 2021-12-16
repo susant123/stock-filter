@@ -11,6 +11,7 @@ import {
   selectAllRSIData,
   selectChartData,
   selectLivePlusIndicatorData,
+  selectNSEPriceData,
 } from "../../StockSlice";
 
 function AllCards() {
@@ -19,6 +20,7 @@ function AllCards() {
   const allRSIData = useSelector(selectAllRSIData);
   const chartData = useSelector(selectChartData);
   const livePlusIndicator = useSelector(selectLivePlusIndicatorData);
+  const nsePriceData = useSelector(selectNSEPriceData);
 
   //console.log("livePlusIndicator", livePlusIndicator);
 
@@ -56,6 +58,7 @@ function AllCards() {
                 key={index}
                 chartData={chartData[stockName]}
                 rsiData={allRSIData[stockName]}
+                nsePriceData={nsePriceData[stockName]}
               />
             );
           } else {
@@ -76,6 +79,7 @@ function AllCards() {
                 chartData={chartData[stockName]}
                 rsiData={allRSIData[stockName]}
                 keepSeparated={true}
+                nsePriceData={nsePriceData[stockName]}
               />
             );
           } else {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CardTitle, CardsWrapper } from "../commonStyles/allCardsStyles";
-import Card from "./Card";
+//import Card from "./Card";
+import Card from "../common/Card";
 import { useSelector } from "react-redux";
 import { IconHeaderWrapper } from "../commonStyles/commonStyles";
 
@@ -8,6 +9,7 @@ import {
   selectAllRSIData,
   selectChartData,
   selectLivePlusIndicatorData,
+  selectNSEPriceData,
 } from "../../StockSlice";
 
 function AllCards() {
@@ -15,6 +17,7 @@ function AllCards() {
   const allRSIData = useSelector(selectAllRSIData);
   const chartData = useSelector(selectChartData);
   const livePlusIndicator = useSelector(selectLivePlusIndicatorData);
+  const nsePriceData = useSelector(selectNSEPriceData);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -63,6 +66,7 @@ function AllCards() {
             key={index}
             chartData={chartData[stockName]}
             rsiData={allRSIData[stockName]}
+            nsePriceData={nsePriceData[stockName]}
           />
         ))}
       </CardsWrapper>
