@@ -22,6 +22,11 @@ export function fetchTradeData() {
   return axios.get(url);
 }
 
+export function fetchNSEPriceData() {
+  const url = baseUrl + "/getNSEPriceData";
+  return axios.get(url);
+}
+
 export function postSellData(payload) {
   const url = "http://localhost:4300/api/post_sell_data";
   console.log("postSellData", payload);

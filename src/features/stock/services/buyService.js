@@ -128,7 +128,8 @@ const calculateBuySuggestion = (stockWiseData, limitPercentage) => {
 export const getBuyRecommendations = (
   livePlusIndicator,
   tradeData,
-  limitPercentage
+  limitPercentage,
+  nsePriceData
 ) => {
   const initialTradeData = getKeyObjectTradeData(tradeData);
   let allStocksNameArr = [];
@@ -143,8 +144,10 @@ export const getBuyRecommendations = (
           const currentStock =
             initialTradeData[accounts[i]][allStocksNameArr[j]];
           if (livePlusIndicator[allStocksNameArr[j]]) {
-            const currentPrice =
-              livePlusIndicator[allStocksNameArr[j]].nse.priceInfo.lastPrice;
+            const currentPrice = nsePriceData[allStocksNameArr[j]]
+              ? nsePriceData[allStocksNameArr[j]].lastPrice
+              : livePlusIndicator[allStocksNameArr[j]].nse.priceInfo.lastPrice;
+
             const allLiveStockData = livePlusIndicator[allStocksNameArr[j]];
 
             if (currentStock) {

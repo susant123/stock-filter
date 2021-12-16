@@ -7,6 +7,7 @@ import {
   getTradeDataAsync,
   selectLivePlusIndicatorData,
   updateStock,
+  getNSEPriceDataAsync
 } from "./StockSlice";
 //import SellCards from "../stock/components/sell/SellCards";
 //import BuyCards from "../stock/components/buy/BuyCards";
@@ -22,7 +23,9 @@ export function Stock() {
     dispatch(getAllRSIDataAsync());
     dispatch(getChartDataAsync());
     dispatch(getTradeDataAsync());
+    dispatch(getNSEPriceDataAsync());
   }, [dispatch]);
+  
   const livePlusIndicatorData = useSelector(selectLivePlusIndicatorData);
 
   return (

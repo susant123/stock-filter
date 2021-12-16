@@ -6,6 +6,7 @@ import {
   fetchTradeData,
   postSellData,
   insertNewScrip,
+  fetchNSEPriceData,
 } from "./stockAPI";
 
 const initialState = {
@@ -13,6 +14,7 @@ const initialState = {
   chartData: {},
   livePlusIndicatorData: {},
   tradeData: {},
+  nsePriceData: {},
 };
 
 export const getAllRSIDataAsync = createAsyncThunk(
@@ -37,6 +39,14 @@ export const getLivePlusIndicatorDataAsync = createAsyncThunk(
   "stock/getLivePlusIndicatorData",
   async () => {
     const response = await fetchLivePlusIndicatorData();
+    return response.data;
+  }
+);
+
+export const getNSEPriceDataAsync = createAsyncThunk(
+  "stock/fetchNSEPriceData",
+  async () => {
+    const response = await fetchNSEPriceData();
     return response.data;
   }
 );
@@ -99,6 +109,9 @@ export const stockSlice = createSlice({
       .addCase(getLivePlusIndicatorDataAsync.fulfilled, (state, action) => {
         state.livePlusIndicatorData = action.payload;
       })
+      .addCase(getNSEPriceDataAsync.fulfilled, (state, action) => {
+        state.nsePriceData = action.payload;
+      })
       .addCase(getTradeDataAsync.fulfilled, (state, action) => {
         state.tradeData = action.payload;
       });
@@ -114,5 +127,6 @@ export const selectLivePlusIndicatorData = (state) =>
 export const selectTradeData = (state) => state.stocks.tradeData;
 export const selectPriceInfo = (state) =>
   state.stocks.livePlusIndicatorData.nse.priceInfo;
+export const selectNSEPriceData = (state) => state.stocks.nsePriceData;
 
 export default stockSlice.reducer;

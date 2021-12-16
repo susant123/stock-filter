@@ -6,7 +6,8 @@ import CommonCardView from "../common/CommonCardView";
 import ChartsAndDetails from "../common/ChartsAndDetails";
 
 function Card(props) {
-  const { card, stockName, chartData, rsiData, keepSeparated } = props;
+  const { card, stockName, chartData, rsiData, keepSeparated, nsePriceData } =
+    props;
   const [isOpen, setIsOpen] = useState(false);
   const { nse } = card;
 
@@ -37,7 +38,11 @@ function Card(props) {
 
       {(isOpen || isLowRsi) && stockName !== "ZEEL" && (
         <CardBlock>
-          <CommonCardView nseData={nse} stockName={stockName} />
+          <CommonCardView
+            nseData={nse}
+            stockName={stockName}
+            nsePriceData={nsePriceData}
+          />
           <ChartsAndDetails
             card={card}
             rsiData={rsiData}

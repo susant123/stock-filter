@@ -2,12 +2,18 @@ import React from "react";
 import { StockSymbol, StockName } from "../commonStyles/cardStyles";
 
 function CommonCardView(props) {
-  const { nseData, stockName } = props;
-
+  const { nseData, stockName, nsePriceData } = props;
+  const NotLivePrice = () => (
+    <span>
+      {nseData.priceInfo.lastPrice}
+      <span style={{ color: "red" }}> &nbsp;Not live</span>
+    </span>
+  );
   return (
     <>
       <StockSymbol>
-        {stockName}-({nseData.priceInfo.lastPrice})
+        {stockName}-(&nbsp;
+        {nsePriceData ? nsePriceData.lastPrice : <NotLivePrice />}&nbsp;)
       </StockSymbol>
       <hr style={{ borderColor: "gray" }} />
       <StockName>

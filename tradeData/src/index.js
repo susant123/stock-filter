@@ -5,8 +5,14 @@ import http from "http";
 import AllRSIData from "./data/AllRSIData.json";
 import ChartData from "./data/chart.json";
 import LiveIndicatorData from "./data/allData.json";
+import NSEPriceData from "./data/nse500.json";
 
 const bodyParser = require("body-parser");
+const NSEDataBuilder = require("./getNSEData.js");
+
+/* setInterval(function () {
+  NSEDataBuilder.startBuildingNSEPriceData();
+}, 5 * 60 * 1000); */
 
 let app = express();
 app.use(bodyParser.json());
@@ -38,6 +44,9 @@ app.get("/getLivePlusIndicatorData", (req, res) => {
   res.send(LiveIndicatorData);
 });
 
+app.get("/getNSEPriceData", (req, res) => {
+  res.send(NSEPriceData);
+});
 /* app.get("/getTradeData", (req, res) => {
   res.send(TradeData);
 }); */
