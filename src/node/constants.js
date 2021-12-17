@@ -394,11 +394,6 @@ module.exports = {
       mcScdid: "KPI02",
     },
     {
-      symbol: "BLISSGVS",
-      mcScid: "BCP01",
-      mcScdid: "BGV",
-    },
-    {
       symbol: "BLUEDART",
       mcScid: "BDE",
       mcScdid: "BDE",
@@ -654,16 +649,6 @@ module.exports = {
       mcScdid: "DB04",
     },
     {
-      symbol: "DISHTV",
-      mcScid: "DTV",
-      mcScdid: "DTV",
-    },
-    {
-      symbol: "DCAL",
-      mcScid: "DCA",
-      mcScdid: "DCA",
-    },
-    {
       symbol: "DIVISLAB",
       mcScid: "DL03",
       mcScdid: "DL03",
@@ -789,11 +774,6 @@ module.exports = {
       mcScdid: "FH",
     },
     {
-      symbol: "FCONSUMER",
-      mcScid: "FVI",
-      mcScdid: "FVI",
-    },
-    {
       symbol: "FRETAIL",
       mcScid: "FR",
       mcScdid: "FR",
@@ -804,19 +784,9 @@ module.exports = {
       mcScdid: "GAI",
     },
     {
-      symbol: "GEPIL",
-      mcScid: "ABB01",
-      mcScdid: "AP29",
-    },
-    {
       symbol: "GMMPFAUDLR",
       mcScid: "GMM01",
       mcScdid: "GMM01",
-    },
-    {
-      symbol: "GMRINFRA",
-      mcScid: "GI27",
-      mcScdid: "GI27",
     },
     {
       symbol: "GALAXYSURF",
@@ -1064,11 +1034,6 @@ module.exports = {
       mcScdid: "HUD",
     },
     {
-      symbol: "HUHTAMAKI",
-      mcScid: "PP",
-      mcScdid: "PP",
-    },
-    {
       symbol: "ICICIBANK",
       mcScid: "ICI02",
       mcScdid: "ICI02",
@@ -1304,11 +1269,6 @@ module.exports = {
       mcScdid: "JSW01",
     },
     {
-      symbol: "JTEKTINDIA",
-      mcScid: "SSS",
-      mcScdid: "SKS04",
-    },
-    {
       symbol: "JAMNAAUTO",
       mcScid: "JAI",
       mcScdid: "JAI",
@@ -1484,11 +1444,6 @@ module.exports = {
       mcScdid: "MMF04",
     },
     {
-      symbol: "MASFIN",
-      mcScid: "MFS09",
-      mcScdid: "MFS09",
-    },
-    {
       symbol: "MMTC",
       mcScid: "MMT",
       mcScdid: "MMT",
@@ -1507,16 +1462,6 @@ module.exports = {
       symbol: "MGL",
       mcScid: "MG02",
       mcScdid: "MG02",
-    },
-    {
-      symbol: "MAHSCOOTER",
-      mcScid: "MS01",
-      mcScdid: "MS01",
-    },
-    {
-      symbol: "MAHSEAMLES",
-      mcScid: "MS02",
-      mcScdid: "MS02",
     },
     {
       symbol: "MAHINDCIE",
@@ -1592,11 +1537,6 @@ module.exports = {
       symbol: "MIDHANI",
       mcScid: "MDN",
       mcScdid: "MDN",
-    },
-    {
-      symbol: "MOTHERSUMI",
-      mcScid: "MSS01",
-      mcScdid: "MSS01",
     },
     {
       symbol: "MOTILALOFS",
@@ -2015,11 +1955,6 @@ module.exports = {
       mcScdid: "SCI",
     },
     {
-      symbol: "SHOPERSTOP",
-      mcScid: "SS51",
-      mcScdid: "SS51",
-    },
-    {
       symbol: "SHREECEM",
       mcScid: "SC12",
       mcScdid: "SC12",
@@ -2123,11 +2058,6 @@ module.exports = {
       symbol: "SUNTV",
       mcScid: "STV01",
       mcScdid: "STN01",
-    },
-    {
-      symbol: "SUNCLAYLTD",
-      mcScid: "SC",
-      mcScdid: "SC",
     },
     {
       symbol: "SUNDARMFIN",

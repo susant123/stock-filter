@@ -76,3 +76,7 @@ export const CloseButton = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+export const NotLive = styled.span`
+  color: red;
+`;

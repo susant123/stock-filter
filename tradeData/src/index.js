@@ -8,11 +8,12 @@ import LiveIndicatorData from "./data/allData.json";
 import NSEPriceData from "./data/nse500.json";
 
 const bodyParser = require("body-parser");
-const NSEDataBuilder = require("./getNSEData.js");
+//const NSEDataBuilder = require("./getNSEData.js");
 
-setInterval(function () {
+console.log("restarted");
+/* setInterval(function () {
   NSEDataBuilder.startBuildingNSEPriceData();
-}, 300000); //5 * 60 * 1000
+}, 300000); //5 * 60 * 1000 */
 
 let app = express();
 app.use(bodyParser.json());
@@ -29,7 +30,7 @@ app.use(function (req, res, next) {
 });
 
 app.get("/", (req, res) => {
-  res.send("I am ready to provide staock data!");
+  res.send("I am ready to provide stock data!");
 });
 
 app.get("/getAllRSIData", (req, res) => {

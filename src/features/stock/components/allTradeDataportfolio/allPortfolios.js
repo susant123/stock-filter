@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { selectTradeData } from "../../StockSlice";
 import { useSelector } from "react-redux";
-import { selectLivePlusIndicatorData } from "../../StockSlice";
+import {
+  selectLivePlusIndicatorData,
+  selectNSEPriceData,
+} from "../../StockSlice";
 import { convertArrayToObject } from "../../utils/utilities";
 
 import {
@@ -14,6 +17,7 @@ import {
   Modal,
   ModalContent,
   CloseButton,
+  NotLive,
 } from "./allPortfolio.styles";
 
 function AllPortfolios() {
@@ -24,6 +28,7 @@ function AllPortfolios() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalStock, setModalStock] = useState(null);
   const livePlusIndicator = useSelector(selectLivePlusIndicatorData);
+  const nsePriceData = useSelector(selectNSEPriceData);
   const allStocks = Object.keys(livePlusIndicator);
 
   allStocks.sort();
@@ -106,7 +111,8 @@ function AllPortfolios() {
             return (
               <Row key={index}>
                 <Col isHeader={true}>
-                  {stock}
+                  {stock}{" "}
+                  {nsePriceData[stock] ? null : <NotLive>Not Live</NotLive>}
                   <AdditionalInfo
                     onClick={() => showAdditionalInfoModal(stock)}
                   >
@@ -119,8 +125,9 @@ function AllPortfolios() {
                     ? keyObjectTradeData[account][stock].average_price
                     : null;
                   //console.log("in all stock", stock);
-                  const latestPrice =
-                    livePlusIndicator[stock].nse.priceInfo.lastPrice;
+                  const latestPrice = nsePriceData[stock]
+                    ? nsePriceData[stock].lastPrice
+                    : livePlusIndicator[stock].nse.priceInfo.lastPrice;
 
                   const profitLoss = averagePrice
                     ? (
