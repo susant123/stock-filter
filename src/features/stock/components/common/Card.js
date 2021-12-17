@@ -7,9 +7,17 @@ import CommonCardView from "../common/CommonCardView";
 import ChartsAndDetails from "../common/ChartsAndDetails";
 
 function Card(props) {
-  const { card, stockName, chartData, rsiData, keepSeparated, nsePriceData } =
-    props;
-  const [isOpen, setIsOpen] = useState(true);
+  const {
+    card,
+    stockName,
+    chartData,
+    rsiData,
+    keepSeparated,
+    nsePriceData,
+    key,
+  } = props;
+  console.log("key", key);
+  const [isOpen, setIsOpen] = useState(key > 20 ? false : true);
   const { nse } = card;
 
   /*   const isLowRSI = (rsiData) => {
@@ -29,7 +37,7 @@ function Card(props) {
 
   //const isLowRsi = isLowRSI(rsiData);
 
-  console.log("stockName", stockName);
+  //console.log("stockName", stockName);
   return (
     <CardContainer keepSeparated={keepSeparated} isOpen={isOpen}>
       <IconHeaderWrapper onClick={handleClick}>
@@ -39,7 +47,7 @@ function Card(props) {
         </CardTitle>
       </IconHeaderWrapper>
 
-      {isOpen && stockName !== "ZEEL" && (
+      {isOpen && (
         <CardBlock>
           <CommonCardView
             nseData={nse}

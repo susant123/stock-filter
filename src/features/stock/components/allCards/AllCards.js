@@ -28,7 +28,7 @@ function AllCards() {
     setIsOpen(!isOpen);
   };
 
-  const isLowRSI = (rsiData) => {
+  /*   const isLowRSI = (rsiData) => {
     let total = 0;
     for (let i = 0; i < rsiData.length; i++) {
       total += rsiData[i];
@@ -37,7 +37,7 @@ function AllCards() {
     if (average > rsiData[rsiData.length - 1]) {
       return true;
     }
-  };
+  }; */
 
   const allStocks = Object.keys(livePlusIndicator);
   return (
@@ -49,25 +49,23 @@ function AllCards() {
 
       <CardsWrapper>
         {allStocks.map((stockName, index) => {
-          const isLowRsi = isLowRSI(allRSIData[stockName]);
-          if (isLowRsi) {
-            return (
-              <Card
-                card={livePlusIndicator[stockName]}
-                stockName={stockName}
-                key={index}
-                chartData={chartData[stockName]}
-                rsiData={allRSIData[stockName]}
-                nsePriceData={nsePriceData[stockName]}
-              />
-            );
-          } else {
-            return <></>;
-          }
+          //const isLowRsi = isLowRSI(allRSIData[stockName]);
+          //if (isLowRsi) {
+          return (
+            <Card
+              card={livePlusIndicator[stockName]}
+              stockName={stockName}
+              key={index}
+              chartData={chartData[stockName]}
+              rsiData={allRSIData[stockName]}
+              nsePriceData={nsePriceData[stockName]}
+            />
+          );
+          //}
         })}
       </CardsWrapper>
 
-      <CardsWrapper>
+      {/* <CardsWrapper>
         {allStocks.map((stockName, index) => {
           const isLowRsi = isLowRSI(allRSIData[stockName]);
           if (!isLowRsi) {
@@ -82,11 +80,9 @@ function AllCards() {
                 nsePriceData={nsePriceData[stockName]}
               />
             );
-          } else {
-            return <></>;
           }
         })}
-      </CardsWrapper>
+      </CardsWrapper> */}
       <hr />
     </div>
   );

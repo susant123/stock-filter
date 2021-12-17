@@ -113,7 +113,7 @@ const calculateBuySuggestion = (stockWiseData, limitPercentage) => {
     } else {
       buyAccount = acc2Stock;
       buyAccount.flagAccounts =
-        acc1Stock.account + ": " + acc1Stock.profitLoss + ",";
+        acc1Stock.account + ": " + acc1Stock.profitLoss + ",\n";
     }
   } else if (
     acc1Stock.quantity &&
@@ -132,7 +132,7 @@ export const getAllBoughtStocks = (
 ) => {
   const initialTradeData = getKeyObjectTradeData(tradeData);
 
-  console.log("initialTradeData---------------", initialTradeData);
+  //console.log("initialTradeData---------------", initialTradeData);
 
   let allStocksNameArr = [];
   const buyRecommendations = [];

@@ -24,14 +24,14 @@ import CommonCardView from "../common/CommonCardView";
 const recommendedAmout = 15000;
 
 function BuyCard(props) {
-  const { card, nseData } = props;
+  const { card, nseData, nsePriceData } = props;
   const { priceInfo } = nseData;
+
+  const lastPrice = nsePriceData ? nsePriceData.lastPrice : priceInfo.lastPrice;
   const allRSIData = useSelector(selectAllRSIData);
   const chartData = useSelector(selectChartData);
 
-  const recommendedQuantity = Math.floor(
-    recommendedAmout / priceInfo.lastPrice
-  );
+  const recommendedQuantity = Math.floor(recommendedAmout / lastPrice);
   const displayRows = [
     { label: "Buy", info: card.account },
     { label: "Flag Accounts", info: card.flagAccounts },
@@ -54,7 +54,11 @@ function BuyCard(props) {
 
   return (
     <CardBlock>
-      <CommonCardView nseData={nseData} stockName={card.stockName} />
+      <CommonCardView
+        nseData={nseData}
+        stockName={card.stockName}
+        nsePriceData={nsePriceData}
+      />
 
       <hr style={{ borderColor: "gray" }} />
 

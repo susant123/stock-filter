@@ -95,6 +95,7 @@ const startBuildingNSEPriceData = async () => {
   }
 };
 
+//startBuildingNSEPriceData();
 module.exports.startBuildingNSEPriceData = startBuildingNSEPriceData;
 
 /*setInterval(function () {

@@ -10,9 +10,9 @@ import NSEPriceData from "./data/nse500.json";
 const bodyParser = require("body-parser");
 const NSEDataBuilder = require("./getNSEData.js");
 
-/* setInterval(function () {
+setInterval(function () {
   NSEDataBuilder.startBuildingNSEPriceData();
-}, 5 * 60 * 1000); */
+}, 300000); //5 * 60 * 1000
 
 let app = express();
 app.use(bodyParser.json());

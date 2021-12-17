@@ -61,7 +61,7 @@ function AllCards() {
         {allStocks.map((stockName, index) => {
           const isLowRsi = isLowRSI(allRSIData[stockName]);
           if (isLowRsi) {
-            console.log({ stockName, rsiData: allRSIData[stockName] });
+            // console.log({ stockName, rsiData: allRSIData[stockName] });
             return (
               <Card
                 card={livePlusIndicator[stockName]}
@@ -73,8 +73,6 @@ function AllCards() {
                 isLowRsi={isLowRsi}
               />
             );
-          } else {
-            return <></>;
           }
         })}
       </CardsWrapper>

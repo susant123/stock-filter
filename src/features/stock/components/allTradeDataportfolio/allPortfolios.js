@@ -118,7 +118,7 @@ function AllPortfolios() {
                   const averagePrice = keyObjectTradeData[account][stock]
                     ? keyObjectTradeData[account][stock].average_price
                     : null;
-console.log("in all stock", stock);
+                  //console.log("in all stock", stock);
                   const latestPrice =
                     livePlusIndicator[stock].nse.priceInfo.lastPrice;
 

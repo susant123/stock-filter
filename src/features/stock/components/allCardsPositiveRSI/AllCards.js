@@ -68,8 +68,6 @@ function AllCards() {
                 nsePriceData={nsePriceData[stockName]}
               />
             );
-          } else {
-            return <></>;
           }
         })}
       </CardsWrapper>
