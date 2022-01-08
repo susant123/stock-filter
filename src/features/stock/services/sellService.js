@@ -29,7 +29,11 @@ const getAllStockNames = (stocksArr) => {
   return allStocksNames;
 };
 
-export const getSellRecommendation = (livePlusIndicator, tradeData = {}) => {
+export const getSellRecommendation = (
+  livePlusIndicator,
+  tradeData = {},
+  nsePriceData = {}
+) => {
   let allStocks = [];
   const sellRecommendation = [];
   if (tradeData["asha-kite"] && JSON.stringify(livePlusIndicator) !== "{}") {
@@ -49,8 +53,9 @@ export const getSellRecommendation = (livePlusIndicator, tradeData = {}) => {
             "livePlusIndicator[allStocks[j]].nse",
             livePlusIndicator[allStocks[j]].nse
           ); */
-          const currentPrice =
-            livePlusIndicator[allStocks[j]].nse.priceInfo.lastPrice;
+          const currentPrice = nsePriceData[allStocks[j]]
+            ? nsePriceData[allStocks[j]].lastPrice
+            : livePlusIndicator[allStocks[j]].nse.priceInfo.lastPrice;
           if (currentStock) {
             const profit = parseFloat(
               profitLossCalc(

@@ -1,56 +1,8 @@
 const axios = require("axios");
 const constants = require("./constants");
 const utils = require("./utils");
-
-//const swot = require("./data-builders/money-control/swot");
 const chart = require("./data-builders/money-control/chartData");
-
 const fs = require("fs");
-
-// Start
-/*
-const path = require("path");
-//const stocksConstants = require("../../src/node/constants");
-const sqlite3 = require("sqlite3").verbose();
-
-const dbPath = path.join(
-  __dirname,
-  "../..",
-  "tradeDetailsDB",
-  "app",
-  "data",
-  "tradeData.db"
-);
-console.log("dbPath", dbPath);
-
-const db = new sqlite3.Database(dbPath, sqlite3.OPEN_READWRITE, (err) => {
-  if (err) {
-    console.error(err.message);
-  } else {
-    console.log("Connected to the tradeData database.");
-  }
-});
-
-const allStocks = [];
-
-db.serialize(function () {
-  db.each("SELECT * FROM stock_master", function (err, row) {
-    //console.log(row.id + ": " + row.symbol);
-    allStocks.push({
-      symbol: row.symbol,
-      mcScid: row.mcScid,
-      mcScdid: row.mcScdid,
-      avoid: row.avoid,
-    });
-  });
-
-  // close the database connection
-  db.close();
-});
-
-console.log("allStocks", allStocks);
-*/
-//End
 
 let cookie;
 

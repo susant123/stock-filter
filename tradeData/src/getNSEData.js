@@ -98,6 +98,6 @@ const startBuildingNSEPriceData = async () => {
 startBuildingNSEPriceData();
 //module.exports.startBuildingNSEPriceData = startBuildingNSEPriceData;
 
-setInterval(function () {
+/* setInterval(function () {
   startBuildingNSEPriceData();
-}, 300000); //5*60*1000
+}, 300000); //5*60*1000 */

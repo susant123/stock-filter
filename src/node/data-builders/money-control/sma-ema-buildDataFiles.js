@@ -34,8 +34,10 @@ const getStockWiseNSEData = (symbol) => {
   });
 };
 
+//function fetchedDataAggregator() {}
+
 const getAllNSEData = (cookie) => {
-  let counter = 0;
+  //let counter = 0;
   const allNSEDataObj = {};
   try {
     return new Promise((resolve, reject) => {
@@ -53,13 +55,11 @@ const getAllNSEData = (cookie) => {
               constants.allStocks.length
             );
             if (
-              Object.keys(allNSEDataObj).length == constants.allStocks.length ||
-              symbol == "ES07" ||
-              stockSymbol == "ECLERX"
+              Object.keys(allNSEDataObj).length === constants.allStocks.length
             ) {
               resolve(allNSEDataObj);
             }
-            counter++;
+            //counter++;
           }, 500 * (i + 1));
         })(i);
       }
