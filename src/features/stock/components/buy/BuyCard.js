@@ -28,6 +28,7 @@ function BuyCard(props) {
   const { priceInfo } = nseData;
   const allRSIData = useSelector(selectAllRSIData);
   const chartData = useSelector(selectChartData);
+  //const marketCap = Math.floor(card.nse.securityInfo.issuedCap * card.nse.priceInfo.lastPrice / 10000000);
 
   const recommendedQuantity = Math.floor(
     recommendedAmout / priceInfo.lastPrice
@@ -57,7 +58,7 @@ function BuyCard(props) {
       <CommonCardView
         nseData={nseData}
         stockName={card.stockName}
-        nsePriceData={nsePriceData}
+        nsePriceData={nsePriceData} 
       />
 
       <hr style={{ borderColor: "gray" }} />

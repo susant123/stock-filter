@@ -20,6 +20,8 @@ function Card(props) {
   const [isOpen, setIsOpen] = useState(key > 20 ? false : true);
   const { nse } = card;
 
+  const marketCap = Math.floor(card.nse.securityInfo.issuedCap * card.nse.priceInfo.lastPrice / 10000000);
+
   /*   const isLowRSI = (rsiData) => {
     let total = 0;
     for (let i = 0; i < rsiData.length; i++) {
@@ -31,6 +33,7 @@ function Card(props) {
     }
   };
  */
+
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
@@ -43,7 +46,7 @@ function Card(props) {
       <IconHeaderWrapper onClick={handleClick}>
         <ActionIcon>{isOpen ? "-" : "+"}</ActionIcon>
         <CardTitle>
-          {stockName}-({nse.priceInfo.lastPrice}){" "}
+          {stockName}-({nse.priceInfo.lastPrice}){" "} ({marketCap} Cr)
         </CardTitle>
       </IconHeaderWrapper>
 

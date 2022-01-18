@@ -3,6 +3,9 @@ import { StockSymbol, StockName } from "../commonStyles/cardStyles";
 
 function CommonCardView(props) {
   const { nseData, stockName, nsePriceData } = props;
+
+  const marketCap = Math.floor(nseData.securityInfo.issuedCap * nseData.priceInfo.lastPrice / 10000000);
+
   const NotLivePrice = () => (
     <span>
       {nseData.priceInfo.lastPrice}
@@ -13,7 +16,7 @@ function CommonCardView(props) {
     <>
       <StockSymbol>
         {stockName}-(&nbsp;
-        {nsePriceData ? nsePriceData.lastPrice : <NotLivePrice />}&nbsp;)
+        {nsePriceData ? nsePriceData.lastPrice : <NotLivePrice />}&nbsp;) - ({marketCap} Cr)
       </StockSymbol>
       <hr style={{ borderColor: "gray" }} />
       <StockName>
