@@ -1,27 +1,82 @@
-const stockWiseData = [
-  { account: "asha-kite", profitLoss: -1, quantity: 10 },
-  { account: "asha-angel", profitLoss: -6, quantity: 5 },
-  { account: "asha-paytm", profitLoss: 0, quantity: 0 },
-  { account: "susant-kite", profitLoss: 2, quantity: 8 },
-  { account: "susant-angel", profitLoss: -17, quantity: 10 },
-  { account: "susant-paytm", profitLoss: 0, quantity: 0 },
-];
+import { Component } from "react";
 
-const calculateBuySuggestion = (stockWiseData, limitPercentage) => els  {};
-
-const checkBuyStatus = (
-  account,
-  stockName,
-  profitLoss,
-  quantity,
-  limitPercentage
-) => {
-  if (quantity && quantity > 0 && profitLoss < limitPercentage) {
-  
-  } else if (quantity && quantity > 0 && profitLoss > limitPercentage) {
-    console.log("Have patience", account, stockName);
+export default class TodoList extends Component {
+  constructor() {
+    super();
+    this.state = {
+      updatedInputValue: "",
+      todoList: [
+        { isDone: false, task: "First Task" },
+        { isDone: true, task: "Second Task" },
+      ],
+    };
   }
-};
 
-const limitPercentage = 5;
-console.log(calculateBuySuggestion(stockWiseData, limitPercentage));
+  handleAdd = () => {
+    this.setState({
+      ...this.state,
+      todoList: [
+        ...this.state.todoList,
+        { isDone: false, task: this.state.updatedInputValue },
+      ],
+    });
+  };
+
+  inputChangeHandler = (e) => {
+    this.setState({
+      ...this.state,
+      updatedInputValue: e.target.value,
+    });
+  };
+
+  handleDelete = (index) => {
+    const { todoList } = this.state;
+
+    let updatableObj = todoList[index];
+    updatableObj.isDone = !updatableObj.isDone;
+
+    todoList.splice(index, 1, updatableObj);
+
+    this.setState({
+      ...this.state,
+      todoList: [...todoList],
+    });
+  };
+
+  render() {
+    return (
+      <>
+        <div>
+          <h2>
+            Todo List
+            <br />
+            <input
+              value={this.state.updatedInputValue}
+              onChange={this.inputChangeHandler}
+            />{" "}
+            <button onClick={this.handleAdd}>Add</button>
+          </h2>
+        </div>
+        <ul>
+          {this.state.todoList.map((todo, index) => {
+            return (
+              <li
+                key={index}
+                onClick={() => this.handleDelete(index)}
+                className={todo.isDone && "is-done"}
+              >
+                {todo.task}{" "}
+              </li>
+            );
+          })}
+        </ul>
+
+        <style>{`
+                    .is-done {
+                        text-decoration: line-through;
+                    }
+                `}</style>
+      </>
+    );
+  }
+}
