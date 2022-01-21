@@ -1704,11 +1704,6 @@ module.exports = {
       mcScdid: "P",
     },
     {
-      symbol: "PHILIPCARB",
-      mcScid: "PCB01",
-      mcScdid: "PCB01",
-    },
-    {
       symbol: "PHOENIXLTD",
       mcScid: "PM02",
       mcScdid: "PM02",
