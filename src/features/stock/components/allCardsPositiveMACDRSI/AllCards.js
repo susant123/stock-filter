@@ -64,6 +64,7 @@ function AllCards() {
             card={livePlusIndicator[stockName]}
             stockName={stockName}
             key={index}
+            currentIndex={index}
             chartData={chartData[stockName]}
             rsiData={allRSIData[stockName]}
             nsePriceData={nsePriceData[stockName]}

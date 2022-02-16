@@ -11,8 +11,10 @@ export const CardTitle = styled.div`
 `;
 
 export const CardContainer = styled.div`
-  margin: ${props=>props.keepSeparated?'20px 0':'auto'};
-  min-width: ${props=>props.keepSeparated? '500px': 'auto'};
-  display: ${props=>props.keepSeparated ?'flex':'auto'};
-  flex-direction: ${props=>props.isOpen ?'column':'row'};
-`
+  margin: ${(props) => (props.keepSeparated ? "20px 0" : "auto")};
+  min-width: ${(props) => (props.keepSeparated ? "500px" : "auto")};
+  display: ${(props) => (props.keepSeparated ? "flex" : "auto")};
+  flex-direction: ${(props) => (props.isOpen ? "column" : "row")};
+  min-width: 30%;
+  margin: 20px;
+`;

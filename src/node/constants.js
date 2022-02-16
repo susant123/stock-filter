@@ -1669,6 +1669,11 @@ module.exports = {
       mcScdid: "PII",
     },
     {
+      symbol: "PAYTM",
+      mcScid: "OC10",
+      mcScdid: "OC03",
+    },
+    {
       symbol: "PNBHOUSING",
       mcScid: "PHF",
       mcScdid: "PHF",
@@ -2433,6 +2438,11 @@ module.exports = {
       symbol: "ZENSARTECH",
       mcScid: "FIC",
       mcScdid: "ZT02",
+    },
+    {
+      symbol: "ZOMATO",
+      mcScid: "Z01",
+      mcScdid: "Z",
     },
     {
       symbol: "ZYDUSWELL",

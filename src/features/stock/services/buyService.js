@@ -34,93 +34,58 @@ const calculateBuySuggestion = (stockWiseData, limitPercentage) => {
   let buyAccount = null;
 
   stockWiseData.sort((a, b) => {
-    const value = (el, quantity) => {
-      return el === 0 && !quantity ? Infinity : el;
-    };
-
+    const value = (el, quantity) => (el === 0 && !quantity ? Infinity : el);
     return value(a.profitLoss, a.quantity) - value(b.profitLoss, b.quantity);
-
-    /* if (b.profitLoss === 0 || a.profitLoss === 0) {
-      return -9999;
-    }
-    return a.profitLoss - b.profitLoss; */
   });
 
-  const acc1Stock = stockWiseData[0];
-  const acc2Stock = stockWiseData[1];
-  const acc3Stock = stockWiseData[2];
-  const acc4Stock = stockWiseData[3];
+  const acc1 = stockWiseData[0];
+  const acc2 = stockWiseData[1];
+  const acc3 = stockWiseData[2];
+  const acc4 = stockWiseData[3];
 
-  if (
-    acc1Stock.quantity &&
-    acc1Stock.quantity > 0 &&
-    acc1Stock.profitLoss < limitPercentage
-  ) {
-    if (
-      acc2Stock.quantity &&
-      acc2Stock.quantity > 0 &&
-      acc2Stock.profitLoss <= limitPercentage
-    ) {
-      if (
-        acc3Stock.quantity &&
-        acc3Stock.quantity > 0 &&
-        acc3Stock.profitLoss <= limitPercentage
-      ) {
-        if (
-          acc4Stock.quantity &&
-          acc4Stock.quantity > 0 &&
-          acc4Stock.profitLoss <= limitPercentage
-        ) {
-          buyAccount = acc1Stock;
-          buyAccount.flagAccounts = [
-            acc2Stock.account + ": " + acc2Stock.profitLoss + ",",
-            acc3Stock.account + ": " + acc3Stock.profitLoss + ",",
-            acc4Stock.account + ": " + acc4Stock.profitLoss + ",",
-          ];
-        } else if (
-          acc4Stock.quantity &&
-          acc4Stock.quantity > 0 &&
-          acc4Stock.profitLoss > limitPercentage
-        ) {
-          console.log("Have patience", acc4Stock.account, acc4Stock.stockName);
-        } else {
-          buyAccount = acc4Stock;
-          buyAccount.flagAccounts = [
-            acc1Stock.account + ": " + acc1Stock.profitLoss + ",",
-            acc2Stock.account + ": " + acc2Stock.profitLoss + ",",
-            acc3Stock.account + ": " + acc3Stock.profitLoss + ",",
-          ];
-        }
-      } else if (
-        acc3Stock.quantity &&
-        acc3Stock.quantity > 0 &&
-        acc3Stock.profitLoss > limitPercentage
-      ) {
-        console.log("Have patience", acc3Stock.account, acc3Stock.stockName);
-      } else {
-        buyAccount = acc3Stock;
-        buyAccount.flagAccounts = [
-          acc1Stock.account + ": " + acc1Stock.profitLoss + ",",
-          acc2Stock.account + ": " + acc2Stock.profitLoss + ",",
-        ];
-      }
-    } else if (
-      acc2Stock.quantity &&
-      acc2Stock.quantity > 0 &&
-      acc2Stock.profitLoss > limitPercentage
-    ) {
-      console.log("Have patience", acc2Stock.account, acc2Stock.stockName);
-    } else {
-      buyAccount = acc2Stock;
-      buyAccount.flagAccounts =
-        acc1Stock.account + ": " + acc1Stock.profitLoss + ",";
+  const isLossMoreThanLimit = (stock) =>
+    stock.quantity && stock.quantity > 0 && stock.profitLoss <= limitPercentage;
+
+  const isLossLessThanLimit = (stock) =>
+    stock.quantity && stock.quantity > 0 && stock.profitLoss > limitPercentage;
+
+  const flagAccountsStrBuilder = (flagAccounts) => {
+    console.log("flagAccounts", flagAccounts);
+
+    let finalStr = "";
+    for (let i = 0; i < flagAccounts.length; i++) {
+      finalStr +=
+        flagAccounts[i].account + ": " + flagAccounts[i].profitLoss + ",";
     }
-  } else if (
-    acc1Stock.quantity &&
-    acc1Stock.quantity > 0 &&
-    acc1Stock.profitLoss > limitPercentage
-  ) {
-    console.log("Have patience", acc1Stock.account, acc1Stock.stockName);
+    return finalStr;
+  };
+
+  if (isLossMoreThanLimit(acc1)) {
+    if (isLossMoreThanLimit(acc2)) {
+      if (isLossMoreThanLimit(acc3)) {
+        if (isLossMoreThanLimit(acc4)) {
+          buyAccount = acc1;
+          buyAccount.flagAccounts = flagAccountsStrBuilder([acc2, acc3, acc4]);
+        } else if (isLossLessThanLimit(acc4)) {
+          console.log("Have patience", acc4.account, acc4.stockName);
+        } else {
+          buyAccount = acc4;
+          buyAccount.flagAccounts = flagAccountsStrBuilder([acc1, acc2, acc3]);
+        }
+      } else if (isLossLessThanLimit(acc3)) {
+        console.log("Have patience", acc3.account, acc3.stockName);
+      } else {
+        buyAccount = acc3;
+        buyAccount.flagAccounts = flagAccountsStrBuilder([acc1, acc2]);
+      }
+    } else if (isLossLessThanLimit(acc2)) {
+      console.log("Have patience", acc2.account, acc2.stockName);
+    } else {
+      buyAccount = acc2;
+      buyAccount.flagAccounts = flagAccountsStrBuilder([acc1]);
+    }
+  } else if (isLossLessThanLimit(acc1)) {
+    console.log("Have patience", acc1.account, acc1.stockName);
   }
   return buyAccount;
 };

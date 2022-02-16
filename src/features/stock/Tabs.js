@@ -1,20 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import { Tab, TabsWrapper } from "./Tabs.styles";
-import SellCards from "../stock/components/sell/SellCards";
-import BuyCards from "../stock/components/buy/BuyCards";
-
-import AllBoughtCards from "../stock/components/allBought/AllBoughtCards";
-
 import Portfolio from "../stock/components/portfolio/portfolio";
 import InsertNewData from "./components/dataManage/insertData";
-import AllCardsPositiveRSIBelow40 from "./components/allCardsPositiveRSIBelow40/AllCards";
-import AllCardsPositiveRSI from "./components/allCardsPositiveRSI/AllCards";
-import AllCardsPositiveMACD from "./components/allCardsPositiveMACD/AllCards";
-import AllCardsPositiveMACDRSI from "./components/allCardsPositiveMACDRSI/AllCards";
 
-import AllCards from "./components/allCards/AllCards";
+const AllCards = React.lazy(() => import("./components/allCards/AllCards"));
 
-import AllPortfolios from "./components/allTradeDataportfolio/allPortfolios";
+const AllPortfolios = lazy(() =>
+  import("./components/allTradeDataportfolio/allPortfolios")
+);
+
+const AllCardsPositiveMACDRSI = lazy(() =>
+  import("./components/allCardsPositiveMACDRSI/AllCards")
+);
+
+const AllCardsPositiveMACD = lazy(() =>
+  import("./components/allCardsPositiveMACD/AllCards")
+);
+
+const AllCardsPositiveRSI = lazy(() =>
+  import("./components/allCardsPositiveRSI/AllCards")
+);
+
+const AllCardsPositiveRSIBelow40 = lazy(() =>
+  import("./components/allCardsPositiveRSIBelow40/AllCards")
+);
+
+const AllBoughtCards = lazy(() =>
+  import("../stock/components/allBought/AllBoughtCards")
+);
+
+const BuyCards = lazy(() => import("../stock/components/buy/BuyCards"));
+const SellCards = lazy(() => import("../stock/components/sell/SellCards"));
 
 const Tabs = (props) => {
   const { livePlusIndicatorData } = props;
@@ -64,25 +80,45 @@ const Tabs = (props) => {
       </TabsWrapper>
 
       <div>
-        {activeTab === 1 && <SellCards />}
-        {activeTab === 2 && <BuyCards />}
+        {activeTab === 1 && (
+          <Suspense fallback={<div>Loading....</div>}>
+            <SellCards />
+          </Suspense>
+        )}
+        {activeTab === 2 && (
+          <Suspense fallback={<div>Loading....</div>}>
+            <BuyCards />
+          </Suspense>
+        )}
         {activeTab === 99 && (
-          <AllCardsPositiveRSIBelow40
-            livePlusIndicator={livePlusIndicatorData}
-          />
+          <Suspense fallback={<div>Loading....</div>}>
+            <AllCardsPositiveRSIBelow40
+              livePlusIndicator={livePlusIndicatorData}
+            />
+          </Suspense>
         )}
         {activeTab === 3 && (
-          <AllCardsPositiveRSI livePlusIndicator={livePlusIndicatorData} />
+          <Suspense fallback={<div>Loading....</div>}>
+            <AllCardsPositiveRSI livePlusIndicator={livePlusIndicatorData} />
+          </Suspense>
         )}
         {activeTab === 4 && (
-          <AllCardsPositiveMACD livePlusIndicator={livePlusIndicatorData} />
+          <Suspense fallback={<div>Loading....</div>}>
+            <AllCardsPositiveMACD livePlusIndicator={livePlusIndicatorData} />
+          </Suspense>
         )}
         {activeTab === 5 && (
-          <AllCardsPositiveMACDRSI livePlusIndicator={livePlusIndicatorData} />
+          <Suspense fallback={<div>Loading....</div>}>
+            <AllCardsPositiveMACDRSI
+              livePlusIndicator={livePlusIndicatorData}
+            />
+          </Suspense>
         )}
 
         {activeTab === 7 && (
-          <AllCards livePlusIndicator={livePlusIndicatorData} />
+          <Suspense fallback={<div>Loading....</div>}>
+            <AllCards livePlusIndicator={livePlusIndicatorData} />
+          </Suspense>
         )}
         {activeTab === 10 && (
           <>
@@ -92,15 +128,15 @@ const Tabs = (props) => {
         )}
 
         {activeTab === 11 && (
-          <>
-            <AllPortfolios />{" "}
-          </>
+          <Suspense fallback={<div>Loading....</div>}>
+            <AllPortfolios />
+          </Suspense>
         )}
 
         {activeTab === 12 && (
-          <>
+          <Suspense fallback={<div>Loading....</div>}>
             <AllBoughtCards />
-          </>
+          </Suspense>
         )}
       </div>
     </div>

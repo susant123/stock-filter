@@ -47,6 +47,8 @@ function AllCards() {
     return isLowRSI(allRSIData[stockName]);
   });
 
+  let cardNumber = 0;
+
   return (
     <div className="App">
       <hr />
@@ -63,12 +65,14 @@ function AllCards() {
                 card={livePlusIndicator[stockName]}
                 stockName={stockName}
                 key={index}
+                currentIndex={cardNumber++}
                 chartData={chartData[stockName]}
                 rsiData={allRSIData[stockName]}
                 nsePriceData={nsePriceData[stockName]}
               />
             );
           }
+          return null;
         })}
       </CardsWrapper>
       <hr />

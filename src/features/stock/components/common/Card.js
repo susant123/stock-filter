@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { CardBlock } from "../commonStyles/cardStyles";
 import { IconHeaderWrapper, ActionIcon } from "../commonStyles/commonStyles";
 import { CardTitle, CardContainer } from "../commonStyles/allCardsStyles";
-
 import CommonCardView from "../common/CommonCardView";
 import ChartsAndDetails from "../common/ChartsAndDetails";
 
@@ -14,13 +13,15 @@ function Card(props) {
     rsiData,
     keepSeparated,
     nsePriceData,
-    key,
+    currentIndex,
   } = props;
-  console.log("key", key);
-  const [isOpen, setIsOpen] = useState(key > 20 ? false : true);
+  //console.log("currentIndex", currentIndex);
+  const [isOpen, setIsOpen] = useState(currentIndex > 41 ? false : true);
   const { nse } = card;
 
-  const marketCap = Math.floor(card.nse.securityInfo.issuedCap * card.nse.priceInfo.lastPrice / 10000000);
+  const marketCap = Math.floor(
+    (card.nse.securityInfo.issuedCap * card.nse.priceInfo.lastPrice) / 10000000
+  );
 
   /*   const isLowRSI = (rsiData) => {
     let total = 0;
@@ -46,7 +47,7 @@ function Card(props) {
       <IconHeaderWrapper onClick={handleClick}>
         <ActionIcon>{isOpen ? "-" : "+"}</ActionIcon>
         <CardTitle>
-          {stockName}-({nse.priceInfo.lastPrice}){" "} ({marketCap} Cr)
+          {stockName}-({nse.priceInfo.lastPrice}) ({marketCap} Cr)
         </CardTitle>
       </IconHeaderWrapper>
 

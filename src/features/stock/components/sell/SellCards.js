@@ -7,11 +7,8 @@ import { selectLivePlusIndicatorData, selectTradeData } from "../../StockSlice";
 import { useSelector } from "react-redux";
 
 function SellCards() {
-  /*const allRSIData = useSelector(selectAllRSIData);
-  const chartData = useSelector(selectChartData);*/
   const livePlusIndicator = useSelector(selectLivePlusIndicatorData);
   const tradeData = useSelector(selectTradeData);
-
   const cards = getSellRecommendation(livePlusIndicator, tradeData);
 
   return (
