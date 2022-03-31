@@ -11,10 +11,11 @@ function SellCards() {
   const tradeData = useSelector(selectTradeData);
   const cards = getSellRecommendation(livePlusIndicator, tradeData);
 
+  console.log("Cards", cards);
   return (
     <div className="App">
       <CardTitle>
-        Sell Card - {cards.length}
+        Sell Card - {cards && cards.length}
         <CardsWrapper>
           {cards.map((card, index) => {
             return <SellCard card={card} key={index} />;

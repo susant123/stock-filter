@@ -54,7 +54,12 @@ const getAllNSEData = () => {
         (function (i) {
           const symbol = constants.allStocks[i].symbol;
           setTimeout(async () => {
-            const nseData = await getStockWiseNSEData(symbol);
+            let nseData = await getStockWiseNSEData(symbol);
+            //make another request if first request fails
+            if (nseData.s === "error") {
+              nseData = await getStockWiseNSEData(symbol);
+            }
+
             allNSEDataObj[symbol] = nseData;
             console.log(
               "Current position->" +

@@ -108,7 +108,18 @@ export const getBuyRecommendations = (
         for (let i = 0; i < accounts.length; i++) {
           const currentStock =
             initialTradeData[accounts[i]][allStocksNameArr[j]];
-          if (livePlusIndicator[allStocksNameArr[j]]) {
+
+          console.log(
+            "livePlusIndicator[allStocksNameArr[j]]",
+            livePlusIndicator[allStocksNameArr[j]]
+          );
+          if (
+            livePlusIndicator[allStocksNameArr[j]] &&
+            ((nsePriceData[allStocksNameArr[j]] &&
+              nsePriceData[allStocksNameArr[j]].lastPrice) ||
+              (livePlusIndicator[allStocksNameArr[j]].nse.priceInfo &&
+                livePlusIndicator[allStocksNameArr[j]].nse.priceInfo.lastPrice))
+          ) {
             const currentPrice = nsePriceData[allStocksNameArr[j]]
               ? nsePriceData[allStocksNameArr[j]].lastPrice
               : livePlusIndicator[allStocksNameArr[j]].nse.priceInfo.lastPrice;

@@ -61,50 +61,49 @@ function AllPortfolios() {
     setIsModalOpen(false);
   };
 
+  const accountsData = [
+    {
+      acName: "asha-kite",
+      label: "Asha Kite",
+    },
+    {
+      acName: "susant-kite",
+      label: "Susant Kite",
+    },
+    {
+      acName: "asha-angel",
+      label: "Asha Angel",
+    },
+    {
+      acName: "susant-angel",
+      label: "Susant Angel",
+    },
+  ];
   return (
     <div className="portfolio">
       <PortfolioTable>
         <Row fixedRow={true}>
           <Col isHeader={true}>Stock Name</Col>
-          <Col isHeader={true}>Asha Kite</Col>
-          <Col isHeader={true}>Susant Kite</Col>
-          <Col isHeader={true}>Asha Angel</Col>
-          <Col isHeader={true}>Susant Angel</Col>
+          {accountsData.map((ac) => (
+            <Col isHeader={true} key={ac.acName}>
+              {ac.label}
+            </Col>
+          ))}
         </Row>
         <Row>
           <Col isHeader={true}></Col>
-          <Col isHeader={true}>
-            <InnerRow>
-              <InnerCol>APrice</InnerCol>
-              <InnerCol>Quantity</InnerCol>
-              <InnerCol>CPrice</InnerCol>
-              <InnerCol>P/L</InnerCol>
-            </InnerRow>
-          </Col>
-          <Col isHeader={true}>
-            <InnerRow>
-              <InnerCol>APrice</InnerCol>
-              <InnerCol>Quantity</InnerCol>
-              <InnerCol>CPrice</InnerCol>
-              <InnerCol>P/L</InnerCol>
-            </InnerRow>
-          </Col>
-          <Col isHeader={true}>
-            <InnerRow>
-              <InnerCol>APrice</InnerCol>
-              <InnerCol>Quantity</InnerCol>
-              <InnerCol>CPrice</InnerCol>
-              <InnerCol>P/L</InnerCol>
-            </InnerRow>
-          </Col>
-          <Col isHeader={true}>
-            <InnerRow>
-              <InnerCol>APrice</InnerCol>
-              <InnerCol>Quantity</InnerCol>
-              <InnerCol>CPrice</InnerCol>
-              <InnerCol>P/L</InnerCol>
-            </InnerRow>
-          </Col>
+
+          {accountsData.map((ac) => (
+            <Col isHeader={true} key={ac.acName}>
+              <InnerRow>
+                <InnerCol>APrice</InnerCol>
+                <InnerCol>Quantity</InnerCol>
+                <InnerCol>CPrice</InnerCol>
+                <InnerCol>P/L</InnerCol>
+                <InnerCol>P/L B</InnerCol>
+              </InnerRow>
+            </Col>
+          ))}
         </Row>
         {allStocks.map((stock, index) => {
           if (stock !== "TIMESTAMP") {
@@ -124,10 +123,14 @@ function AllPortfolios() {
                   const averagePrice = keyObjectTradeData[account][stock]
                     ? keyObjectTradeData[account][stock].average_price
                     : null;
-                  //console.log("in all stock", stock);
+
+                  //console.log("nsePriceData[stock]",stock, nsePriceData[stock],livePlusIndicator[stock]);
+
                   const latestPrice = nsePriceData[stock]
                     ? nsePriceData[stock].lastPrice
-                    : livePlusIndicator[stock].nse.priceInfo.lastPrice;
+                    : livePlusIndicator[stock].nse.priceInfo
+                    ? livePlusIndicator[stock].nse.priceInfo.lastPrice
+                    : 1000;
 
                   const profitLoss = averagePrice
                     ? (
@@ -135,6 +138,14 @@ function AllPortfolios() {
                         100
                       ).toFixed(1)
                     : null;
+
+                  const profitLossFromBottom = averagePrice
+                    ? (
+                        ((latestPrice - averagePrice) / latestPrice) *
+                        100
+                      ).toFixed(1)
+                    : null;
+
                   const quantity = keyObjectTradeData[account][stock]
                     ? keyObjectTradeData[account][stock].quantity
                     : null;
@@ -151,6 +162,12 @@ function AllPortfolios() {
                         </InnerCol>
                         <InnerCol isLoss={profitLoss < 0} isHeader={true}>
                           {quantity && profitLoss}
+                        </InnerCol>
+                        <InnerCol
+                          isLoss={profitLossFromBottom < 0}
+                          isHeader={true}
+                        >
+                          {quantity && profitLossFromBottom}
                         </InnerCol>
                       </InnerRow>
                     </Col>

@@ -424,7 +424,7 @@ module.exports = {
       mcScdid: "BI",
     },
     {
-      symbol: "BURGERKING",
+      symbol: "RBA",
       mcScid: "BKI01",
       mcScdid: "BKI01",
     },

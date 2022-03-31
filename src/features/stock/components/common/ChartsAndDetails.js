@@ -11,10 +11,8 @@ import MCChart from "../modal/MCChart";
 
 function ChartsAndDetails(props) {
   const { card, chartData, rsiData, stockName } = props;
-
   const { strength, weakness, opportunities, threat, volumeData, indicators } =
     card;
-
   const isLowRSI = (rsiData) => {
     let total = 0;
     for (let i = 0; i < rsiData.length; i++) {
@@ -28,6 +26,10 @@ function ChartsAndDetails(props) {
 
   const isLowRsi = isLowRSI(rsiData);
 
+  if (!indicators || !indicators.sentiments) {
+    console.log("No Data--------------", stockName, card);
+    return <></>;
+  }
   return (
     <>
       <hr />

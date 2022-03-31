@@ -35,24 +35,27 @@ export const getSellRecommendation = (
   nsePriceData = {}
 ) => {
   let allStocks = [];
+
   const sellRecommendation = [];
+
   if (tradeData["asha-kite"] && JSON.stringify(livePlusIndicator) !== "{}") {
     allStocks = getAllStockNames(tradeData["asha-kite"]);
     const initialTradeData = getKeyObjectTradeData(tradeData);
     for (let i = 0; i < accounts.length; i++) {
       for (let j = 0; j < allStocks.length; j++) {
         const currentStock = initialTradeData[accounts[i]][allStocks[j]];
-
+        console.log("allStocks[j]", allStocks[j]);
         if (livePlusIndicator[allStocks[j]]) {
-          /*if (!livePlusIndicator[allStocks[j]].nse.priceInfo) {
-            return;
-          }
           console.log(
             "allStocks[j]",
             allStocks[j],
             "livePlusIndicator[allStocks[j]].nse",
             livePlusIndicator[allStocks[j]].nse
-          ); */
+          );
+
+          if (!livePlusIndicator[allStocks[j]].nse.priceInfo) {
+            return [];
+          }
           const currentPrice = nsePriceData[allStocks[j]]
             ? nsePriceData[allStocks[j]].lastPrice
             : livePlusIndicator[allStocks[j]].nse.priceInfo.lastPrice;
@@ -77,5 +80,7 @@ export const getSellRecommendation = (
       }
     }
   }
+
+  console.log("sellRecommendation----", sellRecommendation);
   return sellRecommendation;
 };

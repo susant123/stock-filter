@@ -34,6 +34,7 @@ const getStockWiseNSEData = (symbol) => {
         });
     } catch (error) {
       console.log(error);
+      reject("Error occured", error);
     }
   });
 };
@@ -57,7 +58,17 @@ const getAllNSEData = (cookie) => {
             if (counter % 40 === 0) {
               refreshCookie();
             }
-            const nseData = await getStockWiseNSEData(symbol);
+            let nseData = await getStockWiseNSEData(symbol);
+
+            if (!nseData.info) {
+              console.log(
+                "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@refetching after refreshing@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+              );
+              console.log("nseData---", nseData);
+              refreshCookie();
+              nseData = await getStockWiseNSEData(symbol);
+            }
+
             allNSEDataObj[symbol] = nseData;
             console.log(
               "Object.keys(allNSEDataObj).length",

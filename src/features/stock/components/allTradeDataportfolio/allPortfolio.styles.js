@@ -9,13 +9,14 @@ export const Row = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
   width: 100%;
-  ${(props) => (props.fixedRow ? "position: fixed; top: 55px;" : "")}
+  ${(props) => (props.fixedRow ? "position: sticky; top: 55px;" : "")}
 `;
 
 export const Col = styled.div`
   align-items: center;
   display: flex;
-  padding: 10px 25px;
+  padding: ${(props) => (props.isHeader ? "10px 2px 10px 20px" : "10px 5px")};
+  min-width: ${(props) => (props.isHeader ? "200px" : "auto")};
   border: 1px solid rgb(240, 237, 237);
   font-weight: ${(props) => (props.isHeader ? "bold" : "normal")};
   background-color: ${(props) => (props.isHeader ? "#cecece" : "white")};
@@ -23,8 +24,8 @@ export const Col = styled.div`
 
 export const InnerRow = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 380px;
 `;
 
 export const InnerCol = styled.div`
