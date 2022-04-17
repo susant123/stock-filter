@@ -1,7 +1,7 @@
 const axios = require("axios");
 const constants = require("./constants");
 const utils = require("./utils");
-const chart = require("./data-builders/money-control/chartData");
+const chart = require("./data-builders/money-control-old/chartData");
 const fs = require("fs");
 
 let cookie;
@@ -47,7 +47,7 @@ const refreshCookie = async () => {
 };
 
 const getAllNSEData = (cookie) => {
-  let counter = 0;
+  
   const allNSEDataObj = {};
   try {
     return new Promise((resolve, reject) => {
@@ -55,7 +55,7 @@ const getAllNSEData = (cookie) => {
         (function (i) {
           const symbol = constants.allStocks[i].symbol;
           setTimeout(async () => {
-            if (counter % 40 === 0) {
+            if (i % 40 === 0) {
               refreshCookie();
             }
             let nseData = await getStockWiseNSEData(symbol);
@@ -82,8 +82,7 @@ const getAllNSEData = (cookie) => {
             ) {
               resolve(allNSEDataObj);
               console.log("All done---------------------");
-            }
-            counter++;
+            }        
           }, 500 * (i + 1));
         })(i);
       }

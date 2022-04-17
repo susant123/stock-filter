@@ -147,7 +147,7 @@ export const getAllBoughtStocks = (
             initialTradeData[accounts[i]][allStocksNameArr[j]];
           if (livePlusIndicator[allStocksNameArr[j]]) {
             const currentPrice =
-              livePlusIndicator[allStocksNameArr[j]].nse.priceInfo.lastPrice;
+            livePlusIndicator[allStocksNameArr[j]].nse && livePlusIndicator[allStocksNameArr[j]].nse.priceInfo? livePlusIndicator[allStocksNameArr[j]].nse.priceInfo.lastPrice: 1;
             const allLiveStockData = livePlusIndicator[allStocksNameArr[j]];
 
             if (currentStock) {

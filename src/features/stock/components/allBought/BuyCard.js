@@ -27,10 +27,12 @@ function BuyCard(props) {
   const { card, nseData, nsePriceData } = props;
   const { priceInfo } = nseData;
 
-  const lastPrice = nsePriceData ? nsePriceData.lastPrice : priceInfo.lastPrice;
+  //default to 1 in case there is no price data
+  const lastPrice = nsePriceData ? nsePriceData.lastPrice : priceInfo? priceInfo.lastPrice: 1;
   const allRSIData = useSelector(selectAllRSIData);
   const chartData = useSelector(selectChartData);
 
+ 
   const recommendedQuantity = Math.floor(recommendedAmout / lastPrice);
   const displayRows = [
     { label: "Buy", info: card.account },

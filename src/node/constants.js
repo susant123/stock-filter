@@ -11,9 +11,19 @@ module.exports = {
 
   allStocks1: [
     {
-      symbol: "M&M",
-      mcScid: "MM",
-      mcScdid: "MM",
+      symbol: "ABB",
+      mcScid: "ABB",
+      mcScdid: "ABB",
+    },
+    {
+      symbol: "POWERINDIA",
+      mcScid: "APP03",
+      mcScdid: "APP03",
+    },
+    {
+      symbol: "ACC",
+      mcScid: "ACC",
+      mcScdid: "ACC06",
     },
   ],
   allStocks: [
@@ -449,7 +459,7 @@ module.exports = {
       mcScdid: "CB05",
     },
     {
-      symbol: "CADILAHC",
+      symbol: "ZYDUSLIFE",
       mcScid: "CHC",
       mcScdid: "CHC",
     },
@@ -2395,7 +2405,7 @@ module.exports = {
       mcScdid: "V",
     },
     {
-      symbol: "WABCOINDIA",
+      symbol: "ZFCVINDIA",
       mcScid: "WAB",
       mcScdid: "WAB",
     },

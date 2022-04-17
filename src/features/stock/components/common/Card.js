@@ -19,9 +19,9 @@ function Card(props) {
   const [isOpen, setIsOpen] = useState(currentIndex > 41 ? false : true);
   const { nse } = card;
 
-  const marketCap = Math.floor(
-    (card.nse.securityInfo.issuedCap * card.nse.priceInfo.lastPrice) / 10000000
-  );
+  const marketCap = nse.securityInfo && nse.securityInfo.issuedSize ? Math.floor(
+    (parseInt(nse.securityInfo.issuedSize, 10) * nse.priceInfo.lastPrice) / 10000000
+  ): "Not known";
 
   /*   const isLowRSI = (rsiData) => {
     let total = 0;
@@ -42,12 +42,14 @@ function Card(props) {
   //const isLowRsi = isLowRSI(rsiData);
 
   //console.log("stockName", stockName);
+
+  const lastPrice =  nse.priceInfo? nse.priceInfo.lastPrice:  "Not known";
   return (
     <CardContainer keepSeparated={keepSeparated} isOpen={isOpen}>
       <IconHeaderWrapper onClick={handleClick}>
         <ActionIcon>{isOpen ? "-" : "+"}</ActionIcon>
         <CardTitle>
-          {stockName}-({nse.priceInfo.lastPrice}) ({marketCap} Cr)
+          {stockName}-({lastPrice}) ({marketCap} Cr)
         </CardTitle>
       </IconHeaderWrapper>
 

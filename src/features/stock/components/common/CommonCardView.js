@@ -4,7 +4,11 @@ import { StockSymbol, StockName } from "../commonStyles/cardStyles";
 function CommonCardView(props) {
   const { nseData, stockName, nsePriceData } = props;
 
-  const marketCap = Math.floor(nseData.securityInfo.issuedCap * nseData.priceInfo.lastPrice / 10000000);
+  const marketCap = nseData.securityInfo && nseData.securityInfo.issuedSize ? Math.floor(
+    (parseInt(nseData.securityInfo.issuedSize, 10) * nseData.priceInfo.lastPrice) / 10000000
+  ): "Not known"; 
+
+//  const marketCap = Math.floor(nseData.securityInfo.issuedCap * nseData.priceInfo.lastPrice / 10000000);
 
   const NotLivePrice = () => (
     <span>
