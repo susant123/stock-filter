@@ -84,7 +84,7 @@ const getAllNSEData = (type) => {
             +" of " + constants.allStocks.length
           );
         }, 500 * (i + 1));
-      })(i, constants.allStocks.length);
+      })(i, constants);
     }
   });
 };
@@ -178,10 +178,10 @@ const startBuildingSWOTData = async (type) => {
 };
 
 //startBuildingSWOTData();
-/* 
+
 startBuildingSWOTData("S");
 startBuildingSWOTData("W");
 startBuildingSWOTData("O");
-startBuildingSWOTData("T"); */
+startBuildingSWOTData("T"); 
 
-module.exports.startBuildingSWOTData = startBuildingSWOTData;
+//module.exports.startBuildingSWOTData = startBuildingSWOTData;
