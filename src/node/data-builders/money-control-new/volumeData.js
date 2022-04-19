@@ -8,8 +8,7 @@ const path = require("path");
 const smaEma = require("./sma-ema-buildDataFiles");
 const fs = require("fs");
 
-const volumeDataUrl =
-  "https://api.moneycontrol.com/mcapi/v1/stock/price-volume?scId={0}";
+const volumeDataUrl = "https://api.moneycontrol.com/mcapi/v1/stock/price-volume?scId={0}";
 
 const getStockWiseNSEData = (symbol) => {
   const formattedURL = utils.stringFormat(volumeDataUrl, symbol);
@@ -55,12 +54,7 @@ const getAllNSEData = () => {
           console.log("Error occured");
         }
 
-        console.log(
-          "Current position->" +
-            (i + 1) +
-            "Total Stocks:->" +
-            constants.allStocks.length
-        );
+        console.log("Current position->" + (i + 1) + "Total Stocks:->" + constants.allStocks.length);
       }, 500 * (i + 1));
     })(i);
   }
@@ -69,17 +63,10 @@ const getAllNSEData = () => {
 /* Aggregate individual file section*/
 const readFile = (fileName) => {
   return new Promise((resolve, reject) => {
-    console.log(
-      "path",
-      __dirname + "../../../data/volume/" + fileName + ".json"
-    );
-    fs.readFile(
-      __dirname + "../../../data/volume/" + fileName + ".json",
-      "utf8",
-      function (err, data) {
-        resolve({ [fileName]: JSON.parse(data) });
-      }
-    );
+    console.log("path", __dirname + "../../../data/volume/" + fileName + ".json");
+    fs.readFile(__dirname + "../../../data/volume/" + fileName + ".json", "utf8", function (err, data) {
+      resolve({ [fileName]: JSON.parse(data) });
+    });
   });
 };
 
@@ -101,20 +88,15 @@ const aggregateFiles = () => {
     });
 
     try {
-      fs.writeFile(
-        __dirname + "../../../data/volume.json",
-        JSON.stringify(allData),
-        function (err) {
-          if (err) return console.log(err);
-        }
-      );
+      fs.writeFile(__dirname + "../../../data/volume.json", JSON.stringify(allData), function (err) {
+        if (err) return console.log(err);
+      });
     } catch (e) {
       console.log("Error occured");
     }
   });
 };
 /* End of aggregate individual file section*/
-
 
 const startBuildingVolumeData = async () => {
   try {
@@ -126,15 +108,14 @@ const startBuildingVolumeData = async () => {
     console.log("folder error", e);
   }
 
-
   getAllNSEData();
 
   //start smaEmaDataFetch
 
   setTimeout(() => {
-   smaEma.startEmaSmaDataFetch();
+    smaEma.startEmaSmaDataFetch();
     aggregateFiles();
-  }, (constants.allStocks.length+2) * 500);
+  }, (constants.allStocks.length + 2) * 500);
 };
 
 //startBuildingVolumeData();

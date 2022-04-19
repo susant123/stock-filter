@@ -39,11 +39,7 @@ allSymbols.forEach((symbol) => {
 };
 */
 
-fs.writeFile(
-  path.join(__dirname, "./data/allData.json"),
-  JSON.stringify(allData),
-  function (err) {
-    if (err) return console.log(err);
-    console.log("all NSE data .json is ready");
-  }
-);
+fs.writeFile(path.join(__dirname, "./data/allData.json"), JSON.stringify(allData), function (err) {
+  if (err) return console.log(err);
+  console.log("all NSE data .json is ready");
+});

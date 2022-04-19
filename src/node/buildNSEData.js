@@ -13,10 +13,7 @@ const instance = axios.create({
 });
 
 const getStockWiseNSEData = (symbol) => {
-  const formattedURL = utils.stringFormat(
-    constants.nseDataURL,
-    encodeURIComponent(symbol)
-  );
+  const formattedURL = utils.stringFormat(constants.nseDataURL, encodeURIComponent(symbol));
   console.log(symbol, "url---", formattedURL);
 
   const headers = {
@@ -51,7 +48,7 @@ const getAllNSEData = (cookie) => {
   //const allNSEDataObj = {};
 
   for (let i = 0; i < constants.allStocks.length; i++) {
-    (function (i, totalLength) {
+    (function (i, constants) {
       const symbol = constants.allStocks[i].symbol;
       setTimeout(async () => {
         if (i % 40 === 0) {
@@ -60,9 +57,7 @@ const getAllNSEData = (cookie) => {
         let nseData = await getStockWiseNSEData(symbol);
 
         if (!nseData.info) {
-          console.log(
-            "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@refetching after refreshing@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-          );
+          console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@refetching after refreshing@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
           console.log("nseData---", nseData);
           refreshCookie();
           nseData = await getStockWiseNSEData(symbol);
@@ -71,39 +66,26 @@ const getAllNSEData = (cookie) => {
         //allNSEDataObj[symbol] = nseData;
 
         try {
-          fs.writeFile(
-            __dirname + "/data/nse/" + symbol + ".json",
-            JSON.stringify(nseData),
-            function (err) {
-              if (err) return console.log(err);
-              console.log("all NSE data .json is ready----------------------");
-            }
-          );
+          fs.writeFile(__dirname + "/data/nse/" + symbol + ".json", JSON.stringify(nseData), function (err) {
+            if (err) return console.log(err);
+          });
         } catch (e) {
           console.log("Error occured", e);
         }
 
-        console.log(
-          "Object.keys(allNSEDataObj).length "+ (i + 1) + " of " + totalLength);
+        console.log("Object.keys(allNSEDataObj).length " + (i + 1) + " of " + constants.allStocks.length);
       }, 500 * (i + 1));
-    })(i, constants.allStocks.length);
+    })(i, constants);
   }
 };
 
 /* Aggregate individual file section*/
 const readFile = (fileName) => {
   return new Promise((resolve, reject) => {
-    console.log(
-      "path",
-      __dirname + "/data/nse/" + fileName + ".json"
-    );
-    fs.readFile(
-      __dirname + "/data/nse/" + fileName + ".json",
-      "utf8",
-      function (err, data) {
-        resolve({ [fileName]: JSON.parse(data) });
-      }
-    );
+    console.log("path", __dirname + "/data/nse/" + fileName + ".json");
+    fs.readFile(__dirname + "/data/nse/" + fileName + ".json", "utf8", function (err, data) {
+      resolve({ [fileName]: JSON.parse(data) });
+    });
   });
 };
 
@@ -125,13 +107,9 @@ const aggregateFiles = () => {
     });
 
     try {
-      fs.writeFile(
-        __dirname + "/data/allNSEData.json",
-        JSON.stringify(allData),
-        function (err) {
-          if (err) return console.log(err);
-        }
-      );
+      fs.writeFile(__dirname + "/data/allNSEData.json", JSON.stringify(allData), function (err) {
+        if (err) return console.log(err);
+      });
     } catch (e) {
       console.log("Error occured");
     }
@@ -139,7 +117,6 @@ const aggregateFiles = () => {
 };
 
 /* End of aggregate individual file section*/
-
 
 const startBuildingDataFiles = async () => {
   try {
@@ -155,11 +132,9 @@ const startBuildingDataFiles = async () => {
   cookie = response.headers["set-cookie"].join(";");
   getAllNSEData(cookie);
 
-
-  setTimeout(() => {    
+  setTimeout(() => {
     aggregateFiles();
   }, (constants.allStocks.length + 2) * 500);
-
 };
 
 //start chartData fetching

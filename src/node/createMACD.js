@@ -9,14 +9,10 @@ var macdData = {};
 allStocks.forEach((stock) => {
   console.log("StockName---" + stock);
   var chartData = liveData[stock];
-  tulind.indicators.macd.indicator(
-    [chartData.c],
-    [12, 26, 9],
-    function (err, results) {
-      results.push(chartData.t);
-      macdData[stock] = results;
-    }
-  );
+  tulind.indicators.macd.indicator([chartData.c], [12, 26, 9], function (err, results) {
+    results.push(chartData.t);
+    macdData[stock] = results;
+  });
 });
 const fullFileNameWithPath = __dirname + "/data/MACDData.json";
 fs.writeFile(fullFileNameWithPath, JSON.stringify(macdData), function (err) {
@@ -24,6 +20,4 @@ fs.writeFile(fullFileNameWithPath, JSON.stringify(macdData), function (err) {
   console.log("AllMACDData.json is ready");
 });
 
-console.log(
-  "Given these options, the output arrays will be this much shorter than the input arrays:"
-);
+console.log("Given these options, the output arrays will be this much shorter than the input arrays:");

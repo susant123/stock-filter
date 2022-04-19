@@ -13,18 +13,11 @@ const chartDataUrl =
 
 const getStockWiseNSEData = (symbol) => {
   //for epoch date
-  const fromTime = Math.floor(
-    (new Date().getTime() - 6 * 30 * 24 * 60 * 60 * 1000) / 1000
-  );
+  const fromTime = Math.floor((new Date().getTime() - 6 * 30 * 24 * 60 * 60 * 1000) / 1000);
 
   const toTime = Math.floor(new Date().getTime() / 1000);
 
-  const formattedURL = utils.stringFormat(
-    chartDataUrl,
-    encodeURIComponent(symbol),
-    fromTime,
-    toTime
-  );
+  const formattedURL = utils.stringFormat(chartDataUrl, encodeURIComponent(symbol), fromTime, toTime);
   console.log(symbol, "url---", formattedURL);
 
   const headers = {
@@ -61,23 +54,14 @@ const getAllNSEData = () => {
         //allNSEDataObj[symbol] = nseData;
 
         try {
-          fs.writeFile(
-            __dirname + "../../../data/chart/" + symbol + ".json",
-            JSON.stringify(nseData),
-            function (err) {
-              if (err) return console.log(err);
-            }
-          );
+          fs.writeFile(__dirname + "../../../data/chart/" + symbol + ".json", JSON.stringify(nseData), function (err) {
+            if (err) return console.log(err);
+          });
         } catch (e) {
           console.log("Error occured");
         }
 
-        console.log(
-          "Current position-> " +
-            (i + 1) +
-            " Total Stocks:->" +
-            constants.allStocks.length
-        );
+        console.log("Current position-> " + (i + 1) + " Total Stocks:->" + constants.allStocks.length);
       }, 500 * (i + 1));
     })(i);
   }
@@ -86,17 +70,10 @@ const getAllNSEData = () => {
 /* Aggregate individual file section*/
 const readFile = (fileName) => {
   return new Promise((resolve, reject) => {
-    console.log(
-      "path",
-      __dirname + "../../../data/chart/" + fileName + ".json"
-    );
-    fs.readFile(
-      __dirname + "../../../data/chart/" + fileName + ".json",
-      "utf8",
-      function (err, data) {
-        resolve({ [fileName]: JSON.parse(data) });
-      }
-    );
+    console.log("path", __dirname + "../../../data/chart/" + fileName + ".json");
+    fs.readFile(__dirname + "../../../data/chart/" + fileName + ".json", "utf8", function (err, data) {
+      resolve({ [fileName]: JSON.parse(data) });
+    });
   });
 };
 
@@ -118,13 +95,9 @@ const aggregateFiles = () => {
     });
 
     try {
-      fs.writeFile(
-        __dirname + "../../../data/chart.json",
-        JSON.stringify(allData),
-        function (err) {
-          if (err) return console.log(err);
-        }
-      );
+      fs.writeFile(__dirname + "../../../data/chart.json", JSON.stringify(allData), function (err) {
+        if (err) return console.log(err);
+      });
     } catch (e) {
       console.log("Error occured");
     }

@@ -65,17 +65,10 @@ const getAllNSEData = (cookie) => {
 /* Aggregate individual file section*/
 const readFile = (fileName) => {
   return new Promise((resolve, reject) => {
-    console.log(
-      "path",
-      __dirname + "../../../data/sma-ema/" + fileName + ".json"
-    );
-    fs.readFile(
-      __dirname + "../../../data/sma-ema/" + fileName + ".json",
-      "utf8",
-      function (err, data) {
-        resolve({ [fileName]: JSON.parse(data) });
-      }
-    );
+    console.log("path", __dirname + "../../../data/sma-ema/" + fileName + ".json");
+    fs.readFile(__dirname + "../../../data/sma-ema/" + fileName + ".json", "utf8", function (err, data) {
+      resolve({ [fileName]: JSON.parse(data) });
+    });
   });
 };
 
@@ -97,13 +90,9 @@ const aggregateFiles = () => {
     });
 
     try {
-      fs.writeFile(
-        __dirname + "../../../data/sma-ema-pivot-sentiment.json",
-        JSON.stringify(allData),
-        function (err) {
-          if (err) return console.log(err);
-        }
-      );
+      fs.writeFile(__dirname + "../../../data/sma-ema-pivot-sentiment.json", JSON.stringify(allData), function (err) {
+        if (err) return console.log(err);
+      });
     } catch (e) {
       console.log("Error occured");
     }
@@ -112,7 +101,6 @@ const aggregateFiles = () => {
 /* End of aggregate individual file section*/
 
 const startEmaSmaDataFetch = async () => {
-
   try {
     if (!fs.existsSync(__dirname + "../../../data/sma-ema/")) {
       console.log("creating folder");
@@ -131,8 +119,7 @@ const startEmaSmaDataFetch = async () => {
     swot.startBuildingSWOTData("T");
 
     aggregateFiles();
-
-  }, (constants.allStocks.length+2) * 500);
+  }, (constants.allStocks.length + 2) * 500);
 };
 
 module.exports.startEmaSmaDataFetch = startEmaSmaDataFetch;
