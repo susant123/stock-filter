@@ -399,6 +399,11 @@ module.exports = {
       mcScdid: "BC07",
     },
     {
+      symbol: "BOSCHLTD",
+      mcScid: "MIC",
+      mcScdid: "B05",
+    },
+    {
       symbol: "BSOFT",
       mcScid: "KPI01",
       mcScdid: "KPI02",
