@@ -122,8 +122,7 @@ export const stockSlice = createSlice({
 
 export const selectAllRSIData = (state) => state.stocks.allRSIData;
 export const selectChartData = (state) => state.stocks.chartData;
-export const selectLivePlusIndicatorData = (state) =>
-  state.stocks.livePlusIndicatorData;
+export const selectLivePlusIndicatorData = (state) => state.stocks.livePlusIndicatorData;
 export const selectTradeData = (state) => state.stocks.tradeData;
 export const selectPriceInfo = (state) =>
   state.stocks.livePlusIndicatorData.nse.priceInfo;

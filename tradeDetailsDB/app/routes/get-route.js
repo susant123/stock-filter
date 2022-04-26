@@ -3,7 +3,7 @@ module.exports = function (app, db) {
   app.get("/api/trade_details", (req, res) => {
     processData(
       res,
-      "SELECT account, stock_name, quantity,  average_price FROM trade_details ORDER BY stock_name"
+      "SELECT account, stock_name, quantity,  average_price, buy_date, sell_date, avoid, avoid_reason FROM trade_details ORDER BY stock_name"
     );
   });
 
