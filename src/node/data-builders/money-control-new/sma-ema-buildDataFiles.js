@@ -56,7 +56,7 @@ const getAllNSEData = (cookie) => {
           console.log("Error occured");
         }
 
-        console.log("Current length: ", i + 1, "/", constants.allStocks.length);
+        console.log("Current length: "+ i + 1+ "/"+ constants.allStocks.length);
       }, 500 * (i + 1));
     })(i);
   }
@@ -65,7 +65,7 @@ const getAllNSEData = (cookie) => {
 /* Aggregate individual file section*/
 const readFile = (fileName) => {
   return new Promise((resolve, reject) => {
-    console.log("path", __dirname + "../../../data/sma-ema/" + fileName + ".json");
+    //console.log("path", __dirname + "../../../data/sma-ema/" + fileName + ".json");
     fs.readFile(__dirname + "../../../data/sma-ema/" + fileName + ".json", "utf8", function (err, data) {
       resolve({ [fileName]: JSON.parse(data) });
     });
@@ -80,7 +80,7 @@ const aggregateFiles = () => {
   }
 
   Promise.all(promises).then((data) => {
-    console.log("------------------", data);
+    //console.log("------------------", data);
 
     const allData = {};
 

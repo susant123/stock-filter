@@ -69,7 +69,7 @@ const getAllNSEData = (type) => {
             console.log("Error occured");
           }
 
-          console.log("symbol--" + stockSymbol + " ", i + 1, +" of " + constants.allStocks.length);
+          console.log("symbol--" + stockSymbol + " "+ (i + 1) +" of " + constants.allStocks.length);
         }, 500 * (i + 1));
       })(i, constants);
     }
@@ -91,11 +91,11 @@ const dummyData = {
 const readFile = (fileName, folderName) => {
   console.log("fine name = " + fileName, "Folder name =" + folderName);
   return new Promise((resolve, reject) => {
-    console.log("path", __dirname + "../../../data/swot/" + folderName + "/" + fileName + ".json");
+    //console.log("path", __dirname + "../../../data/swot/" + folderName + "/" + fileName + ".json");
 
     try {
       fs.readFile(__dirname + "../../../data/swot/" + folderName + "/" + fileName + ".json", "utf8", (err, data) => {
-        console.log("data----", data);
+        //console.log("data----", data);
         console.log("Error-----", err);
         if (err) {
           resolve({ [fileName]: dummyData });
@@ -118,7 +118,7 @@ const aggregateFiles = (folderName) => {
   }
 
   Promise.all(promises).then((data) => {
-    console.log("------------------", data);
+    //console.log("------------------", data);
 
     const allData = {};
 

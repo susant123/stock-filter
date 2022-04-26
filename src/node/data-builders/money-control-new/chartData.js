@@ -70,7 +70,7 @@ const getAllNSEData = () => {
 /* Aggregate individual file section*/
 const readFile = (fileName) => {
   return new Promise((resolve, reject) => {
-    console.log("path", __dirname + "../../../data/chart/" + fileName + ".json");
+    //console.log("path", __dirname + "../../../data/chart/" + fileName + ".json");
     fs.readFile(__dirname + "../../../data/chart/" + fileName + ".json", "utf8", function (err, data) {
       resolve({ [fileName]: JSON.parse(data) });
     });
@@ -85,7 +85,7 @@ const aggregateFiles = () => {
   }
 
   Promise.all(promises).then((data) => {
-    console.log("------------------", data);
+    //console.log("------------------", data);
 
     const allData = {};
 
