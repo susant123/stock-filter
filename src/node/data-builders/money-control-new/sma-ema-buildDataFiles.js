@@ -56,7 +56,7 @@ const getAllNSEData = (cookie) => {
           console.log("Error occured");
         }
 
-        console.log("Current length: "+ i + 1+ "/"+ constants.allStocks.length);
+        console.log("Current length: "+ (i + 1)+ "/"+ constants.allStocks.length);
       }, 500 * (i + 1));
     })(i);
   }

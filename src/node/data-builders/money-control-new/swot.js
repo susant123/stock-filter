@@ -95,8 +95,7 @@ const readFile = (fileName, folderName) => {
 
     try {
       fs.readFile(__dirname + "../../../data/swot/" + folderName + "/" + fileName + ".json", "utf8", (err, data) => {
-        //console.log("data----", data);
-        console.log("Error-----", err);
+        //console.log("data----", data);        
         if (err) {
           resolve({ [fileName]: dummyData });
           return;
