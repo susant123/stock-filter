@@ -751,6 +751,7 @@ module.exports = {
       symbol: "ENGINERSIN",
       mcScid: "EI14",
       mcScdid: "EI14",
+      angelName:"Engineers India Ltd."
     },
     {
       symbol: "EQUITAS",
@@ -915,6 +916,7 @@ module.exports = {
       symbol: "GREAVESCOT",
       mcScid: "G",
       mcScdid: "GC20",
+      angelName:"Greaves Cotton Ltd"
     },
     {
       symbol: "GRINDWELL",
@@ -1044,6 +1046,7 @@ module.exports = {
       symbol: "HINDALCO",
       mcScid: "H",
       mcScdid: "HI",
+      angelName:"Hindalco Industries Ltd"
     },
     {
       symbol: "HAL",
@@ -1423,6 +1426,7 @@ module.exports = {
       symbol: "KSCL",
       mcScid: "KSC01",
       mcScdid: "KSC01",
+      angelName:"Kaveri Seed Company Ltd"
     },
     {
       symbol: "KEC",
@@ -1450,6 +1454,7 @@ module.exports = {
       symbol: "LAOPALA",
       mcScid: "LOG",
       mcScdid: "LOR",
+      angelName: "La Opala RG Limited"
     },
     {
       symbol: "LAXMIMACH",
@@ -1886,6 +1891,7 @@ module.exports = {
       symbol: "RAJESHEXPO",
       mcScid: "RE07",
       mcScdid: "RE07",
+      angelName:"Rajesh Exports Ltd."
     },
     {
       symbol: "RALLIS",
@@ -2491,6 +2497,7 @@ module.exports = {
       symbol: "WHIRLPOOL",
       mcScid: "WI",
       mcScdid: "WI",
+      angelName:"Whirlpool Of India Ltd"
     },
     {
       symbol: "WIPRO",
@@ -2524,11 +2531,6 @@ module.exports = {
       symbol: "ZYDUSWELL",
       mcScid: "CNA",
       mcScdid: "ZW01",
-    },
-    {
-      symbol: "ECLERX",
-      mcScid: "ES07",
-      mcScdid: "eS06",
     },
   ],
 };

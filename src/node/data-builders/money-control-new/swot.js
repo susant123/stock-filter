@@ -89,7 +89,7 @@ const dummyData = {
 };
 
 const readFile = (fileName, folderName) => {
-  console.log("fine name = " + fileName, "Folder name =" + folderName);
+  console.log("file name = " + fileName, "Folder name =" + folderName);
   return new Promise((resolve, reject) => {
     //console.log("path", __dirname + "../../../data/swot/" + folderName + "/" + fileName + ".json");
 
