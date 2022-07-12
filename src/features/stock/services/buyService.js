@@ -3,19 +3,14 @@ import { convertArrayToObject } from "../utils/utilities";
 const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel"];
 
 const profitLossCalc = (currentPrice = 0, boughtPrice) => {
-  return boughtPrice
-    ? (((currentPrice - boughtPrice) / boughtPrice) * 100).toFixed(1)
-    : 0;
+  return boughtPrice ? (((currentPrice - boughtPrice) / boughtPrice) * 100).toFixed(1) : 0;
 };
 
 const getKeyObjectTradeData = (tradeData) => {
   const keyObjectTradeData = [];
   if (tradeData["asha-kite"] && tradeData[accounts[0]]) {
     for (let i = 0; i < accounts.length; i++) {
-      keyObjectTradeData[accounts[i]] = convertArrayToObject(
-        tradeData[accounts[i]],
-        "stock_name"
-      );
+      keyObjectTradeData[accounts[i]] = convertArrayToObject(tradeData[accounts[i]], "stock_name");
     }
   }
   return keyObjectTradeData;
@@ -43,19 +38,16 @@ const calculateBuySuggestion = (stockWiseData, limitPercentage) => {
   const acc3 = stockWiseData[2];
   const acc4 = stockWiseData[3];
 
-  const isLossMoreThanLimit = (stock) =>
-    stock.quantity && stock.quantity > 0 && stock.profitLoss <= limitPercentage;
+  const isLossMoreThanLimit = (stock) => stock.quantity && stock.quantity > 0 && stock.profitLoss <= limitPercentage;
 
-  const isLossLessThanLimit = (stock) =>
-    stock.quantity && stock.quantity > 0 && stock.profitLoss > limitPercentage;
+  const isLossLessThanLimit = (stock) => stock.quantity && stock.quantity > 0 && stock.profitLoss > limitPercentage;
 
   const flagAccountsStrBuilder = (flagAccounts) => {
     console.log("flagAccounts", flagAccounts);
 
     let finalStr = "";
     for (let i = 0; i < flagAccounts.length; i++) {
-      finalStr +=
-        flagAccounts[i].account + ": " + flagAccounts[i].profitLoss + ",";
+      finalStr += flagAccounts[i].account + ": " + flagAccounts[i].profitLoss + ",";
     }
     return finalStr;
   };
@@ -90,12 +82,7 @@ const calculateBuySuggestion = (stockWiseData, limitPercentage) => {
   return buyAccount;
 };
 
-export const getBuyRecommendations = (
-  livePlusIndicator,
-  tradeData,
-  limitPercentage,
-  nsePriceData
-) => {
+export const getBuyRecommendations = (livePlusIndicator, tradeData, limitPercentage, nsePriceData) => {
   const initialTradeData = getKeyObjectTradeData(tradeData);
   let allStocksNameArr = [];
   const buyRecommendations = [];
@@ -106,17 +93,12 @@ export const getBuyRecommendations = (
       for (let j = 0; j < allStocksNameArr.length; j++) {
         const stockWiseData = [];
         for (let i = 0; i < accounts.length; i++) {
-          const currentStock =
-            initialTradeData[accounts[i]][allStocksNameArr[j]];
+          const currentStock = initialTradeData[accounts[i]][allStocksNameArr[j]];
 
-          console.log(
-            "livePlusIndicator[allStocksNameArr[j]]",
-            livePlusIndicator[allStocksNameArr[j]]
-          );
+          console.log("livePlusIndicator[allStocksNameArr[j]]", livePlusIndicator[allStocksNameArr[j]]);
           if (
             livePlusIndicator[allStocksNameArr[j]] &&
-            ((nsePriceData[allStocksNameArr[j]] &&
-              nsePriceData[allStocksNameArr[j]].lastPrice) ||
+            ((nsePriceData[allStocksNameArr[j]] && nsePriceData[allStocksNameArr[j]].lastPrice) ||
               (livePlusIndicator[allStocksNameArr[j]].nse.priceInfo &&
                 livePlusIndicator[allStocksNameArr[j]].nse.priceInfo.lastPrice))
           ) {
@@ -127,9 +109,7 @@ export const getBuyRecommendations = (
             const allLiveStockData = livePlusIndicator[allStocksNameArr[j]];
 
             if (currentStock) {
-              const profitLoss = parseFloat(
-                profitLossCalc(currentPrice, currentStock.average_price)
-              );
+              const profitLoss = parseFloat(profitLossCalc(currentPrice, currentStock.average_price));
 
               stockWiseData.push({
                 account: accounts[i],
@@ -149,10 +129,7 @@ export const getBuyRecommendations = (
           }
         }
         if (stockWiseData.length > 0) {
-          const recomendedToBuy = calculateBuySuggestion(
-            stockWiseData,
-            limitPercentage
-          );
+          const recomendedToBuy = calculateBuySuggestion(stockWiseData, limitPercentage);
           if (recomendedToBuy) {
             buyRecommendations.push(recomendedToBuy);
           }

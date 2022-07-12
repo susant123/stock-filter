@@ -974,6 +974,7 @@ module.exports = {
       symbol: "HEG",
       mcScid: "HEG",
       mcScdid: "HEG",
+      angelName:"HEG Ltd."
     },
     {
       symbol: "HCLTECH",
@@ -1111,6 +1112,7 @@ module.exports = {
       symbol: "ISEC",
       mcScid: "ISL03",
       mcScdid: "ISL04",
+      angelName: "ICICI Securities"
     },
     {
       symbol: "IDBI",
@@ -1445,6 +1447,12 @@ module.exports = {
       mcScdid: "LTS",
     },
     {
+      symbol: "LICI",
+      mcScid: "LIC09",
+      mcScdid: "LIC09",
+      angelName: "LIC India"
+    },
+    {
       symbol: "LICHSGFIN",
       mcScid: "LIC",
       mcScdid: "LIC",
@@ -1725,6 +1733,11 @@ module.exports = {
       mcScdid: "ORIEN54130",
     },
     {
+      symbol: "RAINBOW",
+      mcScid: "RCM03",
+      mcScdid: "RCM03",
+    },
+    {
       symbol: "RHIM",
       mcScid: "OR01",
       mcScdid: "OR01",
@@ -1876,11 +1889,13 @@ module.exports = {
       symbol: "RVNL",
       mcScid: "RVN",
       mcScdid: "RVN",
+      angelName: "Rail Vikas",
     },
     {
       symbol: "RAILTEL",
       mcScid: "RCO01",
       mcScdid: "RCO01",
+      angelName: "RAILTEL",
     },
     {
       symbol: "RAIN",
@@ -1897,7 +1912,7 @@ module.exports = {
       symbol: "RALLIS",
       mcScid: "RI03",
       mcScdid: "RI03",
-      angelName: "RALLIC INDIA"
+      angelName: "RALLIS INDIA"
     },
     {
       symbol: "RCF",
@@ -2487,6 +2502,7 @@ module.exports = {
       symbol: "WELSPUNIND",
       mcScid: "WI03",
       mcScdid: "WI03",
+      angelName:"Welspun India Ltd."
     },
     {
       symbol: "WESTLIFE",

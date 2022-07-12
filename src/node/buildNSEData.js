@@ -66,8 +66,8 @@ const getAllNSEData = (cookie) => {
         //allNSEDataObj[symbol] = nseData;
 
         try {
-          fs.writeFile(__dirname + "/data/nse/" + symbol + ".json", JSON.stringify(nseData), function (err) {
-            if (err) return console.log(err);
+          fs.writeFile(__dirname + "/data/nse/" + symbol + ".json", JSON.stringify(nseData), function (err) {          
+            if (err) return console.log("error while reading file json"+symbol, err);
           });
         } catch (e) {
           console.log("Error occured", e);
