@@ -140,7 +140,7 @@ const aggregateFiles = (folderName) => {
 const startBuildingSWOTData = async (type) => {
   try {
     if (!fs.existsSync(__dirname + "../../../data/swot/")) {
-      console.log("creating folder");
+      console.log("creating folder swot");
       fs.mkdirSync(__dirname + "../../../data/swot/");
     }
   } catch (e) {
@@ -149,7 +149,7 @@ const startBuildingSWOTData = async (type) => {
 
   try {
     if (!fs.existsSync(__dirname + "../../../data/swot/" + type + "/")) {
-      console.log("creating folder");
+      console.log("creating folder swot type"+type);
       fs.mkdirSync(__dirname + "../../../data/swot/" + type + "/");
     }
   } catch (e) {

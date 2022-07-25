@@ -2453,11 +2453,11 @@ module.exports = {
       mcScid: "MSM",
       mcScdid: "VT10",
     },
-    {
+/*     {
       symbol: "VARROC",
       mcScid: "VE08",
       mcScdid: "VE08",
-    },
+    }, */
     {
       symbol: "VBL",
       mcScid: "VB05",

@@ -103,7 +103,7 @@ const aggregateFiles = () => {
 const startEmaSmaDataFetch = async () => {
   try {
     if (!fs.existsSync(__dirname + "../../../data/sma-ema/")) {
-      console.log("creating folder");
+      console.log("creating folder sma-ema");
       fs.mkdirSync(__dirname + "../../../data/sma-ema/");
     }
   } catch (e) {

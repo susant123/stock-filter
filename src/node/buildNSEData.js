@@ -48,6 +48,7 @@ const getAllNSEData = (cookie) => {
   //const allNSEDataObj = {};
 
   for (let i = 0; i < constants.allStocks.length; i++) {
+
     (function (i, constants) {
       const symbol = constants.allStocks[i].symbol;
       setTimeout(async () => {
@@ -76,6 +77,7 @@ const getAllNSEData = (cookie) => {
         console.log("Object.keys(allNSEDataObj).length " + (i + 1) + " of " + constants.allStocks.length);
       }, 500 * (i + 1));
     })(i, constants);
+    
   }
 };
 
@@ -83,9 +85,17 @@ const getAllNSEData = (cookie) => {
 const readFile = (fileName) => {
   return new Promise((resolve, reject) => {
     //console.log("path", __dirname + "/data/nse/" + fileName + ".json");
+
     fs.readFile(__dirname + "/data/nse/" + fileName + ".json", "utf8", function (err, data) {
+      try{
       resolve({ [fileName]: JSON.parse(data) });
+      }catch(e){
+        console.log(e);
+        console.log("fileName--------------------------", fileName );
+        console.log("data-------################", data)
+      }
     });
+
   });
 };
 
@@ -121,7 +131,7 @@ const aggregateFiles = () => {
 const startBuildingDataFiles = async () => {
   try {
     if (!fs.existsSync(__dirname + "/data/nse/")) {
-      console.log("creating folder");
+      console.log("creating folder nse");
       fs.mkdirSync(__dirname + "/data/nse/");
     }
   } catch (e) {

@@ -101,7 +101,7 @@ const aggregateFiles = () => {
 const startBuildingVolumeData = async () => {
   try {
     if (!fs.existsSync(__dirname + "../../../data/volume/")) {
-      console.log("creating folder");
+      console.log("creating folder volume");
       fs.mkdirSync(__dirname + "../../../data/volume/");
     }
   } catch (e) {

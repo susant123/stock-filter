@@ -54,9 +54,13 @@ const getAllNSEData = () => {
         //allNSEDataObj[symbol] = nseData;
 
         try {
-          fs.writeFile(__dirname + "../../../data/chart/" + symbol + ".json", JSON.stringify(nseData), function (err) {
-            if (err) return console.log(err);
-          });
+          fs.writeFile(
+            __dirname + "../../../data/chart/" + symbol + ".json",
+            JSON.stringify(nseData),
+            function (err) {
+              if (err) return console.log(err);
+            }
+          );
         } catch (e) {
           console.log("Error occured");
         }
@@ -71,8 +75,15 @@ const getAllNSEData = () => {
 const readFile = (fileName) => {
   return new Promise((resolve, reject) => {
     //console.log("path", __dirname + "../../../data/chart/" + fileName + ".json");
+
     fs.readFile(__dirname + "../../../data/chart/" + fileName + ".json", "utf8", function (err, data) {
-      resolve({ [fileName]: JSON.parse(data) });
+      try {
+        resolve({ [fileName]: JSON.parse(data) });
+      } catch (e) {
+        console.log(e);
+        console.log("fileName--------------------------", fileName);
+        console.log("data-------################", data);
+      }
     });
   });
 };
@@ -109,7 +120,7 @@ const aggregateFiles = () => {
 const startBuildingChartData = async () => {
   try {
     if (!fs.existsSync(__dirname + "../../../data/chart/")) {
-      console.log("creating folder");
+      console.log("creating folder chart");
       fs.mkdirSync(__dirname + "../../../data/chart/");
     }
   } catch (e) {
