@@ -75,7 +75,7 @@ const getAllNSEData = (cookie) => {
         }
 
         console.log("Object.keys(allNSEDataObj).length " + (i + 1) + " of " + constants.allStocks.length);
-      }, 500 * (i + 1));
+      }, constants.waitTime * (i + 1));
     })(i, constants);
     
   }
@@ -144,7 +144,7 @@ const startBuildingDataFiles = async () => {
 
   setTimeout(() => {
     aggregateFiles();
-  }, (constants.allStocks.length + 2) * 500);
+  }, (constants.allStocks.length + 2) * constants.waitTime);
 };
 
 //start chartData fetching

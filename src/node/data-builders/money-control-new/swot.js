@@ -70,7 +70,7 @@ const getAllNSEData = (type) => {
           }
 
           console.log("symbol--" + stockSymbol + " "+ (i + 1) +" of " + constants.allStocks.length);
-        }, 500 * (i + 1));
+        }, constants.waitTime * (i + 1));
       })(i, constants);
     }
   });
@@ -165,7 +165,7 @@ const startBuildingSWOTData = async (type) => {
     aggregateFiles("W");
     aggregateFiles("O");
     aggregateFiles("T");
-  }, (constants.allStocks.length + 5) * 500);
+  }, (constants.allStocks.length + 5) * constants.waitTime);
 };
 
 //startBuildingSWOTData();

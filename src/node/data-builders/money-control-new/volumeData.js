@@ -55,7 +55,7 @@ const getAllNSEData = () => {
         }
 
         console.log("Current position->" + (i + 1) + "Total Stocks:->" + constants.allStocks.length);
-      }, 500 * (i + 1));
+      }, constants.waitTime * (i + 1));
     })(i);
   }
 };
@@ -63,7 +63,7 @@ const getAllNSEData = () => {
 /* Aggregate individual file section*/
 const readFile = (fileName) => {
   return new Promise((resolve, reject) => {
-    //console.log("path", __dirname + "../../../data/volume/" + fileName + ".json");
+    console.log("path", __dirname + "../../../data/volume/" + fileName + ".json");
     fs.readFile(__dirname + "../../../data/volume/" + fileName + ".json", "utf8", function (err, data) {
       resolve({ [fileName]: JSON.parse(data) });
     });
@@ -115,7 +115,7 @@ const startBuildingVolumeData = async () => {
   setTimeout(() => {
     smaEma.startEmaSmaDataFetch();
     aggregateFiles();
-  }, (constants.allStocks.length + 2) * 500);
+  }, (constants.allStocks.length + 2) * constants.waitTime);
 };
 
 //startBuildingVolumeData();

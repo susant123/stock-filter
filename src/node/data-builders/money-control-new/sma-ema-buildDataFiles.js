@@ -57,7 +57,7 @@ const getAllNSEData = (cookie) => {
         }
 
         console.log("Current length: "+ (i + 1)+ "/"+ constants.allStocks.length);
-      }, 500 * (i + 1));
+      }, constants.waitTime * (i + 1));
     })(i);
   }
 };
@@ -113,13 +113,14 @@ const startEmaSmaDataFetch = async () => {
   getAllNSEData();
 
   setTimeout(() => {
+    aggregateFiles();
+    
     swot.startBuildingSWOTData("S");
     swot.startBuildingSWOTData("W");
     swot.startBuildingSWOTData("O");
     swot.startBuildingSWOTData("T");
-
-    aggregateFiles();
-  }, (constants.allStocks.length + 2) * 500);
+    
+  }, (constants.allStocks.length + 2) * constants.waitTime);
 };
 
 module.exports.startEmaSmaDataFetch = startEmaSmaDataFetch;

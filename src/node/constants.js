@@ -8,6 +8,7 @@ module.exports = {
     "accept-language": "en,gu;q=0.9,hi;q=0.8",
     "accept-encoding": "gzip, deflate, br",
   },
+  waitTime: 1500,
 
   allStocks1: [
     {
@@ -349,6 +350,7 @@ module.exports = {
       symbol: "MAHABANK",
       mcScid: "BM05",
       mcScdid: "BM05",
+      angelName: "Bank of Maha"
     },
     {
       symbol: "BATAINDIA",
@@ -814,11 +816,6 @@ module.exports = {
       symbol: "FORTIS",
       mcScid: "FH",
       mcScdid: "FH",
-    },
-    {
-      symbol: "FRETAIL",
-      mcScid: "FR",
-      mcScdid: "FR",
     },
     {
       symbol: "GAIL",

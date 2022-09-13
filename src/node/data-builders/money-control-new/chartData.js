@@ -66,7 +66,7 @@ const getAllNSEData = () => {
         }
 
         console.log("Current position-> " + (i + 1) + " Total Stocks:->" + constants.allStocks.length);
-      }, 500 * (i + 1));
+      }, constants.waitTime * (i + 1));
     })(i);
   }
 };
@@ -130,9 +130,9 @@ const startBuildingChartData = async () => {
   getAllNSEData();
 
   setTimeout(() => {
-    volumeData.startBuildingVolumeData();
     aggregateFiles();
-  }, (constants.allStocks.length + 2) * 500);
+    volumeData.startBuildingVolumeData();    
+  }, (constants.allStocks.length + 2) * constants.waitTime);
 };
 
 //startBuildingChartData();
