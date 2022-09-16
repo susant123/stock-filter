@@ -8,7 +8,7 @@ module.exports = {
     "accept-language": "en,gu;q=0.9,hi;q=0.8",
     "accept-encoding": "gzip, deflate, br",
   },
-  waitTime: 1500,
+  waitTime: 1000,
 
   allStocks1: [
     {
