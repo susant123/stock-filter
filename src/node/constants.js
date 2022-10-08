@@ -118,6 +118,7 @@ module.exports = {
       symbol: "ABFRL",
       mcScid: "PFR",
       mcScdid: "PFR",
+      angelName: "ADITYA BIR. FAS."
     },
     {
       symbol: "ADVENZYMES",
@@ -858,6 +859,7 @@ module.exports = {
       symbol: "GLAXO",
       mcScid: "GI",
       mcScdid: "GSK",
+      angelName: "GLAXOSMI"
     },
     {
       symbol: "GLENMARK",
@@ -955,6 +957,7 @@ module.exports = {
       symbol: "GSFC",
       mcScid: "GSF",
       mcScdid: "GSF",
+      angelName: "G S F C"
     },
     {
       symbol: "GSPL",
@@ -1115,6 +1118,7 @@ module.exports = {
       symbol: "IDBI",
       mcScid: "IDB",
       mcScdid: "IDB05",
+      angelName: "IDBI"
     },
     {
       symbol: "IDFCFIRSTB",
@@ -1748,6 +1752,7 @@ module.exports = {
       symbol: "PAYTM",
       mcScid: "OC10",
       mcScdid: "OC03",
+      angelName: "ONE 97"
     },
     {
       symbol: "PNBHOUSING",
@@ -2254,6 +2259,7 @@ module.exports = {
       symbol: "TCS",
       mcScid: "TCS",
       mcScdid: "TCS",
+      angelName: "TCS"
     },
     {
       symbol: "TATACONSUM",
