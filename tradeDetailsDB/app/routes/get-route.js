@@ -19,7 +19,7 @@ module.exports = function (app, db) {
   }
 
   const getAccountKeyTradeData = (tradeData) => {
-    const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel"];
+    const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel", "susant-paytm", "asha-paytm", "susant-fyers"];
     const allAccountDetails = {};
     if (tradeData) {
       for (let i = 0; i < accounts.length; i++) {

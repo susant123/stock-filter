@@ -13,7 +13,7 @@ function CommonCardView(props) {
   const NotLivePrice = () => (
     <span>
       {nseData.priceInfo.lastPrice}
-      <span style={{ color: "red" }}> &nbsp;Not live</span>
+      <span style={{ color: "red" }}> &nbsp;NL</span>
     </span>
   );
   return (

@@ -24,7 +24,7 @@ const lowMarketCap = 7500;
 const tooLowMarketCap  = 5000;
 
 function AllPortfolios() {
-  const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel"];
+  const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel", "susant-paytm", "asha-paytm"];
   const tradeData = useSelector(selectTradeData);
   /*const [selectedAc, setSelectedAc] = useState(null);
   const [totalInvested, setTotalInvested] = useState(0);*/
@@ -81,6 +81,18 @@ function AllPortfolios() {
       acName: "susant-angel",
       label: "Susant Angel",
     },
+    {
+      acName: "susant-paytm",
+      label: "Susant Paytm",
+    },
+    {
+      acName: "susant-fyers",
+      label: "Susant Fyers",
+    },
+    {
+      acName: "asha-paytm",
+      label: "Asha Paytm",
+    },
   ];
   return (
     <div className="portfolio">
@@ -100,7 +112,7 @@ function AllPortfolios() {
             <Col isHeader={true} key={ac.acName}>
               <InnerRow>
                 <InnerCol>APrice</InnerCol>
-                <InnerCol>Quantity</InnerCol>
+                <InnerCol>Qty</InnerCol>
                 <InnerCol>CPrice</InnerCol>
                 <InnerCol>P/L</InnerCol>
                 <InnerCol>P/L B</InnerCol>
@@ -117,8 +129,8 @@ function AllPortfolios() {
             return (
               <Row key={index} isTooLow={marketCap < tooLowMarketCap} isLow={marketCap < lowMarketCap }>
                 <Col isHeader={true}>
-                  <b>{stock}</b>{" "}{marketCap}{" "}
-                  {nsePriceData[stock] ? null : <NotLive>Not Live</NotLive>}
+                  <b>{stock}</b>{" "}<span style={{color: "#999", fontStyle: "italic"}}>{marketCap}</span>
+                  {nsePriceData[stock] ? null : <NotLive>NL</NotLive>}
                   <AdditionalInfo
                     onClick={() => showAdditionalInfoModal(stock)}
                   >

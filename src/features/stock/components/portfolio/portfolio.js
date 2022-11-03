@@ -19,7 +19,7 @@ const convertArrayToObject = (array, key) => {
 const stockConstantsArr = convertArrayToObject(constants.allStocks, "symbol");
 
 function Portfolio() {
-  const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel"];
+  const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel", "susant-paytm", "asha-paytm", "susant-fyers"];
   const tradeData = useSelector(selectTradeData);
   const [selectedAc, setSelectedAc] = useState("asha-kite");
   const [totalInvested, setTotalInvested] = useState(0);
@@ -56,6 +56,18 @@ function Portfolio() {
         window.susantKite = totalInvestedAmount;
         break;
       }
+      case "susant-paytm": {
+        window.susantPaytm = totalInvestedAmount;
+        break;
+      }
+      case "susant-fyers": {
+        window.susantFyers = totalInvestedAmount;
+        break;
+      }
+      case "asha-paytm": {
+        window.ashaPaytm = totalInvestedAmount;
+        break;
+      }
       default:
         window.susantAngel = totalInvestedAmount;
     }
@@ -63,7 +75,10 @@ function Portfolio() {
     window.totalInvested =
       parseFloat(window.susantAngel) +
       parseFloat(window.susantKite) +
+      parseFloat(window.susantPaytm) +
       parseFloat(window.ashaAngel) +
+      parseFloat(window.ashaPaytm) +
+      parseFloat(window.susantFyers) +      
       parseFloat(window.ashaKite);
   };
 

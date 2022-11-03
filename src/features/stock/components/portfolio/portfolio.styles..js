@@ -15,6 +15,7 @@ export const AccountWrapper = styled.div`
 
 export const Tabs = styled.div`
   display: flex;
+  margin: 15px;
 `;
 
 export const AccountWiseTradeData = styled.div``;
