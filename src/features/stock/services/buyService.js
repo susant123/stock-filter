@@ -1,6 +1,6 @@
 import { convertArrayToObject } from "../utils/utilities";
 
-const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel"];
+const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel", "susant-paytm", "asha-paytm", "susant-fyers"];
 
 const profitLossCalc = (currentPrice = 0, boughtPrice) => {
   return boughtPrice ? (((currentPrice - boughtPrice) / boughtPrice) * 100).toFixed(1) : 0;
@@ -38,9 +38,15 @@ const calculateBuySuggestion = (stockWiseData, limitPercentage) => {
   const acc3 = stockWiseData[2];
   const acc4 = stockWiseData[3];
 
-  const isLossMoreThanLimit = (stock) => stock.quantity && stock.quantity > 0 && stock.profitLoss <= limitPercentage;
+  const acc5 = stockWiseData[4];
+  const acc6 = stockWiseData[5];
+  const acc7 = stockWiseData[6];
 
-  const isLossLessThanLimit = (stock) => stock.quantity && stock.quantity > 0 && stock.profitLoss > limitPercentage;
+  const isLossMoreThanLimit = (stock) =>
+    stock.quantity && stock.quantity > 0 && stock.profitLoss <= limitPercentage;
+
+  const isLossLessThanLimit = (stock) =>
+    stock.quantity && stock.quantity > 0 && stock.profitLoss > limitPercentage;
 
   const flagAccountsStrBuilder = (flagAccounts) => {
     console.log("flagAccounts", flagAccounts);
@@ -56,8 +62,29 @@ const calculateBuySuggestion = (stockWiseData, limitPercentage) => {
     if (isLossMoreThanLimit(acc2)) {
       if (isLossMoreThanLimit(acc3)) {
         if (isLossMoreThanLimit(acc4)) {
-          buyAccount = acc1;
-          buyAccount.flagAccounts = flagAccountsStrBuilder([acc2, acc3, acc4]);
+          if (isLossMoreThanLimit(acc5)) {
+            if (isLossMoreThanLimit(acc6)) {
+              if (isLossMoreThanLimit(acc7)) {
+                buyAccount = acc1;
+                buyAccount.flagAccounts = flagAccountsStrBuilder([acc2, acc3, acc4, acc5, acc6, acc7]);
+              } else if (isLossLessThanLimit(acc7)) {
+                console.log("Have patience", acc7.account, acc7.stockName);
+              } else {
+                buyAccount = acc7;
+                buyAccount.flagAccounts = flagAccountsStrBuilder([acc1, acc2, acc3, acc4, acc5, acc6]);
+              }
+            } else if (isLossLessThanLimit(acc6)) {
+              console.log("Have patience", acc6.account, acc6.stockName);
+            } else {
+              buyAccount = acc6;
+              buyAccount.flagAccounts = flagAccountsStrBuilder([acc1, acc2, acc3, acc4, acc5]);
+            }
+          } else if (isLossLessThanLimit(acc5)) {
+            console.log("Have patience", acc5.account, acc5.stockName);
+          } else {
+            buyAccount = acc5;
+            buyAccount.flagAccounts = flagAccountsStrBuilder([acc1, acc2, acc3, acc4]);
+          }
         } else if (isLossLessThanLimit(acc4)) {
           console.log("Have patience", acc4.account, acc4.stockName);
         } else {
