@@ -9,7 +9,9 @@ export const Row = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
   width: 100%;
+  background-color: ${({isTooLow, isLow})=>isTooLow? "#ebc274":isLow?"isLow":"white"};
   ${(props) => (props.fixedRow ? "position: sticky; top: 55px;" : "")}
+
 `;
 
 export const Col = styled.div`
@@ -19,7 +21,7 @@ export const Col = styled.div`
   min-width: ${(props) => (props.isHeader ? "200px" : "auto")};
   border: 1px solid rgb(240, 237, 237);
   font-weight: ${(props) => (props.isHeader ? "bold" : "normal")};
-  background-color: ${(props) => (props.isHeader ? "#cecece" : "white")};
+  background-color: ${(props) => props.isTooLow ? "#ebc274": props.isLow? "antiquewhite": (props.isHeader ? "#cecece" : "white")};
 `;
 
 export const InnerRow = styled.div`

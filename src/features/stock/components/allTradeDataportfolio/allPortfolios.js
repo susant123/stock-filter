@@ -20,6 +20,9 @@ import {
   NotLive,
 } from "./allPortfolio.styles";
 
+const lowMarketCap = 7500;
+const tooLowMarketCap  = 5000;
+
 function AllPortfolios() {
   const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel"];
   const tradeData = useSelector(selectTradeData);
@@ -106,11 +109,15 @@ function AllPortfolios() {
           ))}
         </Row>
         {allStocks.map((stock, index) => {
+            const marketCap = livePlusIndicator[stock].nse.securityInfo && livePlusIndicator[stock].nse.securityInfo.issuedSize ? Math.floor(
+              (parseInt(livePlusIndicator[stock].nse.securityInfo.issuedSize, 10) * livePlusIndicator[stock].nse.priceInfo.lastPrice) / 10000000
+            ): "Not known";
+
           if (stock !== "TIMESTAMP") {
             return (
-              <Row key={index}>
+              <Row key={index} isTooLow={marketCap < tooLowMarketCap} isLow={marketCap < lowMarketCap }>
                 <Col isHeader={true}>
-                  {stock}{" "}
+                  <b>{stock}</b>{" "}{marketCap}{" "}
                   {nsePriceData[stock] ? null : <NotLive>Not Live</NotLive>}
                   <AdditionalInfo
                     onClick={() => showAdditionalInfoModal(stock)}
@@ -151,7 +158,7 @@ function AllPortfolios() {
                     : null;
 
                   return (
-                    <Col key={index}>
+                    <Col key={index} isTooLow={marketCap < tooLowMarketCap} isLow={marketCap < lowMarketCap}>
                       <InnerRow>
                         <InnerCol>{averagePrice}</InnerCol>
                         <InnerCol>{quantity}</InnerCol>
