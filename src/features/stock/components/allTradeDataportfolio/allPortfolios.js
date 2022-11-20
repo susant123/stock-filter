@@ -24,7 +24,7 @@ const lowMarketCap = 7500;
 const tooLowMarketCap  = 5000;
 
 function AllPortfolios() {
-  const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel", "susant-paytm", "asha-paytm"];
+  const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel", "susant-paytm", "susant-fyers",  "asha-paytm"];
   const tradeData = useSelector(selectTradeData);
   /*const [selectedAc, setSelectedAc] = useState(null);
   const [totalInvested, setTotalInvested] = useState(0);*/

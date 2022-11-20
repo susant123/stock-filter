@@ -624,13 +624,7 @@ module.exports = {
       symbol: "ENDURANCE",
       mcScid: "ET04",
       mcScdid: "ET01",
-    },
-    {
-      symbol: "ENGINERSIN",
-      mcScid: "EI14",
-      mcScdid: "EI14",
-      angelName:"Engineers India Ltd."
-    },
+    },    
     {
       symbol: "EQUITAS",
       mcScid: "EH03",
@@ -1099,13 +1093,7 @@ module.exports = {
       symbol: "KARURVYSYA",
       mcScid: "KVB",
       mcScdid: "KVB",
-    },
-    {
-      symbol: "KSCL",
-      mcScid: "KSC01",
-      mcScdid: "KSC01",
-      angelName:"Kaveri Seed Company Ltd"
-    },
+    },    
     {
       symbol: "KEC",
       mcScid: "KEC03",
@@ -1824,12 +1812,7 @@ module.exports = {
       symbol: "UCOBANK",
       mcScid: "UCO",
       mcScdid: "UCO",
-    },
-    {
-      symbol: "UFLEX",
-      mcScid: "FI08",
-      mcScdid: "U01",
-    },
+    },   
     {
       symbol: "UPL",
       mcScid: "SI10",

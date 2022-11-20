@@ -7,7 +7,7 @@ export const PortfolioTable = styled.div`
 
 export const Row = styled.div`
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr 2fr;
+  grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr;
   width: 100%;
   background-color: ${({isTooLow, isLow})=>isTooLow? "#ebc274":isLow?"isLow":"white"};
   ${(props) => (props.fixedRow ? "position: sticky; top: 55px;" : "")}
