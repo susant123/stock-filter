@@ -448,6 +448,7 @@ module.exports = {
       symbol: "CDSL",
       mcScid: "CDS",
       mcScdid: "CDS",
+      angelName: "C D S L"
     },
     {
       symbol: "CENTURYPLY",
@@ -624,13 +625,7 @@ module.exports = {
       symbol: "ENDURANCE",
       mcScid: "ET04",
       mcScdid: "ET01",
-    },    
-    {
-      symbol: "EQUITAS",
-      mcScid: "EH03",
-      mcScdid: "EH03",
-      angelName: "EQUITAS HOLDINGS"
-    },        
+    },      
     {
       symbol: "ESCORTS",
       mcScid: "E",
@@ -1224,12 +1219,7 @@ module.exports = {
       symbol: "MINDTREE",
       mcScid: "MC20",
       mcScdid: "MT13",
-    },    
-    {
-      symbol: "MINDAIND",
-      mcScid: "MI44",
-      mcScdid: "MI4",
-    },    
+    },       
     {
       symbol: "MOTILALOFS",
       mcScid: "MOF01",
@@ -1449,7 +1439,7 @@ module.exports = {
       symbol: "RECLTD",
       mcScid: "REC02",
       mcScdid: "REC02",
-      angelName: "REC LTD"
+      angelName: "R E C LTD"
     },
     {
       symbol: "RITES",
@@ -1466,13 +1456,7 @@ module.exports = {
       mcScid: "RVN",
       mcScdid: "RVN",
       angelName: "Rail Vikas",
-    },
-    {
-      symbol: "RAILTEL",
-      mcScid: "RCO01",
-      mcScdid: "RCO01",
-      angelName: "RAILTEL",
-    },    
+    },  
     {
       symbol: "RAJESHEXPO",
       mcScid: "RE07",

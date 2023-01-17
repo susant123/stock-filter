@@ -44,14 +44,14 @@ export const getSellRecommendation = (
     for (let i = 0; i < accounts.length; i++) {
       for (let j = 0; j < allStocks.length; j++) {
         const currentStock = initialTradeData[accounts[i]][allStocks[j]];
-        console.log("allStocks[j]", allStocks[j]);
+        //console.log("allStocks[j]", allStocks[j]);
         if (livePlusIndicator[allStocks[j]]) {
-          console.log(
+          /* console.log(
             "allStocks[j]",
             allStocks[j],
             "livePlusIndicator[allStocks[j]].nse",
             livePlusIndicator[allStocks[j]].nse
-          );
+          ); */
 
           if (!livePlusIndicator[allStocks[j]].nse.priceInfo) {
             return [];
@@ -81,6 +81,6 @@ export const getSellRecommendation = (
     }
   }
 
-  console.log("sellRecommendation----", sellRecommendation);
+  //console.log("sellRecommendation----", sellRecommendation);
   return sellRecommendation;
 };

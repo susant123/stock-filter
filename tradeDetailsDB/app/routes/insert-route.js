@@ -5,7 +5,7 @@ module.exports = function (app, db) {
     var data = req.body;
     console.log("data;;;;;;;;;;;;", data);
     //res.send("Success");
-    const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel"];
+    const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel", "susant-paytm", "susant-fyers","asha-paytm"];
     accounts.forEach((account) => {
       insertNewScript(data.newScrip, account, res, db);
     });

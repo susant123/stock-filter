@@ -4,15 +4,16 @@ import { StockSymbol, StockName } from "../commonStyles/cardStyles";
 function CommonCardView(props) {
   const { nseData, stockName, nsePriceData } = props;
 
-  const marketCap = nseData.securityInfo && nseData.securityInfo.issuedSize ? Math.floor(
+  const marketCap = nseData.securityInfo && nseData.securityInfo.issuedSize !== "-" ? Math.floor(
     (parseInt(nseData.securityInfo.issuedSize, 10) * nseData.priceInfo.lastPrice) / 10000000
-  ): "Not known"; 
+  ): "Unknown";
 
-//  const marketCap = Math.floor(nseData.securityInfo.issuedCap * nseData.priceInfo.lastPrice / 10000000);
+   //const marketCap = nsePriceData?.ffmc ? Math.floor(nsePriceData.ffmc / 10000000): "-";
 
+   //console.log("--------------nseData?.securityInfo?.surveillance.surv", nseData?.securityInfo?.surveillance.surv)
   const NotLivePrice = () => (
     <span>
-      {nseData.priceInfo.lastPrice}
+      {nseData?.priceInfo?.lastPrice}
       <span style={{ color: "red" }}> &nbsp;NL</span>
     </span>
   );
@@ -31,8 +32,8 @@ function CommonCardView(props) {
         {nseData.metadata.pdSectorPe}
       </StockName>
 
-      <StockName isDanger={nseData.securityInfo.surveillance !== "-"}>
-        Surveillance- {nseData.securityInfo.surveillance}
+     <StockName isDanger={nseData?.securityInfo?.surveillance.surv !== "-"}>
+        Surveillance- {nseData?.securityInfo?.surveillance?.surv}
       </StockName>
     </>
   );

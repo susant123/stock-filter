@@ -37,7 +37,7 @@ db.serialize(function () {
     );
   };
 
-  const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel"];
+  const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel", "susant-paytm", "susant-fyers","asha-paytm"];
 
   for (var i = 0; i < accounts.length; i++) {
     const accountTradeData = tradeDetails.stocks[accounts[i]];

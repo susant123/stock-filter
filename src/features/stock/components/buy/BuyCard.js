@@ -58,7 +58,7 @@ function BuyCard(props) {
       <CommonCardView
         nseData={nseData}
         stockName={card.stockName}
-        nsePriceData={nsePriceData} 
+        nsePriceData={nsePriceData}        
       />
 
       <hr style={{ borderColor: "gray" }} />

@@ -1,6 +1,6 @@
 import { convertArrayToObject } from "../utils/utilities";
 
-const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel"];
+const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel", "susant-paytm", "asha-paytm", "susant-fyers"];
 
 const profitLossCalc = (currentPrice = 0, boughtPrice) => {
   return boughtPrice

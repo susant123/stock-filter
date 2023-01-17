@@ -41,7 +41,7 @@ function SellCard(props) {
   };
 
   const partiallySavedhandler = () => {
-    console.log(sellQuantity, ",", sellPrice);
+    //console.log(sellQuantity, ",", sellPrice);
     dispatch(
       updateStock({
         stockName: card.stockName,

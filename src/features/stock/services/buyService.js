@@ -49,12 +49,15 @@ const calculateBuySuggestion = (stockWiseData, limitPercentage) => {
     stock.quantity && stock.quantity > 0 && stock.profitLoss > limitPercentage;
 
   const flagAccountsStrBuilder = (flagAccounts) => {
-    console.log("flagAccounts", flagAccounts);
+    //console.log("flagAccounts", flagAccounts);
 
     let finalStr = "";
     for (let i = 0; i < flagAccounts.length; i++) {
       finalStr += flagAccounts[i].account + ": " + flagAccounts[i].profitLoss + ",";
     }
+
+    //console.log("flagAccounts exit", flagAccounts);
+
     return finalStr;
   };
 
@@ -122,7 +125,7 @@ export const getBuyRecommendations = (livePlusIndicator, tradeData, limitPercent
         for (let i = 0; i < accounts.length; i++) {
           const currentStock = initialTradeData[accounts[i]][allStocksNameArr[j]];
 
-          console.log("livePlusIndicator[allStocksNameArr[j]]", livePlusIndicator[allStocksNameArr[j]]);
+          //console.log("livePlusIndicator[allStocksNameArr[j]]", livePlusIndicator[allStocksNameArr[j]]);
           if (
             livePlusIndicator[allStocksNameArr[j]] &&
             ((nsePriceData[allStocksNameArr[j]] && nsePriceData[allStocksNameArr[j]].lastPrice) ||

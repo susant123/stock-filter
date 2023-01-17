@@ -62,7 +62,17 @@ const getAllNSEData = (cookie) => {
           console.log("nseData---", nseData);
           refreshCookie();
           nseData = await getStockWiseNSEData(symbol);
-        }
+
+          try {
+            fs.writeFile(__dirname + "/data/nse/" + symbol + ".json", JSON.stringify(nseData), function (err) {          
+              if (err) return console.log("error while reading file json"+symbol, err);
+            });
+          } catch (e) {
+            console.log("Error occured", e);
+          }
+  
+          console.log("Object.keys(allNSEDataObj).length " + (i + 1) + " of " + constants.allStocks.length);
+        }else{
 
         //allNSEDataObj[symbol] = nseData;
 
@@ -75,6 +85,7 @@ const getAllNSEData = (cookie) => {
         }
 
         console.log("Object.keys(allNSEDataObj).length " + (i + 1) + " of " + constants.allStocks.length);
+      }
       }, constants.waitTime * (i + 1));
     })(i, constants);
     

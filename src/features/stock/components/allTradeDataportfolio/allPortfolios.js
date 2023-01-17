@@ -56,7 +56,7 @@ function AllPortfolios() {
   const showAdditionalInfoModal = (stock) => {
     setIsModalOpen(true);
     setModalStock(keyObjectTradeData[accounts[0]][stock]);
-    console.log(keyObjectTradeData[accounts[0]][stock]);
+    //console.log(keyObjectTradeData[accounts[0]][stock]);
     //keyObjectTradeData[account][stock]
   };
 
@@ -121,9 +121,12 @@ function AllPortfolios() {
           ))}
         </Row>
         {allStocks.map((stock, index) => {
-            const marketCap = livePlusIndicator[stock].nse.securityInfo && livePlusIndicator[stock].nse.securityInfo.issuedSize ? Math.floor(
+
+           const marketCap = livePlusIndicator[stock].nse.securityInfo && livePlusIndicator[stock].nse.securityInfo.issuedSize ? Math.floor(
               (parseInt(livePlusIndicator[stock].nse.securityInfo.issuedSize, 10) * livePlusIndicator[stock].nse.priceInfo.lastPrice) / 10000000
             ): "Not known";
+ 
+            //const marketCap = nsePriceData[stock]?.ffmc ? Math.floor(nsePriceData[stock].ffmc / 10000000): "-";
 
           if (stock !== "TIMESTAMP") {
             return (
