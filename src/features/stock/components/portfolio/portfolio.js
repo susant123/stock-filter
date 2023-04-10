@@ -19,57 +19,103 @@ const convertArrayToObject = (array, key) => {
 const stockConstantsArr = convertArrayToObject(constants.allStocks, "symbol");
 
 function Portfolio() {
-  const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel", "susant-paytm", "asha-paytm", "susant-fyers"];
+  const accounts = [
+    "asha-kite",
+    "susant-kite",
+    "asha-angel",
+    "susant-angel",
+    "susant-paytm",
+    "asha-paytm",
+    "susant-fyers",
+  ];
   const tradeData = useSelector(selectTradeData);
   const [selectedAc, setSelectedAc] = useState("asha-kite");
   const [totalInvested, setTotalInvested] = useState(0);
+  const [totalInvestedETF, setTotalInvestedETF] = useState(0);
   const [sortedData, setSortedData] = useState(tradeData["asha-kite"]);
   const [sortedColumn, setSortedColumns] = useState("symbol");
 
   const calculateTotalInvested = (account) => {
     let totalInvested = 0;
     tradeData[account].forEach((trade) => {
-      totalInvested += trade.average_price * trade.quantity;
+      if (
+        trade.stock_name === "LIQUIDBEES" ||
+        trade.stock_name === "NIFTYBEES" ||
+        trade.stock_name === "EBBETF0430" ||
+        trade.stock_name === "HDFCMFGETF"
+      ) {
+        console.log("ETF investment");
+      } else {
+        totalInvested += trade.average_price * trade.quantity;
+      }
     });
     return totalInvested.toFixed(2);
   };
 
-  useEffect(()=>{
+  const calculateTotalInvestedETF = (account) => {
+    let totalInvested = 0;
+    tradeData[account].forEach((trade) => {
+      if (
+        trade.stock_name === "LIQUIDBEES" ||
+        trade.stock_name === "NIFTYBEES" ||
+        trade.stock_name === "EBBETF0430" ||
+        trade.stock_name === "HDFCMFGETF"
+      ) {
+        totalInvested += trade.average_price * trade.quantity;
+      } else {
+        console.log("NON ETF investment");
+      }
+    });
+    return totalInvested.toFixed(2);
+  };
+
+  useEffect(() => {
     handleSelection(selectedAc);
-  }, [])
+  }, []);
 
   const handleSelection = (account) => {
     setSelectedAc(account);
     const totalInvestedAmount = calculateTotalInvested(account);
+
+    const totalInvestedETF = calculateTotalInvestedETF(account);
+
     setTotalInvested(totalInvestedAmount);
+    setTotalInvestedETF(totalInvestedETF);
     switch (account) {
       case "asha-kite": {
         window.ashaKite = totalInvestedAmount;
+        window.ashaKiteETF = totalInvestedETF;
         break;
       }
 
       case "asha-angel": {
         window.ashaAngel = totalInvestedAmount;
+        window.ashaAngelETF = totalInvestedETF;
         break;
       }
       case "susant-kite": {
         window.susantKite = totalInvestedAmount;
+        window.susantKiteETF = totalInvestedETF;
         break;
       }
       case "susant-paytm": {
         window.susantPaytm = totalInvestedAmount;
+        window.susantPaytmETF = totalInvestedETF;
         break;
       }
       case "susant-fyers": {
         window.susantFyers = totalInvestedAmount;
+        window.susantFyersETF = totalInvestedETF;
         break;
       }
       case "asha-paytm": {
         window.ashaPaytm = totalInvestedAmount;
+        window.ashaPaytmETF = totalInvestedETF;
         break;
       }
       default:
         window.susantAngel = totalInvestedAmount;
+        window.susantAngelETF = totalInvestedETF;
     }
 
     window.totalInvested =
@@ -78,8 +124,17 @@ function Portfolio() {
       parseFloat(window.susantPaytm) +
       parseFloat(window.ashaAngel) +
       parseFloat(window.ashaPaytm) +
-      parseFloat(window.susantFyers) +      
+      parseFloat(window.susantFyers) +
       parseFloat(window.ashaKite);
+
+    window.totalInvestedETF =
+      parseFloat(window.susantAngelETF) +
+      parseFloat(window.susantKiteETF) +
+      parseFloat(window.susantPaytmETF) +
+      parseFloat(window.ashaAngelETF) +
+      parseFloat(window.ashaPaytmETF) +
+      parseFloat(window.susantFyersETF) +
+      parseFloat(window.ashaKiteETF);
   };
 
   const sortByAngelname = () => {
@@ -118,12 +173,12 @@ function Portfolio() {
   }, [selectedAc]);
 
   useEffect(() => {
-    getTotalStocksInPortfolio();   
+    getTotalStocksInPortfolio();
   }, [selectedAc]);
 
   const [totalPortfolioStockCount, setTotalPortfolioStockCount] = useState(0);
 
-  const getTotalStocksInPortfolio = () => {   
+  const getTotalStocksInPortfolio = () => {
     const tradedData = tradeData[selectedAc];
     const portfolioData = tradedData.filter((data) => {
       return data.quantity > 0;
@@ -150,15 +205,25 @@ function Portfolio() {
           </Tabs>
           <AccountWiseTradeData>
             <div>
-              Total amount invested in the AC: <b>{totalInvested}</b> , Total bought Stocks in the AC:{" "}
-              <b>{totalPortfolioStockCount}</b>
+              Total amount invested in Stocks: <b>{totalInvested}</b> , Total amount invested in ETF:{" "}
+              <b>{totalInvestedETF}</b> , Total bought Stocks in the AC: <b>{totalPortfolioStockCount}</b>,{" "}
+              totalInvestedETF
             </div>
             <div>
               {" "}
-              Total in all Ac:{" "}
+              Total Stocks in all Ac:{" "}
               <b>
                 {window.totalInvested
                   ? window.totalInvested
+                      .toFixed(2)
+                      .toString()
+                      .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
+                  : 0}
+              </b>{" "}
+              || Total ETF in all Ac:{" "}
+              <b>
+                {window.totalInvestedETF
+                  ? window.totalInvestedETF
                       .toFixed(2)
                       .toString()
                       .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
