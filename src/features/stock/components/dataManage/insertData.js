@@ -8,18 +8,20 @@ function InsertNewData() {
 
   const handleSave = () => {
     console.log("newScrip", newScrip);
-    dispatch(insertNewScripAsync({ newScrip }));
+
+    if (newScrip && newScrip !== "" && newScrip.length > 0) {
+      dispatch(insertNewScripAsync({ newScrip }));
+    }
     setNewScrip("");
   };
 
   return (
     <div className="inserData">
       New Scrip Symbol:
-      <input
-        value={newScrip}
-        onChange={(e) => setNewScrip(e.target.value.toUpperCase())}
-      />
-      <button onClick={handleSave}>Save</button>
+      <input value={newScrip} onChange={(e) => setNewScrip(e.target.value.trim().toUpperCase())} />
+      <button onClick={handleSave} disabled={!newScrip}>
+        Save
+      </button>
     </div>
   );
 }

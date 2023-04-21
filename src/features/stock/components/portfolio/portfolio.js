@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { AccountWrapper, Tabs, AccountWiseTradeData } from "./portfolio.styles.";
 import PortfolioRow from "./portfolioRow";
 import constants from "../../../../node/constants";
-import { RowWrapper, CellWrapper, InputField, ButtonWrapper } from "./portfolioRow.styles";
+import { RowWrapper, CellWrapper } from "./portfolioRow.styles";
 
 const convertArrayToObject = (array, key) => {
   const initialValue = {};
@@ -42,7 +42,8 @@ function Portfolio() {
         trade.stock_name === "LIQUIDBEES" ||
         trade.stock_name === "NIFTYBEES" ||
         trade.stock_name === "EBBETF0430" ||
-        trade.stock_name === "HDFCMFGETF"
+        trade.stock_name === "HDFCMFGETF" ||
+        trade.stock_name === "SGBMAR31"
       ) {
         console.log("ETF investment");
       } else {
@@ -71,6 +72,7 @@ function Portfolio() {
 
   useEffect(() => {
     handleSelection(selectedAc);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSelection = (account) => {
@@ -170,10 +172,12 @@ function Portfolio() {
 
   useEffect(() => {
     setSortedData(tradeData[selectedAc]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedAc]);
 
   useEffect(() => {
     getTotalStocksInPortfolio();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedAc]);
 
   const [totalPortfolioStockCount, setTotalPortfolioStockCount] = useState(0);
