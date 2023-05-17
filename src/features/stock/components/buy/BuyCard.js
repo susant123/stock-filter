@@ -30,15 +30,13 @@ function BuyCard(props) {
   const chartData = useSelector(selectChartData);
   //const marketCap = Math.floor(card.nse.securityInfo.issuedCap * card.nse.priceInfo.lastPrice / 10000000);
 
-  const recommendedQuantity = Math.floor(
-    recommendedAmout / priceInfo.lastPrice
-  );
+  const recommendedQuantity = Math.floor(recommendedAmout / priceInfo?.lastPrice || 1);
   const displayRows = [
     { label: "Buy", info: card.account },
     { label: "Flag Accounts", info: card.flagAccounts },
     {
       label: "Year low",
-      info: priceInfo.weekHighLow.min + " - " + priceInfo.weekHighLow.minDate,
+      info: priceInfo.weekHighLow.min + " - " + priceInfo?.weekHighLow?.minDate,
     },
     {
       label: "Year high",
@@ -46,8 +44,7 @@ function BuyCard(props) {
     },
     {
       label: "IntraDay Range",
-      info:
-        priceInfo.intraDayHighLow.min + " - " + priceInfo.intraDayHighLow.max,
+      info: priceInfo.intraDayHighLow.min + " - " + priceInfo.intraDayHighLow.max,
     },
   ];
 
@@ -55,11 +52,7 @@ function BuyCard(props) {
 
   return (
     <CardBlock>
-      <CommonCardView
-        nseData={nseData}
-        stockName={card.stockName}
-        nsePriceData={nsePriceData}        
-      />
+      <CommonCardView nseData={nseData} stockName={card.stockName} nsePriceData={nsePriceData} />
 
       <hr style={{ borderColor: "gray" }} />
 
@@ -88,11 +81,7 @@ function BuyCard(props) {
         <hr />
         <VolumeData volumeData={card.volumeData} />
         <hr />
-        <RSILineChart
-          chartData={chartDataPerStock}
-          rsiData={allRSIData[card.stockName]}
-          rsiRange={14}
-        />
+        <RSILineChart chartData={chartDataPerStock} rsiData={allRSIData[card.stockName]} rsiRange={14} />
         <MACDChart macdChartData={card.macdData} />
       </div>
       <QuantityBlock>

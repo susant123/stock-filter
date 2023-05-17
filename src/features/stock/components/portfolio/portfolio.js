@@ -60,7 +60,8 @@ function Portfolio() {
         trade.stock_name === "LIQUIDBEES" ||
         trade.stock_name === "NIFTYBEES" ||
         trade.stock_name === "EBBETF0430" ||
-        trade.stock_name === "HDFCMFGETF"
+        trade.stock_name === "HDFCMFGETF" ||
+        trade.stock_name === "SGBMAR31"
       ) {
         totalInvested += trade.average_price * trade.quantity;
       } else {

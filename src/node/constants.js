@@ -62,7 +62,7 @@ module.exports = {
       symbol: "AUBANK",
       mcScid: "ASF03",
       mcScdid: "ASF02",
-    },   
+    },
     {
       symbol: "AARTIIND",
       mcScid: "AI",
@@ -92,7 +92,7 @@ module.exports = {
       symbol: "ADANIPORTS",
       mcScid: "MPS",
       mcScdid: "MPS",
-      angelName: "ADANI PORTS"
+      angelName: "ADANI PORTS",
     },
     {
       symbol: "ATGL",
@@ -113,19 +113,19 @@ module.exports = {
       symbol: "ABFRL",
       mcScid: "PFR",
       mcScdid: "PFR",
-      angelName: "ADITYA BIR. FAS."
+      angelName: "ADITYA BIR. FAS.",
     },
     {
       symbol: "ADVENZYMES",
       mcScid: "AET02",
       mcScdid: "AET",
-      angelName: "ADVANCED ENZYME"
+      angelName: "ADVANCED ENZYME",
     },
     {
       symbol: "AEGISCHEM",
       mcScid: "AC02",
       mcScdid: "AL9",
-      angelName: "AEGIS LOGISTICS"
+      angelName: "AEGIS LOGISTICS",
     },
     {
       symbol: "AFFLE",
@@ -141,13 +141,13 @@ module.exports = {
       symbol: "AKZOINDIA",
       mcScid: "ICI",
       mcScdid: "ICI",
-      angelName: "AKZO NOBEL"
+      angelName: "AKZO NOBEL",
     },
     {
       symbol: "APLLTD",
       mcScid: "AP29",
       mcScdid: "AP35",
-      angelName:"ALEMBIC PHARMA"
+      angelName: "ALEMBIC PHARMA",
     },
     {
       symbol: "ALKEM",
@@ -168,7 +168,7 @@ module.exports = {
       symbol: "AMARAJABAT",
       mcScid: "ARB",
       mcScdid: "ARB",
-      angelName: "AMARA RAJA BATT."
+      angelName: "AMARA RAJA BATT.",
     },
     {
       symbol: "AMBER",
@@ -190,7 +190,7 @@ module.exports = {
       symbol: "APOLLOTYRE",
       mcScid: "AT",
       mcScdid: "AT14",
-      angelName: "APOLLO TYRES"
+      angelName: "APOLLO TYRES",
     },
     {
       symbol: "ASAHIINDIA",
@@ -211,7 +211,7 @@ module.exports = {
       symbol: "ASTERDM",
       mcScid: "ADH",
       mcScdid: "ADH",
-    },    
+    },
     {
       symbol: "ASTRAL",
       mcScid: "APT02",
@@ -226,7 +226,7 @@ module.exports = {
       symbol: "AUROPHARMA",
       mcScid: "AP",
       mcScdid: "AP",
-    },   
+    },
     {
       symbol: "DMART",
       mcScid: "AS28",
@@ -241,24 +241,24 @@ module.exports = {
       symbol: "BASF",
       mcScid: "BAS",
       mcScdid: "BAS",
-    },        
+    },
     {
       symbol: "BAJAJ-AUTO",
       mcScid: "BA06",
       mcScdid: "BA10",
-      angelName: "BAJAJ AUTO"
+      angelName: "BAJAJ AUTO",
     },
     {
       symbol: "BAJAJCON",
       mcScid: "BC14",
       mcScdid: "BC02",
-      angelName: "BAJAJ CONSUMER"
+      angelName: "BAJAJ CONSUMER",
     },
     {
       symbol: "BAJAJELEC",
       mcScid: "BE",
       mcScdid: "BE",
-      angelName: "BAJAJ ELECTRIC"
+      angelName: "BAJAJ ELECTRIC",
     },
     {
       symbol: "BAJFINANCE",
@@ -274,7 +274,7 @@ module.exports = {
       symbol: "BAJAJHLDNG",
       mcScid: "BA",
       mcScdid: "BHI",
-    },   
+    },
     {
       symbol: "BALKRISIND",
       mcScid: "BI03",
@@ -284,9 +284,9 @@ module.exports = {
       symbol: "BALMLAWRIE",
       mcScid: "BLC",
       mcScdid: "BLC",
-      angelName: "BALMER LAWRIE"
+      angelName: "BALMER LAWRIE",
     },
-    
+
     {
       symbol: "BANDHANBNK",
       mcScid: "BB09",
@@ -306,7 +306,7 @@ module.exports = {
       symbol: "MAHABANK",
       mcScid: "BM05",
       mcScdid: "BM05",
-      angelName: "Bank of Maha"
+      angelName: "Bank of Maha",
     },
     {
       symbol: "BATAINDIA",
@@ -317,7 +317,7 @@ module.exports = {
       symbol: "BAYERCROP",
       mcScid: "HSA01",
       mcScdid: "BC12",
-      angelName: "BAYER CORP SCI."
+      angelName: "BAYER CORP SCI.",
     },
     {
       symbol: "BERGEPAINT",
@@ -343,14 +343,14 @@ module.exports = {
       symbol: "BHEL",
       mcScid: "BHE",
       mcScdid: "BHE",
-      angelName: "B H E L"
+      angelName: "B H E L",
     },
     {
       symbol: "BPCL",
       mcScid: "BPC",
       mcScdid: "BPC",
-      angelName: "B P C L"
-    },    
+      angelName: "B P C L",
+    },
     {
       symbol: "BHARTIARTL",
       mcScid: "BTV",
@@ -360,12 +360,12 @@ module.exports = {
       symbol: "BIOCON",
       mcScid: "BL03",
       mcScdid: "BL03",
-    },    
+    },
     {
       symbol: "BOSCHLTD",
       mcScid: "MIC",
       mcScdid: "B05",
-    },    
+    },
     {
       symbol: "BLUEDART",
       mcScid: "BDE",
@@ -380,7 +380,7 @@ module.exports = {
       symbol: "BBTC",
       mcScid: "BBT",
       mcScdid: "BBT",
-      angelName: "BOMBAY BURMAH"
+      angelName: "BOMBAY BURMAH",
     },
     {
       symbol: "BOSCHLTD",
@@ -396,7 +396,7 @@ module.exports = {
       symbol: "BRITANNIA",
       mcScid: "BI",
       mcScdid: "BI",
-    },    
+    },
     {
       symbol: "CESC",
       mcScid: "CES",
@@ -406,17 +406,17 @@ module.exports = {
       symbol: "CRISIL",
       mcScid: "CRI",
       mcScdid: "CRI",
-    },    
+    },
     {
       symbol: "ZYDUSLIFE",
       mcScid: "CHC",
       mcScdid: "CHC",
-    },    
+    },
     {
       symbol: "CANBK",
       mcScid: "CB06",
       mcScdid: "CB06",
-    },    
+    },
     {
       symbol: "CGCL",
       mcScid: "DSL01",
@@ -431,13 +431,13 @@ module.exports = {
       symbol: "CASTROLIND",
       mcScid: "CI01",
       mcScdid: "CI01",
-      angelName: "CASTROL INDIA"
+      angelName: "CASTROL INDIA",
     },
     {
       symbol: "CEATLTD",
       mcScid: "C07",
       mcScdid: "C07",
-      angelName: "CEAT"
+      angelName: "CEAT",
     },
     {
       symbol: "CENTRALBK",
@@ -448,13 +448,13 @@ module.exports = {
       symbol: "CDSL",
       mcScid: "CDS",
       mcScdid: "CDS",
-      angelName: "C D S L"
+      angelName: "C D S L",
     },
     {
       symbol: "CENTURYPLY",
       mcScid: "CP9",
       mcScdid: "CP9",
-    },           
+    },
     {
       symbol: "CHAMBLFERT",
       mcScid: "CFC",
@@ -479,7 +479,7 @@ module.exports = {
       symbol: "CUB",
       mcScid: "CUB",
       mcScdid: "CUB",
-      angelName: "CITY UNION BANK"
+      angelName: "CITY UNION BANK",
     },
     {
       symbol: "COALINDIA",
@@ -500,7 +500,7 @@ module.exports = {
       symbol: "COLPAL",
       mcScid: "CPI",
       mcScdid: "CPI",
-      angelName: "COLGATE PALMOLIVE LTD."
+      angelName: "COLGATE PALMOLIVE LTD.",
     },
     {
       symbol: "CAMS",
@@ -531,7 +531,7 @@ module.exports = {
       symbol: "CUMMINSIND",
       mcScid: "CI02",
       mcScdid: "CI02",
-    },    
+    },
     {
       symbol: "DCMSHRIRAM",
       mcScid: "DCM02",
@@ -546,7 +546,7 @@ module.exports = {
       symbol: "DABUR",
       mcScid: "DI",
       mcScdid: "DI",
-      angelName: "DABUR INDIA"
+      angelName: "DABUR INDIA",
     },
     {
       symbol: "DALBHARAT",
@@ -557,12 +557,12 @@ module.exports = {
       symbol: "DEEPAKNTR",
       mcScid: "DN",
       mcScdid: "DN",
-    },    
+    },
     {
       symbol: "DBL",
       mcScid: "DB03",
       mcScdid: "DB04",
-      angelName: "DILLIP BUILDCON"
+      angelName: "DILLIP BUILDCON",
     },
     {
       symbol: "DIVISLAB",
@@ -590,6 +590,11 @@ module.exports = {
       mcScdid: "EBBET16253",
     },
     {
+      symbol: "EBBETF0431",
+      mcScid: "BBE",
+      mcScdid: "BBE",
+    },
+    {
       symbol: "EIDPARRY",
       mcScid: "EID",
       mcScdid: "EID",
@@ -603,13 +608,13 @@ module.exports = {
       symbol: "EPL",
       mcScid: "EP",
       mcScdid: "EP11",
-      angelName: "EPL LTD"
-    },    
+      angelName: "EPL LTD",
+    },
     {
       symbol: "EICHERMOT",
       mcScid: "EM",
       mcScdid: "EM",
-      angelName: "EICHER MOTORS"
+      angelName: "EICHER MOTORS",
     },
     {
       symbol: "ELGIEQUIP",
@@ -625,7 +630,7 @@ module.exports = {
       symbol: "ENDURANCE",
       mcScid: "ET04",
       mcScdid: "ET01",
-    },      
+    },
     {
       symbol: "ESCORTS",
       mcScid: "E",
@@ -635,8 +640,8 @@ module.exports = {
       symbol: "EXIDEIND",
       mcScid: "EI",
       mcScdid: "EI",
-      angelName: "EXIDE INDS."
-    },    
+      angelName: "EXIDE INDS.",
+    },
     {
       symbol: "FEDERALBNK",
       mcScid: "FB",
@@ -646,7 +651,7 @@ module.exports = {
       symbol: "FINEORG",
       mcScid: "FOI",
       mcScdid: "FOI",
-    },    
+    },
     {
       symbol: "FORTIS",
       mcScid: "FH",
@@ -656,35 +661,35 @@ module.exports = {
       symbol: "GAIL",
       mcScid: "GAI",
       mcScdid: "GAI",
-    },    
+    },
     {
       symbol: "GALAXYSURF",
       mcScid: "GSL06",
       mcScdid: "GSL06",
-    },        
+    },
     {
       symbol: "GICRE",
       mcScid: "GIC12",
       mcScdid: "GIC12",
-      angelName: "GENERAL INS CORP OF INDIA"
+      angelName: "GENERAL INS CORP OF INDIA",
     },
     {
       symbol: "GILLETTE",
       mcScid: "ISP",
       mcScdid: "GI22",
-      angelName: "GILLETTE INDIA"
+      angelName: "GILLETTE INDIA",
     },
     {
       symbol: "GLAXO",
       mcScid: "GI",
       mcScdid: "GSK",
-      angelName: "GLAXOSMI"
+      angelName: "GLAXOSMI",
     },
     {
       symbol: "GLENMARK",
       mcScid: "GP08",
       mcScdid: "GP08",
-    },    
+    },
     {
       symbol: "GODREJCP",
       mcScid: "GCP",
@@ -700,17 +705,17 @@ module.exports = {
       mcScid: "GP11",
       mcScdid: "GP11",
     },
-    
+
     {
       symbol: "GRASIM",
       mcScid: "GI01",
       mcScdid: "GI01",
-    },        
+    },
     {
       symbol: "GRINDWELL",
       mcScid: "GN",
       mcScdid: "GN",
-    },    
+    },
     {
       symbol: "FLUOROCHEM",
       mcScid: "GUJAR54281",
@@ -730,13 +735,13 @@ module.exports = {
       symbol: "GPPL",
       mcScid: "GPP03",
       mcScdid: "GPP03",
-      angelName: "GUJURAT PIPAVAV"
+      angelName: "GUJURAT PIPAVAV",
     },
     {
       symbol: "GSFC",
       mcScid: "GSF",
       mcScdid: "GSF",
-      angelName: "G S F C"
+      angelName: "G S F C",
     },
     {
       symbol: "GSPL",
@@ -747,13 +752,13 @@ module.exports = {
       symbol: "GULFOILLUB",
       mcScid: "GOL01",
       mcScdid: "GOL01",
-      angelName: "GULF OIL LUBRIC."
+      angelName: "GULF OIL LUBRIC.",
     },
     {
       symbol: "HEG",
       mcScid: "HEG",
       mcScdid: "HEG",
-      angelName:"HEG Ltd."
+      angelName: "HEG Ltd.",
     },
     {
       symbol: "HCLTECH",
@@ -769,7 +774,7 @@ module.exports = {
       symbol: "HDFCAMC",
       mcScid: "HAM02",
       mcScdid: "HAM02",
-      angelName: "HDFC AMC"
+      angelName: "HDFC AMC",
     },
     {
       symbol: "HDFCBANK",
@@ -810,18 +815,18 @@ module.exports = {
       symbol: "HEIDELBERG",
       mcScid: "MC14",
       mcScdid: "HCI02",
-      angelName: "HEIDELBERG CEM."
-    },    
+      angelName: "HEIDELBERG CEM.",
+    },
     {
       symbol: "HEROMOTOCO",
       mcScid: "HHM",
       mcScdid: "HHM",
-    },    
+    },
     {
       symbol: "HINDALCO",
       mcScid: "H",
       mcScdid: "HI",
-      angelName:"Hindalco Industries Ltd"
+      angelName: "Hindalco Industries Ltd",
     },
     {
       symbol: "HAL",
@@ -832,19 +837,19 @@ module.exports = {
       symbol: "HINDCOPPER",
       mcScid: "HC07",
       mcScdid: "HC07",
-      angelName: "HINDUSTAN COPP.."
+      angelName: "HINDUSTAN COPP..",
     },
     {
       symbol: "HINDPETRO",
       mcScid: "HPC",
       mcScdid: "HPC",
-      angelName: "H P C L"
+      angelName: "H P C L",
     },
     {
       symbol: "HINDUNILVR",
       mcScid: "HL",
       mcScdid: "HU",
-      angelName: "HIN. UNILEVER"
+      angelName: "HIN. UNILEVER",
     },
     {
       symbol: "HINDZINC",
@@ -875,31 +880,31 @@ module.exports = {
       symbol: "IRFC",
       mcScid: "IRF",
       mcScdid: "IRF",
-      angelName: "I R F C"
+      angelName: "I R F C",
     },
     {
       symbol: "ISEC",
       mcScid: "ISL03",
       mcScdid: "ISL04",
-      angelName: "ICICI Securities"
+      angelName: "ICICI Securities",
     },
     {
       symbol: "IDBI",
       mcScid: "IDB",
       mcScdid: "IDB05",
-      angelName: "IDBI"
+      angelName: "IDBI",
     },
     {
       symbol: "IDFCFIRSTB",
       mcScid: "IDF01",
       mcScdid: "IDF01",
-      angelName: "IDFC FIRST BANK"
+      angelName: "IDFC FIRST BANK",
     },
     {
       symbol: "IDFC",
       mcScid: "IDF",
       mcScdid: "IDF",
-    },    
+    },
     {
       symbol: "IIFL",
       mcScid: "II15",
@@ -909,7 +914,7 @@ module.exports = {
       symbol: "IIFLWAM",
       mcScid: "IIFLW54277",
       mcScdid: "IIFLW54277",
-    },    
+    },
     {
       symbol: "IRB",
       mcScid: "IID01",
@@ -924,7 +929,7 @@ module.exports = {
       symbol: "ITI",
       mcScid: "ITI",
       mcScdid: "ITI",
-    },    
+    },
     {
       symbol: "INDIAMART",
       mcScid: "II22",
@@ -964,7 +969,7 @@ module.exports = {
       symbol: "IGL",
       mcScid: "IG04",
       mcScdid: "IG04",
-      angelName: "INDRAPRASTHA G.."
+      angelName: "INDRAPRASTHA G..",
     },
     {
       symbol: "INDUSTOWER",
@@ -975,7 +980,7 @@ module.exports = {
       symbol: "INDUSINDBK",
       mcScid: "IIB",
       mcScdid: "IIB",
-    },    
+    },
     {
       symbol: "NAUKRI",
       mcScid: "IEI01",
@@ -985,8 +990,8 @@ module.exports = {
       symbol: "INFY",
       mcScid: "IT",
       mcScdid: "IT",
-      angelName: "INFOSYS"
-    },            
+      angelName: "INFOSYS",
+    },
     {
       symbol: "INDIGO",
       mcScid: "IA05",
@@ -1016,7 +1021,7 @@ module.exports = {
       symbol: "JKPAPER",
       mcScid: "CPM01",
       mcScdid: "JKP01",
-    },        
+    },
     {
       symbol: "JSWENERGY",
       mcScid: "JE02",
@@ -1026,7 +1031,7 @@ module.exports = {
       symbol: "JSWSTEEL",
       mcScid: "JVS",
       mcScdid: "JSW01",
-    },    
+    },
     {
       symbol: "JINDALSTEL",
       mcScid: "JSP",
@@ -1036,7 +1041,7 @@ module.exports = {
       symbol: "JCHAC",
       mcScid: "AA02",
       mcScdid: "HHL",
-      angelName: "JOHNSON CON. HIT"
+      angelName: "JOHNSON CON. HIT",
     },
     {
       symbol: "JUBLFOOD",
@@ -1062,7 +1067,7 @@ module.exports = {
       symbol: "KEI",
       mcScid: "KEI",
       mcScdid: "KEI",
-    },    
+    },
     {
       symbol: "KPITTECH",
       mcScid: "KPITT54265",
@@ -1072,23 +1077,23 @@ module.exports = {
       symbol: "KRBL",
       mcScid: "KRB",
       mcScdid: "KRB01",
-    },    
+    },
     {
       symbol: "KAJARIACER",
       mcScid: "KC06",
       mcScdid: "KC06",
-    },    
+    },
     {
       symbol: "KANSAINER",
       mcScid: "GNP",
       mcScdid: "KNP",
-      angelName: "KANSAI NEROLAC"
+      angelName: "KANSAI NEROLAC",
     },
     {
       symbol: "KARURVYSYA",
       mcScid: "KVB",
       mcScdid: "KVB",
-    },    
+    },
     {
       symbol: "KEC",
       mcScid: "KEC03",
@@ -1098,7 +1103,7 @@ module.exports = {
       symbol: "KOTAKBANK",
       mcScid: "KMF",
       mcScdid: "KMB",
-      angelName: "KOTAK MAH. BANK"
+      angelName: "KOTAK MAH. BANK",
     },
     {
       symbol: "LTTS",
@@ -1109,14 +1114,14 @@ module.exports = {
       symbol: "LICI",
       mcScid: "LIC09",
       mcScdid: "LIC09",
-      angelName: "LIC India"
+      angelName: "LIC India",
     },
     {
       symbol: "LICHSGFIN",
       mcScid: "LIC",
       mcScdid: "LIC",
-      angelName: "LIC HOUSING FIN."
-    },    
+      angelName: "LIC HOUSING FIN.",
+    },
     {
       symbol: "LAXMIMACH",
       mcScid: "LMW",
@@ -1136,7 +1141,7 @@ module.exports = {
       symbol: "LAURUSLABS",
       mcScid: "LL06",
       mcScdid: "LL05",
-    },    
+    },
     {
       symbol: "LINDEINDIA",
       mcScid: "BOC",
@@ -1146,12 +1151,12 @@ module.exports = {
       symbol: "LUPIN",
       mcScid: "LC03",
       mcScdid: "L",
-    },    
+    },
     {
       symbol: "M&M",
       mcScid: "MM",
       mcScdid: "MM",
-      angelName: "M & M"
+      angelName: "M & M",
     },
     {
       symbol: "M&MFIN",
@@ -1162,7 +1167,7 @@ module.exports = {
       symbol: "MMTC",
       mcScid: "MMT",
       mcScdid: "MMT",
-    },    
+    },
     {
       symbol: "MRF",
       mcScid: "MRF",
@@ -1172,13 +1177,13 @@ module.exports = {
       symbol: "MGL",
       mcScid: "MG02",
       mcScdid: "MG02",
-      angelName: "MAHANAGAR GAS"
+      angelName: "MAHANAGAR GAS",
     },
     {
       symbol: "MAHINDCIE",
       mcScid: "MAS",
       mcScdid: "MF19",
-    },    
+    },
     {
       symbol: "MANAPPURAM",
       mcScid: "MGF01",
@@ -1199,7 +1204,7 @@ module.exports = {
       mcScid: "MU01",
       mcScdid: "MS24",
     },
-    
+
     {
       symbol: "MAXHEALTH",
       mcScid: "MHI",
@@ -1219,7 +1224,7 @@ module.exports = {
       symbol: "MINDTREE",
       mcScid: "MC20",
       mcScdid: "MT13",
-    },       
+    },
     {
       symbol: "MOTILALOFS",
       mcScid: "MOF01",
@@ -1234,7 +1239,7 @@ module.exports = {
       symbol: "MCX",
       mcScid: "MCE",
       mcScdid: "MCE",
-      angelName: "MULTI COMM. EXC."
+      angelName: "MULTI COMM. EXC.",
     },
     {
       symbol: "MUTHOOTFIN",
@@ -1245,7 +1250,7 @@ module.exports = {
       symbol: "NATCOPHARM",
       mcScid: "NP01",
       mcScdid: "NP07",
-    },    
+    },
     {
       symbol: "NIFTYBEES",
       mcScid: "NBE01",
@@ -1266,7 +1271,7 @@ module.exports = {
       symbol: "NMDC",
       mcScid: "NMD01",
       mcScdid: "NMD02",
-    },    
+    },
     {
       symbol: "NTPC",
       mcScid: "NTP",
@@ -1286,7 +1291,7 @@ module.exports = {
       symbol: "NESTLEIND",
       mcScid: "NI",
       mcScdid: "NI",
-    },    
+    },
     {
       symbol: "NAM-INDIA",
       mcScid: "RNL",
@@ -1331,8 +1336,8 @@ module.exports = {
       symbol: "PAYTM",
       mcScid: "OC10",
       mcScdid: "OC03",
-      angelName: "ONE 97"
-    },        
+      angelName: "ONE 97",
+    },
     {
       symbol: "PVR",
       mcScid: "PVR",
@@ -1357,7 +1362,7 @@ module.exports = {
       symbol: "PFIZER",
       mcScid: "P",
       mcScdid: "P",
-      angelName: "PFIZER"
+      angelName: "PFIZER",
     },
     {
       symbol: "PHOENIXLTD",
@@ -1383,7 +1388,7 @@ module.exports = {
       symbol: "POLYCAB",
       mcScid: "PI41",
       mcScdid: "PI44",
-    },    
+    },
     {
       symbol: "PFC",
       mcScid: "PFC02",
@@ -1413,7 +1418,7 @@ module.exports = {
       symbol: "PGHL",
       mcScid: "EMI",
       mcScdid: "M12",
-      angelName: "P & G HEALTH L"
+      angelName: "P & G HEALTH L",
     },
     {
       symbol: "PGHH",
@@ -1439,7 +1444,7 @@ module.exports = {
       symbol: "RECLTD",
       mcScid: "REC02",
       mcScdid: "REC02",
-      angelName: "R E C LTD"
+      angelName: "R E C LTD",
     },
     {
       symbol: "RITES",
@@ -1456,19 +1461,19 @@ module.exports = {
       mcScid: "RVN",
       mcScdid: "RVN",
       angelName: "Rail Vikas",
-    },  
+    },
     {
       symbol: "RAJESHEXPO",
       mcScid: "RE07",
       mcScdid: "RE07",
-      angelName:"Rajesh Exports Ltd."
+      angelName: "Rajesh Exports Ltd.",
     },
     {
       symbol: "RALLIS",
       mcScid: "RI03",
       mcScdid: "RI03",
-      angelName: "RALLIS INDIA"
-    },    
+      angelName: "RALLIS INDIA",
+    },
     {
       symbol: "RATNAMANI",
       mcScid: "RMT",
@@ -1508,7 +1513,7 @@ module.exports = {
       symbol: "SBILIFE",
       mcScid: "SLI03",
       mcScdid: "SLI03",
-    },    
+    },
     {
       symbol: "SJVN",
       mcScid: "S14",
@@ -1533,7 +1538,7 @@ module.exports = {
       symbol: "SANOFI",
       mcScid: "HMR",
       mcScdid: "AP26",
-      angelName: "SANOFI INDIA"
+      angelName: "SANOFI INDIA",
     },
     {
       symbol: "SCHAEFFLER",
@@ -1544,7 +1549,7 @@ module.exports = {
       symbol: "SHYAMMETL",
       mcScid: "SME05",
       mcScdid: "SME05",
-      angelName: "SHYAM METALICS"
+      angelName: "SHYAM METALICS",
     },
 
     {
@@ -1571,12 +1576,12 @@ module.exports = {
       symbol: "SIEMENS",
       mcScid: "S",
       mcScdid: "S",
-    },      
+    },
     {
       symbol: "SONATSOFTW",
       mcScid: "SS42",
       mcScdid: "SS42",
-    },  
+    },
     {
       symbol: "SBIN",
       mcScid: "SBI",
@@ -1587,13 +1592,13 @@ module.exports = {
       mcScid: "SAI",
       mcScdid: "SAI",
     },
-    
+
     {
       symbol: "STLTECH",
       mcScid: "SO03",
       mcScdid: "ST20",
-      angelName: "STERLITE TECH."
-    },    
+      angelName: "STERLITE TECH.",
+    },
     {
       symbol: "SUMICHEM",
       mcScid: "SUMIC54292",
@@ -1623,7 +1628,7 @@ module.exports = {
       symbol: "SUNDRMFAST",
       mcScid: "SF",
       mcScdid: "SF23",
-    },    
+    },
     {
       symbol: "SUPREMEIND",
       mcScid: "SI48",
@@ -1678,7 +1683,7 @@ module.exports = {
       symbol: "TANLA",
       mcScid: "TS11",
       mcScdid: "TS11",
-    },    
+    },
     {
       symbol: "TATACHEM",
       mcScid: "TC",
@@ -1693,7 +1698,7 @@ module.exports = {
       symbol: "TCS",
       mcScid: "TCS",
       mcScdid: "TCS",
-      angelName: "TCS"
+      angelName: "TCS",
     },
     {
       symbol: "TATACONSUM",
@@ -1734,7 +1739,7 @@ module.exports = {
       symbol: "TECHM",
       mcScid: "TM4",
       mcScdid: "TM4",
-      angelName: "TECH MAHINDRA"
+      angelName: "TECH MAHINDRA",
     },
     {
       symbol: "NIACL",
@@ -1750,7 +1755,7 @@ module.exports = {
       symbol: "THERMAX",
       mcScid: "T",
       mcScdid: "T",
-    },    
+    },
     {
       symbol: "TIMKEN",
       mcScid: "TT04",
@@ -1770,7 +1775,7 @@ module.exports = {
       symbol: "TORNTPOWER",
       mcScid: "TP13",
       mcScdid: "TP14",
-      angelName: "TORRENT POWER"
+      angelName: "TORRENT POWER",
     },
     {
       symbol: "TRENT",
@@ -1796,7 +1801,7 @@ module.exports = {
       symbol: "UCOBANK",
       mcScid: "UCO",
       mcScdid: "UCO",
-    },   
+    },
     {
       symbol: "UPL",
       mcScid: "SI10",
@@ -1807,7 +1812,7 @@ module.exports = {
       mcScid: "UA03",
       mcScdid: "UA04",
     },
-        
+
     {
       symbol: "ULTRACEMCO",
       mcScid: "UTC",
@@ -1817,7 +1822,7 @@ module.exports = {
       symbol: "UNIONBANK",
       mcScid: "UBI01",
       mcScdid: "UBI01",
-      angelName: "UNION BANK"
+      angelName: "UNION BANK",
     },
     {
       symbol: "UBL",
@@ -1848,14 +1853,14 @@ module.exports = {
       symbol: "VSTIND",
       mcScid: "VST",
       mcScdid: "VST",
-      angelName: "VST INDUSTRIES"
-    },    
+      angelName: "VST INDUSTRIES",
+    },
     {
       symbol: "VTL",
       mcScid: "MSM",
       mcScdid: "VT10",
     },
-/*     {
+    /*     {
       symbol: "VARROC",
       mcScid: "VE08",
       mcScdid: "VE08",
@@ -1869,7 +1874,7 @@ module.exports = {
       symbol: "VEDL",
       mcScid: "SG",
       mcScdid: "SG",
-    },    
+    },
     {
       symbol: "VINATIORGA",
       mcScid: "VO01",
@@ -1899,7 +1904,7 @@ module.exports = {
       symbol: "WELSPUNIND",
       mcScid: "WI03",
       mcScdid: "WI03",
-      angelName:"Welspun India Ltd."
+      angelName: "Welspun India Ltd.",
     },
     {
       symbol: "WESTLIFE",
@@ -1910,7 +1915,7 @@ module.exports = {
       symbol: "WHIRLPOOL",
       mcScid: "WI",
       mcScdid: "WI",
-      angelName:"Whirlpool Of India Ltd"
+      angelName: "Whirlpool Of India Ltd",
     },
     {
       symbol: "WIPRO",
@@ -1921,19 +1926,19 @@ module.exports = {
       symbol: "WOCKPHARMA",
       mcScid: "W05",
       mcScdid: "W05",
-      angelName: "WOCKHARDT"
+      angelName: "WOCKHARDT",
     },
     {
       symbol: "YESBANK",
       mcScid: "YB",
       mcScdid: "YB",
-      angelName: "YES BANK"
-    },    
+      angelName: "YES BANK",
+    },
     {
       symbol: "ZOMATO",
       mcScid: "Z01",
       mcScdid: "Z",
-      angelName: "ZOMATO LTD"
+      angelName: "ZOMATO LTD",
     },
     {
       symbol: "ZYDUSWELL",

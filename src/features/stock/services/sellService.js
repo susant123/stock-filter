@@ -1,24 +1,27 @@
 import { convertArrayToObject } from "../utils/utilities";
 
-const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel", "susant-paytm", "asha-paytm", "susant-fyers"];
+const accounts = [
+  "asha-kite",
+  "susant-kite",
+  "asha-angel",
+  "susant-angel",
+  "susant-paytm",
+  "asha-paytm",
+  "susant-fyers",
+];
 
 export const getKeyObjectTradeData = (tradeData) => {
   const keyObjectTradeData = [];
   if (tradeData) {
     for (let i = 0; i < accounts.length; i++) {
-      keyObjectTradeData[accounts[i]] = convertArrayToObject(
-        tradeData[accounts[i]],
-        "stock_name"
-      );
+      keyObjectTradeData[accounts[i]] = convertArrayToObject(tradeData[accounts[i]], "stock_name");
     }
   }
   return keyObjectTradeData;
 };
 
 const profitLossCalc = (currentPrice = 0, boughtPrice) => {
-  return boughtPrice
-    ? (((currentPrice - boughtPrice) / boughtPrice) * 100).toFixed(1)
-    : 0;
+  return boughtPrice ? (((currentPrice - boughtPrice) / boughtPrice) * 100).toFixed(1) : 0;
 };
 
 const getAllStockNames = (stocksArr) => {
@@ -29,11 +32,7 @@ const getAllStockNames = (stocksArr) => {
   return allStocksNames;
 };
 
-export const getSellRecommendation = (
-  livePlusIndicator,
-  tradeData = {},
-  nsePriceData = {}
-) => {
+export const getSellRecommendation = (livePlusIndicator, tradeData = {}, nsePriceData = {}) => {
   let allStocks = [];
 
   const sellRecommendation = [];
@@ -46,26 +45,25 @@ export const getSellRecommendation = (
         const currentStock = initialTradeData[accounts[i]][allStocks[j]];
         //console.log("allStocks[j]", allStocks[j]);
         if (livePlusIndicator[allStocks[j]]) {
-          /* console.log(
+          /*  console.log(
             "allStocks[j]",
             allStocks[j],
             "livePlusIndicator[allStocks[j]].nse",
             livePlusIndicator[allStocks[j]].nse
           ); */
 
-          if (!livePlusIndicator[allStocks[j]].nse.priceInfo) {
-            return [];
+          if (!livePlusIndicator[allStocks[j]].nse.priceInfo || allStocks[j] === "EBBETF0430") {
+            console.log("allStocks[j]---", allStocks[j]);
+            continue;
           }
           const currentPrice = nsePriceData[allStocks[j]]
             ? nsePriceData[allStocks[j]].lastPrice
             : livePlusIndicator[allStocks[j]].nse.priceInfo.lastPrice;
           if (currentStock) {
-            const profit = parseFloat(
-              profitLossCalc(
-                currentPrice,
-                parseFloat(currentStock.average_price)
-              )
-            );
+            const profit = parseFloat(profitLossCalc(currentPrice, parseFloat(currentStock.average_price)));
+
+            //console.log("profit", profit);
+
             if (profit > 5) {
               sellRecommendation.push({
                 account: accounts[i],
@@ -79,6 +77,8 @@ export const getSellRecommendation = (
         }
       }
     }
+  } else {
+    console.log("No data found-------------------", tradeData, livePlusIndicator);
   }
 
   //console.log("sellRecommendation----", sellRecommendation);
