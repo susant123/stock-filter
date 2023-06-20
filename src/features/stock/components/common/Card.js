@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { CardBlock } from "../commonStyles/cardStyles";
-import { IconHeaderWrapper, ActionIcon } from "../commonStyles/commonStyles";
-import { CardTitle, CardContainer } from "../commonStyles/allCardsStyles";
-import CommonCardView from "../common/CommonCardView";
-import ChartsAndDetails from "../common/ChartsAndDetails";
+import React, { useState } from 'react';
+import { CardBlock } from '../commonStyles/cardStyles';
+import { IconHeaderWrapper, ActionIcon } from '../commonStyles/commonStyles';
+import { CardTitle, CardContainer } from '../commonStyles/allCardsStyles';
+import CommonCardView from '../common/CommonCardView';
+import ChartsAndDetails from '../common/ChartsAndDetails';
 
 function Card(props) {
   const {
@@ -19,35 +19,24 @@ function Card(props) {
   const [isOpen, setIsOpen] = useState(currentIndex > 41 ? false : true);
   const { nse } = card;
 
-  const marketCap = nse.securityInfo && nse.securityInfo.issuedSize ? Math.floor(
-    (parseInt(nse.securityInfo.issuedSize, 10) * nse.priceInfo.lastPrice) / 10000000
-  ): "Not known";
-
-  /*   const isLowRSI = (rsiData) => {
-    let total = 0;
-    for (let i = 0; i < rsiData.length; i++) {
-      total += rsiData[i];
-    }
-    const average = total / rsiData.length;
-    if (average > rsiData[rsiData.length - 1]) {
-      return true;
-    }
-  };
- */
+  const marketCap =
+    nse.securityInfo && nse.securityInfo.issuedSize
+      ? Math.floor(
+          (parseInt(nse.securityInfo.issuedSize, 10) *
+            nse.priceInfo.lastPrice) /
+            10000000
+        )
+      : 'Not known';
 
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
 
-  //const isLowRsi = isLowRSI(rsiData);
-
-  //console.log("stockName", stockName);
-
-  const lastPrice =  nse.priceInfo? nse.priceInfo.lastPrice:  "Not known";
+  const lastPrice = nse.priceInfo ? nse.priceInfo.lastPrice : 'Not known';
   return (
     <CardContainer keepSeparated={keepSeparated} isOpen={isOpen}>
       <IconHeaderWrapper onClick={handleClick}>
-        <ActionIcon>{isOpen ? "-" : "+"}</ActionIcon>
+        <ActionIcon>{isOpen ? '-' : '+'}</ActionIcon>
         <CardTitle>
           {stockName}-({lastPrice}) ({marketCap} Cr)
         </CardTitle>

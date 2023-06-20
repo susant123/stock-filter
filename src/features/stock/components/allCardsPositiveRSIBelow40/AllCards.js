@@ -27,6 +27,9 @@ function AllCards() {
   };
 
   const isLowRSI = (rsiData) => {
+    if (!rsiData) {
+      return false;
+    }
     let total = 0;
     for (let i = 0; i < rsiData.length; i++) {
       total += rsiData[i];
@@ -36,10 +39,7 @@ function AllCards() {
       return true;
     }*/
 
-    if (
-      average > rsiData[rsiData.length - 1] &&
-      rsiData[rsiData.length - 1] < 30
-    ) {
+    if (average > rsiData[rsiData.length - 1] && rsiData[rsiData.length - 1] < 30) {
       return true;
     }
   };

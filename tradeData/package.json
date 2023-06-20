@@ -9,7 +9,7 @@
     "test": "eslint src"
   },
   "dependencies": {
-    "express": "^4.13.3",
+    "express": "^4.18.2",
     "smartapi-javascript": "^1.0.14"
   },
   "devDependencies": {

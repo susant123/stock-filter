@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { CardTitle, CardsWrapper } from "../commonStyles/allCardsStyles";
+import React, { useState } from 'react';
+import { CardTitle, CardsWrapper } from '../commonStyles/allCardsStyles';
 //import Card from "./Card";
-import Card from "../common/Card";
-import { useSelector } from "react-redux";
-import { IconHeaderWrapper } from "../commonStyles/commonStyles";
+import Card from '../common/Card';
+import { useSelector } from 'react-redux';
+import { IconHeaderWrapper } from '../commonStyles/commonStyles';
 
 import {
   selectAllRSIData,
   selectChartData,
   selectLivePlusIndicatorData,
   selectNSEPriceData,
-} from "../../StockSlice";
+} from '../../StockSlice';
 
 function AllCards() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,9 +26,11 @@ function AllCards() {
   const allStocks = Object.keys(livePlusIndicator);
 
   const isPositiveMACDSignal = (macdChartData) => {
-    const macd = macdChartData[0];
-    const signal = macdChartData[1];
-    return macd[macd.length - 1] >= signal[signal.length - 1];
+    if (macdChartData && macdChartData.length > 0) {
+      const macd = macdChartData?.[0];
+      const signal = macdChartData?.[1];
+      return macd[macd.length - 1] >= signal[signal.length - 1];
+    }
   };
 
   const allPositiveMACDStocks = allStocks.filter((stockName) => {

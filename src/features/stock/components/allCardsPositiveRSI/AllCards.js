@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { CardTitle, CardsWrapper } from "../commonStyles/allCardsStyles";
+import React, { useState } from 'react';
+import { CardTitle, CardsWrapper } from '../commonStyles/allCardsStyles';
 //import Card from "./Card";
-import Card from "../common/Card";
-import { useSelector } from "react-redux";
-import { IconHeaderWrapper } from "../commonStyles/commonStyles";
+import Card from '../common/Card';
+import { useSelector } from 'react-redux';
+import { IconHeaderWrapper } from '../commonStyles/commonStyles';
 
 import {
   selectAllRSIData,
   selectChartData,
   selectLivePlusIndicatorData,
   selectNSEPriceData,
-} from "../../StockSlice";
+} from '../../StockSlice';
 
 function AllCards() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,8 +27,11 @@ function AllCards() {
   };
 
   const isLowRSI = (rsiData) => {
+    if (!rsiData) {
+      return false;
+    }
     let total = 0;
-    for (let i = 0; i < rsiData.length; i++) {
+    for (let i = 0; i < rsiData?.length; i++) {
       total += rsiData[i];
     }
     const average = total / rsiData.length;

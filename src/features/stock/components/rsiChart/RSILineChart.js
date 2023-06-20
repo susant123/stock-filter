@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import Chart from "react-google-charts";
+import React, { useState } from 'react';
+import Chart from 'react-google-charts';
 
 import {
   IconHeaderWrapper,
   ActionIcon,
   TableHeader,
-} from "../commonStyles/commonStyles";
+} from '../commonStyles/commonStyles';
 
-import { RSIWrapper } from "./RSILineChart.styles";
+import { RSIWrapper } from './RSILineChart.styles';
 
 const buildChartData = (date = [], rsiData = [], rsiRange) => {
-  const data = [["Date", "RSI"]];
+  const data = [['Date', 'RSI']];
   let dataObj = {};
 
   for (let i = 0; i < date.length; i++) {
     dataObj = [
-      new Date(date[i] * 1000).toISOString().split("T")[0],
+      new Date(date[i] * 1000).toISOString().split('T')[0],
       rsiData[i],
     ];
     data.push(dataObj);
@@ -25,13 +25,15 @@ const buildChartData = (date = [], rsiData = [], rsiRange) => {
 };
 
 const isLowRSI = (rsiData) => {
-  let total = 0;
-  for (let i = 0; i < rsiData.length; i++) {
-    total += rsiData[i];
-  }
-  const average = total / rsiData.length;
-  if (average > rsiData[rsiData.length - 1]) {
-    return true;
+  if (rsiData) {
+    let total = 0;
+    for (let i = 0; i < rsiData?.length; i++) {
+      total += rsiData[i];
+    }
+    const average = total / rsiData.length;
+    if (average > rsiData[rsiData.length - 1]) {
+      return true;
+    }
   }
 };
 
@@ -46,28 +48,28 @@ function RSILineChart({ chartData, rsiData, rsiRange }) {
   }
 
   const data = buildChartData(chartData.t, rsiData, rsiRange);
-  const isLowRsi = isLowRSI(rsiData);
+  const isLowRsi = rsiData ? isLowRSI(rsiData) : false;
   return (
     <RSIWrapper isLowRSI={isLowRsi}>
       <IconHeaderWrapper>
-        <ActionIcon onClick={handleClick}>{isOpen ? "-" : "+"}</ActionIcon>
+        <ActionIcon onClick={handleClick}>{isOpen ? '-' : '+'}</ActionIcon>
         <TableHeader>RSI Chart(14)</TableHeader>
       </IconHeaderWrapper>
       <Chart
-        width={"500px"}
-        height={"400px"}
+        width={'500px'}
+        height={'400px'}
         chartType="LineChart"
         loader={<div>Loading Chart</div>}
         data={data}
         options={{
           hAxis: {
-            title: "Time",
+            title: 'Time',
           },
           vAxis: {
-            title: "RSI",
+            title: 'RSI',
           },
         }}
-        rootProps={{ "data-testid": "1" }}
+        rootProps={{ 'data-testid': '1' }}
       />
     </RSIWrapper>
   );
