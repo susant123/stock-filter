@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { selectTradeData } from "../../StockSlice";
-import { useSelector } from "react-redux";
+import React, { useState } from 'react';
+import { selectTradeData } from '../../StockSlice';
+import { useSelector } from 'react-redux';
 import {
   selectLivePlusIndicatorData,
   selectNSEPriceData,
-} from "../../StockSlice";
-import { convertArrayToObject } from "../../utils/utilities";
+} from '../../StockSlice';
+import { convertArrayToObject } from '../../utils/utilities';
 
 import {
   PortfolioTable,
@@ -18,13 +18,21 @@ import {
   ModalContent,
   CloseButton,
   NotLive,
-} from "./allPortfolio.styles";
+} from './allPortfolio.styles';
 
 const lowMarketCap = 7500;
-const tooLowMarketCap  = 5000;
+const tooLowMarketCap = 5000;
 
 function AllPortfolios() {
-  const accounts = ["asha-kite", "susant-kite", "asha-angel", "susant-angel", "susant-paytm", "susant-fyers",  "asha-paytm"];
+  const accounts = [
+    'asha-kite',
+    'susant-kite',
+    'asha-angel',
+    'susant-angel',
+    'susant-paytm',
+    'susant-fyers',
+    'asha-paytm',
+  ];
   const tradeData = useSelector(selectTradeData);
   /*const [selectedAc, setSelectedAc] = useState(null);
   const [totalInvested, setTotalInvested] = useState(0);*/
@@ -34,17 +42,25 @@ function AllPortfolios() {
   const nsePriceData = useSelector(selectNSEPriceData);
   const allStocks = Object.keys(livePlusIndicator);
 
+  const sectorSet = new Set();
+
+  allStocks.forEach((stock) => {
+    sectorSet.add(livePlusIndicator[stock]?.nse?.industryInfo?.sector);
+  });
+
+  console.log('sectorSet----', sectorSet);
+
   allStocks.sort();
 
   //console.log("allStocks", allStocks);
 
   const getKeyObjectTradeData = (tradeData) => {
     const keyObjectTradeData = [];
-    if (tradeData["asha-kite"] && tradeData[accounts[0]]) {
+    if (tradeData['asha-kite'] && tradeData[accounts[0]]) {
       for (let i = 0; i < accounts.length; i++) {
         keyObjectTradeData[accounts[i]] = convertArrayToObject(
           tradeData[accounts[i]],
-          "stock_name"
+          'stock_name'
         );
       }
     }
@@ -66,32 +82,32 @@ function AllPortfolios() {
 
   const accountsData = [
     {
-      acName: "asha-kite",
-      label: "Asha Kite",
+      acName: 'asha-kite',
+      label: 'Asha Kite',
     },
     {
-      acName: "susant-kite",
-      label: "Susant Kite",
+      acName: 'susant-kite',
+      label: 'Susant Kite',
     },
     {
-      acName: "asha-angel",
-      label: "Asha Angel",
+      acName: 'asha-angel',
+      label: 'Asha Angel',
     },
     {
-      acName: "susant-angel",
-      label: "Susant Angel",
+      acName: 'susant-angel',
+      label: 'Susant Angel',
     },
     {
-      acName: "susant-paytm",
-      label: "Susant Paytm",
+      acName: 'susant-paytm',
+      label: 'Susant Paytm',
     },
     {
-      acName: "susant-fyers",
-      label: "Susant Fyers",
+      acName: 'susant-fyers',
+      label: 'Susant Fyers',
     },
     {
-      acName: "asha-paytm",
-      label: "Asha Paytm",
+      acName: 'asha-paytm',
+      label: 'Asha Paytm',
     },
   ];
   return (
@@ -121,18 +137,33 @@ function AllPortfolios() {
           ))}
         </Row>
         {allStocks.map((stock, index) => {
+          const marketCap =
+            livePlusIndicator[stock].nse.securityInfo &&
+            livePlusIndicator[stock].nse.securityInfo.issuedSize
+              ? Math.floor(
+                  (parseInt(
+                    livePlusIndicator[stock].nse.securityInfo.issuedSize,
+                    10
+                  ) *
+                    livePlusIndicator[stock].nse.priceInfo.lastPrice) /
+                    10000000
+                )
+              : 'Not known';
 
-           const marketCap = livePlusIndicator[stock].nse.securityInfo && livePlusIndicator[stock].nse.securityInfo.issuedSize ? Math.floor(
-              (parseInt(livePlusIndicator[stock].nse.securityInfo.issuedSize, 10) * livePlusIndicator[stock].nse.priceInfo.lastPrice) / 10000000
-            ): "Not known";
- 
-            //const marketCap = nsePriceData[stock]?.ffmc ? Math.floor(nsePriceData[stock].ffmc / 10000000): "-";
+          //const marketCap = nsePriceData[stock]?.ffmc ? Math.floor(nsePriceData[stock].ffmc / 10000000): "-";
 
-          if (stock !== "TIMESTAMP") {
+          if (stock !== 'TIMESTAMP') {
             return (
-              <Row key={index} isTooLow={marketCap < tooLowMarketCap} isLow={marketCap < lowMarketCap }>
+              <Row
+                key={index}
+                isTooLow={marketCap < tooLowMarketCap}
+                isLow={marketCap < lowMarketCap}
+              >
                 <Col isHeader={true}>
-                  <b>{stock}</b>{" "}<span style={{color: "#999", fontStyle: "italic"}}>{marketCap}</span>
+                  <b>{stock}</b>{' '}
+                  <span style={{ color: '#999', fontStyle: 'italic' }}>
+                    {marketCap}
+                  </span>
                   {nsePriceData[stock] ? null : <NotLive>NL</NotLive>}
                   <AdditionalInfo
                     onClick={() => showAdditionalInfoModal(stock)}
@@ -173,7 +204,11 @@ function AllPortfolios() {
                     : null;
 
                   return (
-                    <Col key={index} isTooLow={marketCap < tooLowMarketCap} isLow={marketCap < lowMarketCap}>
+                    <Col
+                      key={index}
+                      isTooLow={marketCap < tooLowMarketCap}
+                      isLow={marketCap < lowMarketCap}
+                    >
                       <InnerRow>
                         <InnerCol>{averagePrice}</InnerCol>
                         <InnerCol>{quantity}</InnerCol>

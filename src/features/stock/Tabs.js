@@ -1,36 +1,36 @@
-import React, { useState, lazy, Suspense } from "react";
-import { Tab, TabsWrapper } from "./Tabs.styles";
-import Portfolio from "../stock/components/portfolio/portfolio";
-import InsertNewData from "./components/dataManage/insertData";
+import React, { useState, lazy, Suspense } from 'react';
+import { Tab, TabsWrapper } from './Tabs.styles';
+import Portfolio from '../stock/components/portfolio/portfolio';
+import InsertNewData from './components/dataManage/insertData';
 
-const AllCards = React.lazy(() => import("./components/allCards/AllCards"));
+const AllCards = React.lazy(() => import('./components/allCards/AllCards'));
 
 const AllPortfolios = lazy(() =>
-  import("./components/allTradeDataportfolio/allPortfolios")
+  import('./components/allTradeDataportfolio/allPortfolios')
 );
 
 const AllCardsPositiveMACDRSI = lazy(() =>
-  import("./components/allCardsPositiveMACDRSI/AllCards")
+  import('./components/allCardsPositiveMACDRSI/AllCards')
 );
 
 const AllCardsPositiveMACD = lazy(() =>
-  import("./components/allCardsPositiveMACD/AllCards")
+  import('./components/allCardsPositiveMACD/AllCards')
 );
 
 const AllCardsPositiveRSI = lazy(() =>
-  import("./components/allCardsPositiveRSI/AllCards")
+  import('./components/allCardsPositiveRSI/AllCards')
 );
 
 const AllCardsPositiveRSIBelow40 = lazy(() =>
-  import("./components/allCardsPositiveRSIBelow40/AllCards")
+  import('./components/allCardsPositiveRSIBelow40/AllCards')
 );
 
 const AllBoughtCards = lazy(() =>
-  import("../stock/components/allBought/AllBoughtCards")
+  import('../stock/components/allBought/AllBoughtCards')
 );
 
-const BuyCards = lazy(() => import("../stock/components/buy/BuyCards"));
-const SellCards = lazy(() => import("../stock/components/sell/SellCards"));
+const BuyCards = lazy(() => import('../stock/components/buy/BuyCards'));
+const SellCards = lazy(() => import('../stock/components/sell/SellCards'));
 
 const Tabs = (props) => {
   const { livePlusIndicatorData } = props;
@@ -40,7 +40,7 @@ const Tabs = (props) => {
     setActiveTab(tabNumber);
   };
   return (
-    <div className="App" style={{ fontFamily: "sans-serif", fontSize: "16px" }}>
+    <div className="App" style={{ fontFamily: 'sans-serif', fontSize: '16px' }}>
       <TabsWrapper>
         <Tab onClick={() => onTabClick(1)} active={activeTab === 1}>
           Sell Cards
@@ -49,7 +49,7 @@ const Tabs = (props) => {
           Buy Cards
         </Tab>
         <Tab onClick={() => onTabClick(99)} active={activeTab === 99}>
-          All Cards-Positive RSI Below 30
+          All Cards-Positive RSI Below 35
         </Tab>
         <Tab onClick={() => onTabClick(3)} active={activeTab === 3}>
           All Cards-Positive RSI
@@ -123,7 +123,7 @@ const Tabs = (props) => {
         {activeTab === 10 && (
           <>
             <InsertNewData />
-            <Portfolio />{" "}
+            <Portfolio />{' '}
           </>
         )}
 

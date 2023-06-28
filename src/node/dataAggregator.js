@@ -1,15 +1,15 @@
-const nse = require("./data/allNSEData.json");
-const indicators = require("./data/sma-ema-pivot-sentiment.json");
-const strength = require("./data/S.json");
-const weakness = require("./data/W.json");
-const opportunities = require("./data/O.json");
-const threat = require("./data/T.json");
-const volumeData = require("./data/volume.json");
-const AllmacdData = require("./data/MACDData.json");
-const fs = require("fs");
-const path = require("path");
+const nse = require('./data/allNSEData.json');
+const indicators = require('./data/sma-ema-pivot-sentiment.json');
+const strength = require('./data/S.json');
+const weakness = require('./data/W.json');
+const opportunities = require('./data/O.json');
+const threat = require('./data/T.json');
+const volumeData = require('./data/volume.json');
+const AllmacdData = require('./data/MACDData.json');
+const fs = require('fs');
+const path = require('path');
 
-console.log("indicators", indicators);
+console.log('indicators', indicators);
 
 const allSymbols = Object.keys(nse);
 
@@ -39,7 +39,11 @@ allSymbols.forEach((symbol) => {
 };
 */
 
-fs.writeFile(path.join(__dirname, "./data/allData.json"), JSON.stringify(allData), function (err) {
-  if (err) return console.log(err);
-  console.log("all data aggregated and json is ready");
-});
+fs.writeFile(
+  path.join(__dirname, './data/allData.json'),
+  JSON.stringify(allData),
+  function (err) {
+    if (err) return console.log(err);
+    console.log('all data aggregated and json is ready');
+  }
+);
