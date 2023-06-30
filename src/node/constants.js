@@ -10,6 +10,23 @@ module.exports = {
   },
   nseWaitTime: 1000,
   waitTime: 500,
+  allStocks1: [
+    {
+      symbol: 'PIIND',
+      mcScid: 'PII',
+      mcScdid: 'PII',
+      angelName: 'PI Industries',
+      sector: 'Agriculture',
+    },
+
+    {
+      symbol: 'UPL',
+      mcScid: 'SI10',
+      mcScdid: 'UP04',
+      angelName: 'UPL',
+      sector: 'Agriculture',
+    },
+  ],
   allStocks: [
     {
       symbol: 'PIIND',

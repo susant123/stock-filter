@@ -3,6 +3,7 @@ const constants = require('../../constants');
 const utils = require('../../utils');
 const fs = require('fs');
 const volumeData = require('./volumeData');
+const path = require('path');
 
 const chartDataUrl =
   'https://priceapi.moneycontrol.com/techCharts/techChartController/history?symbol={0}&resolution=1D&from={1}&to={2}';
@@ -111,6 +112,14 @@ const aggregateFiles = () => {
     try {
       fs.writeFile(
         __dirname + '../../../data/chart.json',
+        JSON.stringify(allData),
+        function (err) {
+          if (err) return console.log(err);
+        }
+      );
+
+      fs.writeFile(
+        path.join(__dirname, './../../../../tradeData/src/data/chart1.json'),
         JSON.stringify(allData),
         function (err) {
           if (err) return console.log(err);

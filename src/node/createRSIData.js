@@ -1,8 +1,8 @@
-var tulind = require("tulind");
+var tulind = require('tulind');
 //var liveData = require("./data/chart.json");
-const fs = require("fs");
-
-const constants = require("./constants");
+const fs = require('fs');
+const constants = require('./constants');
+const path = require('path');
 
 var liveData = {};
 
@@ -11,13 +11,17 @@ for (var i = 0; i < constants.allStocks.length; i++) {
 
   const symbol = constants.allStocks[i].symbol;
 
-  fs.readFile(__dirname + "/data/chart/" + symbol + ".json", "utf8", function (err, data) {
-    if (err) {
-      return console.log(err);
+  fs.readFile(
+    __dirname + '/data/chart/' + symbol + '.json',
+    'utf8',
+    function (err, data) {
+      if (err) {
+        return console.log(err);
+      }
+      // console.log(data);
+      liveData[symbol] = JSON.parse(data);
     }
-    // console.log(data);
-    liveData[symbol] = JSON.parse(data);
-  });
+  );
 }
 
 setTimeout(() => {
@@ -25,17 +29,32 @@ setTimeout(() => {
 
   var rsiData = {};
   allStocks.forEach((stock) => {
-    console.log("StockName---" + stock);
+    console.log('StockName---' + stock);
     var chartData = liveData[stock];
-    tulind.indicators.rsi.indicator([chartData.c], [14], function (err, results) {
-      rsiData[stock] = results[0];
-    });
+    tulind.indicators.rsi.indicator(
+      [chartData.c],
+      [14],
+      function (err, results) {
+        rsiData[stock] = results[0];
+      }
+    );
   });
-  const fullFileNameWithPath = __dirname + "/data/AllRSIData.json";
+  const fullFileNameWithPath = __dirname + '/data/AllRSIData.json';
   fs.writeFile(fullFileNameWithPath, JSON.stringify(rsiData), function (err) {
     if (err) return console.log(err);
-    console.log("AllRSIData.json is ready");
+    console.log('AllRSIData.json is ready');
   });
 
-  console.log("Given these options, the output arrays will be this much shorter than the input arrays:");
+  fs.writeFile(
+    path.join(__dirname, './../../tradeData/src/data/AllRSIData1.json'),
+    JSON.stringify(rsiData),
+    function (err) {
+      if (err) return console.log(err);
+      console.log('AllRSIData.json is ready');
+    }
+  );
+
+  console.log(
+    'Given these options, the output arrays will be this much shorter than the input arrays:'
+  );
 }, 3000);

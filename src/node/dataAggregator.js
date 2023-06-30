@@ -47,3 +47,12 @@ fs.writeFile(
     console.log('all data aggregated and json is ready');
   }
 );
+
+fs.writeFile(
+  path.join(__dirname, './../../tradeData/src/data/allData1.json'),
+  JSON.stringify(allData),
+  function (err) {
+    if (err) return console.log(err);
+    console.log('all data aggregated and json is ready');
+  }
+);
