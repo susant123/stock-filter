@@ -76,9 +76,12 @@ function BuyCard(props) {
         );
       })}
       <MCChart stockName={card.stockName} />
-      <SentimentsTable sentiments={card.indicators.sentiments} />
-      <PivotLevelsTable pivotLevels={card.indicators.pivotLevels} />
-      <EmaSma ema={card.indicators.ema} sma={card.indicators.sma} />
+      <SentimentsTable sentiments={card?.indicators?.sentiments || {}} />
+      <PivotLevelsTable pivotLevels={card?.indicators?.pivotLevels || {}} />
+      <EmaSma
+        ema={card?.indicators?.ema || {}}
+        sma={card?.indicators?.sma || {}}
+      />
       <hr />
 
       <div style={{ backgroundColor: '#b49292' }}>
@@ -90,7 +93,7 @@ function BuyCard(props) {
         <hr />
         <SwotComponent swot={card.threat} />
         <hr />
-        <VolumeData volumeData={card.volumeData} />
+        {card.volumeData && <VolumeData volumeData={card.volumeData} />}
         <hr />
         <RSILineChart
           chartData={chartDataPerStock}

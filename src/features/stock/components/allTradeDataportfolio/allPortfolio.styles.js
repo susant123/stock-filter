@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const PortfolioTable = styled.div`
   display: grid;
@@ -7,21 +7,29 @@ export const PortfolioTable = styled.div`
 
 export const Row = styled.div`
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr;
+  grid-template-columns: ${({ fullWidth }) =>
+    fullWidth ? '' : '1fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr'};
   width: 100%;
-  background-color: ${({isTooLow, isLow})=>isTooLow? "#ebc274":isLow?"isLow":"white"};
-  ${(props) => (props.fixedRow ? "position: sticky; top: 55px;" : "")}
-
+  background-color: ${({ isTooLow, isLow }) =>
+    isTooLow ? '#ebc274' : isLow ? 'isLow' : 'white'};
+  ${(props) => (props.fixedRow ? 'position: sticky; top: 55px;' : '')}
 `;
 
 export const Col = styled.div`
   align-items: center;
   display: flex;
-  padding: ${(props) => (props.isHeader ? "10px 2px 10px 10px" : "10px 5px")};
-  min-width: ${(props) => (props.isHeader ? "200px" : "auto")};
+  padding: ${(props) => (props.isHeader ? '10px 2px 10px 10px' : '10px 5px')};
+  min-width: ${(props) => (props.isHeader ? '200px' : 'auto')};
   border: 1px solid rgb(240, 237, 237);
-  font-weight: ${(props) => (props.isHeader ? "bold" : "normal")};
-  background-color: ${(props) => props.isTooLow ? "#ebc274": props.isLow? "antiquewhite": (props.isHeader ? "#cecece" : "white")};
+  font-weight: ${(props) => (props.isHeader ? 'bold' : 'normal')};
+  background-color: ${(props) =>
+    props.isTooLow
+      ? '#ebc274'
+      : props.isLow
+      ? 'antiquewhite'
+      : props.isHeader
+      ? '#cecece'
+      : 'white'};
 `;
 
 export const InnerRow = styled.div`
@@ -35,8 +43,8 @@ export const InnerCol = styled.div`
   display: flex;
   padding: 5px;
   border-right: 1px dotted #999;
-  font-weight: ${(props) => (props.isHeader ? "bold" : "normal")};
-  color: ${(props) => (props.isLoss ? "red" : "black")};
+  font-weight: ${(props) => (props.isHeader ? 'bold' : 'normal')};
+  color: ${(props) => (props.isLoss ? 'red' : 'black')};
 `;
 
 export const AdditionalInfo = styled.div`
@@ -83,4 +91,11 @@ export const CloseButton = styled.div`
 
 export const NotLive = styled.span`
   color: red;
+`;
+
+export const HeadingRowContents = styled.div`
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px 0;
+  background-color: aqua;
 `;

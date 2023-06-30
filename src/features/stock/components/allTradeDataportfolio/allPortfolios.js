@@ -18,6 +18,7 @@ import {
   ModalContent,
   CloseButton,
   NotLive,
+  HeadingRowContents,
 } from './allPortfolio.styles';
 
 const lowMarketCap = 7500;
@@ -42,13 +43,29 @@ function AllPortfolios() {
   const nsePriceData = useSelector(selectNSEPriceData);
   const allStocks = Object.keys(livePlusIndicator);
 
+  const sectorWiseData = {};
+
   const sectorSet = new Set();
 
   allStocks.forEach((stock) => {
-    sectorSet.add(livePlusIndicator[stock]?.nse?.industryInfo?.sector);
+    sectorSet.add(livePlusIndicator[stock]?.nse?.industryInfo?.industry);
+
+    if (
+      !sectorWiseData[livePlusIndicator[stock]?.nse?.industryInfo?.industry]
+    ) {
+      sectorWiseData[livePlusIndicator[stock]?.nse?.industryInfo?.industry] =
+        [];
+    }
+    sectorWiseData[livePlusIndicator[stock]?.nse?.industryInfo?.industry].push(
+      livePlusIndicator[stock]
+    );
   });
 
-  console.log('sectorSet----', sectorSet);
+  const industryArr = Object.keys(sectorWiseData).sort();
+
+  //const sectorArray = Array.from(sectorSet).sort();
+
+  //console.log('sectorSet----', sectorArray);
 
   allStocks.sort();
 
@@ -136,6 +153,115 @@ function AllPortfolios() {
             </Col>
           ))}
         </Row>
+
+        {industryArr.map((industryName) => {
+          return (
+            <>
+              <Row fullWidth={true}>
+                <HeadingRowContents>{industryName}</HeadingRowContents>
+              </Row>
+
+              {sectorWiseData[industryName].map((currentStock) => {
+                const stock = currentStock.nse.info.symbol;
+                const marketCap =
+                  livePlusIndicator[stock].nse.securityInfo &&
+                  livePlusIndicator[stock].nse.securityInfo.issuedSize
+                    ? Math.floor(
+                        (parseInt(
+                          livePlusIndicator[stock].nse.securityInfo.issuedSize,
+                          10
+                        ) *
+                          livePlusIndicator[stock].nse.priceInfo.lastPrice) /
+                          10000000
+                      )
+                    : 'Not known';
+
+                if (stock !== 'TIMESTAMP') {
+                  return (
+                    <Row
+                      isTooLow={marketCap < tooLowMarketCap}
+                      isLow={marketCap < lowMarketCap}
+                    >
+                      <Col isHeader={true}>
+                        <b>{stock}</b>{' '}
+                        <span style={{ color: '#999', fontStyle: 'italic' }}>
+                          {marketCap}
+                        </span>
+                        {nsePriceData[stock] ? null : <NotLive>NL</NotLive>}
+                        <AdditionalInfo
+                          onClick={() => showAdditionalInfoModal(stock)}
+                        >
+                          +
+                        </AdditionalInfo>
+                      </Col>
+
+                      {accounts.map((account, index) => {
+                        const averagePrice = keyObjectTradeData[account][stock]
+                          ? keyObjectTradeData[account][stock].average_price
+                          : null;
+
+                        //console.log("nsePriceData[stock]",stock, nsePriceData[stock],livePlusIndicator[stock]);
+
+                        const latestPrice = nsePriceData[stock]
+                          ? nsePriceData[stock].lastPrice
+                          : livePlusIndicator[stock].nse.priceInfo
+                          ? livePlusIndicator[stock].nse.priceInfo.lastPrice
+                          : 1000;
+
+                        const profitLoss = averagePrice
+                          ? (
+                              ((latestPrice - averagePrice) / averagePrice) *
+                              100
+                            ).toFixed(1)
+                          : null;
+
+                        const profitLossFromBottom = averagePrice
+                          ? (
+                              ((latestPrice - averagePrice) / latestPrice) *
+                              100
+                            ).toFixed(1)
+                          : null;
+
+                        const quantity = keyObjectTradeData[account][stock]
+                          ? keyObjectTradeData[account][stock].quantity
+                          : null;
+
+                        return (
+                          <Col
+                            key={index}
+                            isTooLow={marketCap < tooLowMarketCap}
+                            isLow={marketCap < lowMarketCap}
+                          >
+                            <InnerRow>
+                              <InnerCol>{averagePrice}</InnerCol>
+                              <InnerCol>{quantity}</InnerCol>
+                              <InnerCol>
+                                {quantity &&
+                                  keyObjectTradeData[account][stock] &&
+                                  latestPrice}
+                              </InnerCol>
+                              <InnerCol isLoss={profitLoss < 0} isHeader={true}>
+                                {quantity && profitLoss}
+                              </InnerCol>
+                              <InnerCol
+                                isLoss={profitLossFromBottom < 0}
+                                isHeader={true}
+                              >
+                                {quantity && profitLossFromBottom}
+                              </InnerCol>
+                            </InnerRow>
+                          </Col>
+                        );
+                      })}
+                    </Row>
+                  );
+                } else {
+                  return null;
+                }
+              })}
+            </>
+          );
+        })}
         {allStocks.map((stock, index) => {
           const marketCap =
             livePlusIndicator[stock].nse.securityInfo &&
@@ -151,90 +277,6 @@ function AllPortfolios() {
               : 'Not known';
 
           //const marketCap = nsePriceData[stock]?.ffmc ? Math.floor(nsePriceData[stock].ffmc / 10000000): "-";
-
-          if (stock !== 'TIMESTAMP') {
-            return (
-              <Row
-                key={index}
-                isTooLow={marketCap < tooLowMarketCap}
-                isLow={marketCap < lowMarketCap}
-              >
-                <Col isHeader={true}>
-                  <b>{stock}</b>{' '}
-                  <span style={{ color: '#999', fontStyle: 'italic' }}>
-                    {marketCap}
-                  </span>
-                  {nsePriceData[stock] ? null : <NotLive>NL</NotLive>}
-                  <AdditionalInfo
-                    onClick={() => showAdditionalInfoModal(stock)}
-                  >
-                    +
-                  </AdditionalInfo>
-                </Col>
-
-                {accounts.map((account, index) => {
-                  const averagePrice = keyObjectTradeData[account][stock]
-                    ? keyObjectTradeData[account][stock].average_price
-                    : null;
-
-                  //console.log("nsePriceData[stock]",stock, nsePriceData[stock],livePlusIndicator[stock]);
-
-                  const latestPrice = nsePriceData[stock]
-                    ? nsePriceData[stock].lastPrice
-                    : livePlusIndicator[stock].nse.priceInfo
-                    ? livePlusIndicator[stock].nse.priceInfo.lastPrice
-                    : 1000;
-
-                  const profitLoss = averagePrice
-                    ? (
-                        ((latestPrice - averagePrice) / averagePrice) *
-                        100
-                      ).toFixed(1)
-                    : null;
-
-                  const profitLossFromBottom = averagePrice
-                    ? (
-                        ((latestPrice - averagePrice) / latestPrice) *
-                        100
-                      ).toFixed(1)
-                    : null;
-
-                  const quantity = keyObjectTradeData[account][stock]
-                    ? keyObjectTradeData[account][stock].quantity
-                    : null;
-
-                  return (
-                    <Col
-                      key={index}
-                      isTooLow={marketCap < tooLowMarketCap}
-                      isLow={marketCap < lowMarketCap}
-                    >
-                      <InnerRow>
-                        <InnerCol>{averagePrice}</InnerCol>
-                        <InnerCol>{quantity}</InnerCol>
-                        <InnerCol>
-                          {quantity &&
-                            keyObjectTradeData[account][stock] &&
-                            latestPrice}
-                        </InnerCol>
-                        <InnerCol isLoss={profitLoss < 0} isHeader={true}>
-                          {quantity && profitLoss}
-                        </InnerCol>
-                        <InnerCol
-                          isLoss={profitLossFromBottom < 0}
-                          isHeader={true}
-                        >
-                          {quantity && profitLossFromBottom}
-                        </InnerCol>
-                      </InnerRow>
-                    </Col>
-                  );
-                })}
-              </Row>
-            );
-          } else {
-            return null;
-          }
         })}
       </PortfolioTable>
       {isModalOpen && (

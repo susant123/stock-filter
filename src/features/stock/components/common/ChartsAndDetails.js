@@ -35,7 +35,7 @@ function ChartsAndDetails(props) {
     <>
       <hr />
       <MCChart stockName={stockName} />
-      <SentimentsTable sentiments={indicators.sentiments} />
+      <SentimentsTable sentiments={indicators?.sentiments || {}} />
       <PivotLevelsTable pivotLevels={indicators.pivotLevels} />
       <EmaSma ema={indicators.ema} sma={indicators.sma} />
       <hr />
@@ -48,7 +48,7 @@ function ChartsAndDetails(props) {
         <hr />
         <SwotComponent swot={threat} />
         <hr />
-        <VolumeData volumeData={volumeData} />
+        {card.volumeData && <VolumeData volumeData={volumeData} />}
         <hr />
         <LineChart chartData={chartData} />
         <hr />

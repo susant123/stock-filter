@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 import {
   RowWrapper,
@@ -7,26 +7,26 @@ import {
   HeaderRow,
   ActionIcon,
   IconHeaderWrapper,
-} from "./common.styles";
+} from './common.styles';
 
 function VolumeData({ volumeData }) {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
-  const volume = volumeData.stock_price_volume_data.volume;
+  const volume = volumeData?.stock_price_volume_data?.volume;
   const volumeDataArr = [
-    { key: "Today", ...volume["Today"] },
-    { key: "Yesterday", ...volume["Yesterday"] },
-    { key: "1 Week", ...volume["1 Week"] },
-    { key: "1 Month", ...volume["1 Month"] },
+    { key: 'Today', ...volume['Today'] },
+    { key: 'Yesterday', ...volume['Yesterday'] },
+    { key: '1 Week', ...volume['1 Week'] },
+    { key: '1 Month', ...volume['1 Month'] },
   ];
 
   return (
     <div>
       <hr />
       <IconHeaderWrapper>
-        <ActionIcon onClick={handleClick}>{isOpen ? "-" : "+"}</ActionIcon>
+        <ActionIcon onClick={handleClick}>{isOpen ? '-' : '+'}</ActionIcon>
         <TableHeader>Volume Table</TableHeader>
       </IconHeaderWrapper>
 
