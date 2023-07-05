@@ -49,7 +49,7 @@ fs.writeFile(
 );
 
 fs.writeFile(
-  path.join(__dirname, './../../tradeData/src/data/allData1.json'),
+  path.join(__dirname, './../../tradeData/src/data/allData.json'),
   JSON.stringify(allData),
   function (err) {
     if (err) return console.log(err);

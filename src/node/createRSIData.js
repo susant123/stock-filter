@@ -46,7 +46,7 @@ setTimeout(() => {
   });
 
   fs.writeFile(
-    path.join(__dirname, './../../tradeData/src/data/AllRSIData1.json'),
+    path.join(__dirname, './../../tradeData/src/data/AllRSIData.json'),
     JSON.stringify(rsiData),
     function (err) {
       if (err) return console.log(err);

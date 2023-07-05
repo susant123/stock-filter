@@ -1,6 +1,6 @@
-import React from "react";
-import { Stock } from "./features/stock/Stock";
-import "./App.css";
+import React from 'react';
+import { Stock } from './features/stock/Stock';
+import './App.css';
 
 function App() {
   return (

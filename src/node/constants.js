@@ -1544,6 +1544,12 @@ module.exports = {
       sector: 'Healthcare',
     },
     {
+      symbol: 'WOCKPHARMA',
+      mcScid: 'W05',
+      mcScdid: 'W05',
+      angelName: 'WOCKHARDT',
+    },
+    {
       symbol: 'INDIGO',
       mcScid: 'IA05',
       mcScdid: 'IA04',
@@ -2352,7 +2358,7 @@ module.exports = {
       sector: 'Textile Industry',
     },
   ],
-  allStocks1: [
+  allStocks2: [
     {
       symbol: 'ADVENZYMES',
       mcScid: 'AET02',
@@ -2716,13 +2722,6 @@ module.exports = {
       symbol: 'WELCORP',
       mcScid: 'WGS',
       mcScdid: 'WGS',
-    },
-
-    {
-      symbol: 'WOCKPHARMA',
-      mcScid: 'W05',
-      mcScdid: 'W05',
-      angelName: 'WOCKHARDT',
     },
   ],
 };

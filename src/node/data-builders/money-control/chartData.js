@@ -119,7 +119,7 @@ const aggregateFiles = () => {
       );
 
       fs.writeFile(
-        path.join(__dirname, './../../../../tradeData/src/data/chart1.json'),
+        path.join(__dirname, './../../../../tradeData/src/data/chart.json'),
         JSON.stringify(allData),
         function (err) {
           if (err) return console.log(err);
