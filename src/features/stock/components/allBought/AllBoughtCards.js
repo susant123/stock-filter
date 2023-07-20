@@ -1,13 +1,13 @@
-import React from "react";
-import { CardTitle, CardsWrapper } from "../commonStyles/allCardsStyles";
-import BuyCard from "./BuyCard";
-import { getAllBoughtStocks } from "../../services/allBoughtService";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { CardTitle, CardsWrapper } from '../commonStyles/allCardsStyles';
+import BuyCard from './BuyCard';
+import { getAllBoughtStocks } from '../../services/allBoughtService';
+import { useSelector } from 'react-redux';
 import {
   selectLivePlusIndicatorData,
   selectNSEPriceData,
   selectTradeData,
-} from "../../StockSlice";
+} from '../../StockSlice';
 
 const limit5Percentage = 100;
 

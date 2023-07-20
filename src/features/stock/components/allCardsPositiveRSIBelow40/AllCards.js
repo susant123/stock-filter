@@ -10,6 +10,7 @@ import {
   selectChartData,
   selectLivePlusIndicatorData,
   selectNSEPriceData,
+  selectTradeData,
 } from '../../StockSlice';
 
 function AllCards() {
@@ -19,8 +20,9 @@ function AllCards() {
   const chartData = useSelector(selectChartData);
   const livePlusIndicator = useSelector(selectLivePlusIndicatorData);
   const nsePriceData = useSelector(selectNSEPriceData);
+  const tradeData = useSelector(selectTradeData);
 
-  //console.log("livePlusIndicator", livePlusIndicator);
+  console.log('tradeData', tradeData);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -54,6 +56,23 @@ function AllCards() {
   });
 
   let cardNumber = 0;
+
+  const getBoughtStocks = (stockName) => {
+    const accounts = Object.keys(tradeData);
+    const accountData = [];
+    accounts.forEach((acc) => {
+      const stockWithValidData = tradeData[acc].find(
+        (stock) =>
+          stock.stock_name === stockName &&
+          stock.quantity &&
+          stock.quantity !== 0
+      );
+      if (stockWithValidData) accountData.push(stockWithValidData);
+    });
+    console.log(accountData);
+    return accountData;
+  };
+
   return (
     <div className="App">
       <hr />
@@ -76,6 +95,7 @@ function AllCards() {
                 rsiData={allRSIData[stockName]}
                 nsePriceData={nsePriceData[stockName]}
                 isLowRsi={isLowRsi}
+                boughtData={getBoughtStocks(stockName)}
               />
             );
           }

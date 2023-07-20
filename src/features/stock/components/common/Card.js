@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { CardBlock } from '../commonStyles/cardStyles';
 import { IconHeaderWrapper, ActionIcon } from '../commonStyles/commonStyles';
-import { CardTitle, CardContainer } from '../commonStyles/allCardsStyles';
+import {
+  CardTitle,
+  CardContainer,
+  IfBought,
+} from '../commonStyles/allCardsStyles';
 import CommonCardView from '../common/CommonCardView';
 import ChartsAndDetails from '../common/ChartsAndDetails';
 
@@ -14,6 +18,7 @@ function Card(props) {
     keepSeparated,
     nsePriceData,
     currentIndex,
+    boughtData,
   } = props;
   //console.log("currentIndex", currentIndex);
   const [isOpen, setIsOpen] = useState(currentIndex > 41 ? false : true);
@@ -41,7 +46,6 @@ function Card(props) {
           {stockName}-({lastPrice}) ({marketCap} Cr)
         </CardTitle>
       </IconHeaderWrapper>
-
       {isOpen && (
         <CardBlock>
           <CommonCardView
@@ -49,6 +53,19 @@ function Card(props) {
             stockName={stockName}
             nsePriceData={nsePriceData}
           />
+          <IfBought>
+            {boughtData &&
+              boughtData.length > 0 &&
+              boughtData.map(
+                (data) =>
+                  data.account +
+                  ':' +
+                  parseFloat(
+                    ((lastPrice - data.average_price) / data.average_price) *
+                      100
+                  ).toFixed(2)
+              )}
+          </IfBought>
           <ChartsAndDetails
             card={card}
             rsiData={rsiData}
