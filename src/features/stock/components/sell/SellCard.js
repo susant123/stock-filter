@@ -52,7 +52,7 @@ function SellCard(props) {
     );
   };
   return (
-    <div className="App">
+    <div>
       <SellCardBlock>
         <StockSymbol>{card.stockName}</StockSymbol>
         <hr style={{ borderColor: "gray" }} />

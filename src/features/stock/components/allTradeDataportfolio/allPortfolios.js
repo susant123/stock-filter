@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { selectTradeData } from '../../StockSlice';
-import { useSelector } from 'react-redux';
+import React, { useState } from "react";
+import { selectTradeData } from "../../StockSlice";
+import { useSelector } from "react-redux";
 import {
   selectLivePlusIndicatorData,
   selectNSEPriceData,
-} from '../../StockSlice';
-import { convertArrayToObject } from '../../utils/utilities';
+} from "../../StockSlice";
+import { convertArrayToObject } from "../../utils/utilities";
 
 import {
   PortfolioTable,
@@ -19,20 +19,20 @@ import {
   CloseButton,
   NotLive,
   HeadingRowContents,
-} from './allPortfolio.styles';
+} from "./allPortfolio.styles";
 
 const lowMarketCap = 7500;
 const tooLowMarketCap = 5000;
 
 function AllPortfolios() {
   const accounts = [
-    'asha-kite',
-    'susant-kite',
-    'asha-angel',
-    'susant-angel',
-    'susant-paytm',
-    'susant-fyers',
-    'asha-paytm',
+    "asha-kite",
+    "susant-kite",
+    "asha-angel",
+    "susant-angel",
+    "susant-paytm",
+    "susant-fyers",
+    "asha-paytm",
   ];
   const tradeData = useSelector(selectTradeData);
   /*const [selectedAc, setSelectedAc] = useState(null);
@@ -73,11 +73,11 @@ function AllPortfolios() {
 
   const getKeyObjectTradeData = (tradeData) => {
     const keyObjectTradeData = [];
-    if (tradeData['asha-kite'] && tradeData[accounts[0]]) {
+    if (tradeData["asha-kite"] && tradeData[accounts[0]]) {
       for (let i = 0; i < accounts.length; i++) {
         keyObjectTradeData[accounts[i]] = convertArrayToObject(
           tradeData[accounts[i]],
-          'stock_name'
+          "stock_name"
         );
       }
     }
@@ -99,32 +99,32 @@ function AllPortfolios() {
 
   const accountsData = [
     {
-      acName: 'asha-kite',
-      label: 'Asha Kite',
+      acName: "asha-kite",
+      label: "Asha Kite",
     },
     {
-      acName: 'susant-kite',
-      label: 'Susant Kite',
+      acName: "susant-kite",
+      label: "Susant Kite",
     },
     {
-      acName: 'asha-angel',
-      label: 'Asha Angel',
+      acName: "asha-angel",
+      label: "Asha Angel",
     },
     {
-      acName: 'susant-angel',
-      label: 'Susant Angel',
+      acName: "susant-angel",
+      label: "Susant Angel",
     },
     {
-      acName: 'susant-paytm',
-      label: 'Susant Paytm',
+      acName: "susant-paytm",
+      label: "Susant Paytm",
     },
     {
-      acName: 'susant-fyers',
-      label: 'Susant Fyers',
+      acName: "susant-fyers",
+      label: "Susant Fyers",
     },
     {
-      acName: 'asha-paytm',
-      label: 'Asha Paytm',
+      acName: "asha-paytm",
+      label: "Asha Paytm",
     },
   ];
   return (
@@ -156,14 +156,16 @@ function AllPortfolios() {
 
         {industryArr.map((industryName) => {
           return (
-            <>
+            <div key={industryName}>
               <Row fullWidth={true}>
                 <HeadingRowContents>{industryName}</HeadingRowContents>
               </Row>
 
               {sectorWiseData[industryName].map((currentStock) => {
-                const stock = currentStock.nse.info.symbol;
+                const stock = currentStock.nse?.info?.symbol;
+
                 const marketCap =
+                  stock &&
                   livePlusIndicator[stock].nse.securityInfo &&
                   livePlusIndicator[stock].nse.securityInfo.issuedSize
                     ? Math.floor(
@@ -174,17 +176,17 @@ function AllPortfolios() {
                           livePlusIndicator[stock].nse.priceInfo.lastPrice) /
                           10000000
                       )
-                    : 'Not known';
+                    : "Not known";
 
-                if (stock !== 'TIMESTAMP') {
+                if (stock && stock !== "TIMESTAMP") {
                   return (
                     <Row
                       isTooLow={marketCap < tooLowMarketCap}
                       isLow={marketCap < lowMarketCap}
                     >
                       <Col isHeader={true}>
-                        <b>{stock}</b>{' '}
-                        <span style={{ color: '#999', fontStyle: 'italic' }}>
+                        <b>{stock}</b>{" "}
+                        <span style={{ color: "#999", fontStyle: "italic" }}>
                           {marketCap}
                         </span>
                         {nsePriceData[stock] ? null : <NotLive>NL</NotLive>}
@@ -232,8 +234,10 @@ function AllPortfolios() {
                             isTooLow={marketCap < tooLowMarketCap}
                             isLow={marketCap < lowMarketCap}
                           >
-                            <InnerRow>
-                              <InnerCol>{averagePrice}</InnerCol>
+                            <InnerRow warn={averagePrice * quantity > 15000}>
+                              <InnerCol title={averagePrice * quantity}>
+                                {averagePrice}
+                              </InnerCol>
                               <InnerCol>{quantity}</InnerCol>
                               <InnerCol>
                                 {quantity &&
@@ -259,10 +263,10 @@ function AllPortfolios() {
                   return null;
                 }
               })}
-            </>
+            </div>
           );
         })}
-        {allStocks.map((stock, index) => {
+        {/* {allStocks.map((stock, index) => {
           const marketCap =
             livePlusIndicator[stock].nse.securityInfo &&
             livePlusIndicator[stock].nse.securityInfo.issuedSize
@@ -274,10 +278,10 @@ function AllPortfolios() {
                     livePlusIndicator[stock].nse.priceInfo.lastPrice) /
                     10000000
                 )
-              : 'Not known';
+              : "Not known";
 
           //const marketCap = nsePriceData[stock]?.ffmc ? Math.floor(nsePriceData[stock].ffmc / 10000000): "-";
-        })}
+        })} */}
       </PortfolioTable>
       {isModalOpen && (
         <Modal>

@@ -1,12 +1,12 @@
-const axios = require('axios');
-const constants = require('../../constants');
-const utils = require('../../utils');
-const fs = require('fs');
-const volumeData = require('./volumeData');
-const path = require('path');
+const axios = require("axios");
+const constants = require("../../constants");
+const utils = require("../../utils");
+const fs = require("fs");
+const volumeData = require("./volumeData");
+const path = require("path");
 
 const chartDataUrl =
-  'https://priceapi.moneycontrol.com/techCharts/techChartController/history?symbol={0}&resolution=1D&from={1}&to={2}';
+  "https://priceapi.moneycontrol.com/techCharts/techChartController/history?symbol={0}&resolution=1D&from={1}&to={2}";
 
 const getStockWiseNSEData = (i) => {
   let index = i || 0;
@@ -32,7 +32,7 @@ const getStockWiseNSEData = (i) => {
         fromTime,
         toTime
       );
-      console.log(symbol, 'url---', formattedURL);
+      console.log(index, "---", symbol, "url---", formattedURL);
 
       const headers = {
         ...constants.headers,
@@ -44,15 +44,15 @@ const getStockWiseNSEData = (i) => {
             headers: headers,
           })
           .then((res) => {
-            if (res.data.s !== 'no_data') {
+            if (res.data.s !== "no_data") {
               try {
                 fs.writeFile(
-                  __dirname + '../../../data/chart/' + symbol + '.json',
+                  __dirname + "../../../data/chart/" + symbol + ".json",
                   JSON.stringify(res.data),
                   function (err) {
                     if (err)
                       return console.log(
-                        'error while reading file json' + symbol,
+                        "error while reading file json" + symbol,
                         err
                       );
                   }
@@ -60,13 +60,18 @@ const getStockWiseNSEData = (i) => {
                 getStockWiseNSEData(++index);
                 resolve(res.data);
               } catch (e) {
-                console.log('Error occured', e);
+                console.log("Error occured", e);
               }
             }
+          })
+          .catch((err) => {
+            getStockWiseNSEData(++index);
+            console.log("Error occurred chartData.js", err);
           });
       } catch (error) {
+        getStockWiseNSEData(++index);
         console.log(error);
-        reject('Error occured', error);
+        reject("Error occured", error);
       }
     }))(index);
 };
@@ -77,15 +82,15 @@ const readFile = (fileName) => {
     //console.log("path", __dirname + "../../../data/chart/" + fileName + ".json");
 
     fs.readFile(
-      __dirname + '../../../data/chart/' + fileName + '.json',
-      'utf8',
+      __dirname + "../../../data/chart/" + fileName + ".json",
+      "utf8",
       function (err, data) {
         try {
           resolve({ [fileName]: JSON.parse(data) });
         } catch (e) {
           console.log(e);
-          console.log('fileName--------------------------', fileName);
-          console.log('data-------################', data);
+          console.log("fileName--------------------------", fileName);
+          console.log("data-------################", data);
         }
       }
     );
@@ -111,7 +116,7 @@ const aggregateFiles = () => {
 
     try {
       fs.writeFile(
-        __dirname + '../../../data/chart.json',
+        __dirname + "../../../data/chart.json",
         JSON.stringify(allData),
         function (err) {
           if (err) return console.log(err);
@@ -119,14 +124,14 @@ const aggregateFiles = () => {
       );
 
       fs.writeFile(
-        path.join(__dirname, './../../../../tradeData/src/data/chart.json'),
+        path.join(__dirname, "./../../../../tradeData/src/data/chart.json"),
         JSON.stringify(allData),
         function (err) {
           if (err) return console.log(err);
         }
       );
     } catch (e) {
-      console.log('Error occured');
+      console.log("Error occured");
     }
   });
 };
@@ -135,12 +140,12 @@ const aggregateFiles = () => {
 
 const startBuildingChartData = async () => {
   try {
-    if (!fs.existsSync(__dirname + '../../../data/chart/')) {
-      console.log('creating folder chart');
-      fs.mkdirSync(__dirname + '../../../data/chart/');
+    if (!fs.existsSync(__dirname + "../../../data/chart/")) {
+      console.log("creating folder chart");
+      fs.mkdirSync(__dirname + "../../../data/chart/");
     }
   } catch (e) {
-    console.log('folder error', e);
+    console.log("folder error", e);
   }
 
   getStockWiseNSEData();

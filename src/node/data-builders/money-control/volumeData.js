@@ -1,19 +1,19 @@
 /*
 SMA, EMA, Pivot levels, Sentiments
 */
-const axios = require('axios');
-const constants = require('../../constants');
-const utils = require('../../utils');
-const path = require('path');
-const smaEma = require('./sma-ema-buildDataFiles');
-const fs = require('fs');
+const axios = require("axios");
+const constants = require("../../constants");
+const utils = require("../../utils");
+const path = require("path");
+const smaEma = require("./sma-ema-buildDataFiles");
+const fs = require("fs");
 
 const volumeDataUrl =
-  'https://api.moneycontrol.com/mcapi/v1/stock/price-volume?scId={0}';
+  "https://api.moneycontrol.com/mcapi/v1/stock/price-volume?scId={0}";
 
 const getStockWiseNSEData = (i) => {
   let index = i ? i : 0;
-  console.log('index-----------', index);
+  console.log("index-----------", index);
   if (index + 1 > constants.allStocks.length) {
     smaEma.startEmaSmaDataFetch();
     aggregateFiles();
@@ -26,7 +26,7 @@ const getStockWiseNSEData = (i) => {
       const stockSymbol = constants.allStocks[index].symbol;
 
       const formattedURL = utils.stringFormat(volumeDataUrl, symbol);
-      console.log('formattedURL-----', formattedURL);
+      console.log("formattedURL-----", formattedURL);
 
       try {
         axios
@@ -37,12 +37,12 @@ const getStockWiseNSEData = (i) => {
           .then((res) => {
             try {
               fs.writeFile(
-                __dirname + '../../../data/volume/' + stockSymbol + '.json',
+                __dirname + "../../../data/volume/" + stockSymbol + ".json",
                 JSON.stringify(res.data),
                 function (err) {
                   if (err)
                     return console.log(
-                      'error while reading file json' + symbol,
+                      "error while reading file json" + symbol,
                       err
                     );
                 }
@@ -50,12 +50,18 @@ const getStockWiseNSEData = (i) => {
               getStockWiseNSEData(++index);
               resolve(res.data);
             } catch (e) {
-              console.log('Error occured', e);
+              getStockWiseNSEData(++index);
+              console.log("Error occured", e);
             }
+          })
+          .catch((err) => {
+            getStockWiseNSEData(++index);
+            console.log("Error occurred-volumeData.js", err);
           });
       } catch (error) {
+        getStockWiseNSEData(++index);
         console.log(error);
-        reject('Error occured', error);
+        reject("Error occured", error);
       }
     }))(index);
 };
@@ -64,12 +70,12 @@ const getStockWiseNSEData = (i) => {
 const readFile = (fileName) => {
   return new Promise((resolve, reject) => {
     console.log(
-      'path',
-      __dirname + '../../../data/volume/' + fileName + '.json'
+      "path",
+      __dirname + "../../../data/volume/" + fileName + ".json"
     );
     fs.readFile(
-      __dirname + '../../../data/volume/' + fileName + '.json',
-      'utf8',
+      __dirname + "../../../data/volume/" + fileName + ".json",
+      "utf8",
       function (err, data) {
         resolve({ [fileName]: JSON.parse(data) });
       }
@@ -96,14 +102,14 @@ const aggregateFiles = () => {
 
     try {
       fs.writeFile(
-        __dirname + '../../../data/volume.json',
+        __dirname + "../../../data/volume.json",
         JSON.stringify(allData),
         function (err) {
           if (err) return console.log(err);
         }
       );
     } catch (e) {
-      console.log('Error occured');
+      console.log("Error occured");
     }
   });
 };
@@ -111,12 +117,12 @@ const aggregateFiles = () => {
 
 const startBuildingVolumeData = async () => {
   try {
-    if (!fs.existsSync(__dirname + '../../../data/volume/')) {
-      console.log('creating folder volume');
-      fs.mkdirSync(__dirname + '../../../data/volume/');
+    if (!fs.existsSync(__dirname + "../../../data/volume/")) {
+      console.log("creating folder volume");
+      fs.mkdirSync(__dirname + "../../../data/volume/");
     }
   } catch (e) {
-    console.log('folder error', e);
+    console.log("folder error", e);
   }
   getStockWiseNSEData();
 };

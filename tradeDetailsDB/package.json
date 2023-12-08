@@ -16,7 +16,6 @@
     "express": "^4.15.2",
     "sqlite": "^4.2.1",
     "sqlite3": "^5.1.6"
-
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

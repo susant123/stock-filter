@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { CardTitle, CardsWrapper } from '../commonStyles/allCardsStyles';
+import React, { useState } from "react";
+import { CardTitle, CardsWrapper } from "../commonStyles/allCardsStyles";
 //import Card from "./Card";
-import Card from '../common/Card';
-import { useSelector } from 'react-redux';
-import { IconHeaderWrapper } from '../commonStyles/commonStyles';
+import Card from "../common/Card";
+import { useSelector } from "react-redux";
+import { IconHeaderWrapper } from "../commonStyles/commonStyles";
 
 import {
   selectAllRSIData,
   selectChartData,
   selectLivePlusIndicatorData,
   selectNSEPriceData,
-} from '../../StockSlice';
+} from "../../StockSlice";
 
 function AllCards() {
   const [isOpen, setIsOpen] = useState(false);

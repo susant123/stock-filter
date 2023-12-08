@@ -1,8 +1,9 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 export const CardsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `;
 export const CardTitle = styled.div`
   font-size: 20px;
@@ -11,10 +12,10 @@ export const CardTitle = styled.div`
 `;
 
 export const CardContainer = styled.div`
-  margin: ${(props) => (props.keepSeparated ? '20px 0' : 'auto')};
-  min-width: ${(props) => (props.keepSeparated ? '500px' : 'auto')};
-  display: ${(props) => (props.keepSeparated ? 'flex' : 'auto')};
-  flex-direction: ${(props) => (props.isOpen ? 'column' : 'row')};
+  margin: ${(props) => (props.keepSeparated ? "20px 0" : "auto")};
+  min-width: ${(props) => (props.keepSeparated ? "500px" : "auto")};
+  display: ${(props) => (props.keepSeparated ? "flex" : "auto")};
+  flex-direction: ${(props) => (props.isOpen ? "column" : "row")};
   min-width: 30%;
   margin: 20px;
 `;

@@ -13,7 +13,7 @@ function SellCards() {
 
   //console.log("Cards", cards);
   return (
-    <div className="App">
+    <div>
       <CardTitle>
         Sell Card - {cards && cards.length}
         <CardsWrapper>
