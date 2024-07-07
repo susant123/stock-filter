@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   CardBlock,
   GridBody,
@@ -8,24 +8,26 @@ import {
   Title,
   InputField,
   Button,
-} from '../commonStyles/cardStyles';
-import PivotLevelsTable from '../indicators/PivotLevelsTable';
-import SentimentsTable from '../indicators/SentimentsTable';
-import EmaSma from '../indicators/EmaSma';
-import SwotComponent from '../indicators/SwotComponent';
-import VolumeData from '../indicators/VolumeData';
-import MCChart from '../modal/MCChart';
-import RSILineChart from '../rsiChart/RSILineChart';
-import MACDChart from '../macdCharts/LineChart';
-import { selectAllRSIData, selectChartData } from '../../StockSlice';
-import { useSelector } from 'react-redux';
-import CommonCardView from '../common/CommonCardView';
+} from "../commonStyles/cardStyles";
+import PivotLevelsTable from "../indicators/PivotLevelsTable";
+import SentimentsTable from "../indicators/SentimentsTable";
+import EmaSma from "../indicators/EmaSma";
+import SwotComponent from "../indicators/SwotComponent";
+import VolumeData from "../indicators/VolumeData";
+import MCChart from "../modal/MCChart";
+import RSILineChart from "../rsiChart/RSILineChart";
+import MACDChart from "../macdCharts/LineChart";
+import { selectAllRSIData, selectChartData } from "../../StockSlice";
+import { useSelector } from "react-redux";
+import CommonCardView from "../common/CommonCardView";
 
 const recommendedAmout = 15000;
 
 function BuyCard(props) {
   const { card, nseData, nsePriceData } = props;
   const { priceInfo } = nseData;
+
+  console.log("card", card);
 
   //default to 1 in case there is no price data
   const lastPrice = nsePriceData
@@ -38,23 +40,23 @@ function BuyCard(props) {
 
   const recommendedQuantity = Math.floor(recommendedAmout / lastPrice);
   const displayRows = [
-    { label: 'Buy', info: card.account },
-    { label: 'Flag Accounts', info: card.flagAccounts },
+    { label: "Buy", info: card.account },
+    { label: "Flag Accounts", info: card.flagAccounts },
     {
-      label: 'Year low',
+      label: "Year low",
       info:
-        priceInfo?.weekHighLow?.min + ' - ' + priceInfo?.weekHighLow?.minDate,
+        priceInfo?.weekHighLow?.min + " - " + priceInfo?.weekHighLow?.minDate,
     },
     {
-      label: 'Year high',
+      label: "Year high",
       info:
-        priceInfo?.weekHighLow?.max + ' - ' + priceInfo?.weekHighLow?.maxDate,
+        priceInfo?.weekHighLow?.max + " - " + priceInfo?.weekHighLow?.maxDate,
     },
     {
-      label: 'IntraDay Range',
+      label: "IntraDay Range",
       info:
         priceInfo?.intraDayHighLow?.min +
-        ' - ' +
+        " - " +
         priceInfo?.intraDayHighLow?.max,
     },
   ];
@@ -69,7 +71,7 @@ function BuyCard(props) {
         nsePriceData={nsePriceData}
       />
 
-      <hr style={{ borderColor: 'gray' }} />
+      <hr style={{ borderColor: "gray" }} />
 
       {displayRows.map((displayRow, index) => {
         return (
@@ -82,10 +84,13 @@ function BuyCard(props) {
       <MCChart stockName={card.stockName} />
       <SentimentsTable sentiments={card?.indicators?.sentiments || {}} />
       <PivotLevelsTable pivotLevels={card?.indicators?.pivotLevels} />
-      <EmaSma ema={card?.indicators?.ema} sma={card?.indicators?.sma} />
+      <EmaSma
+        ema={card?.indicators?.ema || {}}
+        sma={card?.indicators?.sma || {}}
+      />
       <hr />
 
-      <div style={{ backgroundColor: '#b49292' }}>
+      <div style={{ backgroundColor: "#b49292" }}>
         <SwotComponent swot={card.strength} />
         <hr />
         <SwotComponent swot={card.weakness} />

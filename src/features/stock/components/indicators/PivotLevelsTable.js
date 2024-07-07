@@ -29,7 +29,7 @@ export default function PivotLevelsTable(props) {
             <Cell>S2</Cell>
             <Cell>S3</Cell>
           </PivotHeaderRow>
-          {pivotLevels.map((pivot, index) => {
+          {pivotLevels?.map((pivot, index) => {
             return (
               <PivotRowWrapper key={index}>
                 <Cell>{pivot.key}</Cell>

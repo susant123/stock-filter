@@ -1,7 +1,7 @@
 const axios = require("axios");
 const constants = require("./constants");
 const utils = require("./utils");
-const chart = require("./data-builders/money-control/chartData");
+//const chart = require("./data-builders/money-control/chartData");
 const fs = require("fs");
 
 let cookie;
@@ -18,63 +18,68 @@ const refreshCookie = async () => {
   console.log("cookie refreshed");
 };
 
-const getStockWiseNSEData = (i) => {
-  let index = i || 0;
-  if (index + 1 > constants.allStocks.length) {
-    aggregateFiles();
-    return;
-  }
-  if (!cookie) {
-    cookie = refreshCookie();
-  }
-  const headers = {
-    ...constants.headers,
-    cookie: cookie,
-  };
-  return ((index) =>
-    new Promise((resolve, reject) => {
-      const symbol = constants.allStocks[index].symbol;
-      const formattedURL = utils.stringFormat(
-        constants.nseDataURL,
-        encodeURIComponent(symbol)
+//convert getStockWiseNSEData function below  to async await
+
+function wait(duration) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, duration);
+  });
+}
+
+const getStockWiseData = async () => {
+  for (var i = 0; i < constants.allStocks.length; i++) {
+    //create the calls using await
+    const symbol = constants.allStocks[i].symbol;
+    if (!cookie) {
+      cookie = refreshCookie();
+    }
+
+    if (i % 20 === 0) {
+      cookie = refreshCookie();
+      await wait(3000);
+    }
+
+    console.log("Start");
+
+    await wait(1000);
+
+    console.log("end");
+
+    const headers = {
+      ...constants.headers,
+      cookie: cookie,
+    };
+    const formattedURL = utils.stringFormat(
+      constants.nseDataURL,
+      encodeURIComponent(symbol)
+    );
+    console.log(i, "---", symbol, "url---", formattedURL);
+
+    let response = {};
+
+    try {
+      response = await axios.get(formattedURL, {
+        withCredentials: true,
+        headers: headers,
+      });
+    } catch (error) {
+      console.log("Error occurred--buildNSEData-adv.js", error);
+    }
+
+    try {
+      fs.writeFile(
+        __dirname + "/data/nse/" + symbol + ".json",
+        JSON.stringify(response.data),
+        function (err) {
+          if (err)
+            return console.log("error while reading file json" + symbol, err);
+        }
       );
-      console.log("formattedURL-----", formattedURL);
-      try {
-        axios
-          .get(formattedURL, {
-            withCredentials: true,
-            headers: headers,
-          })
-          .then((res) => {
-            try {
-              fs.writeFile(
-                __dirname + "/data/nse/" + symbol + ".json",
-                JSON.stringify(res.data),
-                function (err) {
-                  if (err)
-                    return console.log(
-                      "error while reading file json" + symbol,
-                      err
-                    );
-                }
-              );
-              getStockWiseNSEData(++index);
-              resolve(res.data);
-            } catch (e) {
-              getStockWiseNSEData(++index);
-              console.log("Error occured", e);
-            }
-          })
-          .catch((err) => {
-            getStockWiseNSEData(++index);
-            console.log("Error occurred--buildNSEData-adv.js", err);
-          });
-      } catch (error) {
-        getStockWiseNSEData(++index);
-        console.log(error);
-        reject("Error occured", error);
-      }
-    }))(index);
+    } catch (e) {
+      console.log("Error occured", e);
+    }
+  }
+  aggregateFiles();
 };
 
 /* Aggregate individual file section*/
@@ -130,9 +135,9 @@ const startBuildingDataFiles = async () => {
   }
   const response = await instance.get(constants.nseBaseURL);
   cookie = response.headers["set-cookie"].join(";");
-  getStockWiseNSEData();
+  getStockWiseData();
 };
 
 //start chartData fetching
-chart.startBuildingChartData();
+//chart.startBuildingChartData();
 startBuildingDataFiles();

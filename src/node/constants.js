@@ -12,19 +12,37 @@ module.exports = {
   waitTime: 500,
   allStocks1: [
     {
-      symbol: "PIIND",
-      mcScid: "PII",
-      mcScdid: "PII",
-      angelName: "PI Industries",
-      sector: "Agriculture",
+      symbol: "AEGISLOG",
+      mcScid: "AC02",
+      mcScdid: "AL9",
+      angelName: "AEGIS LOGISTICS",
+      sector: "Logistics Freight",
     },
-
     {
-      symbol: "UPL",
-      mcScid: "SI10",
-      mcScdid: "UP04",
-      angelName: "UPL",
-      sector: "Agriculture",
+      symbol: "ADANIENSOL",
+      mcScid: "AT18",
+      mcScdid: "AT22",
+      sector: "Energy",
+    },
+    {
+      symbol: "ARE&M",
+      mcScid: "ARB",
+      mcScdid: "ARB",
+      angelName: "AMARA RAJA BATT.",
+      sector: "Energy",
+    },
+    {
+      symbol: "LTF",
+      mcScid: "LFH",
+      mcScdid: "LFH",
+      sector: "Financials",
+    },
+    {
+      symbol: "WELSPUNLIV",
+      mcScid: "WI03",
+      mcScdid: "WI03",
+      angelName: "Welspun India Ltd.",
+      sector: "Textile Industry",
     },
   ],
   allStocks: [
@@ -748,7 +766,7 @@ module.exports = {
       sector: "Energy",
     },
     {
-      symbol: "ADANITRANS",
+      symbol: "ADANIENSOL",
       mcScid: "AT18",
       mcScdid: "AT22",
       sector: "Energy",
@@ -874,7 +892,7 @@ module.exports = {
       sector: "Energy",
     },
     {
-      symbol: "AMARAJABAT",
+      symbol: "ARE&M",
       mcScid: "ARB",
       mcScdid: "ARB",
       angelName: "AMARA RAJA BATT.",
@@ -1061,7 +1079,7 @@ module.exports = {
       sector: "Financials",
     },
     {
-      symbol: "L&TFH",
+      symbol: "LTF",
       mcScid: "LFH",
       mcScdid: "LFH",
       sector: "Financials",
@@ -1272,7 +1290,7 @@ module.exports = {
       sector: "FMCG",
     },
     {
-      symbol: "MCDOWELL-N",
+      symbol: "UNITDSPR",
       mcScid: "MC08",
       mcScdid: "US",
       sector: "FMCG",
@@ -2061,7 +2079,7 @@ module.exports = {
       sector: "Logistics Freight",
     },
     {
-      symbol: "AEGISCHEM",
+      symbol: "AEGISLOG",
       mcScid: "AC02",
       mcScdid: "AL9",
       angelName: "AEGIS LOGISTICS",
@@ -2427,7 +2445,7 @@ module.exports = {
       sector: "Textile Industry",
     },
     {
-      symbol: "WELSPUNIND",
+      symbol: "WELSPUNLIV",
       mcScid: "WI03",
       mcScdid: "WI03",
       angelName: "Welspun India Ltd.",

@@ -13,7 +13,7 @@ function SellCards() {
 
   //console.log("Cards", cards);
   return (
-    <div>
+    <>
       <CardTitle>
         Sell Card - {cards && cards.length}
         <CardsWrapper>
@@ -24,7 +24,7 @@ function SellCards() {
       </CardTitle>
 
       <hr />
-    </div>
+    </>
   );
 }
 

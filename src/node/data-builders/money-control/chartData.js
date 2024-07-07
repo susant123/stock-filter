@@ -8,72 +8,45 @@ const path = require("path");
 const chartDataUrl =
   "https://priceapi.moneycontrol.com/techCharts/techChartController/history?symbol={0}&resolution=1D&from={1}&to={2}";
 
-const getStockWiseNSEData = (i) => {
-  let index = i || 0;
-  if (index + 1 > constants.allStocks.length) {
-    volumeData.startBuildingVolumeData();
-    aggregateFiles();
-    return;
-  }
+const getStockWiseData = async () => {
+  for (var i = 0; i < constants.allStocks.length; i++) {
+    //create the calls using await
+    const symbol = constants.allStocks[i].symbol;
+    const fromTime = Math.floor(
+      (new Date().getTime() - 6 * 30 * 24 * 60 * 60 * 1000) / 1000
+    );
+    const toTime = Math.floor(new Date().getTime() / 1000);
+    const formattedURL = utils.stringFormat(
+      chartDataUrl,
+      encodeURIComponent(symbol),
+      fromTime,
+      toTime
+    );
+    console.log(i, "---", symbol, "url---", formattedURL);
+    const headers = {
+      ...constants.headers,
+    };
 
-  return ((index) =>
-    new Promise((resolve, reject) => {
-      const symbol = constants.allStocks[index].symbol;
-
-      const fromTime = Math.floor(
-        (new Date().getTime() - 6 * 30 * 24 * 60 * 60 * 1000) / 1000
-      );
-
-      const toTime = Math.floor(new Date().getTime() / 1000);
-
-      const formattedURL = utils.stringFormat(
-        chartDataUrl,
-        encodeURIComponent(symbol),
-        fromTime,
-        toTime
-      );
-      console.log(index, "---", symbol, "url---", formattedURL);
-
-      const headers = {
-        ...constants.headers,
-      };
+    const response = await axios.get(formattedURL, {
+      withCredentials: true,
+      headers: headers,
+    });
+    if (response.data.s !== "no_data") {
       try {
-        axios
-          .get(formattedURL, {
-            withCredentials: true,
-            headers: headers,
-          })
-          .then((res) => {
-            if (res.data.s !== "no_data") {
-              try {
-                fs.writeFile(
-                  __dirname + "../../../data/chart/" + symbol + ".json",
-                  JSON.stringify(res.data),
-                  function (err) {
-                    if (err)
-                      return console.log(
-                        "error while reading file json" + symbol,
-                        err
-                      );
-                  }
-                );
-                getStockWiseNSEData(++index);
-                resolve(res.data);
-              } catch (e) {
-                console.log("Error occured", e);
-              }
-            }
-          })
-          .catch((err) => {
-            getStockWiseNSEData(++index);
-            console.log("Error occurred chartData.js", err);
-          });
-      } catch (error) {
-        getStockWiseNSEData(++index);
-        console.log(error);
-        reject("Error occured", error);
+        fs.writeFile(
+          __dirname + "../../../data/chart/" + symbol + ".json",
+          JSON.stringify(response.data),
+          function (err) {
+            if (err)
+              return console.log("error while reading file json" + symbol, err);
+          }
+        );
+      } catch (e) {
+        console.log("Error occured");
       }
-    }))(index);
+    }
+  }
+  aggregateFiles();
 };
 
 /* Aggregate individual file section*/
@@ -148,9 +121,9 @@ const startBuildingChartData = async () => {
     console.log("folder error", e);
   }
 
-  getStockWiseNSEData();
+  getStockWiseData();
 };
 
-//startBuildingChartData();
+startBuildingChartData();
 
-module.exports.startBuildingChartData = startBuildingChartData;
+//module.exports.startBuildingChartData = startBuildingChartData;

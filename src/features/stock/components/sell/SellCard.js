@@ -52,7 +52,7 @@ function SellCard(props) {
     );
   };
   return (
-    <div>
+    <>
       <SellCardBlock>
         <StockSymbol>{card.stockName}</StockSymbol>
         <hr style={{ borderColor: "gray" }} />
@@ -99,8 +99,7 @@ function SellCard(props) {
           <Button onClick={partiallySavedhandler}>Partially Sold</Button>
         </QuantityBlock>
       </SellCardBlock>
-      <hr />
-    </div>
+    </>
   );
 }
 

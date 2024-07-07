@@ -3,13 +3,13 @@ import styled from "@emotion/styled";
 export const CardBlock = styled.div`
   border: 1px solid red;
   width: auto;
-  margin-right: 15px;
   height: auto;
   background-color: #cecece;
-  padding: 15px 10px;
+  padding: 15px 5px;
   border-radius: 4px;
   margin-bottom: 20px;
   min-width: 30%;
+  max-width: 450px;
 `;
 
 export const SellCardBlock = styled(CardBlock)`

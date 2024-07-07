@@ -30,7 +30,7 @@ function EmaSma(props) {
             <Cell>Value</Cell>
             <Cell>Indicator</Cell>
           </HeaderRow>
-          {ema.map((emaLevel) => {
+          {ema?.map((emaLevel) => {
             return (
               <RowWrapper>
                 <Cell>EMA</Cell>
@@ -40,7 +40,7 @@ function EmaSma(props) {
               </RowWrapper>
             );
           })}
-          {sma.map((smaLevel, index) => {
+          {sma?.map((smaLevel, index) => {
             return (
               <RowWrapper key={index}>
                 <Cell>SMA</Cell>

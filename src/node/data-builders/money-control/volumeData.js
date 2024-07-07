@@ -5,65 +5,43 @@ const axios = require("axios");
 const constants = require("../../constants");
 const utils = require("../../utils");
 const path = require("path");
-const smaEma = require("./sma-ema-buildDataFiles");
+//const smaEma = require("./sma-ema-buildDataFiles");
 const fs = require("fs");
 
 const volumeDataUrl =
   "https://api.moneycontrol.com/mcapi/v1/stock/price-volume?scId={0}";
 
-const getStockWiseNSEData = (i) => {
-  let index = i ? i : 0;
-  console.log("index-----------", index);
-  if (index + 1 > constants.allStocks.length) {
-    smaEma.startEmaSmaDataFetch();
-    aggregateFiles();
-    return;
-  }
+const getStockWiseData = async () => {
   const headers = { ...constants.headers };
-  return ((index) =>
-    new Promise((resolve, reject) => {
-      const symbol = constants.allStocks[index].mcScid;
-      const stockSymbol = constants.allStocks[index].symbol;
+  for (let i = 0; i < constants.allStocks.length; i++) {
+    const symbol = constants.allStocks[i].mcScid;
+    const stockSymbol = constants.allStocks[i].symbol;
 
-      const formattedURL = utils.stringFormat(volumeDataUrl, symbol);
-      console.log("formattedURL-----", formattedURL);
+    const formattedURL = utils.stringFormat(volumeDataUrl, symbol);
+    console.log("formattedURL-----", formattedURL);
 
-      try {
-        axios
-          .get(formattedURL, {
-            withCredentials: true,
-            headers: headers,
-          })
-          .then((res) => {
-            try {
-              fs.writeFile(
-                __dirname + "../../../data/volume/" + stockSymbol + ".json",
-                JSON.stringify(res.data),
-                function (err) {
-                  if (err)
-                    return console.log(
-                      "error while reading file json" + symbol,
-                      err
-                    );
-                }
-              );
-              getStockWiseNSEData(++index);
-              resolve(res.data);
-            } catch (e) {
-              getStockWiseNSEData(++index);
-              console.log("Error occured", e);
-            }
-          })
-          .catch((err) => {
-            getStockWiseNSEData(++index);
-            console.log("Error occurred-volumeData.js", err);
-          });
-      } catch (error) {
-        getStockWiseNSEData(++index);
-        console.log(error);
-        reject("Error occured", error);
-      }
-    }))(index);
+    try {
+      const res = await axios.get(formattedURL, {
+        withCredentials: true,
+        headers: headers,
+      });
+
+      fs.writeFile(
+        __dirname + "../../../data/volume/" + stockSymbol + ".json",
+        JSON.stringify(res.data),
+        function (err) {
+          if (err)
+            return console.log(
+              "error while reading file json" + symbol,
+              err + " " + stockSymbol
+            );
+        }
+      );
+    } catch (error) {
+      console.log("Error occured", error);
+    }
+  }
+  aggregateFiles();
 };
 
 /* Aggregate individual file section*/
@@ -124,9 +102,9 @@ const startBuildingVolumeData = async () => {
   } catch (e) {
     console.log("folder error", e);
   }
-  getStockWiseNSEData();
+  getStockWiseData();
 };
 
-//startBuildingVolumeData();
+startBuildingVolumeData();
 
-module.exports.startBuildingVolumeData = startBuildingVolumeData;
+//module.exports.startBuildingVolumeData = startBuildingVolumeData;

@@ -1,13 +1,13 @@
-import React from 'react';
-import SwotComponent from '../indicators/SwotComponent';
-import VolumeData from '../indicators/VolumeData';
-import LineChart from '../charts/LineChart';
-import RSILineChart from '../rsiChart/RSILineChart';
-import MACDChart from '../macdCharts/LineChart';
-import PivotLevelsTable from '../indicators/PivotLevelsTable';
-import SentimentsTable from '../indicators/SentimentsTable';
-import EmaSma from '../indicators/EmaSma';
-import MCChart from '../modal/MCChart';
+import React from "react";
+import SwotComponent from "../indicators/SwotComponent";
+import VolumeData from "../indicators/VolumeData";
+import LineChart from "../charts/LineChart";
+import RSILineChart from "../rsiChart/RSILineChart";
+import MACDChart from "../macdCharts/LineChart";
+import PivotLevelsTable from "../indicators/PivotLevelsTable";
+import SentimentsTable from "../indicators/SentimentsTable";
+import EmaSma from "../indicators/EmaSma";
+import MCChart from "../modal/MCChart";
 
 function ChartsAndDetails(props) {
   const { card, chartData, rsiData, stockName } = props;
@@ -27,19 +27,19 @@ function ChartsAndDetails(props) {
 
   const isLowRsi = isLowRSI(rsiData);
 
-  if (!indicators || !indicators.sentiments) {
-    console.log('No Data--------------', stockName, card);
-    return <></>;
-  }
+  /*  if (!indicators || !indicators.sentiments) {
+    console.log("No Data--------------", stockName, card);
+    return <>No Data</>;
+  } */
   return (
     <>
       <hr />
       <MCChart stockName={stockName} />
       <SentimentsTable sentiments={indicators?.sentiments || {}} />
-      <PivotLevelsTable pivotLevels={indicators.pivotLevels} />
-      <EmaSma ema={indicators.ema} sma={indicators.sma} />
+      <PivotLevelsTable pivotLevels={indicators?.pivotLevels} />
+      <EmaSma ema={indicators?.ema} sma={indicators?.sma} />
       <hr />
-      <div style={{ backgroundColor: '#b49292' }}>
+      <div style={{ backgroundColor: "#b49292" }}>
         <SwotComponent swot={strength} />
         <hr />
         <SwotComponent swot={weakness} />

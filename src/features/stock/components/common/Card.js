@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { CardBlock } from '../commonStyles/cardStyles';
-import { IconHeaderWrapper, ActionIcon } from '../commonStyles/commonStyles';
+import React, { useState } from "react";
+import { CardBlock } from "../commonStyles/cardStyles";
+import { IconHeaderWrapper, ActionIcon } from "../commonStyles/commonStyles";
 import {
   CardTitle,
   CardContainer,
   IfBought,
-} from '../commonStyles/allCardsStyles';
-import CommonCardView from '../common/CommonCardView';
-import ChartsAndDetails from '../common/ChartsAndDetails';
+} from "../commonStyles/allCardsStyles";
+import CommonCardView from "../common/CommonCardView";
+import ChartsAndDetails from "../common/ChartsAndDetails";
 
 function Card(props) {
   const {
@@ -31,17 +31,17 @@ function Card(props) {
             nse.priceInfo.lastPrice) /
             10000000
         )
-      : 'Not known';
+      : "Not known";
 
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
 
-  const lastPrice = nse.priceInfo ? nse.priceInfo.lastPrice : 'Not known';
+  const lastPrice = nse.priceInfo ? nse.priceInfo.lastPrice : "Not known";
   return (
     <CardContainer keepSeparated={keepSeparated} isOpen={isOpen}>
       <IconHeaderWrapper onClick={handleClick}>
-        <ActionIcon>{isOpen ? '-' : '+'}</ActionIcon>
+        <ActionIcon>{isOpen ? "-" : "+"}</ActionIcon>
         <CardTitle>
           {stockName}-({lastPrice}) ({marketCap} Cr)
         </CardTitle>
@@ -59,13 +59,14 @@ function Card(props) {
               boughtData.map(
                 (data) =>
                   data.account +
-                  ':' +
+                  ":" +
                   parseFloat(
                     ((lastPrice - data.average_price) / data.average_price) *
                       100
                   ).toFixed(2)
               )}
           </IfBought>
+
           <ChartsAndDetails
             card={card}
             rsiData={rsiData}

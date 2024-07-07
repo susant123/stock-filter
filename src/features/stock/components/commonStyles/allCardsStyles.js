@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const CardsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 `;
 export const CardTitle = styled.div`
   font-size: 20px;
@@ -17,7 +17,8 @@ export const CardContainer = styled.div`
   display: ${(props) => (props.keepSeparated ? "flex" : "auto")};
   flex-direction: ${(props) => (props.isOpen ? "column" : "row")};
   min-width: 30%;
-  margin: 20px;
+  max-width: 470px;
+  margin: 5px;
 `;
 
 export const IfBought = styled.div`

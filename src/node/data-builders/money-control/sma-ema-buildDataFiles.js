@@ -1,13 +1,45 @@
 const axios = require("axios");
 const constants = require("../../constants");
 const utils = require("../../utils");
-const swot = require("./swot");
+//const swot = require("./swot");
 const fs = require("fs");
 
 const smaEmaPivotSentimentURL =
   "https://priceapi.moneycontrol.com/pricefeed/techindicator/D/{0}?fields=sentiments,pivotLevels,sma,ema";
 
-const getStockWiseNSEData = (i) => {
+//convert getStockWiseNSEData function below  to async await
+const getStockWiseData = async () => {
+  for (var i = 0; i < constants.allStocks.length; i++) {
+    //create the calls using await
+    const symbol = constants.allStocks[i].symbol;
+    const formattedURL = utils.stringFormat(smaEmaPivotSentimentURL, symbol);
+    console.log(i, "---", symbol, "url---", formattedURL);
+    const headers = {
+      ...constants.headers,
+    };
+
+    const response = await axios.get(formattedURL, {
+      withCredentials: true,
+      headers: headers,
+    });
+
+    try {
+      fs.writeFile(
+        __dirname + "../../../data/sma-ema/" + symbol + ".json",
+        JSON.stringify(response.data),
+        function (err) {
+          if (err)
+            return console.log("error while reading file json" + symbol, err);
+        }
+      );
+    } catch (e) {
+      console.log("Error occured");
+    }
+  }
+  aggregateFiles();
+};
+
+/* const getStockWiseNSEData = (i) => {
   let index = i ? i : 0;
   console.log("index-----------", index);
   if (index + 1 > constants.allStocks.length) {
@@ -59,7 +91,7 @@ const getStockWiseNSEData = (i) => {
         reject("Error occured", error);
       }
     }))(index);
-};
+}; */
 
 /* Aggregate individual file section*/
 const readFile = (fileName) => {
@@ -114,13 +146,13 @@ const startEmaSmaDataFetch = async () => {
     console.log("folder error", e);
   }
 
-  getStockWiseNSEData();
+  getStockWiseData();
 
   //  aggregateFiles();
 
   //swot.startBuildingSWOTData();
 };
 
-module.exports.startEmaSmaDataFetch = startEmaSmaDataFetch;
+//module.exports.startEmaSmaDataFetch = startEmaSmaDataFetch;
 
-//startEmaSmaDataFetch();
+startEmaSmaDataFetch();

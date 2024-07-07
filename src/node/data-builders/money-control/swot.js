@@ -8,7 +8,44 @@ const dataUrl =
 
 const types = ["S", "W", "O", "T"];
 
-const getStockWiseNSEData = (i, typeIndex) => {
+const getStockWiseData = async (typeIndex) => {
+  let tIndex = typeIndex ? typeIndex : 0;
+  let type = types[tIndex];
+  console.log("index-----------", tIndex, type);
+  for (var i = 0; i < constants.allStocks.length; i++) {
+    const symbol = constants.allStocks[i].symbol;
+    const stockSymbol = constants.allStocks[i].symbol;
+    const formattedURL = utils.stringFormat(
+      dataUrl,
+      encodeURIComponent(symbol),
+      type
+    );
+    console.log("formattedURL-----", formattedURL);
+
+    try {
+      const response = await axios.get(formattedURL, {
+        withCredentials: true,
+        headers: constants.headers,
+      });
+      fs.writeFile(
+        __dirname + "../../../data/swot/" + type + "/" + stockSymbol + ".json",
+        JSON.stringify(response.data),
+        function (err) {
+          if (err)
+            return console.log("error while reading file json" + symbol, err);
+        }
+      );
+    } catch (error) {
+      console.log("Error occurred swot.js", error);
+    }
+  }
+  aggregateFiles(type);
+  if (tIndex + 1 < types.length) {
+    getStockWiseData(++tIndex);
+  }
+};
+
+/* const getStockWiseNSEData = (i, typeIndex) => {
   let index = i ? i : 0;
   let tIndex = typeIndex ? typeIndex : 0;
   let type = types[tIndex];
@@ -70,7 +107,7 @@ const getStockWiseNSEData = (i, typeIndex) => {
         reject("Error occured", error);
       }
     }))(index);
-};
+}; */
 
 /* Aggregate individual file section*/
 
@@ -178,9 +215,9 @@ const startBuildingSWOTData = async () => {
     console.log("folder error", e);
   }
 
-  getStockWiseNSEData(0, 0);
+  getStockWiseData(0);
 };
 
-//startBuildingSWOTData();
+startBuildingSWOTData();
 
-module.exports.startBuildingSWOTData = startBuildingSWOTData;
+//module.exports.startBuildingSWOTData = startBuildingSWOTData;
